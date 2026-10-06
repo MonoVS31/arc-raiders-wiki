@@ -1388,5 +1388,85 @@
     "revision": null,
     "contentHash": "ac9cb6dd6bfe534948843603e69b218db5b9178bebb7145d717bee6792435744",
     "locator": "Riven Tides"
+  },
+  {
+    "id": "metaforge-dam",
+    "title": "MetaForge — Dam Battlegrounds",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=dam",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:54:53.823Z",
+    "revision": null,
+    "contentHash": "78585bfcd54cc67e1559fd5034dba2436cc4ceabe6914f77c6df0e847d91f31d",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-spaceport",
+    "title": "MetaForge — Spaceport",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=spaceport",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:54:55.722Z",
+    "revision": null,
+    "contentHash": "92828950830ba710a96bd76eeee85ba1d71ff8a772642f656dccdc0cc780b483",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-buried-city",
+    "title": "MetaForge — Buried City",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=buried-city",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:54:56.942Z",
+    "revision": null,
+    "contentHash": "cf9556288be52a26b761db879525d06e1933ae58929be185165378b0d4c7bad5",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-blue-gate",
+    "title": "MetaForge — The Blue Gate",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=blue-gate",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:54:58.282Z",
+    "revision": null,
+    "contentHash": "d10ee314759c6c4983cf318ac14fb9d003e5bc038f432a45d91a0a82b109a3ad",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-stella-montis",
+    "title": "MetaForge — Stella Montis",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=stella-montis",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:54:59.282Z",
+    "revision": null,
+    "contentHash": "c9e241cf2ea1b9ceb3ab8ee611e26ce602a69e514746f04ce4565ce6997407f5",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-riven-tides",
+    "title": "MetaForge — Riven Tides",
+    "url": "https://metaforge.app/api/game-map-data?tableID=arc_map_data&mapID=riven-tides",
+    "kind": "community",
+    "retrievedAt": "2026-10-06T19:55:00.247Z",
+    "revision": null,
+    "contentHash": "39d669279c7549385e41d4d58afe887c8e72b039bfc8163196c725bc2f76b4ee",
+    "locator": "allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión"
+  },
+  {
+    "id": "metaforge-calibration",
+    "title": "MetaForge — configuración de mapas",
+    "url": "https://metaforge.app/_app/immutable/chunks/CopD1w6L.js",
+    "kind": "technical",
+    "retrievedAt": "2026-10-06T19:55:00.421Z",
+    "revision": null,
+    "contentHash": "5f3a37e697a4a0333eda9ec11b3110694bca385a095c9da6a06d263a6c6d070f",
+    "locator": "Anclajes worldExtent/tileExtent y transformación afín"
+  },
+  {
+    "id": "metaforge-transformation",
+    "title": "MetaForge — transformación de coordenadas",
+    "url": "https://metaforge.app/_app/immutable/chunks/DxIwavkz2.js",
+    "kind": "technical",
+    "retrievedAt": "2026-10-06T19:55:00.421Z",
+    "revision": null,
+    "contentHash": "63e6f0df5dedd6371647b3d37472fee5428476b1610e09270cba0da7bb339b79",
+    "locator": "Anclajes worldExtent/tileExtent y transformación afín"
   }
 ]
