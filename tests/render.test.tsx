@@ -8,9 +8,15 @@ it('renderiza la navegación, fuentes y el estado real del mapa', () => {
   const html=renderToStaticMarkup(<App/>);
   expect(html).toContain('aria-label="Categorías del catálogo"');
   expect(html).toContain('Buscar');
-  expect(html).toContain('Cartografía en verificación');
-  expect(html).toContain('0 marcadores publicados');
+  expect(html).toContain('Cargando visor de mapas');
   expect(html).toContain('ARC Raiders Wiki');
+});
+it('separa rutas de planos de los objetos fabricados',()=>{
+ const entity=catalog.entities.find(entity=>entity.id==='blueprint-hullcracker-blueprint')!;
+ const html=renderToStaticMarkup(<EntityDetail entity={entity}/>);
+ expect(html).toContain('Cómo buscar este plano');
+ expect(html).toContain("The Major&#x27;s Footlocker");
+ expect(html).toContain('no son puntos de aparición del plano');
 });
 it('renderiza todas las fichas sin fallos y conserva la advertencia del anuncio', () => {
   for(const entity of catalog.entities)expect(renderToStaticMarkup(<EntityDetail entity={entity}/>)).toContain(entity.name.replaceAll('&','&amp;').replaceAll("'",'&#x27;'));
