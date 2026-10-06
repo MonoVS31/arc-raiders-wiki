@@ -6,7 +6,7 @@ Corte editorial: 6 de octubre de 2026, America/Buenos_Aires. Este es un inventar
 
 Se consultó la API pública `https://api.github.com/users/MonoVS31/repos?per_page=100`. Devolvió tres repositorios: Curso.Prep.Henry (preparación Henry, master), n (gestor de versiones Node, master) y pipo-aventura-estelar (plataformas Three.js, main). Se revisó además el árbol público del último: tiene un juego existente, README, Vite, TypeScript y despliegue. Ninguno es una wiki de ARC Raiders. No se clonó sobre ellos ni se modificó ningún archivo remoto.
 
-El usuario eligió un repositorio público nuevo: **MonoVS31/arc-raiders-wiki**. El enlace inicial es una cuenta, no un repositorio. La autenticación local de GitHub informó una credencial inválida; la creación remota y subida quedan pendientes de conexión válida. La carpeta local independiente permite terminar los entregables sin alterar los otros proyectos.
+El usuario eligió un repositorio público nuevo: **MonoVS31/arc-raiders-wiki**. El enlace inicial es una cuenta, no un repositorio. La investigación se documentó antes de implementar. Después se creó el repositorio público y se publicó mediante la conexión de GitHub autorizada para ese único repositorio. La copia local quedó en la carpeta Arc indicada por el usuario; la historia anterior se conserva sin tocar los otros proyectos.
 
 ## Política de evidencia
 

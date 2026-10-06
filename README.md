@@ -6,7 +6,7 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 Investigación pública con corte **6 de octubre de 2026**, arquitectura documentada antes de la implementación y primera aplicación local con búsqueda, filtros y fichas con fuentes por campo. Las estadísticas comunitarias están clasificadas como probables; anuncios oficiales confirmados se separan del contenido disponible. Los desconocidos y conflictos son visibles.
 
-Se inspeccionaron los tres repositorios públicos de MonoVS31. Ninguno correspondía al proyecto y no se modificó ninguno. El repositorio público nuevo https://github.com/MonoVS31/arc-raiders-wiki ya está creado. La subida aún está pendiente: el perfil de la conexión confirma MonoVS31, pero la instalación de acceso a repositorios pertenece a otra cuenta accesible. Se preparó una instalación limitada a arc-raiders-wiki, pendiente de autorización del propietario. La sesión de la terminal continúa inválida. Los commits locales permanecen intactos en Arc.
+Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó ninguno. La investigación, documentación, catálogo y base web están publicados en https://github.com/MonoVS31/arc-raiders-wiki. El contenido publicado coincide con la base revisada en la PC. La copia de trabajo permanece en C:\Users\Matia\OneDrive\Escritorio\Arc\outputs\arc-raiders-wiki. La rama main sigue la publicación; la historia previa de trabajo se conserva en local-original-history. El acceso de la conexión está limitado a este repositorio.
 
 **No es todavía la wiki completa:** mapas interactivos con assets autorizados, coordenadas de cajas, revisión completa de obtención de planos, diagramas ARC, comparadores y simulaciones pertenecen a las siguientes fases. No hay marcadores inventados, tasas supuestas ni curvas de daño calculadas sin evidencia. No se reutilizan imágenes o datasets de terceros sin revisar permisos.
 
@@ -45,16 +45,15 @@ npm run preview
 
 La investigación inicial se preparó consultando fuentes públicas; los scripts y capturas de trabajo no forman parte de la aplicación. El catálogo es editable sin scraping automático: agregar la fuente, la entidad y los campos revisados; ejecutar las comprobaciones. Las rutas de obtención incompletas siguen marcadas como pendientes.
 
-## Crear el remoto sin tocar otros proyectos
+## Repositorio y trabajo local
 
-Los commits locales ya separan documentación, datos y base web. Para subir esa historia, una vez restablecida la sesión de GitHub CLI:
+Repositorio público: https://github.com/MonoVS31/arc-raiders-wiki.
 
-```sh
-gh auth login --hostname github.com --git-protocol https --web
-gh repo create MonoVS31/arc-raiders-wiki --public --source . --remote origin --push
-```
+La publicación separa investigación, arquitectura, catálogo y aplicación. Los archivos fueron enviados mediante la conexión de GitHub y se verificó que su árbol de contenido coincide con el commit local. La historia local anterior permanece en la rama local-original-history. No se reescribió historia de repositorios existentes.
 
-Si el repositorio ya existe al retomar, inspeccionarlo primero: no ejecutar creación, force-push, borrado ni sobrescribir su historia. Estos comandos son instrucciones pendientes, no evidencia de publicación. No pegar tokens en archivos o en el chat.
+La [verificación automática de la base](https://github.com/MonoVS31/arc-raiders-wiki/actions/runs/37518686760) aprobó instalación, TypeScript, tests y build. Este repositorio contiene la base del proyecto; la web todavía no se desplegó en una URL pública.
+
+Para continuar, crear una rama de trabajo desde main. La sesión de GitHub CLI es independiente de la conexión de la aplicación; no se renovó durante esta entrega. No pegar credenciales en archivos o en el chat.
 
 ## Atribución y propiedad
 

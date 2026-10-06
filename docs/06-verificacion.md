@@ -1,6 +1,6 @@
 # Verificación de la base
 
-Fecha: 6 de octubre de 2026. Esta evidencia corresponde a la base local; no confirma un despliegue ni ejecución de CI en GitHub.
+Fecha: 6 de octubre de 2026. Incluye evidencia de la base local y de la ejecución de CI en GitHub. No se ha desplegado la web.
 
 ## Resultados ejecutados
 
@@ -19,9 +19,13 @@ Node 24.19.0; npm 11.17.0; React/React DOM 19.3.0; TypeScript 7.0.2; Vite 8.3.3;
 
 Bundle JS inicial: aproximadamente 568 kB minificado / 125 kB gzip. Vite advierte un chunk superior a 500 kB. La siguiente fase debería dividir catálogo por categoría y cargar validación/datos por demanda; el aviso no impide compilar. No se verificaron imágenes base ni posiciones: los seis registros de ubicación son tareas sin coordenadas. Los POIs reportados son afirmaciones posibles separadas de marcadores.
 
-Inicialmente GitHub CLI informó credencial inválida y Git no tenía autor. Después el usuario conectó GitHub: el perfil autenticado confirmó MonoVS31 y su nombre. Se configuró solamente este repositorio con ese nombre y la dirección de GitHub noreply `86577003+MonoVS31@users.noreply.github.com`, conservando la privacidad del correo personal. Ya se crean los commits locales por fases. La sesión de GitHub CLI continúa inválida, aunque el plugin sí funciona.
+## Publicación verificada
 
-Se creó y verificó el repositorio público https://github.com/MonoVS31/arc-raiders-wiki desde la sesión del navegador del usuario. El intento inicial de escritura mediante la conexión devolvió 403 Resource not accessible by integration. La instalación de repositorios de ChatGPT Codex Connector pertenece a otra cuenta accesible; no está instalada en MonoVS31. Se preparó la autorización para un único repositorio, arc-raiders-wiki, y se solicitó confirmación antes de conceder permisos de escritura. La subida sigue pendiente de ese permiso. La renovación de credenciales de la terminal fue rechazada por la revisión automática de permisos. No se cambió ningún repositorio existente.
+Repositorio público: https://github.com/MonoVS31/arc-raiders-wiki. El usuario autorizó ChatGPT Codex Connector para un único repositorio en MonoVS31. Se publicaron primero investigación y arquitectura, después catálogo y base web. Los 27 archivos versionados quedaron publicados; no se incluyeron dependencias instaladas, capturas de trabajo o credenciales.
+
+El árbol publicado de la base es `7fa00bd593d05595e7a5c7afb1f74c05beac1af8`, idéntico al árbol de contenido de la copia local revisada. Commit de aplicación: `5173f6eb7bd84f51e723e0f9c49b20d1eb3d08ac`. La [ejecución 37518686760](https://github.com/MonoVS31/arc-raiders-wiki/actions/runs/37518686760) terminó con success: npm ci, comprobación de tipos, pruebas y build aprobados. Esta comprobación corresponde al código de la base; la presente actualización modifica solo documentación.
+
+La copia local está en `C:\Users\Matia\OneDrive\Escritorio\Arc\outputs\arc-raiders-wiki`. main sigue origin/main; la historia local anterior está preservada en local-original-history. La publicación mediante la conexión genera identificadores propios de commits. La renovación de la sesión de GitHub CLI fue rechazada por la revisión automática de permisos; no se configuraron credenciales nuevas de la terminal. No se modificó ningún repositorio existente y la web aún no está desplegada.
 
 ## Secretos y publicación
 
