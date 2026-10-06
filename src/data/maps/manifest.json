@@ -1,0 +1,480 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-06",
+  "retrievedAt": "2026-10-06T19:55:00.421Z",
+  "provider": "MetaForge",
+  "termsUrl": "https://metaforge.app/arc-raiders/api",
+  "attributionUrl": "https://metaforge.app/arc-raiders",
+  "configUrl": "https://metaforge.app/_app/immutable/chunks/CopD1w6L.js",
+  "configHash": "5f3a37e697a4a0333eda9ec11b3110694bca385a095c9da6a06d263a6c6d070f",
+  "transformUrl": "https://metaforge.app/_app/immutable/chunks/DxIwavkz2.js",
+  "transformHash": "63e6f0df5dedd6371647b3d37472fee5428476b1610e09270cba0da7bb339b79",
+  "maps": [
+    {
+      "id": "map-dam-battlegrounds",
+      "slug": "dam",
+      "name": "Dam Battlegrounds",
+      "center": [
+        2560,
+        4096
+      ],
+      "worldExtent": [
+        1634.8691424096007,
+        5260.799310066582,
+        3292.914501442535,
+        2848.1510404315172
+      ],
+      "tileExtent": [
+        47.17178678359251,
+        152.00390625,
+        95.2611648323476,
+        82.04135491430883
+      ],
+      "minZoom": 0,
+      "maxZoom": 5,
+      "initialZoom": 3.25,
+      "tileSize": 256,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "0",
+          "index": 0,
+          "label": "Superficie",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/dam/20260112/{z}/{x}/{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Prospecting Probes",
+          "bit": 1
+        },
+        {
+          "name": "Harvester",
+          "bit": 2
+        },
+        {
+          "name": "Uncovered Caches",
+          "bit": 3
+        },
+        {
+          "name": "Husk Graveyard",
+          "bit": 4
+        },
+        {
+          "name": "Electromagnetic Storm",
+          "bit": 5
+        },
+        {
+          "name": "Lush Blooms",
+          "bit": 6
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        },
+        {
+          "name": "Matriarch",
+          "bit": 8
+        },
+        {
+          "name": "Cold Snap",
+          "bit": 9
+        },
+        {
+          "name": "Hurricane",
+          "bit": 12
+        },
+        {
+          "name": "Close Scrutiny",
+          "bit": 14
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/dam",
+      "snapshotHash": "39f2b6aad66c4828330c1f0b9dbb2d2e9e13f661f5aed593a94b7dbcff42c819",
+      "markerCount": 464,
+      "caseCount": 48
+    },
+    {
+      "id": "map-spaceport",
+      "slug": "spaceport",
+      "name": "Spaceport",
+      "center": [
+        2400,
+        3600
+      ],
+      "worldExtent": [
+        1781.4843302764823,
+        2424.75,
+        3421.448788892414,
+        5104.75
+      ],
+      "tileExtent": [
+        106.76514723178478,
+        139.9453125,
+        201.17851771018792,
+        294.1640625
+      ],
+      "minZoom": 1,
+      "maxZoom": 5,
+      "initialZoom": 3,
+      "tileSize": 512,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "-1",
+          "index": 0,
+          "label": "Subsuelo",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/spaceport/20260114/underground/{z}/{x}/{y}.webp"
+        },
+        {
+          "id": "0",
+          "index": 1,
+          "label": "Superficie",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/spaceport/20260114/{z}/{x}/{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Prospecting Probes",
+          "bit": 1
+        },
+        {
+          "name": "Harvester",
+          "bit": 2
+        },
+        {
+          "name": "Uncovered Caches",
+          "bit": 3
+        },
+        {
+          "name": "Husk Graveyard",
+          "bit": 4
+        },
+        {
+          "name": "Launch Tower Loot",
+          "bit": 5
+        },
+        {
+          "name": "Lush Blooms",
+          "bit": 6
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        },
+        {
+          "name": "Electromagnetic Storm",
+          "bit": 8
+        },
+        {
+          "name": "Hidden Bunker",
+          "bit": 9
+        },
+        {
+          "name": "Matriarch",
+          "bit": 10
+        },
+        {
+          "name": "Cold Snap",
+          "bit": 11
+        },
+        {
+          "name": "Hurricane",
+          "bit": 12
+        },
+        {
+          "name": "Close Scrutiny",
+          "bit": 14
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/spaceport",
+      "snapshotHash": "9afa4af04328ec7dae763c9718e989354ea51adc3398923a99457ca339e24f9b",
+      "markerCount": 382,
+      "caseCount": 34
+    },
+    {
+      "id": "map-buried-city",
+      "slug": "buried-city",
+      "name": "Buried City",
+      "center": [
+        4800,
+        6800
+      ],
+      "worldExtent": [
+        0,
+        0,
+        16384,
+        16384
+      ],
+      "tileExtent": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "minZoom": 1,
+      "maxZoom": 5,
+      "initialZoom": 2.75,
+      "tileSize": 512,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "0",
+          "index": 0,
+          "label": "Superficie",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/buried-city/20260112/{z}/{x}/{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Prospecting Probes",
+          "bit": 1
+        },
+        {
+          "name": "Uncovered Caches",
+          "bit": 3
+        },
+        {
+          "name": "Husk Graveyard",
+          "bit": 4
+        },
+        {
+          "name": "Lush Blooms",
+          "bit": 6
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        },
+        {
+          "name": "Cold Snap",
+          "bit": 8
+        },
+        {
+          "name": "Hurricane",
+          "bit": 12
+        },
+        {
+          "name": "Close Scrutiny",
+          "bit": 14
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/buried-city",
+      "snapshotHash": "20065aaabab28fd94fbb8e963f99a817b24a9c31f438471c7921be626717705c",
+      "markerCount": 389,
+      "caseCount": 38
+    },
+    {
+      "id": "map-the-blue-gate",
+      "slug": "blue-gate",
+      "name": "The Blue Gate",
+      "center": [
+        4700,
+        7500
+      ],
+      "worldExtent": [
+        7416,
+        6553.450942288329,
+        3439.2663383876925,
+        9597.991683705897
+      ],
+      "tileExtent": [
+        233.0236479649544,
+        204.33176267600015,
+        107.43762885951965,
+        300.40951140668346
+      ],
+      "minZoom": 1,
+      "maxZoom": 5,
+      "initialZoom": 2.5,
+      "tileSize": 512,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "-1",
+          "index": 0,
+          "label": "Subsuelo",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/blue-gate/20260112/underground/{z}/{x}/{y}.webp"
+        },
+        {
+          "id": "0",
+          "index": 1,
+          "label": "Superficie",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/blue-gate/20260112/{z}/{x}/{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Harvester",
+          "bit": 2
+        },
+        {
+          "name": "Uncovered Caches",
+          "bit": 3
+        },
+        {
+          "name": "Husk Graveyard",
+          "bit": 4
+        },
+        {
+          "name": "Lush Blooms",
+          "bit": 6
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        },
+        {
+          "name": "Electromagnetic Storm",
+          "bit": 8
+        },
+        {
+          "name": "Cold Snap",
+          "bit": 9
+        },
+        {
+          "name": "Matriarch",
+          "bit": 10
+        },
+        {
+          "name": "Hurricane",
+          "bit": 12
+        },
+        {
+          "name": "Locked Gate",
+          "bit": 13
+        },
+        {
+          "name": "Close Scrutiny",
+          "bit": 14
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/blue-gate",
+      "snapshotHash": "55a94ace5b5d7c832681a79b45fe77764a9352f6bb2e2280d289f27e37fc11b4",
+      "markerCount": 368,
+      "caseCount": 34
+    },
+    {
+      "id": "map-stella-montis",
+      "slug": "stella-montis",
+      "name": "Stella Montis",
+      "center": [
+        2500,
+        4000
+      ],
+      "worldExtent": [
+        3412,
+        2206,
+        1362,
+        4874
+      ],
+      "tileExtent": [
+        112.46875,
+        64.71875,
+        40.25,
+        158.78125
+      ],
+      "minZoom": 1,
+      "maxZoom": 5,
+      "initialZoom": 3,
+      "tileSize": 256,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "-1",
+          "index": 0,
+          "label": "Piso inferior",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/stella-montis/v3/b1/{z}/{x}_{y}.webp"
+        },
+        {
+          "id": "0",
+          "index": 1,
+          "label": "Piso superior",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/stella-montis/v3/default/{z}/{x}_{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/stella-montis",
+      "snapshotHash": "256490450c3f115a1b5bbe5192235e7034df92718368258fb702c55a9d092509",
+      "markerCount": 219,
+      "caseCount": 27
+    },
+    {
+      "id": "map-riven-tides",
+      "slug": "riven-tides",
+      "name": "Riven Tides",
+      "center": [
+        4800,
+        6800
+      ],
+      "worldExtent": [
+        0,
+        0,
+        16384,
+        16384
+      ],
+      "tileExtent": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "minZoom": 1,
+      "maxZoom": 5,
+      "initialZoom": 2.75,
+      "tileSize": 512,
+      "defaultFloorId": "0",
+      "floors": [
+        {
+          "id": "0",
+          "index": 0,
+          "label": "Superficie",
+          "tiles": "https://static.metaforge.app/arc-raiders/maps/riven-tides/20260428/{z}/{x}/{y}.webp"
+        }
+      ],
+      "conditions": [
+        {
+          "name": "No Event",
+          "bit": 0
+        },
+        {
+          "name": "Night Raid",
+          "bit": 7
+        },
+        {
+          "name": "Beachcombing",
+          "bit": 15
+        }
+      ],
+      "sourceUrl": "https://metaforge.app/arc-raiders/map/riven-tides",
+      "snapshotHash": "63eb76b32c0732b40a7a35f7cd53692635e3d9c9d0a5d2566685a5e02128099c",
+      "markerCount": 159,
+      "caseCount": 20
+    }
+  ]
+}

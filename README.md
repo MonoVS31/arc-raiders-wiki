@@ -6,9 +6,11 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 Investigación pública con corte **6 de octubre de 2026**, arquitectura documentada antes de la implementación y primera aplicación local con búsqueda, filtros y fichas con fuentes por campo. Las estadísticas comunitarias están clasificadas como probables; anuncios oficiales confirmados se separan del contenido disponible. Los desconocidos y conflictos son visibles.
 
-Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó ninguno. La investigación, documentación, catálogo y base web están publicados en https://github.com/MonoVS31/arc-raiders-wiki. El contenido publicado coincide con la base revisada en la PC. La copia de trabajo permanece en C:\Users\Matia\OneDrive\Escritorio\Arc\outputs\arc-raiders-wiki. La rama main sigue la publicación; la historia previa de trabajo se conserva en local-original-history. El acceso de la conexión está limitado a este repositorio.
+Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó ninguno. La investigación, documentación, catálogo y base web están publicados en https://github.com/MonoVS31/arc-raiders-wiki. El contenido publicado coincide con la base revisada en la PC. El acceso de la conexión está limitado a este repositorio.
 
-**No es todavía la wiki completa:** mapas interactivos con assets autorizados, coordenadas de cajas, revisión completa de obtención de planos, diagramas ARC, comparadores y simulaciones pertenecen a las siguientes fases. No hay marcadores inventados, tasas supuestas ni curvas de daño calculadas sin evidencia. No se reutilizan imágenes o datasets de terceros sin revisar permisos.
+**Versión 0.2:** seis mapas interactivos con zoom, desplazamiento, pisos, filtros y lista accesible. Incluye 1.981 reportes comunitarios, entre ellos 201 reportes de cajas, y rutas documentadas para 83 planos. Siete rutas tienen corroboración específica; cuatro conservan campos desconocidos. Las posiciones de los reportes no garantizan aparición del botín. Al seleccionar un ARC se muestran sus datos de combate con fuentes.
+
+Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC, comparadores y simulaciones de granadas. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
 
 ## Ejecutar
 
@@ -38,6 +40,7 @@ npm run preview
 - [Fases y estrategia de commits](docs/04-fases-y-commits.md)
 - [Cobertura](docs/05-cobertura.md)
 - [Verificación ejecutada y límites](docs/06-verificacion.md)
+- [Mapas, rutas y atribución](docs/07-mapas-y-rutas.md)
 
 ## Datos y actualización
 
@@ -49,11 +52,19 @@ La investigación inicial se preparó consultando fuentes públicas; los scripts
 
 Repositorio público: https://github.com/MonoVS31/arc-raiders-wiki.
 
-La publicación separa investigación, arquitectura, catálogo y aplicación. Los archivos fueron enviados mediante la conexión de GitHub y se verificó que su árbol de contenido coincide con el commit local. La historia local anterior permanece en la rama local-original-history. No se reescribió historia de repositorios existentes.
+La publicación separa investigación, arquitectura, catálogo y aplicación. No se reescribió historia de repositorios existentes.
 
 La [verificación automática de la base](https://github.com/MonoVS31/arc-raiders-wiki/actions/runs/37518686760) aprobó instalación, TypeScript, tests y build. Este repositorio contiene la base del proyecto; la web todavía no se desplegó en una URL pública.
 
-Para continuar, crear una rama de trabajo desde main. La sesión de GitHub CLI es independiente de la conexión de la aplicación; no se renovó durante esta entrega. No pegar credenciales en archivos o en el chat.
+Para continuar, crear una rama de trabajo desde main y ejecutar las comprobaciones antes de publicar. No incluir credenciales en archivos.
+
+## Actualizar mapas y rutas
+
+Los marcadores se sirven desde cachés por mapa en public/data/maps; Leaflet y el visor se cargan por demanda. El navegador verifica SHA-256 de la caché contra el manifiesto antes de mostrar datos. Las imágenes se cargan desde MetaForge con atribución y enlace; no se copian sus tiles al repositorio. Esta integración usa las condiciones de su [API pública](https://metaforge.app/arc-raiders/api) para el proyecto gratuito actual. Un producto monetizado requiere contacto previo con el proveedor.
+
+`npm run data:maps` solicita una nueva captura deliberadamente y exige revisar la configuración si cambia. `npm run data:blueprints` necesita las capturas de investigación conservadas en Arc/work/research; no es un comando de instalación para un clon nuevo. Los datos ya versionados permiten ejecutar la aplicación sin esas capturas. Revisar diferencias, fuentes y pruebas antes de publicar actualizaciones.
+
+La captura original de catalog.json permanece como evidencia inicial. domain/catalog.ts compone los campos activos con la calibración de mapas y las rutas revisadas, para que los filtros no sigan usando pendientes sustituidos por nueva evidencia.
 
 ## Atribución y propiedad
 
