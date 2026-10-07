@@ -10,12 +10,11 @@ export function useVisualEffects() {
     let x = 0,
       y = 0;
     const reset = (element: HTMLElement) => {
-      element.style.removeProperty('--pointer-x');
-      element.style.removeProperty('--pointer-y');
-      element.style.removeProperty('--tilt-x');
-      element.style.removeProperty('--tilt-y');
-      element.style.removeProperty('--parallax-x');
-      element.style.removeProperty('--parallax-y');
+      element.style.removeProperty('transform');
+      for (const layer of element.querySelectorAll<HTMLElement>(
+        '.card-spotlight, .card-tilt, .banner-machine img',
+      ))
+        layer.style.removeProperty('transform');
       element.removeAttribute('data-pointer-active');
     };
     const move = (event: PointerEvent) => {
@@ -35,13 +34,19 @@ export function useVisualEffects() {
         const rect = target.getBoundingClientRect();
         const nx = (x - rect.left) / rect.width - 0.5,
           ny = (y - rect.top) / rect.height - 0.5;
-        target.style.setProperty('--pointer-x', `${x - rect.left}px`);
-        target.style.setProperty('--pointer-y', `${y - rect.top}px`);
-        target.style.setProperty('--tilt-x', `${-ny * 5}deg`);
-        target.style.setProperty('--tilt-y', `${nx * 5}deg`);
-        target.style.setProperty('--parallax-x', `${nx * 14}px`);
-        target.style.setProperty('--parallax-y', `${ny * 10}px`);
-        target.setAttribute('data-pointer-active', '');
+        // Update the moving layers without invalidating inherited variables across the card.
+        const light = target.querySelector<HTMLElement>('.card-spotlight');
+        const image = target.querySelector<HTMLElement>('.banner-machine img');
+        const tilt = target.matches('.portal-tile')
+          ? target
+          : target.querySelector<HTMLElement>('.card-tilt');
+        if (light)
+          light.style.transform = `translate3d(${x - rect.left - 175}px, ${y - rect.top - 175}px, 0)`;
+        if (image)
+          image.style.transform = `translate3d(${nx * 14}px, ${ny * 10}px, 0) scale(1.035)`;
+        if (tilt) tilt.style.transform = `rotateX(${-ny * 5}deg) rotateY(${nx * 5}deg)`;
+        if (!target.hasAttribute('data-pointer-active'))
+          target.setAttribute('data-pointer-active', '');
       });
     };
     const out = (event: PointerEvent) => {

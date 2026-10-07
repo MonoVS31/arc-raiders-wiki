@@ -1,4 +1,5 @@
 import { numericBarScale } from '../domain/numeric-scale';
+import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
 import { AtlasImage } from './wiki/AtlasImage';
 import { readAtlasData } from '../domain/data-loader';
@@ -93,51 +94,45 @@ export function EntityDetail({
           <ProjectSteps projectId={entity.id} />
         </Suspense>
       )}
-      {entity.availability === 'disponible' && entity.category === 'weapon' && (
-        <WeaponComparison entity={entity} />
-      )}
-      {entity.availability === 'disponible' && entity.category === 'arc' && (
-        <ARCCombatPanel entity={entity} />
-      )}
-      {entity.availability === 'disponible' && entity.category === 'grenade' && (
-        <GrenadeEffectPanel entity={entity} />
-      )}
-      {claims.some((claim) => numericBarScale(claim, entity.category) !== null) && (
-        <p className="muted bar-legend">
-          Las barras usan una escala visual del archivo: mismo campo, unidad y categoría. No
-          representan límites del juego ni modifican los valores.
-        </p>
-      )}
-      <dl className="claims" id="datos">
-        {claims.map((claim) => (
-          <div className="claim" key={claim.id}>
-            <dt>
-              {fieldNames[claim.field] ?? claim.field}
-              <span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>
-                {claim.confidence}
-              </span>
-            </dt>
-            <dd>
-              {claim.value === null ? (
-                <span className="unknown">Pendiente de verificar</span>
-              ) : (
-                `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`
-              )}
-            </dd>
-            {numericBarScale(claim, entity.category) !== null && (
-              <span
-                className="stat-bar"
-                aria-hidden="true"
-                title="Escala visual relativa al mismo campo y unidad en el archivo"
-              >
-                <span style={{ transform: `scaleX(${numericBarScale(claim, entity.category)})` }} />
-              </span>
-            )}
-            {claim.note && <p className="claim-note">{claim.note}</p>}
-            <Sources ids={claim.sourceIds} />
-          </div>
-        ))}
-      </dl>
+      <section id="datos" aria-label="Estadísticas y datos">
+        {entity.availability === 'disponible' && entity.category === 'weapon' && (
+          <WeaponComparison entity={entity} />
+        )}
+        {entity.availability === 'disponible' && entity.category === 'arc' && (
+          <ARCCombatPanel entity={entity} />
+        )}
+        {entity.availability === 'disponible' && entity.category === 'grenade' && (
+          <GrenadeEffectPanel entity={entity} />
+        )}
+        {claims.some((claim) => numericBarScale(claim, entity.category) !== null) && (
+          <p className="muted bar-legend">
+            Las barras usan una escala visual del archivo: mismo campo, unidad y categoría. No
+            representan límites del juego ni modifican los valores.
+          </p>
+        )}
+        <dl className="claims">
+          {claims.map((claim) => (
+            <div className="claim" key={claim.id}>
+              <dt>
+                {fieldNames[claim.field] ?? claim.field}
+                <span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>
+                  {claim.confidence}
+                </span>
+              </dt>
+              <dd>
+                {claim.value === null ? (
+                  <span className="unknown">Pendiente de verificar</span>
+                ) : (
+                  `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`
+                )}
+              </dd>
+              <StatBars claim={claim} category={entity.category} />
+              {claim.note && <p className="claim-note">{claim.note}</p>}
+              <Sources ids={claim.sourceIds} />
+            </div>
+          ))}
+        </dl>
+      </section>
       {['weapon', 'grenade', 'blueprint', 'container'].includes(entity.category) &&
         entity.availability === 'disponible' && (
           <Suspense fallback={<p className="muted">Cargando archivo de fabricación…</p>}>

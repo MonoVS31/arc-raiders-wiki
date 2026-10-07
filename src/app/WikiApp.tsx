@@ -123,7 +123,7 @@ export function App() {
           >
             Créditos y fuentes
           </button>
-          <span>V2.2 / ARCHIVO EN ESPAÑOL</span>
+          <span>V2.3 / ARCHIVO EN ESPAÑOL</span>
         </footer>
       </div>
       {modalLoaded && (

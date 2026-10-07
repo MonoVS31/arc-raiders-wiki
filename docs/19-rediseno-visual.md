@@ -4,7 +4,7 @@ Rama: feat/rediseno-visual. Un commit de fase. No integrar a main sin aprobació
 
 ## Dirección de arte
 
-Negro cálido, crema, naranja quemado y turquesa secundario; retícula militar, esquinas visualmente recortadas, líneas finas y códigos monoespaciados. Grano SVG estático feTurbulence al 2,8% de opacidad, sin capturar eventos. Paleta y variables de interacción en el único :root de tokens.css; estilos organizados por sección en redesign.css dentro de @layer components.
+Negro cálido, crema, naranja quemado y turquesa secundario; retícula militar, esquinas visualmente recortadas, líneas finas y códigos monoespaciados. Se retiró la capa de grano SVG de pantalla completa durante la revisión de rendimiento. Paleta y tokens tipográficos en el único :root de tokens.css; estilos organizados por sección en redesign.css dentro de @layer components.
 
 ## Tipografía local
 
@@ -12,10 +12,25 @@ Barlow Condensed 600/700 para títulos, Inter Variable para lectura y JetBrains 
 
 ## Cambios por sección
 
-- Portada: hero panorámico del alto del viewport, degradados de lectura, palabras reveladas en secuencia y parallax máximo de 7/5 px según el cursor en escritorio. Bento con Mapas y ARC destacados; son imágenes editoriales, no mapas nuevos. Contadores derivados del mismo catálogo, con conteo visual al entrar y valor final accesible. Franja Frozen Trail que abre el anuncio existente.
+- Portada: hero panorámico del alto del viewport, degradados de lectura, palabras reveladas en secuencia y parallax máximo de 7/5 px según el cursor en escritorio. Bento con Mapas y ARC destacados; son imágenes editoriales, no mapas nuevos. Contadores derivados del mismo catálogo, con número final estable y entrada por transform/opacity. Franja Frozen Trail que abre el anuncio existente.
 - Galería: spotlight radial en una capa que se mueve con transform, tilt de hasta 2,5 grados en una capa independiente del layout de Motion, imágenes que sobresalen del marco interno, acentos por disponibilidad y skeleton mientras cargan. Se conserva el enlace real y la apertura con teclado y nueva pestaña.
 - Ficha: título display e imagen grande, datos originales junto a barras decorativas. La escala se calcula entre valores numéricos del mismo campo, categoría y unidad del archivo; no es un máximo del juego, no interpreta RPM mixtos, porcentajes ni datos desconocidos. Índice con aria-current según la sección visible, incluidos contenidos cargados por demanda.
 - Microinteracciones: presión de botones, subrayado y pequeños movimientos de íconos; solo transform y opacity.
+
+## Correcciones de revisión · edición visual 2.3
+
+- Logo del sidebar en Barlow Condensed; subtítulo en una línea. Proyectos usa una lista de tareas, Contenedores una caja y Materiales un recurso geométrico.
+- Bento con áreas explícitas: tres filas completas en escritorio y dos columnas hasta 1100 px. Se revisaron 375, 900, 1024 y 1366 px; sin huecos ni títulos recortados.
+- Hornet llena la región derecha hasta los bordes, con imagen cover y degradado de lectura. En celular se atenúa la imagen.
+- Comparador con tokens compartidos para etiquetas y ayuda. Barras para valores numéricos, multiplicadores explícitos y durabilidad en shots; las series I–IV se muestran como cuatro barras. No se extraen números de descripciones, porcentajes ni cadencias mixtas. Las escalas mantienen campo, unidad y categoría; no se interpretan como máximos del juego.
+- La sección Estadísticas y datos incluye el comparador. El índice sigue scroll capturado y contenido por demanda; en tablet/celular aparece antes de la ficha. Se comprobaron ambos enlaces de sección y el cambio al nivel IV de Kettle (898 shots conservados).
+- Se retiraron el grano global, el filtro heredado del hero, las entradas ligadas al scroll y la sombra al pasar por los botones bento. El puntero escribe transform solo en las capas que se mueven, sin actualizar seis variables heredadas en toda la tarjeta por frame. Los contadores conservan el valor final: entran mediante transform/opacity, sin cambiar texto por frame. El observador de animaciones ignora cambios de texto, evitando recorridos globales repetidos. Sidebar y topbar conservan backdrop-filter: none.
+
+### Límite de la medición de rendimiento
+
+La conexión disponible permite inspeccionar DOM, estilos y capturas de Chrome, pero no controlar su pestaña DevTools/Performance. Se intentó abrirla mediante el atajo del navegador sin obtener acceso al panel. Un ensayo local con requestAnimationFrame de ocho segundos presentó intervalos cercanos a un segundo y ningún long task: el navegador automatizado limita la cadencia, por lo que se descartó como prueba de FPS. No se certifican 60 fps ni se atribuye una mejora porcentual sin una traza válida. Falta una grabación de Performance en Chrome en primer plano para verificar rasterización y frames perdidos en esta PC.
+
+Validación: lint, TypeScript, 109 pruebas, hashes de datos y assets, build y 167 fichas prerenderizadas. Vista local de revisión: http://127.0.0.1:4176/. No se integra ni publica main en esta fase.
 
 ## Accesibilidad y preservación
 

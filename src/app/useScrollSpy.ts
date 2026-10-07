@@ -3,6 +3,7 @@ const ids = ['detail-title', 'datos', 'fabricacion'];
 export function useScrollSpy(entityId: string) {
   const [active, setActive] = useState('detail-title');
   useEffect(() => {
+    setActive('detail-title');
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -30,19 +31,29 @@ export function useScrollSpy(entityId: string) {
       }
       schedule();
     };
-    const changes = new MutationObserver(refresh);
+    const changes = new MutationObserver((records) => {
+      if (
+        records.some((record) =>
+          [...record.addedNodes, ...record.removedNodes].some(
+            (node) => node.nodeType === Node.ELEMENT_NODE,
+          ),
+        )
+      )
+        refresh();
+    });
     changes.observe(document.getElementById('catalog') ?? document.body, {
       childList: true,
       subtree: true,
     });
-    window.addEventListener('scroll', schedule, { passive: true });
+    // Capture also observes scroll in nested containers and embedded previews.
+    document.addEventListener('scroll', schedule, { passive: true, capture: true });
     window.addEventListener('resize', schedule);
     refresh();
     return () => {
       observer?.disconnect();
       changes.disconnect();
       cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', schedule);
+      document.removeEventListener('scroll', schedule, true);
       window.removeEventListener('resize', schedule);
     };
   }, [entityId]);

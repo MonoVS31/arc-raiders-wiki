@@ -34,6 +34,18 @@ it('pausa elementos fuera de pantalla y limpia el observer al desmontar', async 
     expect(element.classList.contains('animation-paused')).toBe(false);
     callback([{ target: element, isIntersecting: false }]);
     expect(element.classList.contains('animation-paused')).toBe(true);
+    const scan = vi.spyOn(document, 'querySelectorAll');
+    await act(async () => {
+      element.textContent = '24';
+    });
+    expect(scan).not.toHaveBeenCalled();
+    const added = document.createElement('div');
+    added.className = 'banner-orbit';
+    await act(async () => {
+      host.append(added);
+    });
+    expect(observe).toHaveBeenCalledWith(added);
+    scan.mockRestore();
   } finally {
     await act(async () => root.unmount());
     host.remove();

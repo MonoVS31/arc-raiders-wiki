@@ -1,14 +1,6 @@
 @layer components {
   /* Archivo de campo: superficie cálida, óptica analógica y retícula militar. */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    pointer-events: none;
-    background: url('/grain.svg') repeat;
-    opacity: 0.028;
-  }
+  /* Sin filtro SVG de pantalla completa: el scroll no necesita rasterizar grano. */
   h1,
   h2,
   h3,
@@ -17,6 +9,26 @@
   .atlas-logo {
     font-family: var(--font-family-display);
     font-stretch: condensed;
+  }
+  .wiki-brand {
+    font-family: var(--font-family-display);
+    font-size: 1.6rem;
+    line-height: 1;
+    gap: 0.65rem;
+    letter-spacing: 0;
+  }
+  .wiki-brand > span:last-child {
+    min-width: 0;
+  }
+  .wiki-brand b {
+    font-size: 2rem;
+  }
+  .wiki-brand small {
+    font-family: var(--font-family-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+    margin-top: 0.65rem;
   }
   .wiki-sidebar {
     width: 220px;
@@ -131,6 +143,7 @@
     z-index: 2;
   }
   .banner-machine {
+    filter: none;
     inset: 0;
     width: 100%;
     border-radius: 0;
@@ -267,12 +280,50 @@
     color: inherit;
     margin: 0;
   }
+  .counter-value {
+    transition:
+      transform 0.45s ease-out,
+      opacity 0.45s ease-out;
+  }
+  .counter-value.counter-pending {
+    opacity: 0;
+    transform: translateY(8px);
+  }
   /* Bento: el paisaje y las máquinas tienen prioridad visual. */
   .portal-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+      'map map arc arc'
+      'map map weapon grenade'
+      'blueprint project container material';
     gap: 1rem;
   }
+  .tile-map {
+    grid-area: map;
+  }
+  .tile-arc {
+    grid-area: arc;
+  }
+  .tile-weapon {
+    grid-area: weapon;
+  }
+  .tile-grenade {
+    grid-area: grenade;
+  }
+  .tile-blueprint {
+    grid-area: blueprint;
+  }
+  .tile-project {
+    grid-area: project;
+  }
+  .tile-container {
+    grid-area: container;
+  }
+  .tile-material {
+    grid-area: material;
+  }
   .portal-tile {
+    animation: none;
     min-height: 190px;
     border-radius: 2px;
     background: var(--color-surface);
@@ -283,6 +334,7 @@
   }
   .portal-tile:hover {
     transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    box-shadow: none;
   }
   .portal-tile::after,
   .gallery-card::after {
@@ -296,12 +348,9 @@
     background: linear-gradient(45deg, transparent 49%, var(--color-background) 50%);
   }
   .portal-tile.tile-map {
-    grid-column: span 2;
-    grid-row: span 2;
     min-height: 410px;
   }
   .portal-tile.tile-arc {
-    grid-column: span 2;
     min-height: 260px;
   }
   .portal-tile .tile-border {
@@ -320,7 +369,7 @@
     color: var(--color-secondary);
   }
   .portal-tile h3 {
-    font: 600 2.25rem/0.95 var(--font-family-display);
+    font: 600 clamp(1.6rem, 2.5vw, 2.25rem)/0.95 var(--font-family-display);
     position: relative;
     z-index: 1;
   }
@@ -375,6 +424,46 @@
   .home-guide h3 {
     font-size: 3rem;
     line-height: 1;
+  }
+  .featured-editorial > :not(.featured-art) {
+    position: relative;
+    z-index: 1;
+  }
+  .featured-art {
+    position: absolute;
+    inset: 0 0 0 43%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .featured-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--color-surface), transparent 65%);
+  }
+  .featured-editorial .featured-art img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .combat-tool label {
+    font: var(--font-size-label)/1.5 var(--font-family-mono);
+  }
+  .combat-tool select {
+    font: var(--font-size-label)/1.5 var(--font-family-body);
+  }
+  .combat-tool p,
+  .tier-card > p,
+  .bar-legend {
+    font: var(--font-size-help)/var(--line-height-help) var(--font-family-body);
+  }
+  .combat-evidence strong {
+    font-family: var(--font-family-mono);
   }
   /* Galería: capa de luz independiente del transform de layout de Motion. */
   .category-heading {
@@ -587,7 +676,7 @@
   }
   .stat-bar {
     display: block;
-    height: 3px;
+    height: 5px;
     margin: 0.85rem 0;
     background: var(--color-surface-raised);
     overflow: hidden;
@@ -598,6 +687,27 @@
     height: 100%;
     background: var(--color-secondary);
     transform-origin: left;
+  }
+  .stat-series {
+    display: grid;
+    gap: 0.6rem;
+    margin-block: 0.85rem;
+  }
+  .stat-series-row {
+    display: grid;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .stat-series-row > span:first-child {
+    font: 0.75rem var(--font-family-mono);
+    color: var(--color-text-muted);
+  }
+  .stat-series-row .stat-bar {
+    margin: 0;
+  }
+  .combat-evidence > .stat-bar {
+    margin: 0.25rem 0;
   }
   .article-index {
     top: 95px;
@@ -651,6 +761,7 @@
     }
     .article-index {
       position: static;
+      order: -1;
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -662,12 +773,17 @@
       margin: 0;
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     .portal-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        'map map'
+        'arc arc'
+        'weapon grenade'
+        'blueprint project'
+        'container material';
     }
     .portal-tile.tile-map {
-      grid-row: auto;
       min-height: 320px;
     }
     .welcome-copy h1 {
@@ -746,12 +862,8 @@
       min-height: 185px;
       padding: 1rem;
     }
-    .portal-tile.tile-map,
-    .portal-tile.tile-arc {
-      grid-column: span 2;
-    }
     .portal-tile h3 {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
     }
     .portal-tile p {
       max-width: none;
@@ -790,8 +902,31 @@
     .wiki-section-title {
       display: block;
     }
+    .featured-editorial h2 {
+      font-size: 2.5rem;
+    }
+    .featured-editorial p {
+      width: 66%;
+    }
+    .featured-art {
+      left: 40%;
+      opacity: 0.65;
+    }
+    .featured-art::after {
+      background: linear-gradient(90deg, var(--color-surface), transparent 95%);
+    }
+    .combat-pair {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .combat-tool {
+      padding: 0.85rem;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
+    .counter-value.counter-pending {
+      opacity: 1;
+      transform: none;
+    }
     .hero-word,
     .ticker-track,
     .image-skeleton::after {

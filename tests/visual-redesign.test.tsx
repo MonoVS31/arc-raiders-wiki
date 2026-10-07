@@ -6,7 +6,8 @@ import { CountUp } from '../src/components/wiki/CountUp';
 import { AtlasImage } from '../src/components/wiki/AtlasImage';
 import { useVisualEffects } from '../src/app/useVisualEffects';
 import { useScrollSpy } from '../src/app/useScrollSpy';
-import { numericBarScale } from '../src/domain/numeric-scale';
+import { numericBarScale, numericBarSeries } from '../src/domain/numeric-scale';
+import { weaponTierMetric } from '../src/domain/combat';
 import { catalog } from '../src/domain/catalog';
 let host: HTMLDivElement;
 let root: Root;
@@ -78,6 +79,28 @@ it('las barras no interpretan escalas mixtas, porcentajes ni valores desconocido
     expect(numericBarScale({ ...claim, value }, 'weapon')).toBeNull();
   expect(JSON.stringify(claim)).toBe(original);
 });
+it('las series de durabilidad y los multiplicadores conservan sus unidades y valores', () => {
+  const durability = catalog.claims.find(
+    (claim) => claim.subjectId === 'weapon-kettle' && claim.field === 'Durability',
+  )!;
+  const headshot = catalog.claims.find(
+    (claim) => claim.subjectId === 'weapon-kettle' && claim.field === 'Headshot Multiplier',
+  )!;
+  const snapshot = JSON.stringify([durability, headshot]);
+  const bars = numericBarSeries(durability, 'weapon')!;
+  expect(bars).toHaveLength(4);
+  expect(bars[3]).toBeGreaterThan(bars[0]!);
+  expect(numericBarScale(weaponTierMetric('weapon-kettle', 'Durability', 'IV')!, 'weapon')).toBe(
+    bars[3],
+  );
+  expect(numericBarScale(headshot, 'weapon')).toBeGreaterThan(0);
+  expect(numericBarScale({ ...headshot, value: '2.5x' }, 'arc')).toBeGreaterThan(0);
+  expect(numericBarScale({ ...headshot, field: 'Fire Rate' }, 'weapon')).toBeNull();
+  expect(
+    numericBarSeries({ ...durability, value: '625 | ? | 781 | 898 shots' }, 'weapon'),
+  ).toBeNull();
+  expect(JSON.stringify([durability, headshot])).toBe(snapshot);
+});
 function SpyHarness() {
   const active = useScrollSpy('weapon-kettle');
   return (
@@ -108,4 +131,12 @@ it('el índice resalta la sección visible y limpia sus callbacks al salir', asy
   } as DOMRect);
   await act(async () => callback?.(0));
   expect(host.querySelector('a')?.getAttribute('aria-current')).toBe('location');
+  vi.spyOn(host.querySelector('#fabricacion')!, 'getBoundingClientRect').mockReturnValue({
+    top: 110,
+  } as DOMRect);
+  await act(async () => {
+    host.querySelector('#fabricacion')!.dispatchEvent(new Event('scroll'));
+    callback?.(1);
+  });
+  expect(host.querySelector('output')?.textContent).toBe('fabricacion');
 });

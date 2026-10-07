@@ -6,36 +6,26 @@ export function CountUp({ value }: { value: string }) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    node.textContent = value;
     if (reduced || !window.IntersectionObserver) return;
-    let frame = 0;
+    // Keep the final number stable: only opacity/transform animate on entry.
+    node.classList.add('counter-pending');
     const observer = new IntersectionObserver(
       (entries) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
         observer.disconnect();
-        const start = performance.now();
-        const tick = (time: number) => {
-          const progress = Math.min(1, (time - start) / 1100);
-          node.textContent = String(Math.round(Number(value) * (1 - (1 - progress) ** 3))).padStart(
-            2,
-            '0',
-          );
-          if (progress < 1) frame = requestAnimationFrame(tick);
-        };
-        frame = requestAnimationFrame(tick);
+        node.classList.remove('counter-pending');
       },
       { threshold: 0.5 },
     );
     observer.observe(node);
     return () => {
       observer.disconnect();
-      cancelAnimationFrame(frame);
-      node.textContent = value;
+      node.classList.remove('counter-pending');
     };
   }, [value, reduced]);
   return (
     <strong aria-label={value}>
-      <span ref={ref} aria-hidden="true">
+      <span ref={ref} className="counter-value" aria-hidden="true">
         {value}
       </span>
     </strong>

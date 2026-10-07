@@ -27,6 +27,9 @@
     --font-family-mono: 'JetBrains Mono Variable', monospace;
     --font-family-body: 'Inter Variable', Inter, sans-serif;
     --font-family-display: 'Barlow Condensed', Impact, sans-serif;
+    --font-size-label: 0.8125rem;
+    --font-size-help: 0.8125rem;
+    --line-height-help: 1.65;
     --color-accent: #e69a6c;
     --color-text: #f3ead6;
     --color-text-muted: #bdb29e;

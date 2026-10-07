@@ -33,7 +33,17 @@ export function useVisibleAnimations() {
     };
     document.addEventListener('visibilitychange', visibility);
     refresh();
-    const changes = new MutationObserver(refresh);
+    const changes = new MutationObserver((records) => {
+      // Counter text changes cannot add animated elements. Avoid a document-wide scan per frame.
+      if (
+        records.some((record) =>
+          [...record.addedNodes, ...record.removedNodes].some(
+            (node) => node.nodeType === Node.ELEMENT_NODE,
+          ),
+        )
+      )
+        refresh();
+    });
     changes.observe(document.getElementById('root') ?? document.body, {
       childList: true,
       subtree: true,

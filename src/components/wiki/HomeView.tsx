@@ -145,7 +145,7 @@ export function HomeView({
           <button className="portal-tile tile-material" onClick={() => open({ kind: 'materials' })}>
             <span className="tile-border" aria-hidden="true" />
             <div className="tile-art">
-              <WikiIcon category="container" />
+              <WikiIcon category="material" />
             </div>
             <span className="tile-number">{formatCount(categorySchema.options.length + 1)}</span>
             <h3>Materiales</h3>
@@ -166,14 +166,16 @@ export function HomeView({
             Elegí una máquina, recorré sus piezas y encontrá los mapas con reportes de su presencia.
           </p>
           <WikiLink entityId="arc-hornet">Explorar Hornet →</WikiLink>
-          <img
-            width={512}
-            height={512}
-            decoding="async"
-            src={artFor('arc-hornet')}
-            alt="Hornet"
-            loading="lazy"
-          />
+          <div className="featured-art">
+            <img
+              width={512}
+              height={512}
+              decoding="async"
+              src={artFor('arc-hornet')}
+              alt="Hornet"
+              loading="lazy"
+            />
+          </div>
         </div>
         <div className="home-guide">
           <span className="section-kicker">TU PRÓXIMO OBJETIVO</span>
