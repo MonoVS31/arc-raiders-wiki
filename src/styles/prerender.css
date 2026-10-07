@@ -1,0 +1,24 @@
+@layer components {
+  .static-fiche {
+    max-width: 70rem;
+    margin-inline: auto;
+    padding: var(--space-24);
+  }
+  .static-fiche nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+    padding: 0;
+    list-style: none;
+  }
+  .static-fiche h1 {
+    font-size: 2rem;
+  }
+  .static-fiche .claim details {
+    margin-block: var(--space-12);
+  }
+  .static-fiche footer {
+    margin-block: var(--space-24);
+    color: var(--color-text-muted);
+  }
+}

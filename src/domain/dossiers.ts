@@ -1,3 +1,4 @@
+import { atlasAsset } from './assets';
 import { z } from 'zod';
 const tableSchema = z
   .object({
@@ -23,7 +24,7 @@ export async function loadDossiers(category: string, signal?: AbortSignal) {
   const saved = cache.get(category);
   if (saved) return saved;
   const response = await fetch(
-    `${import.meta.env.BASE_URL}data/dossiers/${category}.json`,
+    atlasAsset(`data/dossiers/${category}.json`),
     signal ? { signal } : undefined,
   );
   if (!response.ok) throw Error('No se pudo cargar el archivo de fabricación');

@@ -1,3 +1,4 @@
+import { localImage } from '../domain/images';
 import { entityTransitionName } from '../app/view-transitions';
 import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
@@ -17,40 +18,8 @@ const MapExplorer = lazy(() => import('./MapExplorer'));
 const ProjectSteps = lazy(() => import('./ProjectSteps'));
 const LocalDossier = lazy(() => import('./LocalDossier'));
 
-export const categories = {
-  map: 'Mapas',
-  weapon: 'Armas',
-  arc: 'Enemigos ARC',
-  grenade: 'Granadas',
-  blueprint: 'Planos',
-  project: 'Proyectos',
-  container: 'Contenedores',
-} as const;
-const fieldNames: Record<string, string> = {
-  Health: 'Vida declarada',
-  'Primary Attack': 'Ataque principal',
-  Abilities: 'Habilidades declaradas',
-  'Headshot Multiplier': 'Multiplicador a la cabeza',
-  Durability: 'Durabilidad declarada',
-  Stability: 'Estabilidad',
-  Agility: 'Agilidad',
-  Stealth: 'Sigilo',
-  Weight: 'Peso declarado',
-  'Ammo Type': 'Munición',
-  'Firing Mode': 'Modo de disparo',
-  'ARC Armor Penetration': 'Penetración ARC',
-  Damage: 'Daño declarado',
-  'Fire Rate': 'Cadencia declarada',
-  Range: 'Alcance declarado',
-  'Magazine Size': 'Cargador',
-  Radius: 'Radio del efecto',
-  'Homing Range': 'Alcance de búsqueda',
-  Duration: 'Duración',
-  Delay: 'Retardo',
-  'ARC Stun Duration': 'Aturdimiento ARC',
-  'Raider Stun Duration': 'Aturdimiento Raider',
-  'Stamina Drain': 'Consumo de resistencia',
-};
+import { categories, fieldNames } from '../domain/presentation';
+export { categories } from '../domain/presentation';
 export function EntityDetail({
   entity,
   blueprintId,
@@ -85,7 +54,7 @@ export function EntityDetail({
             width={512}
             height={512}
             decoding="async"
-            src={visual.url}
+            src={localImage(visual.url)}
             alt={entity.name}
           />
         </div>

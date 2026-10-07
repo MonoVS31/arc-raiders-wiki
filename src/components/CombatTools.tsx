@@ -1,3 +1,4 @@
+import { localImage } from '../domain/images';
 import { entityTransitionName } from '../app/view-transitions';
 import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
@@ -165,7 +166,7 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
               width={512}
               height={512}
               decoding="async"
-              src={portrait.imageUrl}
+              src={localImage(portrait.imageUrl)}
               alt={`Referencia visual de ${entity.name}`}
               loading="lazy"
               referrerPolicy="no-referrer"

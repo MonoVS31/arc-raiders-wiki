@@ -128,3 +128,20 @@ it('genera URLs de mapa con contexto de plano o ARC y cierra los paneles', async
   expect(window.location.hash).toBe('');
   expect(closePanels).toHaveBeenCalledTimes(3);
 });
+
+it('una ficha estática conserva el historial al visitar la portada y volver', async () => {
+  window.history.replaceState(
+    null,
+    '',
+    'https://monovs31.github.io/arc-raiders-wiki/fichas/arc-hornet/',
+  );
+  await act(async () => root.render(<Harness />));
+  expect(navigation.selected?.id).toBe('arc-hornet');
+  scroll(480);
+  await act(async () => navigation.home());
+  expect(window.location.pathname).toBe('/arc-raiders-wiki/');
+  expect(navigation.view).toBe('home');
+  await traverse('back');
+  expect(navigation.selected?.id).toBe('arc-hornet');
+  expect(window.scrollY).toBe(480);
+});

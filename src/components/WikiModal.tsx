@@ -1,3 +1,5 @@
+import { localImage } from '../domain/images';
+import { atlasAsset } from '../domain/assets';
 import { usePresence } from 'motion/react';
 import { useMotionPreference } from '../app/motion-preference';
 import { useEffect, useRef, useState } from 'react';
@@ -59,7 +61,7 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
   useEffect(() => {
     if (!['material', 'materials'].includes(panel.kind) || materialCache) return;
     const abort = new AbortController();
-    fetch(`${import.meta.env.BASE_URL}data/dossiers/materials.json`, { signal: abort.signal })
+    fetch(atlasAsset('data/dossiers/materials.json'), { signal: abort.signal })
       .then((response) => {
         if (!response.ok) throw Error();
         return response.json();
@@ -194,7 +196,7 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
                   height={512}
                   decoding="async"
                   className="material-portrait"
-                  src={material.icon}
+                  src={localImage(material.icon)}
                   alt={material.name}
                 />
               )}
@@ -278,7 +280,7 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
                           width={512}
                           height={512}
                           decoding="async"
-                          src={item.icon}
+                          src={localImage(item.icon)}
                           alt=""
                           loading="lazy"
                         />

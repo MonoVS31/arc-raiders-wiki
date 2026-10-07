@@ -1,7 +1,7 @@
 {
   "name": "arc-raiders-wiki",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
@@ -10,7 +10,7 @@
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "build": "npm run typecheck && npm run data:validate && vite build",
+    "build": "npm run typecheck && npm run data:validate && npm run assets:ensure && vite build && npm run prerender",
     "preview": "vite preview --host 127.0.0.1",
     "data:maps": "node scripts/refresh-map-snapshot.mjs",
     "data:blueprints": "node scripts/build-blueprint-routes.mjs",
@@ -18,7 +18,10 @@
     "data:arc-links": "node scripts/build-arc-map-index.mjs",
     "lint": "eslint src tests *.config.*",
     "format": "prettier --write src tests *.config.* package.json .github/workflows/*.yml",
-    "data:validate": "vitest run tests/data-validation.test.ts"
+    "data:validate": "vitest run tests/data-validation.test.ts",
+    "prerender": "node scripts/build-prerender.mjs",
+    "assets:ensure": "node scripts/ensure-image-assets.mjs",
+    "predev": "npm run assets:ensure"
   },
   "dependencies": {
     "leaflet": "1.9.4",
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "@resvg/resvg-js": "2.6.2",
     "@types/leaflet": "1.9.22",
     "@types/node": "26.6.4",
     "@types/react": "19.3.0",

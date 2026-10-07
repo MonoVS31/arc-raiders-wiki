@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 import type { ReactNode, MouseEvent, CSSProperties, Ref } from 'react';
-import { entityLink } from '../domain/navigation';
+import { entityLink, entityShareLink } from '../domain/navigation';
 export interface WikiActions {
   navigate: (id: string, focus?: { blueprintId?: string; arcId?: string }) => void;
   references: (ids: string[]) => void;
@@ -12,6 +12,7 @@ export function WikiLink({
   entityId,
   blueprintId,
   arcId,
+  shareable = false,
   children,
   className,
   style,
@@ -20,6 +21,7 @@ export function WikiLink({
   entityId: string;
   blueprintId?: string;
   arcId?: string;
+  shareable?: boolean;
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -27,7 +29,7 @@ export function WikiLink({
 }) {
   const actions = useWiki();
   const base = window.location.href;
-  const href = entityLink(base, entityId, blueprintId, arcId);
+  const href = (shareable ? entityShareLink : entityLink)(base, entityId, blueprintId, arcId);
   const click = (event: MouseEvent<HTMLAnchorElement>) => {
     if (
       actions &&

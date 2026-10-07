@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { entityLink } from '../domain/navigation';
+import { entityShareLink } from '../domain/navigation';
 import { WikiLink } from '../app/WikiContext';
 export function ShareEntityLink({
   entityId,
@@ -11,11 +11,12 @@ export function ShareEntityLink({
   arcId?: string | undefined;
 }) {
   const [status, setStatus] = useState('');
-  const url = entityLink(window.location.href, entityId, blueprintId, arcId);
+  const url = entityShareLink(window.location.href, entityId, blueprintId, arcId);
   return (
     <div className="share-fiche">
       <WikiLink
         entityId={entityId}
+        shareable
         {...(blueprintId ? { blueprintId } : {})}
         {...(arcId ? { arcId } : {})}
       >

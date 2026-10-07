@@ -1,3 +1,4 @@
+import { atlasAsset } from './assets';
 import { readAtlasData } from './data-loader';
 import { z } from 'zod';
 const rawManifest =
@@ -150,7 +151,7 @@ export async function loadMapSnapshot(map: MapConfig, signal?: AbortSignal) {
   const cached = cache.get(map.slug);
   if (cached) return cached;
   const response = await fetch(
-    `${import.meta.env.BASE_URL}data/maps/${map.slug}.json`,
+    atlasAsset(`data/maps/${map.slug}.json`),
     signal ? { signal } : undefined,
   );
   if (!response.ok) throw new Error('No se pudo cargar el mapa');

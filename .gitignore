@@ -13,3 +13,6 @@ Thumbs.db
 .sites-checkout/
 .sites-checkout-*/
 .sites-runtime/
+
+# Caché local de imágenes; el build recupera y verifica el snapshot antes de publicar.
+/public/images/game/
