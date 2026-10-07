@@ -1,5 +1,7 @@
 # ARC Atlas — ARC Raiders Wiki
 
+**Sitio publicado:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/).
+
 Base inicial de una wiki comunitaria en español, preparada para el repositorio público nuevo **MonoVS31/arc-raiders-wiki**. No está afiliada a Embark Studios.
 
 ## Estado de esta entrega
@@ -13,6 +15,8 @@ Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó 
 **Versión 0.3:** comparador de armas con niveles y mejoras, panel de puntos débiles/blindaje/consejos y visualización geométrica de granadas con fuentes. Detalles en `docs/08-combat-tools.md`.
 
 Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC y verificación dentro del juego. La versión 0.4 añade 21 referencias visuales ARC y un flujo verificado de publicación con GitHub Pages; ver `docs/09-publicacion-y-mantenimiento.md`. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
+
+La entrega 0.4 pasó 29 pruebas, TypeScript y compilación en local y GitHub. La URL pública fue comprobada con el visor de Dam (48 reportes de cajas), carga de imagen ARC y consulta de blindaje. La guía PDF de 32 páginas se entrega por separado con el recorrido de construcción, instrucciones de uso, documentación de las fases y registro de 148 fuentes.
 
 ## Ejecutar
 

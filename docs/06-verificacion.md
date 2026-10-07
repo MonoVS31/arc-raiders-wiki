@@ -22,11 +22,21 @@ Las 1.981 ubicaciones son reportes de una fuente comunitaria, incluidos 201 repo
 
 ## Rendimiento y pendientes
 
-Leaflet, el visor y las cachés de mapas se cargan por demanda. El paquete inicial conserva una advertencia de tamaño, aproximadamente 637 kB minificado y 135 kB gzip. Quedan por corroborar individualmente 72 rutas del índice y completar cuatro rutas. No se verificaron todas las ubicaciones dentro del juego, no hay curva de daño revisada ni diagramas anatómicos de ARC. La web aún no está desplegada en una URL pública.
+Leaflet, el visor y las cachés de mapas se cargan por demanda. La versión 0.4 conserva una advertencia de tamaño, aproximadamente 647 kB minificado y 137 kB gzip. Quedan por corroborar individualmente 72 rutas del índice y completar cuatro rutas. No se verificaron todas las ubicaciones dentro del juego, no hay curva de daño revisada ni diagramas anatómicos de ARC.
+
+## Versión 0.4: combate, referencias visuales y publicación
+
+- 29 pruebas aprobadas; TypeScript estricto y compilación correctos.
+- Comparación de estadísticas declaradas, niveles y mejoras separadas; legendarias sin niveles inventados.
+- Radios de búsqueda y efecto separados, con exclusión de Wolfpack y Trailblazer del diagrama circular.
+- 21 referencias visuales ARC con identidad probable, procedencia y atribución; sin hitboxes ficticios.
+- Publicación en [ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/) mediante [GitHub Actions](https://github.com/MonoVS31/arc-raiders-wiki/actions/runs/37573209902).
+- Revisión de producción: el visor de Dam carga sus 48 reportes de cajas desde la subcarpeta pública; el retrato de Snitch carga y el selector de blindaje conserva evidencia y su límite cualitativo.
+- Capturas y guía PDF de 32 páginas guardadas con los respaldos locales. Se verificaron las 32 páginas renderizadas y los límites de texto del PDF.
 
 ## Publicación
 
-Repositorio: https://github.com/MonoVS31/arc-raiders-wiki. La fase de mapas y rutas se prepara en una rama con propuesta de cambios y comprobaciones de CI. Este documento describe las verificaciones realizadas; no declara terminada la wiki completa.
+Repositorio: https://github.com/MonoVS31/arc-raiders-wiki. Las propuestas #1, #2 y #3 integraron mapas, combate y publicación tras CI. Este documento describe las verificaciones realizadas; no declara terminada la wiki completa.
 
 ## Configuración
 

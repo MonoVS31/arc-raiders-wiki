@@ -2,6 +2,8 @@
 
 ## GitHub Pages
 
+Sitio publicado y verificado el 7 de octubre de 2026: [ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/).
+
 La aplicación se publica desde `main` mediante `.github/workflows/pages.yml`. La compilación utiliza la base relativa de Vite y publica exclusivamente `dist`, incluidos los seis conjuntos de reportes comunitarios. El código fuente y las capturas de investigación no forman parte del artefacto web.
 
 En el repositorio, abrir **Settings > Pages > Source > GitHub Actions**. Después de cada cambio integrado en `main`, GitHub instala dependencias, ejecuta tests, comprueba TypeScript, compila y publica. El trabajo de publicación solo se inicia si el de compilación termina correctamente. El entorno `github-pages` conserva el enlace y el historial de despliegues.
