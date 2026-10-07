@@ -1,7 +1,6 @@
 import { localImage } from '../../domain/images';
-import { entityTransitionName } from '../../app/view-transitions';
 import { readAtlasData } from '../../domain/data-loader';
-import { useState } from 'react';
+import { AtlasImage } from './AtlasImage';
 import type { Category } from '../../domain/schema';
 import { catalog } from '../../domain/catalog';
 const visuals =
@@ -29,19 +28,6 @@ export const artFor = (id: string) => {
   return url ? localImage(url) : undefined;
 };
 export function EntityImage({ id, name }: { id: string; name: string }) {
-  const [failed, setFailed] = useState(false);
   const url = artFor(id);
-  return url && !failed ? (
-    <img
-      width={512}
-      height={512}
-      decoding="async"
-      data-view-art={id}
-      style={{ viewTransitionName: entityTransitionName(id) }}
-      src={url}
-      alt={name}
-      loading="lazy"
-      onError={() => setFailed(true)}
-    />
-  ) : null;
+  return url ? <AtlasImage key={url} url={url} name={name} id={id} /> : null;
 }

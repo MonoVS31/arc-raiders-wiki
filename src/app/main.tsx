@@ -1,3 +1,7 @@
+import '@fontsource/barlow-condensed/latin-600.css';
+import '@fontsource/barlow-condensed/latin-700.css';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/jetbrains-mono/wght.css';
 import { setAtlasAssetBase } from '../domain/assets';
 import { startAtlas } from './bootstrap';
 import '../styles/tokens.css';
@@ -8,6 +12,7 @@ import '../styles/maps.css';
 import '../styles/wiki.css';
 import '../styles/animations.css';
 import '../styles/prerender.css';
+import '../styles/redesign.css';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Falta el contenedor de la aplicación');

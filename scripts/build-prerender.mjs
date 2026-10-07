@@ -4,7 +4,11 @@ import { Resvg } from '@resvg/resvg-js';
 const dist = new URL('../dist/', import.meta.url);
 const readData = async (name) =>
   JSON.parse(await readFile(new URL(`../public/data/atlas/${name}`, import.meta.url), 'utf8'));
-const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
+const server = await createServer({
+  server: { middlewareMode: true },
+  appType: 'custom',
+  resolve: { preserveSymlinks: true },
+});
 try {
   const api = await server.ssrLoadModule('/src/prerender/article.tsx');
   const [

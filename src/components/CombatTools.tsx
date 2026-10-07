@@ -1,5 +1,4 @@
 import { localImage } from '../domain/images';
-import { entityTransitionName } from '../app/view-transitions';
 import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
 import { catalog } from '../domain/catalog';
@@ -161,8 +160,6 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
             </p>
           ) : (
             <img
-              data-view-art={entity.id}
-              style={{ viewTransitionName: entityTransitionName(entity.id) }}
               width={512}
               height={512}
               decoding="async"

@@ -1,5 +1,6 @@
+import { numericBarScale } from '../domain/numeric-scale';
 import { localImage } from '../domain/images';
-import { entityTransitionName } from '../app/view-transitions';
+import { AtlasImage } from './wiki/AtlasImage';
 import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
 import { catalog } from '../domain/catalog';
@@ -41,24 +42,29 @@ export function EntityDetail({
   const visual = visuals.find((visual) => visual.entityId === entity.id);
   return (
     <article className="detail" aria-labelledby="detail-title">
-      <div className="detail-header">
-        <span className="eyebrow">{categories[entity.category]} / expediente</span>
-        <span className={`availability ${entity.availability}`}>{entity.availability}</span>
-      </div>
-      <h2 id="detail-title">{entity.name}</h2>
-      {visual && entity.category !== 'arc' && (
-        <div className="article-visual">
-          <img
-            data-view-art={entity.id}
-            style={{ viewTransitionName: entityTransitionName(entity.id) }}
-            width={512}
-            height={512}
-            decoding="async"
-            src={localImage(visual.url)}
-            alt={entity.name}
-          />
+      <header className="article-hero">
+        <div>
+          <div className="detail-header">
+            <span className="eyebrow">{categories[entity.category]} / expediente</span>
+            <span className={`availability ${entity.availability}`}>{entity.availability}</span>
+          </div>
+          <h2 id="detail-title">{entity.name}</h2>
+          <span className="article-code" aria-hidden="true">
+            ARCHIVO / {entity.id.toUpperCase()}
+          </span>
         </div>
-      )}
+        {visual && (
+          <div className="article-visual">
+            <AtlasImage
+              key={visual.url}
+              url={localImage(visual.url)}
+              name={entity.category === 'arc' ? '' : entity.name}
+              id={entity.id}
+              lazy={false}
+            />
+          </div>
+        )}
+      </header>
       <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId} />
       <p className="muted">
         Cada campo conserva su propia evidencia. Los datos comunitarios siguen sujetos a revisión.
@@ -96,6 +102,12 @@ export function EntityDetail({
       {entity.availability === 'disponible' && entity.category === 'grenade' && (
         <GrenadeEffectPanel entity={entity} />
       )}
+      {claims.some((claim) => numericBarScale(claim, entity.category) !== null) && (
+        <p className="muted bar-legend">
+          Las barras usan una escala visual del archivo: mismo campo, unidad y categoría. No
+          representan límites del juego ni modifican los valores.
+        </p>
+      )}
       <dl className="claims" id="datos">
         {claims.map((claim) => (
           <div className="claim" key={claim.id}>
@@ -112,6 +124,15 @@ export function EntityDetail({
                 `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`
               )}
             </dd>
+            {numericBarScale(claim, entity.category) !== null && (
+              <span
+                className="stat-bar"
+                aria-hidden="true"
+                title="Escala visual relativa al mismo campo y unidad en el archivo"
+              >
+                <span style={{ transform: `scaleX(${numericBarScale(claim, entity.category)})` }} />
+              </span>
+            )}
             {claim.note && <p className="claim-note">{claim.note}</p>}
             <Sources ids={claim.sourceIds} />
           </div>

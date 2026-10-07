@@ -1,3 +1,5 @@
+> Rama de revisión visual: **feat/rediseno-visual**. La fase 9 sigue pendiente de aprobación y no reemplaza la edición publicada en main. Ver [diseño y cómo probarlo](docs/19-rediseno-visual.md).
+
 # ARC Atlas - Edición 2.2
 
 Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, armas, ARC, granadas, planos, proyectos, recetas, materiales y fuentes se consultan dentro del sitio. No está afiliada a Embark Studios.

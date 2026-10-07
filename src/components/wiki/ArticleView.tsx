@@ -1,3 +1,4 @@
+import { useScrollSpy } from '../../app/useScrollSpy';
 import type { Category, Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
 import { EntityDetail } from '../EntityDetail';
@@ -14,6 +15,7 @@ export function ArticleView({
   category: (value: Category) => void;
   navigate: (id: string, next?: NavigationFocus) => void;
 }) {
+  const active = useScrollSpy(selected.id);
   return (
     <div className="article-layout">
       <div>
@@ -30,10 +32,16 @@ export function ArticleView({
       </div>
       <aside className="article-index">
         <span className="section-kicker">EN ESTA PÁGINA</span>
-        <a href="#detail-title">Ficha general</a>
-        <a href="#datos">Estadísticas y datos</a>
+        <a href="#detail-title" aria-current={active === 'detail-title' ? 'location' : undefined}>
+          Ficha general
+        </a>
+        <a href="#datos" aria-current={active === 'datos' ? 'location' : undefined}>
+          Estadísticas y datos
+        </a>
         {['weapon', 'grenade', 'blueprint'].includes(selected.category) && (
-          <a href="#fabricacion">Fabricación y mantenimiento</a>
+          <a href="#fabricacion" aria-current={active === 'fabricacion' ? 'location' : undefined}>
+            Fabricación y mantenimiento
+          </a>
         )}
         <p>La navegación entre fichas, materiales y mapas ocurre dentro de ARC Atlas.</p>
         <span className="confidence posible">evidencia por campo</span>
