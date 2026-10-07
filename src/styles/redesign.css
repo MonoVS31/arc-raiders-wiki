@@ -379,6 +379,7 @@
     max-width: 220px;
     position: relative;
     z-index: 1;
+    padding-inline-end: 2rem;
   }
   .portal-tile .tile-number {
     color: var(--color-text-muted);

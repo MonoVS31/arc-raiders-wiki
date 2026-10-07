@@ -1,6 +1,6 @@
-# Fase 9: rediseño visual en revisión
+# Fase 9: rediseño visual aprobado
 
-Rama: feat/rediseno-visual. Un commit de fase. No integrar a main sin aprobación del usuario.
+Rama de desarrollo: feat/rediseno-visual. El usuario aprobó la vista previa y autorizó integrar a main y publicar en GitHub Pages el 7 de octubre de 2026. El cierre reserva espacio para la flecha en las descripciones del bento.
 
 ## Dirección de arte
 
@@ -30,7 +30,7 @@ Barlow Condensed 600/700 para títulos, Inter Variable para lectura y JetBrains 
 
 La conexión disponible permite inspeccionar DOM, estilos y capturas de Chrome, pero no controlar su pestaña DevTools/Performance. Se intentó abrirla mediante el atajo del navegador sin obtener acceso al panel. Un ensayo local con requestAnimationFrame de ocho segundos presentó intervalos cercanos a un segundo y ningún long task: el navegador automatizado limita la cadencia, por lo que se descartó como prueba de FPS. No se certifican 60 fps ni se atribuye una mejora porcentual sin una traza válida. Falta una grabación de Performance en Chrome en primer plano para verificar rasterización y frames perdidos en esta PC.
 
-Validación: lint, TypeScript, 109 pruebas, hashes de datos y assets, build y 167 fichas prerenderizadas. Vista local de revisión: http://127.0.0.1:4176/. No se integra ni publica main en esta fase.
+Validación: lint, TypeScript, 109 pruebas, hashes de datos y assets, build y 167 fichas prerenderizadas. Vista local de revisión: http://127.0.0.1:4176/. La publicación aprobada usa el workflow de GitHub Pages al integrar main.
 
 ## Accesibilidad y preservación
 
@@ -56,4 +56,4 @@ Después de compilar, npm run preview -- --port 4175 muestra el resultado local 
 
 El generador SSR conserva rutas de paquetes (preserveSymlinks) para evitar consultas nativas de realpath que fallan dentro del entorno aislado sobre OneDrive. El HTML y los datos generados conservan su comportamiento. Los temporales de verificación se guardan en Arc/work/phase9-runtime-temp cuando se ejecuta desde el entorno aislado.
 
-Si el servidor del agente no responde al navegador, abrir una terminal normal en Arc/outputs/arc-raiders-wiki y ejecutar npm run preview -- --port 4175. Esto sirve el dist ya compilado sin cambiar la rama main. La revisión de 375 px y las interacciones se realizó antes de la interrupción; se conserva el resultado en los tests de regresión y el diseño está pendiente de aprobación.
+Si el servidor del agente no responde al navegador, abrir una terminal normal en Arc/outputs/arc-raiders-wiki y ejecutar npm run preview -- --port 4175. Esto sirve el dist ya compilado. La revisión de 375 px y las interacciones se conserva en los tests de regresión; la vista previa fue aprobada por el usuario.
