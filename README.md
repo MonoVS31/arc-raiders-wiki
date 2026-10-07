@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Fase 6 de mantenimiento:** View Transitions, entradas ligadas al scroll, diálogo y búsqueda con transiciones discretas, radar y bordes CSS, layout de galería y presencia de modales con Motion por demanda. 95 pruebas aprobadas; arranque de 4,06 KB. [Animaciones y extensiones futuras](docs/12-animaciones.md).
+
 **Fase 5 de mantenimiento:** datos públicos cargados con caché, arranque de 4,06 KB, validación obligatoria antes de compilar, marcadores Canvas con selección incremental e imágenes y animaciones optimizadas. 88 pruebas aprobadas. [Mediciones y arquitectura de carga](docs/15-fase-5-rendimiento.md).
 
 **Fase 4 de mantenimiento:** textos de al menos 12 px, tokens de contraste corregidos, búsqueda accesible por teclado, tarjetas con enlaces, breadcrumb semántico y títulos dinámicos. 78 pruebas aprobadas. [Accesibilidad y ratios de contraste](docs/14-fase-4-accesibilidad.md).

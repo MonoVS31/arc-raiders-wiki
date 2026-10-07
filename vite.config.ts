@@ -22,6 +22,7 @@ export default defineConfig({
   ],
   server: { strictPort: true },
   build: {
+    manifest: true,
     rolldownOptions: {
       output: {
         codeSplitting: {

@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { ReactNode, MouseEvent, CSSProperties } from 'react';
+import type { ReactNode, MouseEvent, CSSProperties, Ref } from 'react';
 import { entityLink } from '../domain/navigation';
 export interface WikiActions {
   navigate: (id: string, focus?: { blueprintId?: string; arcId?: string }) => void;
@@ -15,6 +15,7 @@ export function WikiLink({
   children,
   className,
   style,
+  ref,
 }: {
   entityId: string;
   blueprintId?: string;
@@ -22,6 +23,7 @@ export function WikiLink({
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
+  ref?: Ref<HTMLAnchorElement>;
 }) {
   const actions = useWiki();
   const base = window.location.href;
@@ -43,7 +45,7 @@ export function WikiLink({
     }
   };
   return (
-    <a href={href} className={className} style={style} onClick={click}>
+    <a ref={ref} href={href} className={className} style={style} onClick={click}>
       {children}
     </a>
   );

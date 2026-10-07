@@ -12,11 +12,11 @@ import { Topbar } from '../components/wiki/Topbar';
 import { HomeView } from '../components/wiki/HomeView';
 import { CategoryView } from '../components/wiki/CategoryView';
 import { ArticleView } from '../components/wiki/ArticleView';
-const WikiModal = lazy(() => import('../components/WikiModal'));
+const ModalStack = lazy(() => import('../components/ModalStack'));
 export function App() {
   useVisibleAnimations();
   const [panels, setPanels] = useState<WikiPanel[]>([]);
-  const panel = panels.at(-1);
+  const [modalLoaded, setModalLoaded] = useState(false);
   const [menu, setMenu] = useState(false);
   const closeNavigationPanels = useCallback(() => {
     setPanels([]);
@@ -48,7 +48,10 @@ export function App() {
           : 'Archivo de campo';
     document.title = `${name ?? 'Archivo de campo'} · ARC Atlas`;
   }, [view, selected?.name, filters.category]);
-  const open = (value: WikiPanel) => setPanels((current) => [...current, value]);
+  const open = (value: WikiPanel) => {
+    setModalLoaded(true);
+    setPanels((current) => [...current, value]);
+  };
   const actions = {
     navigate,
     references: (ids: string[]) => open({ kind: 'references', ids }),
@@ -121,7 +124,7 @@ export function App() {
           <span>V2.0 / ARCHIVO EN ESPAÑOL</span>
         </footer>
       </div>
-      {panel && (
+      {modalLoaded && (
         <Suspense
           fallback={
             <div className="panel-loading" role="status">
@@ -129,9 +132,8 @@ export function App() {
             </div>
           }
         >
-          <WikiModal
-            key={panels.length + panel.kind}
-            panel={panel}
+          <ModalStack
+            panels={panels}
             onClose={() => setPanels((current) => current.slice(0, -1))}
           />
         </Suspense>

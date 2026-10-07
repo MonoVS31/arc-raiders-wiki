@@ -1,3 +1,4 @@
+import { entityTransitionName } from '../../app/view-transitions';
 import { readAtlasData } from '../../domain/data-loader';
 import { useState } from 'react';
 import type { Category } from '../../domain/schema';
@@ -31,6 +32,8 @@ export function EntityImage({ id, name }: { id: string; name: string }) {
       width={512}
       height={512}
       decoding="async"
+      data-view-art={id}
+      style={{ viewTransitionName: entityTransitionName(id) }}
       src={url}
       alt={name}
       loading="lazy"

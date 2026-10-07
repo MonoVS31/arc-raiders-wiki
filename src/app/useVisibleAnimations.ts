@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 const selector =
-  '.banner-grid, .banner-orbit, .banner-machine img, .signal-dot, .material-portrait, .article-visual img, .zone-point, .effect-pulse';
+  '.banner-radar, .tile-border, .welcome-banner, .portal-tile, .banner-grid, .banner-orbit, .banner-machine img, .signal-dot, .material-portrait, .article-visual img, .zone-point, .effect-pulse';
 export function useVisibleAnimations() {
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return;

@@ -1,3 +1,4 @@
+import { transitionNavigation } from './view-transitions';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { catalog } from '../domain/catalog';
 import { requestedEntity, entityLink } from '../domain/navigation';
@@ -132,38 +133,46 @@ export function useWikiNavigation(onNavigate: () => void) {
     setTransition((current) => ({ revision: current.revision + 1, kind: 'push', x: 0, y: 0 }));
     onNavigate();
   };
-  const home = () => {
-    setView('home');
-    setSelectedId(null);
-    setFocus({ blueprintId: null, arcId: null });
-    const url = new URL(window.location.href);
-    url.search = '';
-    url.hash = '';
-    push(url.toString());
-  };
-  const category = (value: Category) => {
-    setFilters({
-      ...defaultFilters,
-      category: value,
-      availability: value === 'project' ? 'all' : 'disponible',
+  const home = () =>
+    transitionNavigation(() => {
+      setView('home');
+      setSelectedId(null);
+      setFocus({ blueprintId: null, arcId: null });
+      const url = new URL(window.location.href);
+      url.search = '';
+      url.hash = '';
+      push(url.toString());
     });
-    setView('category');
-    setSelectedId(null);
-    setFocus({ blueprintId: null, arcId: null });
-    const url = new URL(window.location.href);
-    url.search = '';
-    url.searchParams.set('category', value);
-    url.hash = 'catalog';
-    push(url.toString());
-  };
+  const category = (value: Category) =>
+    transitionNavigation(() => {
+      setFilters({
+        ...defaultFilters,
+        category: value,
+        availability: value === 'project' ? 'all' : 'disponible',
+      });
+      setView('category');
+      setSelectedId(null);
+      setFocus({ blueprintId: null, arcId: null });
+      const url = new URL(window.location.href);
+      url.search = '';
+      url.searchParams.set('category', value);
+      url.hash = 'catalog';
+      push(url.toString());
+    });
   const navigate = (id: string, next?: NavigationFocus) => {
     const entity = catalog.entities.find((entity) => entity.id === id);
     if (!entity) return;
-    setSelectedId(id);
-    setFilters({ ...defaultFilters, category: entity.category, availability: entity.availability });
-    setFocus({ blueprintId: next?.blueprintId ?? null, arcId: next?.arcId ?? null });
-    setView('article');
-    push(entityLink(window.location.href, id, next?.blueprintId, next?.arcId));
+    transitionNavigation(() => {
+      setSelectedId(id);
+      setFilters({
+        ...defaultFilters,
+        category: entity.category,
+        availability: entity.availability,
+      });
+      setFocus({ blueprintId: next?.blueprintId ?? null, arcId: next?.arcId ?? null });
+      setView('article');
+      push(entityLink(window.location.href, id, next?.blueprintId, next?.arcId));
+    }, id);
   };
   return {
     view,

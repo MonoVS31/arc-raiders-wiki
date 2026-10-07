@@ -1,3 +1,4 @@
+import { entityTransitionName } from '../app/view-transitions';
 import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
 import { catalog } from '../domain/catalog';
@@ -78,7 +79,15 @@ export function EntityDetail({
       <h2 id="detail-title">{entity.name}</h2>
       {visual && entity.category !== 'arc' && (
         <div className="article-visual">
-          <img width={512} height={512} decoding="async" src={visual.url} alt={entity.name} />
+          <img
+            data-view-art={entity.id}
+            style={{ viewTransitionName: entityTransitionName(entity.id) }}
+            width={512}
+            height={512}
+            decoding="async"
+            src={visual.url}
+            alt={entity.name}
+          />
         </div>
       )}
       <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId} />

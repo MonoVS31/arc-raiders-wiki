@@ -1,3 +1,5 @@
+import { usePresence } from 'motion/react';
+import { useMotionPreference } from '../app/motion-preference';
 import { useEffect, useRef, useState } from 'react';
 import { z } from 'zod';
 import { sourceById, catalog } from '../domain/catalog';
@@ -26,6 +28,8 @@ type Material = z.infer<typeof materialsSchema>[number];
 let materialCache: Material[] | null = null;
 export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const [present, safeToRemove] = usePresence();
+  const reduced = useMotionPreference();
   const [items, setItems] = useState<Material[]>(materialCache ?? []);
   const [search, setSearch] = useState('');
   const [error, setError] = useState('');
@@ -42,6 +46,16 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
       dialog?.close();
     };
   }, []);
+  useEffect(() => {
+    if (present) return;
+    ref.current?.close();
+    if (reduced || !window.CSS?.supports?.('transition-behavior: allow-discrete')) {
+      safeToRemove?.();
+      return;
+    }
+    const timer = window.setTimeout(() => safeToRemove?.(), 260);
+    return () => window.clearTimeout(timer);
+  }, [present, reduced, safeToRemove]);
   useEffect(() => {
     if (!['material', 'materials'].includes(panel.kind) || materialCache) return;
     const abort = new AbortController();
@@ -79,7 +93,19 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
   );
   const hint = materialArcHints.find((hint) => hint.material === name);
   return (
-    <dialog ref={ref} className="wiki-modal" onCancel={onClose} aria-labelledby="modal-title">
+    <dialog
+      ref={ref}
+      className="wiki-modal"
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
+      onTransitionEnd={(event) => {
+        if (!present && event.target === event.currentTarget && event.propertyName === 'opacity')
+          safeToRemove?.();
+      }}
+      aria-labelledby="modal-title"
+    >
       <div className="modal-top">
         <span className="section-kicker">ARC ATLAS / LECTURA LOCAL</span>
         <button type="button" onClick={onClose} aria-label="Cerrar panel">

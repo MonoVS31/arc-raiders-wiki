@@ -453,8 +453,6 @@
     text-align: left;
     padding: var(--space-22);
     transition: transform var(--duration-250);
-    animation: wiki-enter var(--duration-550) both;
-    animation-delay: var(--delay, var(--duration-0));
     &:before {
       content: '';
       position: absolute;
@@ -687,11 +685,9 @@
     overflow: hidden;
     padding: 0;
     text-align: left;
-    transition: transform var(--duration-250);
-    animation: wiki-enter var(--duration-450) both;
-    animation-delay: var(--delay, var(--duration-0));
+    transition: translate var(--duration-250);
     &:hover {
-      transform: translateY(-5px);
+      translate: 0 -5px;
       border-color: var(--color-border-gallery-card-hover);
       box-shadow: var(--shadow-gallery-card-hover);
     }
@@ -947,7 +943,6 @@
     max-height: 85vh;
     padding: var(--space-28);
     box-shadow: var(--shadow-wiki-modal);
-    animation: wiki-enter var(--duration-250);
     &::backdrop {
       background: var(--color-surface-wiki-modal-backdrop);
       backdrop-filter: blur(8px);

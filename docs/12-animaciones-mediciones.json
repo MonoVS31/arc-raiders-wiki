@@ -1,0 +1,84 @@
+{
+  "entryAssets": [
+    "assets/index-BqlUyd5W.js"
+  ],
+  "homeAssets": [
+    "assets/render-app-B6PuiYjt.js",
+    "assets/rolldown-runtime-hePW80VL.js",
+    "assets/index-BqlUyd5W.js",
+    "assets/react-ClMGoy9N.js",
+    "assets/zod-rheUNOxz.js",
+    "assets/catalog-D0BJ17AG.js",
+    "assets/WikiContext-Bc3b5d49.js"
+  ],
+  "galleryOnly": [
+    "assets/MotionGallery-Bh6SCQ0c.js",
+    "assets/use-presence-DUEUEAEO.js"
+  ],
+  "modalsOnly": [
+    "assets/ModalStack-ChXcK0pI.js",
+    "assets/use-presence-DUEUEAEO.js"
+  ],
+  "chunks": [
+    {
+      "file": "assets/WikiContext-Bc3b5d49.js",
+      "bytes": 1099
+    },
+    {
+      "file": "assets/catalog-D0BJ17AG.js",
+      "bytes": 8837
+    },
+    {
+      "file": "assets/react-ClMGoy9N.js",
+      "bytes": 218835
+    },
+    {
+      "file": "assets/rolldown-runtime-hePW80VL.js",
+      "bytes": 716
+    },
+    {
+      "file": "assets/use-presence-DUEUEAEO.js",
+      "bytes": 806
+    },
+    {
+      "file": "assets/zod-rheUNOxz.js",
+      "bytes": 88706
+    },
+    {
+      "file": "assets/index-BqlUyd5W.js",
+      "bytes": 4065
+    },
+    {
+      "file": "assets/leaflet-src-D6yJ2DYL.js",
+      "bytes": 148742
+    },
+    {
+      "file": "assets/render-app-B6PuiYjt.js",
+      "bytes": 40986
+    },
+    {
+      "file": "assets/ARCZoneExplorer-DfiRsn1q.js",
+      "bytes": 5994
+    },
+    {
+      "file": "assets/LocalDossier-XSiBSOtq.js",
+      "bytes": 2987
+    },
+    {
+      "file": "assets/MapExplorer-CnSQq7L8.js",
+      "bytes": 10784
+    },
+    {
+      "file": "assets/ModalStack-ChXcK0pI.js",
+      "bytes": 11445
+    },
+    {
+      "file": "assets/ProjectSteps-B9b2jiEI.js",
+      "bytes": 3317
+    },
+    {
+      "file": "assets/MotionGallery-Bh6SCQ0c.js",
+      "bytes": 122604
+    }
+  ]
+}

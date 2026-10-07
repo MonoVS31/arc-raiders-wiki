@@ -1,6 +1,5 @@
 import type { Category, Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
-import type { CSSProperties } from 'react';
 import { categorySchema } from '../../domain/schema';
 import { sources } from '../../domain/catalog';
 import { WikiLink } from '../../app/WikiContext';
@@ -28,6 +27,7 @@ export function HomeView({
     <>
       <section className="welcome-banner">
         <div className="banner-grid" aria-hidden="true" />
+        <div className="banner-radar" aria-hidden="true" />
         <div className="banner-orbit" aria-hidden="true" />
         <div className="welcome-copy">
           <span className="section-kicker">INTELIGENCIA PARA LA PRÓXIMA INCURSIÓN</span>
@@ -89,9 +89,9 @@ export function HomeView({
             <button
               className={`portal-tile tile-${value}`}
               key={value}
-              style={{ '--delay': `${index * 55}ms` } as CSSProperties}
               onClick={() => category(value)}
             >
+              <span className="tile-border" aria-hidden="true" />
               <div className="tile-art">
                 <WikiIcon category={value} />
               </div>
@@ -102,6 +102,7 @@ export function HomeView({
             </button>
           ))}
           <button className="portal-tile tile-material" onClick={() => open({ kind: 'materials' })}>
+            <span className="tile-border" aria-hidden="true" />
             <div className="tile-art">
               <WikiIcon category="container" />
             </div>

@@ -1,11 +1,12 @@
-import { WikiLink } from '../../app/WikiContext';
+import { lazy, Suspense } from 'react';
+import { Gallery } from './Gallery';
+const MotionGallery = lazy(() => import('./MotionGallery'));
 import type { Category, Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
-import type { CSSProperties, Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { availabilitySchema, confidenceSchema } from '../../domain/schema';
 import type { Filters } from '../../domain/query';
-import { WikiIcon } from '../WikiIcon';
-import { descriptions, EntityImage } from './presentation';
+import { descriptions } from './presentation';
 
 export function CategoryView({
   filters,
@@ -79,27 +80,10 @@ export function CategoryView({
       <p role="status" className="result-count">
         {entities.length} fichas encontradas
       </p>
-      <div className="entity-gallery">
-        {entities.map((entity, index) => (
-          <WikiLink
-            key={entity.id}
-            className={`gallery-card category-${entity.category}`}
-            style={{ '--delay': `${Math.min(index, 12) * 35}ms` } as CSSProperties}
-            entityId={entity.id}
-          >
-            <div className="gallery-art">
-              <WikiIcon category={entity.category} />
-              <EntityImage id={entity.id} name={entity.name} />
-            </div>
-            <div className="gallery-body">
-              <small>{categories[entity.category]}</small>
-              <h2>{entity.name}</h2>
-              <span className={`availability ${entity.availability}`}>{entity.availability}</span>
-              <span className="gallery-arrow">→</span>
-            </div>
-          </WikiLink>
-        ))}
-      </div>
+      <Suspense fallback={<Gallery entities={entities} />}>
+        {' '}
+        <MotionGallery entities={entities} />{' '}
+      </Suspense>
       {entities.length === 0 && (
         <p className="empty-state">No hay coincidencias. Cambiá el nombre o los filtros.</p>
       )}

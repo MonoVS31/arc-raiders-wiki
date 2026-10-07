@@ -1,6 +1,7 @@
 @layer tokens, base, components, utilities;
 @layer tokens {
   :root {
+    --sweep-angle: 0deg;
     --color-surface-zone-gradient-center: #283c2c;
     --color-surface-zone-gradient-edge: #14231a;
     --color-surface-zone-selected: #2b3c23;
@@ -364,4 +365,10 @@
     --shadow-wiki-sidebar-is-open: 15px 0 70px var(--color-shadow-strong);
     --shadow-global-results: 0 20px 40px var(--color-shadow-global-results);
   }
+}
+
+@property --sweep-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
 }
