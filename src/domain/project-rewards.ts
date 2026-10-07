@@ -1,6 +1,12 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawRewards from '../data/project-blueprint-rewards.json';
-import rawPeriods from '../data/project-periods.json';
+const rawRewards = readAtlasData<
+  typeof import('../../public/data/atlas/project-blueprint-rewards.json')
+>('project-blueprint-rewards.json');
+const rawPeriods =
+  readAtlasData<typeof import('../../public/data/atlas/project-periods.json')>(
+    'project-periods.json',
+  );
 import { availabilitySchema } from './schema';
 export const projectBlueprintRewards = z
   .array(

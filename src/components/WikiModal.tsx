@@ -163,7 +163,14 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
                 ← Catálogo de recursos
               </button>
               {material?.icon && (
-                <img className="material-portrait" src={material.icon} alt={material.name} />
+                <img
+                  width={512}
+                  height={512}
+                  decoding="async"
+                  className="material-portrait"
+                  src={material.icon}
+                  alt={material.name}
+                />
               )}
               <dl className="material-data">
                 <div>
@@ -240,7 +247,16 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
                   .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
                   .map((item) => (
                     <button key={item.id} onClick={() => setSelected(item.name)}>
-                      {item.icon && <img src={item.icon} alt="" loading="lazy" />}
+                      {item.icon && (
+                        <img
+                          width={512}
+                          height={512}
+                          decoding="async"
+                          src={item.icon}
+                          alt=""
+                          loading="lazy"
+                        />
+                      )}
                       <strong>{item.name}</strong>
                       <small>{typeLabels[item.type] ?? item.type}</small>
                     </button>

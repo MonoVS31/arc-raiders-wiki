@@ -54,7 +54,7 @@ export function HomeView({
           </div>
         </div>
         <div className="banner-machine" aria-hidden="true">
-          <img src={artFor('arc-rocketeer')} alt="" />
+          <img width={512} height={512} decoding="async" src={artFor('arc-rocketeer')} alt="" />
           <span>ARC / ARCHIVO DE COMBATE</span>
         </div>
       </section>
@@ -124,7 +124,14 @@ export function HomeView({
             Elegí una máquina, recorré sus piezas y encontrá los mapas con reportes de su presencia.
           </p>
           <WikiLink entityId="arc-hornet">Explorar Hornet →</WikiLink>
-          <img src={artFor('arc-hornet')} alt="Hornet" loading="lazy" />
+          <img
+            width={512}
+            height={512}
+            decoding="async"
+            src={artFor('arc-hornet')}
+            alt="Hornet"
+            loading="lazy"
+          />
         </div>
         <div className="home-guide">
           <span className="section-kicker">TU PRÓXIMO OBJETIVO</span>

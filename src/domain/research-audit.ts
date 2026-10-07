@@ -1,5 +1,9 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawAudit from '../data/research-audit.json';
+const rawAudit =
+  readAtlasData<typeof import('../../public/data/atlas/research-audit.json')>(
+    'research-audit.json',
+  );
 const rowSchema = z
   .object({
     blueprintId: z.string(),

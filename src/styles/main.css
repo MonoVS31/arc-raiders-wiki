@@ -84,6 +84,23 @@
   }
 }
 @layer components {
+  .boot-state {
+    max-width: 40rem;
+    margin: 12vh auto;
+    padding: var(--space-24);
+    color: var(--color-text);
+    & p {
+      font-size: var(--font-size-1);
+      line-height: 1.6;
+    }
+    & button {
+      background: var(--color-surface);
+      color: var(--color-accent);
+      border: 1px solid var(--color-border);
+      padding: var(--space-12);
+    }
+  }
+
   .eyebrow {
     font-size: var(--font-size-0-625);
     letter-spacing: 0.17em;
@@ -404,6 +421,12 @@
   }
 }
 @layer utilities {
+  .animation-paused,
+  .animation-paused::before,
+  .animation-paused::after {
+    animation-play-state: paused !important;
+  }
+
   [hidden] {
     display: none !important;
   }

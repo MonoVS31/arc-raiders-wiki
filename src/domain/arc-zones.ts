@@ -1,5 +1,7 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawZones from '../data/arc-zones.json';
+const rawZones =
+  readAtlasData<typeof import('../../public/data/atlas/arc-zones.json')>('arc-zones.json');
 const zoneSchema = z
   .object({
     id: z.string(),

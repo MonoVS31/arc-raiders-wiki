@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Fase 5 de mantenimiento:** datos públicos cargados con caché, arranque de 4,06 KB, validación obligatoria antes de compilar, marcadores Canvas con selección incremental e imágenes y animaciones optimizadas. 88 pruebas aprobadas. [Mediciones y arquitectura de carga](docs/15-fase-5-rendimiento.md).
+
 **Fase 4 de mantenimiento:** textos de al menos 12 px, tokens de contraste corregidos, búsqueda accesible por teclado, tarjetas con enlaces, breadcrumb semántico y títulos dinámicos. 78 pruebas aprobadas. [Accesibilidad y ratios de contraste](docs/14-fase-4-accesibilidad.md).
 
 **Fase 3 de mantenimiento:** CSS sin las 26 clases antiguas sin uso, tokens centralizados, capas explícitas, nesting nativo y reglas de portada y rutas consolidadas. Apariencia comparada en escritorio y celular; 54 pruebas aprobadas. [Arquitectura y comprobaciones del CSS](docs/13-fase-3-css.md).
@@ -65,7 +67,7 @@ Para aplicar el formato del proyecto, ejecutá `npm run format`. ESLint usa conf
 
 ## Datos y actualización
 
-`src/data/catalog.json` almacena entidades, afirmaciones y tareas de ubicación. `sources.json` conserva URLs, revisiones y hashes de consultas. `src/domain/schema.ts` valida procedencia, duplicados, unidades, posiciones e incertidumbre; la UI nunca consume HTML remoto. Cada edición debe conservar evidencia y pasar las pruebas. Después del 8 de octubre revisar Frozen Trail antes de cambiar disponibilidad o estadísticas.
+`public/data/atlas/catalog.json` almacena entidades, afirmaciones y tareas de ubicación. `public/data/atlas/sources.json` conserva URLs, revisiones y hashes de consultas. `src/domain/schema.ts` valida procedencia, duplicados, unidades, posiciones e incertidumbre; la UI nunca consume HTML remoto. Cada edición debe conservar evidencia y pasar las pruebas. Después del 8 de octubre revisar Frozen Trail antes de cambiar disponibilidad o estadísticas.
 
 La investigación inicial se preparó consultando fuentes públicas; los scripts y capturas de trabajo no forman parte de la aplicación. El catálogo es editable sin scraping automático: agregar la fuente, la entidad y los campos revisados; ejecutar las comprobaciones. Las rutas de obtención incompletas siguen marcadas como pendientes.
 
@@ -85,7 +87,7 @@ Los marcadores se sirven desde cachés por mapa en public/data/maps; Leaflet y e
 
 `npm run data:maps` solicita una nueva captura deliberadamente y exige revisar la configuración si cambia. `npm run data:blueprints` necesita las capturas de investigación conservadas en Arc/work/research; no es un comando de instalación para un clon nuevo. Los datos ya versionados permiten ejecutar la aplicación sin esas capturas. Revisar diferencias, fuentes y pruebas antes de publicar actualizaciones.
 
-La captura original de catalog.json permanece como evidencia inicial. domain/catalog.ts compone los campos activos con la calibración de mapas y las rutas revisadas, para que los filtros no sigan usando pendientes sustituidos por nueva evidencia.
+La captura original de public/data/atlas/catalog.json permanece como evidencia inicial. domain/catalog.ts compone los campos activos con la calibración de mapas y las rutas revisadas, para que los filtros no sigan usando pendientes sustituidos por nueva evidencia.
 
 ## Atribución y propiedad
 

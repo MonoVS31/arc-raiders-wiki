@@ -1,15 +1,16 @@
-import rawCatalog from '../data/catalog.json';
-import rawSources from '../data/sources.json';
-import { validateCatalog } from './schema';
+import { readAtlasData } from './data-loader';
+const rawCatalog = readAtlasData<Catalog>('catalog.json');
+const rawSources = readAtlasData<Source[]>('sources.json');
+import type { Catalog, Claim, Source } from './schema';
 import { mapManifest } from './maps';
 import { acquisitionData } from './acquisition-schema';
 import { researchAudit } from './research-audit';
 import { projectBlueprintRewards, projectPeriods } from './project-rewards';
-import extraStats from '../data/extra-stats.json';
+const extraStats = readAtlasData<Claim[]>('extra-stats.json');
 
 // Retain the original research snapshot and supersede its pending fields with reviewed evidence.
-const initial = validateCatalog(rawCatalog, rawSources);
-const currentClaims = initial.catalog.claims.map((claim) => {
+const initial = { catalog: rawCatalog, sources: rawSources };
+const currentClaims: Claim[] = initial.catalog.claims.map((claim) => {
   const map = mapManifest.maps.find((map) => map.id === claim.subjectId);
   if (map && claim.field === 'coordenadas de cajas')
     return {
@@ -66,7 +67,7 @@ const currentClaims = initial.catalog.claims.map((claim) => {
   }
   return claim;
 });
-const containerClaims = researchAudit.routes
+const containerClaims: Claim[] = researchAudit.routes
   .filter((row) => row.containerDetails.length)
   .map((row) => ({
     id: `audit-containers-${row.blueprintId}`,
@@ -80,7 +81,7 @@ const containerClaims = researchAudit.routes
     availability: 'disponible',
     effectiveFrom: null,
   }));
-const rewardClaims = projectBlueprintRewards.map((reward, index) => ({
+const rewardClaims: Claim[] = projectBlueprintRewards.map((reward, index) => ({
   id: `project-reward-${index}-${reward.blueprintId}`,
   subjectId: reward.blueprintId,
   field: 'recompensa de proyecto',
@@ -95,11 +96,9 @@ const rewardClaims = projectBlueprintRewards.map((reward, index) => ({
   availability: reward.availability,
   effectiveFrom: null,
 }));
-export const { catalog, sources } = validateCatalog(
-  {
-    ...initial.catalog,
-    claims: [...currentClaims, ...containerClaims, ...rewardClaims, ...extraStats],
-  },
-  rawSources,
-);
+export const catalog: Catalog = {
+  ...initial.catalog,
+  claims: [...currentClaims, ...containerClaims, ...rewardClaims, ...extraStats],
+};
+export const sources = rawSources;
 export const sourceById = new Map(sources.map((source) => [source.id, source]));

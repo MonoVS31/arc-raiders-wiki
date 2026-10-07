@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client';
-import { App } from './App';
+import { startAtlas } from './bootstrap';
 import '../styles/tokens.css';
 import '../styles/main.css';
 import '../styles/combat.css';
@@ -9,4 +8,4 @@ import '../styles/wiki.css';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Falta el contenedor de la aplicación');
-createRoot(root).render(<App />);
+startAtlas(root);

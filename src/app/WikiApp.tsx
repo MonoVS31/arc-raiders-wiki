@@ -1,3 +1,4 @@
+import { useVisibleAnimations } from './useVisibleAnimations';
 import { lazy, Suspense, useCallback, useMemo, useState, useEffect } from 'react';
 import { catalog } from '../domain/catalog';
 import { findEntities } from '../domain/query';
@@ -13,6 +14,7 @@ import { CategoryView } from '../components/wiki/CategoryView';
 import { ArticleView } from '../components/wiki/ArticleView';
 const WikiModal = lazy(() => import('../components/WikiModal'));
 export function App() {
+  useVisibleAnimations();
   const [panels, setPanels] = useState<WikiPanel[]>([]);
   const panel = panels.at(-1);
   const [menu, setMenu] = useState(false);

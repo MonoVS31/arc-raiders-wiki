@@ -1,6 +1,13 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawMaps from '../data/arc-map-reports.json';
-import rawHints from '../data/material-arc-hints.json';
+const rawMaps =
+  readAtlasData<typeof import('../../public/data/atlas/arc-map-reports.json')>(
+    'arc-map-reports.json',
+  );
+const rawHints =
+  readAtlasData<typeof import('../../public/data/atlas/material-arc-hints.json')>(
+    'material-arc-hints.json',
+  );
 export const arcMapReports = z
   .array(
     z

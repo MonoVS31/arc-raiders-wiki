@@ -5,9 +5,9 @@ import { fileURLToPath } from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const scratch=path.resolve(root,'../../work/research');
 const index=JSON.parse(await fs.readFile(path.join(scratch,'Blueprints.json'),'utf8'));
-const manifest=JSON.parse(await fs.readFile(path.join(root,'src/data/maps/manifest.json'),'utf8'));
-const catalog=JSON.parse(await fs.readFile(path.join(root,'src/data/catalog.json'),'utf8'));
-const sources=JSON.parse(await fs.readFile(path.join(root,'src/data/sources.json'),'utf8'));
+const manifest=JSON.parse(await fs.readFile(path.join(root,'public/data/atlas/maps/manifest.json'),'utf8'));
+const catalog=JSON.parse(await fs.readFile(path.join(root,'public/data/atlas/catalog.json'),'utf8'));
+const sources=JSON.parse(await fs.readFile(path.join(root,'public/data/atlas/sources.json'),'utf8'));
 const conditions=[...new Set(manifest.maps.flatMap(map=>map.conditions.map(condition=>condition.name)))];
 const knownMaps=['Dam Battlegrounds','Spaceport','Buried City','The Blue Gate','Stella Montis','Riven Tides'];
 const slug=text=>text.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -52,5 +52,5 @@ for(const row of index.rows[0].rows.slice(1)){
    note:unknown?'El índice tiene campos desconocidos; no se completan por suposición.':rewardMatch?'La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado.':mapMatch?'El mapa coincide con la sección de obtención del plano en la ficha. La aparición sigue siendo aleatoria.':'Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano.',
  });
 }
-await fs.writeFile(path.join(root,'src/data/blueprint-routes.json'),JSON.stringify({schemaVersion:1,asOf:'2026-10-06',indexRevision:index.revision,routes},null,2)+'\n');
+await fs.writeFile(path.join(root,'public/data/atlas/blueprint-routes.json'),JSON.stringify({schemaVersion:1,asOf:'2026-10-06',indexRevision:index.revision,routes},null,2)+'\n');
 console.log('routes',routes.length,'cross-checked',routes.filter(route=>route.validation==='cross-checked').length,'incomplete',routes.filter(route=>route.validation==='incomplete').length);

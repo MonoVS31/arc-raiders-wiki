@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { expect, it } from 'vitest';
 import { grenadeGeometry, weaponTiers, withinReportedRadius } from '../src/domain/combat';
-import portraits from '../src/data/arc-portraits.json';
+import portraits from '../public/data/atlas/arc-portraits.json';
 import { catalog, sourceById } from '../src/domain/catalog';
 it('no dibuja radios inciertos o una cadena como círculo', () => {
   expect(grenadeGeometry('grenade-wolfpack')).toBeNull();

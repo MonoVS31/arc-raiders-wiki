@@ -1,3 +1,4 @@
+import { updateMarkerSelection } from '../domain/map-markers';
 import '../styles/leaflet.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
@@ -55,6 +56,11 @@ function MapCanvas({
     libraryRef = useRef<typeof Leaflet | null>(null);
   const layerRef = useRef<Leaflet.TileLayer | null>(null),
     pointsRef = useRef<Leaflet.LayerGroup | null>(null);
+  const markerCache = useRef(new Map<string, Leaflet.CircleMarker>());
+  const markerColors = useRef(new Map<string, string>());
+  const previousSelection = useRef<string | null>(null);
+  const selection = useRef(selectedId);
+  selection.current = selectedId;
   const selectRef = useRef(onSelect);
   selectRef.current = onSelect;
   const [generation, setGeneration] = useState(0),
@@ -63,6 +69,8 @@ function MapCanvas({
   const ready = generation > 0;
   const reduced = useRef(false);
   useEffect(() => {
+    const createdMarkers = markerCache.current;
+    const createdColors = markerColors.current;
     let cancelled = false;
     let observer: ResizeObserver | undefined;
     reduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -80,6 +88,7 @@ function MapCanvas({
         ]);
         const map = L.map(host.current, {
           crs,
+          preferCanvas: true,
           center: config.center,
           zoom: config.initialZoom,
           minZoom: config.minZoom,
@@ -113,6 +122,9 @@ function MapCanvas({
       mapRef.current = null;
       libraryRef.current = null;
       pointsRef.current = null;
+      createdMarkers.clear();
+      createdColors.clear();
+      previousSelection.current = null;
     };
   }, [config]);
   useEffect(() => {
@@ -151,10 +163,12 @@ function MapCanvas({
       group = pointsRef.current;
     if (generation === 0 || !L || !group) return;
     group.clearLayers();
+    markerCache.current.clear();
+    markerColors.current.clear();
     for (const point of markers) {
       const dot = L.circleMarker([point.lat, point.lng], {
-        radius: point.id === selectedId ? 10 : 6,
-        color: point.id === selectedId ? '#fff' : colors[point.kind],
+        radius: point.id === selection.current ? 10 : 6,
+        color: point.id === selection.current ? '#fff' : colors[point.kind],
         weight: 2,
         fillColor: colors[point.kind],
         fillOpacity: 0.8,
@@ -164,8 +178,19 @@ function MapCanvas({
       dot.bindTooltip(label);
       dot.on('click', () => selectRef.current(point.id));
       dot.addTo(group);
+      markerCache.current.set(point.id, dot);
+      markerColors.current.set(point.id, colors[point.kind]);
     }
-  }, [markers, selectedId, generation]);
+  }, [markers, generation]);
+  useEffect(() => {
+    updateMarkerSelection(
+      markerCache.current,
+      markerColors.current,
+      previousSelection.current,
+      selectedId,
+    );
+    previousSelection.current = selectedId;
+  }, [selectedId, generation, markers]);
   useEffect(() => {
     const map = mapRef.current,
       point = markers.find((point) => point.id === selectedId);

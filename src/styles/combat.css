@@ -104,7 +104,7 @@
   }
   @keyframes combat-pulse {
     50% {
-      fill-opacity: 0.25;
+      opacity: 0.25;
     }
   }
   @media (max-width: 700px) {

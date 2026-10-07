@@ -1,5 +1,9 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawProjects from '../data/project-stages.json';
+const rawProjects =
+  readAtlasData<typeof import('../../public/data/atlas/project-stages.json')>(
+    'project-stages.json',
+  );
 import { availabilitySchema } from './schema';
 export const projectStageData = z
   .object({

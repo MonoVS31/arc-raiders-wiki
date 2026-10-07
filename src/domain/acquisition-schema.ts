@@ -1,5 +1,9 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawRoutes from '../data/blueprint-routes.json';
+const rawRoutes =
+  readAtlasData<typeof import('../../public/data/atlas/blueprint-routes.json')>(
+    'blueprint-routes.json',
+  );
 
 const routeSchema = z
   .object({

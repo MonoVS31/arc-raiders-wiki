@@ -1,3 +1,4 @@
+import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
 import { catalog } from '../domain/catalog';
 import type { Entity } from '../domain/schema';
@@ -7,7 +8,10 @@ import { mapManifest } from '../domain/maps';
 import { WeaponComparison, ARCCombatPanel, GrenadeEffectPanel } from './CombatTools';
 import { ShareEntityLink } from './ShareEntityLink';
 import { Sources } from '../app/WikiContext';
-import visuals from '../data/entity-visuals.json';
+const visuals =
+  readAtlasData<typeof import('../../public/data/atlas/entity-visuals.json')>(
+    'entity-visuals.json',
+  );
 const MapExplorer = lazy(() => import('./MapExplorer'));
 const ProjectSteps = lazy(() => import('./ProjectSteps'));
 const LocalDossier = lazy(() => import('./LocalDossier'));
@@ -74,7 +78,7 @@ export function EntityDetail({
       <h2 id="detail-title">{entity.name}</h2>
       {visual && entity.category !== 'arc' && (
         <div className="article-visual">
-          <img src={visual.url} alt={entity.name} />
+          <img width={512} height={512} decoding="async" src={visual.url} alt={entity.name} />
         </div>
       )}
       <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId} />

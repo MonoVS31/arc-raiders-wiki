@@ -56,7 +56,15 @@
   }
   .zone-point[aria-pressed='true'] {
     box-shadow: var(--shadow-zone-point-aria-pressed-true);
-    animation: zone-beacon var(--duration-1800) var(--ease-ease-in-out) infinite;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      box-shadow: var(--shadow-zone-point-pulse);
+      pointer-events: none;
+      animation: zone-beacon var(--duration-1800) var(--ease-ease-in-out) infinite;
+    }
   }
   .front-left {
     left: 31.7%;
@@ -157,7 +165,8 @@
   }
   @keyframes zone-beacon {
     50% {
-      box-shadow: var(--shadow-zone-point-pulse);
+      transform: scale(1.2);
+      opacity: 0.2;
     }
   }
   @media (max-width: 500px) {

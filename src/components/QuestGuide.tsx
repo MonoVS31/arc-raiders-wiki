@@ -1,5 +1,7 @@
+import { readAtlasData } from '../domain/data-loader';
 import { z } from 'zod';
-import rawQuests from '../data/quest-guides.json';
+const rawQuests =
+  readAtlasData<typeof import('../../public/data/atlas/quest-guides.json')>('quest-guides.json');
 import { Sources } from '../app/WikiContext';
 export const questGuides = z
   .array(

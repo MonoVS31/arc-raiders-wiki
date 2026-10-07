@@ -1,7 +1,11 @@
+import { readAtlasData } from '../../domain/data-loader';
 import { useState } from 'react';
 import type { Category } from '../../domain/schema';
 import { catalog } from '../../domain/catalog';
-import visuals from '../../data/entity-visuals.json';
+const visuals =
+  readAtlasData<typeof import('../../../public/data/atlas/entity-visuals.json')>(
+    'entity-visuals.json',
+  );
 export const descriptions: Record<Category, string> = {
   map: 'Cartografía, pisos y reportes de botín',
   weapon: 'Arsenal, niveles y mantenimiento',
@@ -23,6 +27,14 @@ export function EntityImage({ id, name }: { id: string; name: string }) {
   const [failed, setFailed] = useState(false);
   const url = artFor(id);
   return url && !failed ? (
-    <img src={url} alt={name} loading="lazy" onError={() => setFailed(true)} />
+    <img
+      width={512}
+      height={512}
+      decoding="async"
+      src={url}
+      alt={name}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
   ) : null;
 }

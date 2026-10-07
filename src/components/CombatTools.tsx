@@ -1,3 +1,4 @@
+import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
 import { catalog } from '../domain/catalog';
 import {
@@ -8,7 +9,8 @@ import {
   withinReportedRadius,
 } from '../domain/combat';
 import type { Claim, Entity } from '../domain/schema';
-import portraits from '../data/arc-portraits.json';
+const portraits =
+  readAtlasData<typeof import('../../public/data/atlas/arc-portraits.json')>('arc-portraits.json');
 import { Sources } from '../app/WikiContext';
 const ARCZoneExplorer = lazy(() => import('./ARCZoneExplorer'));
 
@@ -157,6 +159,9 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
             </p>
           ) : (
             <img
+              width={512}
+              height={512}
+              decoding="async"
               src={portrait.imageUrl}
               alt={`Referencia visual de ${entity.name}`}
               loading="lazy"

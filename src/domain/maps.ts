@@ -1,5 +1,7 @@
+import { readAtlasData } from './data-loader';
 import { z } from 'zod';
-import rawManifest from '../data/maps/manifest.json';
+const rawManifest =
+  readAtlasData<typeof import('../../public/data/atlas/maps/manifest.json')>('maps/manifest.json');
 
 const coordinate = z.number().finite();
 const extent = z.tuple([coordinate, coordinate, coordinate, coordinate]);
