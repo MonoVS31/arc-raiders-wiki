@@ -1,0 +1,855 @@
+[
+  {
+    "entityId": "arc-snitch",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 10,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 3,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 5,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 7,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 5,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-wasp",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 16,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 5,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 8,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 18,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 1,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 10,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-hornet",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 6,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 9,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 4,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 10,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 3,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 5,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-tick",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 22,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 18,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 17,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 8,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 45,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 9,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-pop",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 21,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 36,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 28,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 9,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 63,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 7,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-fireball",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 13,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 16,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 21,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 10,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 38,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 8,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-turret",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 14,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 22,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 17,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 7,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 13,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 2,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-sentinel",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 10,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 12,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 11,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 13,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 1,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 5,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-surveyor",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 10,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 10,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 7,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 7,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 2,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-shredder",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 5,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 6,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 11,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 4,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 21,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 4,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-comet",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 10,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 12,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 9,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 13,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 3,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 6,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-firefly",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 4,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 13,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 7,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 5,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 3,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 6,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-spotter",
+    "maps": []
+  },
+  {
+    "entityId": "arc-bombardier",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 2,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 8,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 2,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 5,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 3,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-bastion",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 3,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 7,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 7,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 6,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-stella-montis",
+        "mapName": "Stella Montis",
+        "count": 1,
+        "sourceId": "metaforge-stella-montis",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 5,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-leaper",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 6,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 2,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 5,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 5,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 4,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-rocketeer",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 12,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 9,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 4,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 9,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 3,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-vaporizer",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 3,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 4,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 4,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 8,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 5,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-arc-turbine",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 5,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 5,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-buried-city",
+        "mapName": "Buried City",
+        "count": 5,
+        "sourceId": "metaforge-buried-city",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 4,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-riven-tides",
+        "mapName": "Riven Tides",
+        "count": 8,
+        "sourceId": "metaforge-riven-tides",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-queen",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 1,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 1,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 1,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      }
+    ]
+  },
+  {
+    "entityId": "arc-matriarch",
+    "maps": [
+      {
+        "mapId": "map-dam-battlegrounds",
+        "mapName": "Dam Battlegrounds",
+        "count": 1,
+        "sourceId": "metaforge-dam",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-spaceport",
+        "mapName": "Spaceport",
+        "count": 1,
+        "sourceId": "metaforge-spaceport",
+        "confidence": "posible"
+      },
+      {
+        "mapId": "map-the-blue-gate",
+        "mapName": "The Blue Gate",
+        "count": 1,
+        "sourceId": "metaforge-blue-gate",
+        "confidence": "posible"
+      }
+    ]
+  }
+]

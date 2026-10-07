@@ -1,0 +1,112 @@
+[
+  {
+    "projectId": "project-ascending-the-mountain",
+    "projectName": "Ascending The Mountain",
+    "availability": "desconocido",
+    "stageName": "Begin Ignition Tests (2)",
+    "blueprintId": "blueprint-crash-mat-blueprint",
+    "reward": "1× Crash Mat Blueprint",
+    "sourceId": "wiki-project-review-project-ascending-the-mountain",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-trophy-display",
+    "projectName": "Trophy Display",
+    "availability": "disponible",
+    "stageName": "Roaming Threats (1)",
+    "blueprintId": "blueprint-light-gun-parts-blueprint",
+    "reward": "1× Light Gun Parts Blueprint",
+    "sourceId": "wiki-project-review-project-trophy-display",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-trophy-display",
+    "projectName": "Trophy Display",
+    "availability": "disponible",
+    "stageName": "Soaring Menaces (2)",
+    "blueprintId": "blueprint-vita-shot-blueprint",
+    "reward": "1× Vita Shot Blueprint",
+    "sourceId": "wiki-project-review-project-trophy-display",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-trophy-display",
+    "projectName": "Trophy Display",
+    "availability": "disponible",
+    "stageName": "Ferocious Foes (3)",
+    "blueprintId": "blueprint-shotgun-silencer-blueprint",
+    "reward": "1× Shotgun Silencer Blueprint",
+    "sourceId": "wiki-project-review-project-trophy-display",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-trophy-display",
+    "projectName": "Trophy Display",
+    "availability": "disponible",
+    "stageName": "Dominant Dangers (4)",
+    "blueprintId": "blueprint-bobcat-blueprint",
+    "reward": "1× Bobcat Blueprint",
+    "sourceId": "wiki-project-review-project-trophy-display",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-trophy-display",
+    "projectName": "Trophy Display",
+    "availability": "disponible",
+    "stageName": "Imposing Behemoths (5)",
+    "blueprintId": "blueprint-snap-hook-blueprint",
+    "reward": "1× Snap Hook Blueprint",
+    "sourceId": "wiki-project-review-project-trophy-display",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-phantom-targets",
+    "projectName": "Phantom Targets",
+    "availability": "histórico",
+    "stageName": "Part 2 / Perform Final Tests on Glitched Wasp Parts (5)",
+    "blueprintId": "blueprint-fireworks-box-blueprint",
+    "reward": "1× Fireworks Box Blueprint",
+    "sourceId": "wiki-project-review-project-phantom-targets",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-phantom-targets",
+    "projectName": "Phantom Targets",
+    "availability": "histórico",
+    "stageName": "Part 2 / Conduct One Final Explosive Test (6)",
+    "blueprintId": "blueprint-crash-mat-blueprint",
+    "reward": "1× Crash Mat Blueprint",
+    "sourceId": "wiki-project-review-project-phantom-targets",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-converging-paths",
+    "projectName": "Converging Paths",
+    "availability": "histórico",
+    "stageName": "Use nomad tactics to fight ARC (6)",
+    "blueprintId": "blueprint-surge-coil-blueprint",
+    "reward": "1× Surge Coil Blueprint",
+    "sourceId": "wiki-project-review-project-converging-paths",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-avian-alarm",
+    "projectName": "Avian Alarm",
+    "availability": "histórico",
+    "stageName": "Preliminary Signal birds (2)",
+    "blueprintId": "blueprint-heavy-gun-parts-blueprint",
+    "reward": "1× Heavy Gun Parts Blueprint",
+    "sourceId": "wiki-project-review-project-avian-alarm",
+    "confidence": "probable"
+  },
+  {
+    "projectId": "project-flickering-flames",
+    "projectName": "Flickering Flames",
+    "availability": "histórico",
+    "stageName": "Decorations (2)",
+    "blueprintId": "blueprint-red-light-stick-blueprint",
+    "reward": "1× Red Light Stick Blueprint",
+    "sourceId": "wiki-project-review-project-flickering-flames",
+    "confidence": "probable"
+  }
+]

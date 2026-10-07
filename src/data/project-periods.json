@@ -1,0 +1,210 @@
+[
+  {
+    "entityId": "project-ascending-the-mountain",
+    "name": "Ascending The Mountain",
+    "availability": "desconocido",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "29 days"
+      },
+      {
+        "field": "Start",
+        "value": "September 08, 2026"
+      },
+      {
+        "field": "End",
+        "value": "October 07, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-ascending-the-mountain"
+  },
+  {
+    "entityId": "project-trophy-display",
+    "name": "Trophy Display",
+    "availability": "disponible",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Start",
+        "value": "January 27, 2026"
+      },
+      {
+        "field": "End",
+        "value": "Unknown"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-trophy-display"
+  },
+  {
+    "entityId": "project-expedition",
+    "name": "Expedition",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "PAUSED"
+      },
+      {
+        "field": "Start",
+        "value": "Unknown"
+      },
+      {
+        "field": "End",
+        "value": "Unknown"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-expedition"
+  },
+  {
+    "entityId": "project-phantom-targets",
+    "name": "Phantom Targets",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "33 days"
+      },
+      {
+        "field": "Start",
+        "value": "August 04, 2026"
+      },
+      {
+        "field": "End",
+        "value": "September 06, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-phantom-targets"
+  },
+  {
+    "entityId": "project-converging-paths",
+    "name": "Converging Paths",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "42 days"
+      },
+      {
+        "field": "Start",
+        "value": "June 16, 2026"
+      },
+      {
+        "field": "End",
+        "value": "July 28, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-converging-paths"
+  },
+  {
+    "entityId": "project-avian-alarm",
+    "name": "Avian Alarm",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "28 days"
+      },
+      {
+        "field": "Start",
+        "value": "April 28, 2026"
+      },
+      {
+        "field": "End",
+        "value": "May 26, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-avian-alarm"
+  },
+  {
+    "entityId": "project-high-gain-antenna",
+    "name": "High-Gain Antenna",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "27 days"
+      },
+      {
+        "field": "Start",
+        "value": "March 31, 2026"
+      },
+      {
+        "field": "End",
+        "value": "April 27, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-high-gain-antenna"
+  },
+  {
+    "entityId": "project-weather-monitor-system",
+    "name": "Weather Monitor System",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "35 days"
+      },
+      {
+        "field": "Start",
+        "value": "February 24, 2026"
+      },
+      {
+        "field": "End",
+        "value": "March 31, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-weather-monitor-system"
+  },
+  {
+    "entityId": "project-flickering-flames",
+    "name": "Flickering Flames",
+    "availability": "histórico",
+    "period": [
+      {
+        "field": "Type",
+        "value": "Temporary"
+      },
+      {
+        "field": "Duration",
+        "value": "28 days"
+      },
+      {
+        "field": "Start",
+        "value": "December 16, 2025"
+      },
+      {
+        "field": "End",
+        "value": "January 13, 2026"
+      }
+    ],
+    "sourceId": "wiki-project-review-project-flickering-flames"
+  }
+]

@@ -5,27 +5,33 @@ import { lazy, Suspense } from 'react';
 import { BlueprintRouteCard } from './BlueprintRouteCard';
 import { mapManifest } from '../domain/maps';
 import { WeaponComparison, ARCCombatPanel, GrenadeEffectPanel } from './CombatTools';
+import { ShareEntityLink } from './ShareEntityLink';
 const MapExplorer=lazy(()=>import('./MapExplorer'));
+const ProjectSteps=lazy(()=>import('./ProjectSteps'));
 
 export const categories = { map: 'Mapas', weapon: 'Armas', arc: 'Enemigos ARC', grenade: 'Granadas', blueprint: 'Planos', project: 'Proyectos', container: 'Contenedores' } as const;
 const fieldNames: Record<string, string> = {
+  Health: 'Vida declarada', 'Primary Attack':'Ataque principal', Abilities:'Habilidades declaradas',
+  'Headshot Multiplier':'Multiplicador a la cabeza', Durability:'Durabilidad declarada', Stability:'Estabilidad', Agility:'Agilidad', Stealth:'Sigilo', Weight:'Peso declarado',
   'Ammo Type': 'Munición', 'Firing Mode': 'Modo de disparo', 'ARC Armor Penetration': 'Penetración ARC',
   Damage: 'Daño declarado', 'Fire Rate': 'Cadencia declarada', Range: 'Alcance declarado', 'Magazine Size': 'Cargador',
   Radius: 'Radio del efecto', 'Homing Range': 'Alcance de búsqueda', Duration: 'Duración', Delay: 'Retardo',
   'ARC Stun Duration': 'Aturdimiento ARC', 'Raider Stun Duration': 'Aturdimiento Raider', 'Stamina Drain': 'Consumo de resistencia',
 };
-export function EntityDetail({ entity, blueprintId, onNavigate }: { entity: Entity; blueprintId?:string|undefined; onNavigate?:((mapId:string,blueprintId:string)=>void)|undefined }) {
+export function EntityDetail({ entity, blueprintId, arcId, onNavigate }: { entity: Entity; blueprintId?:string|undefined; arcId?:string|undefined; onNavigate?:((mapId:string,blueprintId:string)=>void)|undefined }) {
   const hasMap=mapManifest.maps.some(map=>map.id===entity.id);
   const claims = claimsFor(catalog, entity.id).filter(claim=>!(hasMap&&claim.field==='coordenadas de cajas')&&!(entity.category==='blueprint'&&claim.field==='ruta detallada'));
   const pendingLocations = catalog.locations.filter(location => location.mapId === entity.id);
   return <article className="detail" aria-labelledby="detail-title">
     <div className="detail-header"><span className="eyebrow">{categories[entity.category]} / expediente</span><span className={`availability ${entity.availability}`}>{entity.availability}</span></div>
     <h2 id="detail-title">{entity.name}</h2>
+    <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId}/>
     <p className="muted">Cada campo conserva su propia evidencia. Los datos comunitarios siguen sujetos a revisión.</p>
     {entity.availability === 'anunciado' && <p className="notice">Contenido anunciado para el 8 de octubre. Todavía no se presenta como disponible.</p>}
-    {hasMap&&<Suspense fallback={<p className="map-loading">Cargando visor de mapas…</p>}><MapExplorer mapId={entity.id} blueprintId={blueprintId}/></Suspense>}
+    {hasMap&&<Suspense fallback={<p className="map-loading">Cargando visor de mapas…</p>}><MapExplorer mapId={entity.id} blueprintId={blueprintId} arcId={arcId}/></Suspense>}
     {entity.category==='map'&&!hasMap&&<div className="map-placeholder"><h3>Cartografía en verificación</h3><p>Este mapa aún no tiene coordenadas revisadas.</p></div>}
     {entity.category==='blueprint'&&<BlueprintRouteCard blueprintId={entity.id} onNavigate={onNavigate}/>}
+    {entity.category==='project'&&<Suspense fallback={<p>Cargando etapas…</p>}><ProjectSteps projectId={entity.id}/></Suspense>}
     {entity.availability==='disponible'&&entity.category==='weapon'&&<WeaponComparison entity={entity}/>}
     {entity.availability==='disponible'&&entity.category==='arc'&&<ARCCombatPanel entity={entity}/>}
     {entity.availability==='disponible'&&entity.category==='grenade'&&<GrenadeEffectPanel entity={entity}/>}

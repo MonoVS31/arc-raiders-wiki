@@ -1,0 +1,1107 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-07T05:26:15.600Z",
+  "projects": [
+    {
+      "entityId": "project-ascending-the-mountain",
+      "name": "Ascending The Mountain",
+      "availability": "desconocido",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "29 days"
+        },
+        {
+          "field": "Start",
+          "value": "September 08, 2026"
+        },
+        {
+          "field": "End",
+          "value": "October 07, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Research High-Altitude Mechanics (1)",
+          "requirements": [
+            "10× Mechanical Components",
+            "6× Pop Trigger",
+            "10× Explosive Compound",
+            "2× Headphones"
+          ],
+          "rewards": [
+            "1× Burletta IV",
+            "1× Extended Light Mag III",
+            "1× Silencer III"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Begin Ignition Tests (2)",
+          "requirements": [
+            "20× Wires",
+            "8× Voltage Converter",
+            "2× Sentinel Firing Core",
+            "1× Rocket Thruster"
+          ],
+          "rewards": [
+            "2× Wolfpack",
+            "2× Deadline",
+            "3× Trailblazer",
+            "1× Crash Mat Blueprint"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Implement Landing Capabilities (3)",
+          "requirements": [
+            "2× Ruined Parachute",
+            "10× Crash Mat",
+            "5× Shredder Gyro",
+            "3× Breathtaking Snow Globe"
+          ],
+          "rewards": [
+            "1× Powered Descender",
+            "2× Raider Hatch Key",
+            "1× Rascal IV",
+            "30× Launcher Ammo"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Final Tweaks (4)",
+          "requirements": [
+            "30× Sensors",
+            "3× Broken Guidance System",
+            "15× Advanced Electrical Components",
+            "3× Vaporizer Regulator"
+          ],
+          "rewards": [
+            "Hot Air Balloon Charm",
+            "1× Tactical Mk. 3 (Defensive)",
+            "1× Tempest IV",
+            "1× Kinetic Converter"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-ascending-the-mountain"
+    },
+    {
+      "entityId": "project-trophy-display",
+      "name": "Trophy Display",
+      "availability": "disponible",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Start",
+          "value": "January 27, 2026"
+        },
+        {
+          "field": "End",
+          "value": "Unknown"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Roaming Threats (1)",
+          "requirements": [
+            "3× Rusted Bolts",
+            "15× Pop Trigger",
+            "15× Tick Pod",
+            "5× Surveyor Vault"
+          ],
+          "rewards": [
+            "10× Mod Components",
+            "3× Power Rod",
+            "10× Raider Tokens",
+            "1× Light Gun Parts Blueprint"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Soaring Menaces (2)",
+          "requirements": [
+            "10× Spotter Relay",
+            "3× Expired Respirator",
+            "20× Wasp Driver",
+            "15× Hornet Driver"
+          ],
+          "rewards": [
+            "3× Vita Spray",
+            "3× Photoelectric Cloak",
+            "20× Raider Tokens",
+            "1× Vita Shot Blueprint"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Ferocious Foes (3)",
+          "requirements": [
+            "10× ARC Performance Steel",
+            "5× Shredder Gyro",
+            "10× Leaper Pulse Unit",
+            "5× Bastion Cell"
+          ],
+          "rewards": [
+            "1× Kinetic Converter",
+            "3× Anvil Splitter",
+            "30× Raider Tokens",
+            "1× Shotgun Silencer Blueprint"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Dominant Dangers (4)",
+          "requirements": [
+            "10× ARC Synthetic Resin",
+            "10× Magnetic Accelerator",
+            "8× Rocketeer Driver",
+            "3× Queen Reactor"
+          ],
+          "rewards": [
+            "1× Bobcat IV",
+            "5× Wolfpack",
+            "40× Raider Tokens",
+            "1× Bobcat Blueprint"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Imposing Behemoths (5)",
+          "requirements": [
+            "5× Exodus Modules",
+            "3× Geiger Counter",
+            "8× Bombardier Cell",
+            "3× Matriarch Reactor"
+          ],
+          "rewards": [
+            "2× Snap Hook",
+            "1× Aphelion",
+            "50× Raider Tokens",
+            "1× Snap Hook Blueprint"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [
+        "1× Howl Emote",
+        "1× Jupiter",
+        "1× Acoustic Guitar",
+        "5× Energy Clip",
+        "300,000× Coins"
+      ],
+      "sourceId": "wiki-project-review-project-trophy-display"
+    },
+    {
+      "entityId": "project-expedition",
+      "name": "Expedition",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "PAUSED"
+        },
+        {
+          "field": "Start",
+          "value": "Unknown"
+        },
+        {
+          "field": "End",
+          "value": "Unknown"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Expedition 1 / Foundation (1)",
+          "requirements": [
+            "150× Metal Parts",
+            "200× Rubber Parts",
+            "80× ARC Alloy",
+            "15× Steel Spring"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 1 / Core Systems (2)",
+          "requirements": [
+            "35× Durable Cloth",
+            "30× Wires",
+            "30× Electrical Components",
+            "5× Cooling Fan"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 1 / Framework (3)",
+          "requirements": [
+            "5× Light Bulb",
+            "30× Battery",
+            "20× Sensors",
+            "1× Exodus Modules"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 1 / Outfitting (4)",
+          "requirements": [
+            "5× Humidifier",
+            "5× Advanced Electrical Components",
+            "3× Magnetic Accelerator",
+            "3× Leaper Pulse Unit"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 1 / Load Stage (5)",
+          "requirements": [
+            "250,000 Coin worth of Combat Items Ammo, Grenades, Traps, Weapons, Weapon Mods",
+            "100,000 Coin worth of Survival Items Shields, Gadgets, Utilities, Augments, Regenerative",
+            "180,000 Coin worth of Provisions Nature, Miscellaneous, Trinkets, Old World, Keys",
+            "300,000 Coin worth of Materials"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 2 / Foundation (1)",
+          "requirements": [
+            "150× Metal Parts",
+            "200× Plastic Parts",
+            "80× ARC Alloy",
+            "15× Steel Spring"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 2 / Core Systems (2)",
+          "requirements": [
+            "35× Durable Cloth",
+            "25× Wires",
+            "20× Electrical Components",
+            "4× Cooling Coil"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 2 / Framework (3)",
+          "requirements": [
+            "4× Light Bulb",
+            "30× Battery",
+            "10× Shredder Gyro",
+            "1× Exodus Modules"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 2 / Outfitting (4)",
+          "requirements": [
+            "5× Frequency Modulation Box",
+            "5× Advanced Electrical Components",
+            "3× Ion Sputter",
+            "3× Leaper Pulse Unit"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 2 / Load Stage (5)",
+          "requirements": [
+            "200,000 Coin worth of Combat Items Ammo, Grenades, Traps, Weapons, Weapon Mods",
+            "100,000 Coin worth of Survival Items Shields, Gadgets, Utilities, Augments, Regenerative",
+            "150,000 Coin worth of Provisions Nature, Miscellaneous, Trinkets, Old World, Keys",
+            "300,000 Coin worth of Materials"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 3 / Foundation (1)",
+          "requirements": [
+            "150× Metal Parts",
+            "100× Chemicals",
+            "80× ARC Alloy",
+            "15× Steel Spring"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 3 / Core Systems (2)",
+          "requirements": [
+            "30× Durable Cloth",
+            "25× Wires",
+            "20× Electrical Components",
+            "3× Industrial Charger"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 3 / Framework (3)",
+          "requirements": [
+            "1× Coffee Pot",
+            "25× Battery",
+            "5× Firefly Burner",
+            "1× Exodus Modules"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 3 / Outfitting (4)",
+          "requirements": [
+            "1× Broken Guidance System",
+            "5× Advanced Electrical Components",
+            "3× Breathtaking Snow Globe",
+            "2× Bombardier Cell"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 3 / Load Stage (5)",
+          "requirements": [
+            "200,000 Coin worth of Combat Items Ammo, Grenades, Traps, Weapons, Weapon Mods",
+            "100,000 Coin worth of Survival Items Shields, Gadgets, Utilities, Augments, Regenerative",
+            "150,000 Coin worth of Provisions Nature, Miscellaneous, Trinkets, Old World, Keys",
+            "300,000 Coin worth of Materials"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 4 / Foundation (1)",
+          "requirements": [
+            "150× Metal Parts",
+            "100× Chemicals",
+            "80× ARC Alloy",
+            "15× Canister"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 4 / Core Systems (2)",
+          "requirements": [
+            "30× Durable Cloth",
+            "25× Oil",
+            "20× Electrical Components",
+            "3× Industrial Charger"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 4 / Framework (3)",
+          "requirements": [
+            "20× ARC Motion Core",
+            "15× Speaker Component",
+            "5× Turbine Compressor",
+            "2× Exodus Modules"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 4 / Outfitting (4)",
+          "requirements": [
+            "1× Portable TV",
+            "5× Advanced Electrical Components",
+            "2× \"Sirena Dorata\" Ship Model",
+            "3× Vaporizer Regulator"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 4 / Load Stage (5)",
+          "requirements": [
+            "200,000 Coin worth of Combat Items Ammo, Grenades, Traps, Weapons, Weapon Mods",
+            "100,000 Coin worth of Survival Items Shields, Gadgets, Utilities, Augments, Regenerative",
+            "150,000 Coin worth of Provisions Nature, Miscellaneous, Trinkets, Old World, Keys",
+            "300,000 Coin worth of Materials"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 5 / Foundation (1)",
+          "requirements": [
+            "150× Metal Parts",
+            "100× Plastic Parts",
+            "80× ARC Alloy",
+            "15× Magnet"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 5 / Core Systems (2)",
+          "requirements": [
+            "30× Durable Cloth",
+            "25× Duct Tape",
+            "20× Mechanical Components",
+            "10× Voltage Converter"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 5 / Framework (3)",
+          "requirements": [
+            "20× ARC Circuitry",
+            "15× Speaker Component",
+            "5× Bastion Cell",
+            "3× Magnetic Accelerator"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 5 / Outfitting (4)",
+          "requirements": [
+            "2× Radio",
+            "5× Advanced Mechanical Components",
+            "3× Lance's Mixtape (5th Edition)",
+            "3× Rocketeer Driver"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        },
+        {
+          "name": "Expedition 5 / Load Stage (5)",
+          "requirements": [
+            "200,000 Coin worth of Combat Items Ammo, Grenades, Traps, Weapons, Weapon Mods",
+            "100,000 Coin worth of Survival Items Shields, Gadgets, Utilities, Augments, Regenerative",
+            "150,000 Coin worth of Provisions Nature, Miscellaneous, Trinkets, Old World, Keys",
+            "300,000 Coin worth of Materials"
+          ],
+          "rewards": [],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-expedition"
+    },
+    {
+      "entityId": "project-phantom-targets",
+      "name": "Phantom Targets",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "33 days"
+        },
+        {
+          "field": "Start",
+          "value": "August 04, 2026"
+        },
+        {
+          "field": "End",
+          "value": "September 06, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Part 1 / Upgrade Cargo Elevator Antennas (1)",
+          "requirements": [],
+          "rewards": [
+            "1× Combat Mk. 3 (Aggressive)",
+            "1× Heavy Shield",
+            "1× Vita Spray"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Part 1 / Test ARC Parts For Irregular Behavior (2)",
+          "requirements": [],
+          "rewards": [
+            "50× Raider Tokens",
+            "1× Aphelion",
+            "1× Dolabra",
+            "1× Jupiter"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Part 1 / Test Multiple Destruction Methods (3)",
+          "requirements": [],
+          "rewards": [
+            "50× Raider Tokens",
+            "1× Powered Descender",
+            "1× Horizontal Grip",
+            "1× Snap Hook"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Part 2 / Bring In Glitched Wasp Parts for Testing (4)",
+          "requirements": [
+            "10× Glitched ARC Power Converter",
+            "10× Glitched ARC Transmitter",
+            "10× Glitched ARC Phased Array",
+            "10× Advanced ARC Powercell"
+          ],
+          "rewards": [
+            "1× Canto III",
+            "1× Stable Stock III",
+            "1× Extended Medium Mag III",
+            "1× Silencer III"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Part 2 / Perform Final Tests on Glitched Wasp Parts (5)",
+          "requirements": [
+            "10× Glitched ARC Light Ring",
+            "10× Glitched ARC Circuitry",
+            "10× ARC Thermo Lining",
+            "10× ARC Circuitry"
+          ],
+          "rewards": [
+            "1× Fireworks Box Blueprint",
+            "1× Vulcano III",
+            "1× Extended Shotgun Mag III",
+            "1× Shotgun Silencer"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Part 2 / Conduct One Final Explosive Test (6)",
+          "requirements": [],
+          "rewards": [
+            "1× Computer Mouse (Backpack Charm) File:Computer Mouse Backpack Charm.png",
+            "1× Crash Mat Blueprint",
+            "1× Anvil IV",
+            "1× Anvil Splitter"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-phantom-targets"
+    },
+    {
+      "entityId": "project-converging-paths",
+      "name": "Converging Paths",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "42 days"
+        },
+        {
+          "field": "Start",
+          "value": "June 16, 2026"
+        },
+        {
+          "field": "End",
+          "value": "July 28, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Secure safe passage for the nomads (1)",
+          "requirements": [],
+          "rewards": [
+            "3× Pulse Mine",
+            "3× Lure Grenade Trap",
+            "25× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Collect Supplies (2)",
+          "requirements": [
+            "3× Train Model",
+            "2× Vintage Steering Wheel",
+            "2× Air Freshener",
+            "6× ARC Thermo Lining"
+          ],
+          "rewards": [
+            "3× Smoke Grenade Trap",
+            "3× Explosive Mine",
+            "25× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Procedure Relics (3)",
+          "requirements": [
+            "4× Sextant",
+            "3× Equatorial Sundial",
+            "5× Metal Brackets",
+            "7× ARC Performance Steel"
+          ],
+          "rewards": [
+            "3× Blaze Grenade Trap",
+            "3× Jolt Mine",
+            "1× Rascal II",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Create Emergency Caches (4)",
+          "requirements": [
+            "3× Tellurion",
+            "1× Elephant Obelisk",
+            "6× Light Bulb",
+            "9× ARC Coolant"
+          ],
+          "rewards": [
+            "3× Surge Coil",
+            "3× Blaze Grenade Trap",
+            "3× Explosive Mine",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Finish the cabinet of curiosities (5)",
+          "requirements": [
+            "6× Colorful Shoes (Rare)",
+            "3× Colorful Shoes (Epic)",
+            "2× Colorful Shoes (Legendary)",
+            "10× ARC Synthetic Resin"
+          ],
+          "rewards": [
+            "1× Combat Mk. 3 (Flanking)",
+            "1× Photoelectric Cloak",
+            "1× Bobcat II",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Use nomad tactics to fight ARC (6)",
+          "requirements": [
+            "950 damage"
+          ],
+          "rewards": [
+            "1× Sextant",
+            "1× Red Black (Saltwalker color)",
+            "100× Raider Tokens",
+            "1× Surge Coil Blueprint"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-converging-paths"
+    },
+    {
+      "entityId": "project-avian-alarm",
+      "name": "Avian Alarm",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "28 days"
+        },
+        {
+          "field": "Start",
+          "value": "April 28, 2026"
+        },
+        {
+          "field": "End",
+          "value": "May 26, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Initial Flock Intake (1)",
+          "requirements": [],
+          "rewards": [
+            "1× Dockmaster's Detector",
+            "25× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Preliminary Signal birds (2)",
+          "requirements": [
+            "7× Tick Pod",
+            "20× Canister",
+            "12× Moss",
+            "5× \"Twilight Compass\" Ship Model"
+          ],
+          "rewards": [
+            "1× Heavy Gun Parts Blueprint",
+            "3× Surge Coil",
+            "25× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Secondary Validation Birds (3)",
+          "requirements": [
+            "3× Comet Igniter",
+            "10× Fertilizer",
+            "8× Rusted Tools",
+            "5× \"Velocity\" Ship Model"
+          ],
+          "rewards": [
+            "1× Anvil IV",
+            "1× Anvil Splitter",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Heightened Alert Birds (4)",
+          "requirements": [
+            "1× Vaporizer Regulator",
+            "3× Water Filter",
+            "8× Agave",
+            "5× \"Sirena Dorata\" Ship Model"
+          ],
+          "rewards": [
+            "1× Gel Patches",
+            "1× Riven Tides Hotel Keycard No. 311",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Critical Warning Birds (5)",
+          "requirements": [
+            "2× Turbine Compressor",
+            "3× Red Coral Jewelry",
+            "4× Roots",
+            "1× \"Leviathan's Crown\" Ship Model"
+          ],
+          "rewards": [
+            "1× Bird House",
+            "1× Fist In Air",
+            "1× Acoustic Guitar",
+            "100× Raider Tokens"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-avian-alarm"
+    },
+    {
+      "entityId": "project-high-gain-antenna",
+      "name": "High-Gain Antenna",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "27 days"
+        },
+        {
+          "field": "Start",
+          "value": "March 31, 2026"
+        },
+        {
+          "field": "End",
+          "value": "April 27, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Sturdy Base (1)",
+          "requirements": [
+            "50× ARC Alloy",
+            "10× ARC Flex Rubber",
+            "10× ARC Performance Steel",
+            "15× Advanced ARC Powercell"
+          ],
+          "rewards": [
+            "1× Torrente II",
+            "1× Extended Medium Mag III",
+            "1× Extended Barrel III",
+            "1× Padded Stock"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Data Logger (2)",
+          "requirements": [
+            "15× ARC Coolant",
+            "15× ARC Thermo Lining",
+            "4× Vaporizer Regulator",
+            "6× Assessor Matrix"
+          ],
+          "rewards": [
+            "1× Bobcat III",
+            "1× Extended Light Mag III",
+            "1× Vertical Grip III",
+            "100× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Parabolic Dish (3)",
+          "requirements": [
+            "10× Surveyor Vault",
+            "20× ARC Synthetic Resin",
+            "15× Vaporizer Regulator",
+            "18× Assessor Matrix"
+          ],
+          "rewards": [
+            "1× Vita Spray",
+            "1× Photoelectric Cloak",
+            "1× Snap Hook",
+            "400× Raider Tokens"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-high-gain-antenna"
+    },
+    {
+      "entityId": "project-weather-monitor-system",
+      "name": "Weather Monitor System",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "35 days"
+        },
+        {
+          "field": "Start",
+          "value": "February 24, 2026"
+        },
+        {
+          "field": "End",
+          "value": "March 31, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Atmospheric Pressure (1)",
+          "requirements": [
+            "25× Plastic Parts",
+            "15× Metal Parts",
+            "5× ARC Alloy",
+            "3× Oil"
+          ],
+          "rewards": [
+            "5× Durable Cloth",
+            "5× Great Mullein",
+            "5× Antiseptic",
+            "3× Vita Shot"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Sunlight (2)",
+          "requirements": [
+            "1× Snitch Scanner",
+            "3× Wires",
+            "3× Sensors",
+            "1× Comet Igniter"
+          ],
+          "rewards": [
+            "10× Processor",
+            "5× Advanced Electrical Components",
+            "3× Zipline",
+            "1× Raider Hatch Key"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Precipitation (3)",
+          "requirements": [
+            "5× ARC Powercell",
+            "5× Canister",
+            "5× Steel Spring",
+            "1× Fine Wristwatch"
+          ],
+          "rewards": [
+            "3× Medium Gun Parts",
+            "2× Complex Gun Parts",
+            "3× Advanced Mechanical Components",
+            "1× Renegade III"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Humidity (4)",
+          "requirements": [
+            "10× Duct Tape",
+            "3× Rusted Bolts",
+            "1× Water Pump",
+            "3× Wasp Driver"
+          ],
+          "rewards": [
+            "10× Explosive Compound",
+            "3× Showstopper",
+            "3× Trailblazer",
+            "1× Extended Barrel III"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Temperature (5)",
+          "requirements": [
+            "3× Camera Lens",
+            "1× Damaged Heat Sink",
+            "1× Firefly Burner",
+            "3× Voltage Converter"
+          ],
+          "rewards": [
+            "1× Medium Shield",
+            "5× Surge Shield Recharger",
+            "3× Sterilized Bandage",
+            "1× Tactical Mk. 3 (Revival)"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [
+        "1× Anemometer (Backpack Charm)",
+        "250× Raider Tokens"
+      ],
+      "sourceId": "wiki-project-review-project-weather-monitor-system"
+    },
+    {
+      "entityId": "project-flickering-flames",
+      "name": "Flickering Flames",
+      "availability": "histórico",
+      "period": [
+        {
+          "field": "Type",
+          "value": "Temporary"
+        },
+        {
+          "field": "Duration",
+          "value": "28 days"
+        },
+        {
+          "field": "Start",
+          "value": "December 16, 2025"
+        },
+        {
+          "field": "End",
+          "value": "January 13, 2026"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Candlelight (1)",
+          "requirements": [
+            "1× Empty Wine Bottle",
+            "25× Plastic Parts",
+            "5× Durable Cloth",
+            "20× Candleberries"
+          ],
+          "rewards": [
+            "5× Firecracker",
+            "1,000× Merit",
+            "1,000× Merit",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Decorations (2)",
+          "requirements": [
+            "3× Candle Holder",
+            "3× Light Bulb",
+            "1× Industrial Battery",
+            "50× Candleberries"
+          ],
+          "rewards": [
+            "1× Red Light Stick Blueprint",
+            "1,000× Merit",
+            "1,000× Merit",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Presents (3)",
+          "requirements": [
+            "5× Snap Blast Grenade",
+            "10× Duct Tape",
+            "1× Film Reel",
+            "60× Candleberries"
+          ],
+          "rewards": [
+            "3× Trailblazer",
+            "1,000× Merit",
+            "1,000× Merit",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Beverages (4)",
+          "requirements": [
+            "2× Coffee Pot",
+            "10× Fireball Burner",
+            "2× Water Filter",
+            "60× Candleberries"
+          ],
+          "rewards": [
+            "1× Vita Spray",
+            "1,000× Merit",
+            "1,000× Merit",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        },
+        {
+          "name": "Meals (5)",
+          "requirements": [
+            "7× Mushroom",
+            "2× Frying Pan",
+            "2× Music Album",
+            "70× Candleberries"
+          ],
+          "rewards": [
+            "1× Snap Hook",
+            "1,000× Merit",
+            "1,000× Merit",
+            "50× Raider Tokens"
+          ],
+          "confidence": "probable"
+        }
+      ],
+      "completion": [],
+      "sourceId": "wiki-project-review-project-flickering-flames"
+    }
+  ]
+}
