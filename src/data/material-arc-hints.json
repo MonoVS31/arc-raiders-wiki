@@ -1,0 +1,142 @@
+[
+  {
+    "material": "Pop Trigger",
+    "entityId": "arc-pop",
+    "enemyName": "Pop",
+    "sourceId": "wiki-pop",
+    "confidence": "posible"
+  },
+  {
+    "material": "Sentinel Firing Core",
+    "entityId": "arc-sentinel",
+    "enemyName": "Sentinel",
+    "sourceId": "wiki-sentinel",
+    "confidence": "posible"
+  },
+  {
+    "material": "Shredder Gyro",
+    "entityId": "arc-shredder",
+    "enemyName": "Shredder",
+    "sourceId": "wiki-shredder",
+    "confidence": "posible"
+  },
+  {
+    "material": "Vaporizer Regulator",
+    "entityId": "arc-vaporizer",
+    "enemyName": "Vaporizer",
+    "sourceId": "wiki-vaporizer",
+    "confidence": "posible"
+  },
+  {
+    "material": "Tick Pod",
+    "entityId": "arc-tick",
+    "enemyName": "Tick",
+    "sourceId": "wiki-tick",
+    "confidence": "posible"
+  },
+  {
+    "material": "Surveyor Vault",
+    "entityId": "arc-surveyor",
+    "enemyName": "Surveyor",
+    "sourceId": "wiki-surveyor",
+    "confidence": "posible"
+  },
+  {
+    "material": "Spotter Relay",
+    "entityId": "arc-spotter",
+    "enemyName": "Spotter",
+    "sourceId": "wiki-spotter",
+    "confidence": "posible"
+  },
+  {
+    "material": "Wasp Driver",
+    "entityId": "arc-wasp",
+    "enemyName": "Wasp",
+    "sourceId": "wiki-wasp",
+    "confidence": "posible"
+  },
+  {
+    "material": "Leaper Pulse Unit",
+    "entityId": "arc-leaper",
+    "enemyName": "Leaper",
+    "sourceId": "wiki-leaper",
+    "confidence": "posible"
+  },
+  {
+    "material": "Bastion Cell",
+    "entityId": "arc-bastion",
+    "enemyName": "Bastion",
+    "sourceId": "wiki-bastion",
+    "confidence": "posible"
+  },
+  {
+    "material": "Rocketeer Driver",
+    "entityId": "arc-rocketeer",
+    "enemyName": "Rocketeer",
+    "sourceId": "wiki-rocketeer",
+    "confidence": "posible"
+  },
+  {
+    "material": "Queen Reactor",
+    "entityId": "arc-queen",
+    "enemyName": "Queen",
+    "sourceId": "wiki-queen",
+    "confidence": "posible"
+  },
+  {
+    "material": "Bombardier Cell",
+    "entityId": "arc-bombardier",
+    "enemyName": "Bombardier",
+    "sourceId": "wiki-bombardier",
+    "confidence": "posible"
+  },
+  {
+    "material": "Matriarch Reactor",
+    "entityId": "arc-matriarch",
+    "enemyName": "Matriarch",
+    "sourceId": "wiki-matriarch",
+    "confidence": "posible"
+  },
+  {
+    "material": "Chemicals",
+    "entityId": "arc-firefly",
+    "enemyName": "Firefly",
+    "sourceId": "wiki-firefly",
+    "confidence": "posible"
+  },
+  {
+    "material": "Firefly Burner",
+    "entityId": "arc-firefly",
+    "enemyName": "Firefly",
+    "sourceId": "wiki-firefly",
+    "confidence": "posible"
+  },
+  {
+    "material": "Turbine Compressor",
+    "entityId": "arc-arc-turbine",
+    "enemyName": "ARC Turbine",
+    "sourceId": "wiki-arc-turbine",
+    "confidence": "posible"
+  },
+  {
+    "material": "Comet Igniter",
+    "entityId": "arc-comet",
+    "enemyName": "Comet",
+    "sourceId": "wiki-comet",
+    "confidence": "posible"
+  },
+  {
+    "material": "Snitch Scanner",
+    "entityId": "arc-snitch",
+    "enemyName": "Snitch",
+    "sourceId": "wiki-snitch",
+    "confidence": "posible"
+  },
+  {
+    "material": "Fireball Burner",
+    "entityId": "arc-fireball",
+    "enemyName": "Fireball",
+    "sourceId": "wiki-fireball",
+    "confidence": "posible"
+  }
+]

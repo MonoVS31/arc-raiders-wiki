@@ -64,21 +64,21 @@ function MapCanvas({config,floorId,markers,selectedId,onSelect}:{config:MapConfi
  </>;
 }
 
-export default function MapExplorer({mapId,blueprintId}:{mapId:string;blueprintId?:string|undefined}){
+export default function MapExplorer({mapId,blueprintId,arcId}:{mapId:string;blueprintId?:string|undefined;arcId?:string|undefined}){
  const config=mapManifest.maps.find(map=>map.id===mapId);
  if(!config)return <p className="notice">El mapa todavía no tiene cartografía revisada.</p>;
- return <LoadedMap key={`${config.slug}:${blueprintId??''}`} config={config} blueprintId={blueprintId}/>;
+ return <LoadedMap key={`${config.slug}:${blueprintId??''}:${arcId??''}`} config={config} blueprintId={blueprintId} arcId={arcId}/>;
 }
-function LoadedMap({config,blueprintId}:{config:MapConfig;blueprintId?:string|undefined}){
+function LoadedMap({config,blueprintId,arcId}:{config:MapConfig;blueprintId?:string|undefined;arcId?:string|undefined}){
  const route=blueprintId?routeForBlueprint(blueprintId):undefined;
  const [snapshot,setSnapshot]=useState<MapSnapshot|null>(null),[error,setError]=useState<string|null>(null);
- const [floorId,setFloorId]=useState(config.defaultFloorId),[kind,setKind]=useState<MapFilters['kind']>(route?.mapScope==='quest'?'quest-objective':'weapon-case');
+ const [floorId,setFloorId]=useState(config.defaultFloorId),[kind,setKind]=useState<MapFilters['kind']>(arcId?'arc':route?.mapScope==='quest'?'quest-objective':'weapon-case');
  const [conditionBit,setConditionBit]=useState<number|null>(null),[query,setQuery]=useState(''),[selectedId,setSelectedId]=useState<string|null>(null);
  const floor=config.floors.find(floor=>floor.id===floorId)??config.floors[0]!;
  useEffect(()=>{const abort=new AbortController();loadMapSnapshot(config,abort.signal).then(data=>setSnapshot(data)).catch(error=>{if(error instanceof Error&&error.name!=='AbortError')setError('No se pudo cargar la información del mapa. Intentá nuevamente.');});return()=>abort.abort();},[config]);
  const questKey=route?.quest?.replaceAll("'",'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
  const markers=useMemo(()=>snapshot?.markers.filter(marker=>markerMatches(marker,{kind,floorIndex:floor.index,conditionBit,query})&&
-  !(kind==='quest-objective'&&route?.mapScope==='quest'&&questKey&&marker.subtype!==questKey))??[],[snapshot,kind,floor.index,conditionBit,query,route?.mapScope,questKey]);
+  !(kind==='quest-objective'&&route?.mapScope==='quest'&&questKey&&marker.subtype!==questKey)&&!(kind==='arc'&&arcId&&arcIdForSubtype(marker.subtype)!==arcId))??[],[snapshot,kind,floor.index,conditionBit,query,route?.mapScope,questKey,arcId]);
  const selected=markers.find(marker=>marker.id===selectedId);
  const arc=selected?.kind==='arc'?catalog.entities.find(entity=>entity.id===arcIdForSubtype(selected.subtype)&&entity.category==='arc'):undefined;
  const arcClaims=arc?claimsFor(catalog,arc.id).filter(claim=>['punto débil','blindaje','consejo'].includes(claim.field)):[];
@@ -86,6 +86,7 @@ function LoadedMap({config,blueprintId}:{config:MapConfig;blueprintId?:string|un
  if(!snapshot)return <p role="status" className="map-loading">Cargando mapa y reportes comunitarios…</p>;
  return <section className="map-explorer" aria-label="Explorador de ubicaciones">
   <p className="map-note">Ubicaciones posibles de una fuente comunitaria. La posición del reporte se conserva; su aparición no está garantizada.</p>
+  {arcId&&<aside className="route-focus"><strong>ARC objetivo: {catalog.entities.find(entity=>entity.id===arcId)?.name}</strong><p>En la vista de enemigos se muestran solo los reportes de esta máquina para el piso seleccionado.</p></aside>}
   {route&&<aside className="route-focus"><strong>Plano objetivo: {route.name}</strong><p>{route.note}</p><p>{route.mapScope==='quest'?'Los puntos son objetivos de la misión; el plano se recompensa al completarla.':'Este mapa muestra reportes de cajas y ARC. No representa posiciones exactas de ese plano.'}</p></aside>}
   <div className="map-filters">
    <label>Piso<select value={floorId} onChange={event=>{setFloorId(event.target.value);setSelectedId(null);}}>{config.floors.map(floor=><option key={floor.id} value={floor.id}>{floor.label}</option>)}</select></label>

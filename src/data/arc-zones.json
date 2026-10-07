@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-07T05:05:49.656Z",
+  "revisionSourceId": "wiki-revision-review",
+  "enemies": [
+    {
+      "entityId": "arc-snitch",
+      "layout": "drone-four",
+      "revision": "41402",
+      "sourceIds": [
+        "wiki-snitch"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Cuatro propulsores",
+          "kind": "weak",
+          "description": "Dañarlos desestabiliza el vuelo. El movimiento errático puede dificultar los disparos siguientes.",
+          "evidence": "four unarmored thrusters",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-wasp",
+      "layout": "drone-four",
+      "revision": "41276",
+      "sourceIds": [
+        "wiki-wasp"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Cuatro propulsores",
+          "kind": "weak",
+          "description": "Destruir varios desestabiliza el vuelo; evitá sus ráfagas desde cobertura.",
+          "evidence": "four thrusters",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-hornet",
+      "layout": "drone-four",
+      "revision": "41277",
+      "sourceIds": [
+        "wiki-hornet"
+      ],
+      "zones": [
+        {
+          "id": "rear",
+          "label": "Propulsores traseros",
+          "kind": "weak",
+          "description": "Son el punto débil declarado; buscar un ángulo trasero permite evitar el blindaje frontal.",
+          "evidence": "WeaknessRear thrusters",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "front",
+          "label": "Propulsores delanteros",
+          "kind": "protected",
+          "description": "Los propulsores delanteros están protegidos por blindaje.",
+          "evidence": "forward thrusters protected by thick armor",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-tick",
+      "layout": "components",
+      "revision": "41290",
+      "sourceIds": [
+        "wiki-tick"
+      ],
+      "zones": [
+        {
+          "id": "unknown",
+          "label": "Zona débil no especificada",
+          "kind": "unknown",
+          "description": "La ficha no identifica un punto débil específico. No se añade uno por suposición.",
+          "evidence": "Combat tips",
+          "condition": "",
+          "confidence": "no confirmado"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-pop",
+      "layout": "components",
+      "revision": "34694",
+      "sourceIds": [
+        "wiki-pop"
+      ],
+      "zones": [
+        {
+          "id": "unknown",
+          "label": "Zona débil no especificada",
+          "kind": "unknown",
+          "description": "La ficha no identifica un punto débil específico. No se añade uno por suposición.",
+          "evidence": "Combat tips",
+          "condition": "",
+          "confidence": "no confirmado"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-fireball",
+      "layout": "shell-core",
+      "revision": "34695",
+      "sourceIds": [
+        "wiki-fireball"
+      ],
+      "zones": [
+        {
+          "id": "core",
+          "label": "Núcleo expuesto",
+          "kind": "weak",
+          "description": "El panel frontal se abre al atacar y deja el núcleo sin protección.",
+          "evidence": "exposing their unarmored core",
+          "condition": "Panel frontal abierto",
+          "confidence": "probable"
+        },
+        {
+          "id": "shell",
+          "label": "Carcasa cerrada",
+          "kind": "protected",
+          "description": "La carcasa es resistente; la ficha describe que la munición ligera rebota en ella.",
+          "evidence": "Light Ammo weapons are ineffective against its shell",
+          "condition": "Mientras el panel está cerrado",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-turret",
+      "layout": "components",
+      "revision": "35190",
+      "sourceIds": [
+        "wiki-turret"
+      ],
+      "zones": [
+        {
+          "id": "unknown",
+          "label": "Zona débil no especificada",
+          "kind": "unknown",
+          "description": "La ficha no identifica un punto débil específico. No se añade uno por suposición.",
+          "evidence": "Combat tips",
+          "condition": "",
+          "confidence": "no confirmado"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-sentinel",
+      "layout": "components",
+      "revision": "35185",
+      "sourceIds": [
+        "wiki-sentinel"
+      ],
+      "zones": [
+        {
+          "id": "canister",
+          "label": "Cápsula amarilla trasera",
+          "kind": "weak",
+          "description": "La cápsula está detrás del brazo giratorio. Buscar cobertura entre disparos y apuntar a esa cápsula.",
+          "evidence": "capsule attached to the rear",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje ligero",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; no identifica por sí sola una placa ni un porcentaje.",
+          "evidence": "ArmorLight",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-surveyor",
+      "layout": "shell-core",
+      "revision": "34698",
+      "sourceIds": [
+        "wiki-surveyor"
+      ],
+      "zones": [
+        {
+          "id": "core",
+          "label": "Núcleo durante transmisión",
+          "kind": "weak",
+          "description": "El núcleo queda expuesto y la máquina se detiene al transmitir; puede interrumpir la transmisión y escapar.",
+          "evidence": "core is exposed and it is stationary",
+          "condition": "Transmisión activa",
+          "confidence": "probable"
+        },
+        {
+          "id": "shell",
+          "label": "Carcasa blindada",
+          "kind": "protected",
+          "description": "La carcasa protege al Surveyor cuando el núcleo no está expuesto.",
+          "evidence": "completely protected by an armored shell",
+          "condition": "Carcasa cerrada",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-shredder",
+      "layout": "components",
+      "revision": "37273",
+      "sourceIds": [
+        "wiki-shredder"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Propulsión azul",
+          "kind": "weak",
+          "description": "La ficha identifica los chorros o propulsores azules como puntos débiles. Buscar ventanas desde una puerta o esquina.",
+          "evidence": "blue jet / jet-propeller",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-comet",
+      "layout": "shell-core",
+      "revision": "41436",
+      "sourceIds": [
+        "wiki-comet"
+      ],
+      "zones": [
+        {
+          "id": "core",
+          "label": "Interior al abrirse",
+          "kind": "weak",
+          "description": "La abertura durante la carga expone el punto débil. No quedarse cerca esperando la explosión.",
+          "evidence": "split open the armor shell",
+          "condition": "Durante la carga, cuando abre la carcasa",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-firefly",
+      "layout": "drone-four",
+      "revision": "41421",
+      "sourceIds": [
+        "wiki-firefly"
+      ],
+      "zones": [
+        {
+          "id": "tank",
+          "label": "Depósito amarillo",
+          "kind": "weak",
+          "description": "El depósito queda sin blindaje al extender el lanzallamas.",
+          "evidence": "unarmored yellow fuel tank",
+          "condition": "Lanzallamas extendido",
+          "confidence": "probable"
+        },
+        {
+          "id": "thrusters",
+          "label": "Cuatro propulsores blindados",
+          "kind": "protected",
+          "description": "Todos sus propulsores están protegidos; priorizar el depósito expuesto.",
+          "evidence": "four thrusters for flight and stabilization, all protected by thick armor",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-spotter",
+      "layout": "components",
+      "revision": "41283",
+      "sourceIds": [
+        "wiki-spotter"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Propulsores",
+          "kind": "weak",
+          "description": "Punto débil declarado. Romper la línea de visión también evita que marque tu posición.",
+          "evidence": "WeaknessThrusters",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "unarmored",
+          "label": "Sin blindaje declarado",
+          "kind": "unarmored",
+          "description": "La ficha declara ausencia de blindaje. Eso no demuestra un multiplicador especial de daño.",
+          "evidence": "ArmorNone",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-bombardier",
+      "layout": "components",
+      "revision": "41422",
+      "sourceIds": [
+        "wiki-bombardier"
+      ],
+      "zones": [
+        {
+          "id": "joints",
+          "label": "Articulaciones amarillas",
+          "kind": "weak",
+          "description": "Dañarlas reduce movilidad y expone partes internas sin blindaje.",
+          "evidence": "yellow kneecaps",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "rear",
+          "label": "Cilindro trasero",
+          "kind": "weak",
+          "description": "La ficha identifica el cilindro amarillo trasero como objetivo de daño crítico.",
+          "evidence": "yellow cylinder on their rear",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje ligero",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; no identifica por sí sola una placa ni un porcentaje.",
+          "evidence": "ArmorLight",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-bastion",
+      "layout": "components",
+      "revision": "35178",
+      "sourceIds": [
+        "wiki-bastion"
+      ],
+      "zones": [
+        {
+          "id": "joints",
+          "label": "Articulaciones amarillas",
+          "kind": "weak",
+          "description": "Las articulaciones son puntos débiles y dañarlas puede crear una ventana de aturdimiento.",
+          "evidence": "yellow kneecaps",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "rear",
+          "label": "Cilindro y parte trasera",
+          "kind": "weak",
+          "description": "Destruir el cilindro retira la placa trasera y expone una pieza interna vulnerable.",
+          "evidence": "peels back its rear plate",
+          "condition": "La pieza interna queda expuesta tras retirar la placa",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Placas exteriores",
+          "kind": "protected",
+          "description": "El Bastion está cubierto por placas gruesas; buscar articulaciones y la parte trasera expuesta.",
+          "evidence": "Covered in thick plating",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-leaper",
+      "layout": "components",
+      "revision": "41301",
+      "sourceIds": [
+        "wiki-leaper"
+      ],
+      "zones": [
+        {
+          "id": "eye",
+          "label": "Ojo",
+          "kind": "weak",
+          "description": "Punto débil declarado. La tabla de anatomía distingue ojo y sus placas de protección.",
+          "evidence": "WeaknessEye",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "joints",
+          "label": "Articulaciones",
+          "kind": "weak",
+          "description": "La ficha identifica las articulaciones; no equivale a disparar indistintamente a cualquier placa de la pata.",
+          "evidence": "Leg Joints",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "plates",
+          "label": "Placas de ojo y patas",
+          "kind": "protected",
+          "description": "La anatomía distingue placas de protección de las piezas internas. Los porcentajes se muestran como datos no corroborados.",
+          "evidence": "Leg Armour",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": [
+        {
+          "part": "Core (Main)",
+          "armor": "Light",
+          "physical": "0%",
+          "explosive": "50%",
+          "confidence": "no confirmado"
+        },
+        {
+          "part": "Frame",
+          "armor": "Heavy",
+          "physical": "40%",
+          "explosive": "70%",
+          "confidence": "no confirmado"
+        },
+        {
+          "part": "Eye Plates (3x)",
+          "armor": "Medium",
+          "physical": "80%",
+          "explosive": "90%",
+          "confidence": "no confirmado"
+        },
+        {
+          "part": "Leg Armour (12x)",
+          "armor": "Heavy",
+          "physical": "80%",
+          "explosive": "90%",
+          "confidence": "no confirmado"
+        },
+        {
+          "part": "Eye Armour",
+          "armor": "Heavy",
+          "physical": "80%",
+          "explosive": "90%",
+          "confidence": "no confirmado"
+        },
+        {
+          "part": "Legs (12x)",
+          "armor": "Light",
+          "physical": "0%",
+          "explosive": "50%",
+          "confidence": "no confirmado"
+        }
+      ]
+    },
+    {
+      "entityId": "arc-rocketeer",
+      "layout": "components",
+      "revision": "41477",
+      "sourceIds": [
+        "wiki-rocketeer"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Parte superior de propulsores",
+          "kind": "weak",
+          "description": "La parte superior de los propulsores carece de blindaje según la guía. Buscar altura y cobertura.",
+          "evidence": "top of its thrusters, since they don't have any armor",
+          "condition": "Ángulo desde arriba",
+          "confidence": "probable"
+        },
+        {
+          "id": "top",
+          "label": "Punto superior bajo la placa",
+          "kind": "weak",
+          "description": "Retirar la placa que la guía llama ceja permite atacar el punto débil superior.",
+          "evidence": "shooting off its \"eyebrow\"",
+          "condition": "Placa retirada",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-vaporizer",
+      "layout": "components",
+      "revision": "41287",
+      "sourceIds": [
+        "wiki-vaporizer"
+      ],
+      "zones": [
+        {
+          "id": "thrusters",
+          "label": "Propulsores",
+          "kind": "weak",
+          "description": "Punto débil declarado en la ficha.",
+          "evidence": "WeaknessThrusters",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "core",
+          "label": "Núcleo inferior",
+          "kind": "weak",
+          "description": "Dañar la parte inferior desprende un pequeño panel y expone el núcleo.",
+          "evidence": "exposing its core",
+          "condition": "Panel inferior retirado",
+          "confidence": "probable"
+        },
+        {
+          "id": "shield",
+          "label": "Escudo de energía",
+          "kind": "protected",
+          "description": "El escudo activo bloquea proyectiles; esperar a que termine para aprovechar la ventana de ataque.",
+          "evidence": "shield will block all kinds of projectile damage",
+          "condition": "Escudo activo",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-arc-turbine",
+      "layout": "components",
+      "revision": "41494",
+      "sourceIds": [
+        "wiki-arc-turbine"
+      ],
+      "zones": [
+        {
+          "id": "landing",
+          "label": "Depósitos giratorios amarillos",
+          "kind": "weak",
+          "description": "Son visibles por los huecos del tren de aterrizaje cuando la máquina está en tierra.",
+          "evidence": "spinning yellow \"tanks\"",
+          "condition": "Aterrizado; tren desplegado",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-queen",
+      "layout": "components",
+      "revision": "39440",
+      "sourceIds": [
+        "wiki-queen"
+      ],
+      "zones": [
+        {
+          "id": "core",
+          "label": "Núcleo",
+          "kind": "weak",
+          "description": "La ficha identifica el núcleo, sin una posición de impacto calibrada sobre esta imagen.",
+          "evidence": "WeaknessCore",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "joints",
+          "label": "Articulaciones",
+          "kind": "weak",
+          "description": "Las articulaciones figuran entre sus puntos débiles. Mantener cobertura y distancia ante sus ataques de área.",
+          "evidence": "Leg Joints",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "armor",
+          "label": "Blindaje pesado",
+          "kind": "protected",
+          "description": "Categoría general de blindaje; esta fuente no precisa una zona resistente ni una reducción porcentual.",
+          "evidence": "ArmorHeavy",
+          "condition": "",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    },
+    {
+      "entityId": "arc-matriarch",
+      "layout": "components",
+      "revision": "40929",
+      "sourceIds": [
+        "wiki-matriarch"
+      ],
+      "zones": [
+        {
+          "id": "core",
+          "label": "Núcleo tras placas faciales",
+          "kind": "weak",
+          "description": "La guía recomienda retirar las placas faciales para exponer el núcleo rojo.",
+          "evidence": "faceplates until they break off",
+          "condition": "Placas faciales retiradas",
+          "confidence": "probable"
+        },
+        {
+          "id": "joints",
+          "label": "Articulaciones",
+          "kind": "weak",
+          "description": "La ficha las declara débiles, aunque el consejo comunitario prioriza el núcleo.",
+          "evidence": "Leg Joints",
+          "condition": "",
+          "confidence": "probable"
+        },
+        {
+          "id": "shield",
+          "label": "Escudo de energía",
+          "kind": "protected",
+          "description": "Bloquea proyectiles externos. La ficha distingue disparos realizados desde dentro del escudo.",
+          "evidence": "only projectiles and throwables from within the shield",
+          "condition": "Escudo activo",
+          "confidence": "probable"
+        }
+      ],
+      "resistances": []
+    }
+  ]
+}

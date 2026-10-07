@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Edición 1.0 lista para revisar:** zonas y condiciones interactivas para los 21 ARC, 83 rutas contrastadas con sus fichas y otro catálogo, etapas de nueve proyectos, recompensas de planos y enlaces directos entre materiales, enemigos y mapas. Cada ficha se puede compartir para señalar errores. [Alcance y revisión](docs/10-edicion-para-revision.md).
+
 Investigación pública con corte **6 de octubre de 2026**, arquitectura documentada antes de la implementación y primera aplicación local con búsqueda, filtros y fichas con fuentes por campo. Las estadísticas comunitarias están clasificadas como probables; anuncios oficiales confirmados se separan del contenido disponible. Los desconocidos y conflictos son visibles.
 
 Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó ninguno. La investigación, documentación, catálogo y base web están publicados en https://github.com/MonoVS31/arc-raiders-wiki. El contenido publicado coincide con la base revisada en la PC. El acceso de la conexión está limitado a este repositorio.
@@ -14,9 +16,11 @@ Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó 
 
 **Versión 0.3:** comparador de armas con niveles y mejoras, panel de puntos débiles/blindaje/consejos y visualización geométrica de granadas con fuentes. Detalles en `docs/08-combat-tools.md`.
 
-Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC y verificación dentro del juego. La versión 0.4 añade 21 referencias visuales ARC y un flujo verificado de publicación con GitHub Pages; ver `docs/09-publicacion-y-mantenimiento.md`. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
+La versión 0.4 añadió referencias visuales ARC y publicación con GitHub Pages; la 1.0 añade esquemas orientativos y revisión de rutas por campo. Sigue pendiente corroborar dentro del juego los datos sin evidencia primaria. Los diagramas no representan zonas exactas de impacto. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
 
 La entrega 0.4 pasó 29 pruebas, TypeScript y compilación en local y GitHub. La URL pública fue comprobada con el visor de Dam (48 reportes de cajas), carga de imagen ARC y consulta de blindaje. La guía PDF de 32 páginas se entrega por separado con el recorrido de construcción, instrucciones de uso, documentación de las fases y registro de 148 fuentes.
+
+La edición 1.0 pasa 43 pruebas y conserva 159 fuentes. Su revisión cubre 112 páginas de objetos/ARC y nueve fichas de proyectos. Se corrigió la interpretación de una ruta de Aphelion: la ficha del arma no confirma dónde aparece el plano. Las recompensas por misión, proyectos y botín conservan evidencia y disponibilidad separadas.
 
 ## Ejecutar
 

@@ -1,0 +1,2900 @@
+[
+  {
+    "id": "extra-weapon-kettle-headshot-multiplier",
+    "subjectId": "weapon-kettle",
+    "field": "Headshot Multiplier",
+    "value": "2.5x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-kettle-durability",
+    "subjectId": "weapon-kettle",
+    "field": "Durability",
+    "value": "625 | 698 | 781 | 898 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-kettle-stability",
+    "subjectId": "weapon-kettle",
+    "field": "Stability",
+    "value": "69.8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-kettle-agility",
+    "subjectId": "weapon-kettle",
+    "field": "Agility",
+    "value": "58.5",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-kettle-stealth",
+    "subjectId": "weapon-kettle",
+    "field": "Stealth",
+    "value": "26",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-kettle-weight",
+    "subjectId": "weapon-kettle",
+    "field": "Weight",
+    "value": "7.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-kettle"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-headshot-multiplier",
+    "subjectId": "weapon-rattler",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-durability",
+    "subjectId": "weapon-rattler",
+    "field": "Durability",
+    "value": "517 | 575 | 649 | 737 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-stability",
+    "subjectId": "weapon-rattler",
+    "field": "Stability",
+    "value": "72.2",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-agility",
+    "subjectId": "weapon-rattler",
+    "field": "Agility",
+    "value": "54.8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-stealth",
+    "subjectId": "weapon-rattler",
+    "field": "Stealth",
+    "value": "14",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rattler-weight",
+    "subjectId": "weapon-rattler",
+    "field": "Weight",
+    "value": "6.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rattler"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-headshot-multiplier",
+    "subjectId": "weapon-arpeggio",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-durability",
+    "subjectId": "weapon-arpeggio",
+    "field": "Durability",
+    "value": "729 | 810 | 911 | 1041 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-stability",
+    "subjectId": "weapon-arpeggio",
+    "field": "Stability",
+    "value": "84",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-agility",
+    "subjectId": "weapon-arpeggio",
+    "field": "Agility",
+    "value": "57.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-stealth",
+    "subjectId": "weapon-arpeggio",
+    "field": "Stealth",
+    "value": "14",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-arpeggio-weight",
+    "subjectId": "weapon-arpeggio",
+    "field": "Weight",
+    "value": "7.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arpeggio"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-headshot-multiplier",
+    "subjectId": "weapon-tempest",
+    "field": "Headshot Multiplier",
+    "value": "1.5x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-durability",
+    "subjectId": "weapon-tempest",
+    "field": "Durability",
+    "value": "950 | 1055 | 1187 | 1366 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-stability",
+    "subjectId": "weapon-tempest",
+    "field": "Stability",
+    "value": "78.9",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-agility",
+    "subjectId": "weapon-tempest",
+    "field": "Agility",
+    "value": "46",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-stealth",
+    "subjectId": "weapon-tempest",
+    "field": "Stealth",
+    "value": "14",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-tempest-weight",
+    "subjectId": "weapon-tempest",
+    "field": "Weight",
+    "value": "11.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tempest"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-headshot-multiplier",
+    "subjectId": "weapon-bettina",
+    "field": "Headshot Multiplier",
+    "value": "1.5x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-durability",
+    "subjectId": "weapon-bettina",
+    "field": "Durability",
+    "value": "759 | 843 | 948 | 1095 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-stability",
+    "subjectId": "weapon-bettina",
+    "field": "Stability",
+    "value": "79.7",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-agility",
+    "subjectId": "weapon-bettina",
+    "field": "Agility",
+    "value": "49.4",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-stealth",
+    "subjectId": "weapon-bettina",
+    "field": "Stealth",
+    "value": "14",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bettina-weight",
+    "subjectId": "weapon-bettina",
+    "field": "Weight",
+    "value": "11.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bettina"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-headshot-multiplier",
+    "subjectId": "weapon-ferro",
+    "field": "Headshot Multiplier",
+    "value": "2.5x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-durability",
+    "subjectId": "weapon-ferro",
+    "field": "Durability",
+    "value": "152 | 169 | 190 | 217 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-stability",
+    "subjectId": "weapon-ferro",
+    "field": "Stability",
+    "value": "78.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-agility",
+    "subjectId": "weapon-ferro",
+    "field": "Agility",
+    "value": "32.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-stealth",
+    "subjectId": "weapon-ferro",
+    "field": "Stealth",
+    "value": "8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-ferro-weight",
+    "subjectId": "weapon-ferro",
+    "field": "Weight",
+    "value": "8.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-ferro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-headshot-multiplier",
+    "subjectId": "weapon-renegade",
+    "field": "Headshot Multiplier",
+    "value": "2.25x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-durability",
+    "subjectId": "weapon-renegade",
+    "field": "Durability",
+    "value": "269 | 298 | 336 | 384 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-stability",
+    "subjectId": "weapon-renegade",
+    "field": "Stability",
+    "value": "85.7",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-agility",
+    "subjectId": "weapon-renegade",
+    "field": "Agility",
+    "value": "55.8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-stealth",
+    "subjectId": "weapon-renegade",
+    "field": "Stealth",
+    "value": "16",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-renegade-weight",
+    "subjectId": "weapon-renegade",
+    "field": "Weight",
+    "value": "10.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-renegade"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-headshot-multiplier",
+    "subjectId": "weapon-aphelion",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-durability",
+    "subjectId": "weapon-aphelion",
+    "field": "Durability",
+    "value": "1130 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-stability",
+    "subjectId": "weapon-aphelion",
+    "field": "Stability",
+    "value": "88 [1]",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-agility",
+    "subjectId": "weapon-aphelion",
+    "field": "Agility",
+    "value": "39 [1]",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-stealth",
+    "subjectId": "weapon-aphelion",
+    "field": "Stealth",
+    "value": "16 [1]",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-aphelion-weight",
+    "subjectId": "weapon-aphelion",
+    "field": "Weight",
+    "value": "10.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-aphelion"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-headshot-multiplier",
+    "subjectId": "weapon-stitcher",
+    "field": "Headshot Multiplier",
+    "value": "1.75x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-durability",
+    "subjectId": "weapon-stitcher",
+    "field": "Durability",
+    "value": "713 | 790 | 886 | 1024 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-stability",
+    "subjectId": "weapon-stitcher",
+    "field": "Stability",
+    "value": "45.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-agility",
+    "subjectId": "weapon-stitcher",
+    "field": "Agility",
+    "value": "73.8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-stealth",
+    "subjectId": "weapon-stitcher",
+    "field": "Stealth",
+    "value": "19",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-stitcher-weight",
+    "subjectId": "weapon-stitcher",
+    "field": "Weight",
+    "value": "5.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-stitcher"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-headshot-multiplier",
+    "subjectId": "weapon-canto",
+    "field": "Headshot Multiplier",
+    "value": "1.75x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-durability",
+    "subjectId": "weapon-canto",
+    "field": "Durability",
+    "value": "784 | 871 | 980 | 1120 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-stability",
+    "subjectId": "weapon-canto",
+    "field": "Stability",
+    "value": "39.4",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-agility",
+    "subjectId": "weapon-canto",
+    "field": "Agility",
+    "value": "78.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-stealth",
+    "subjectId": "weapon-canto",
+    "field": "Stealth",
+    "value": "24",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-canto-weight",
+    "subjectId": "weapon-canto",
+    "field": "Weight",
+    "value": "4.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-canto"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-headshot-multiplier",
+    "subjectId": "weapon-bobcat",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-durability",
+    "subjectId": "weapon-bobcat",
+    "field": "Durability",
+    "value": "1525 | 1694 | 1906 | 2185 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-stability",
+    "subjectId": "weapon-bobcat",
+    "field": "Stability",
+    "value": "45.9",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-agility",
+    "subjectId": "weapon-bobcat",
+    "field": "Agility",
+    "value": "73.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-stealth",
+    "subjectId": "weapon-bobcat",
+    "field": "Stealth",
+    "value": "21",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-bobcat-weight",
+    "subjectId": "weapon-bobcat",
+    "field": "Weight",
+    "value": "7.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bobcat"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-headshot-multiplier",
+    "subjectId": "weapon-il-toro",
+    "field": "Headshot Multiplier",
+    "value": "1.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-durability",
+    "subjectId": "weapon-il-toro",
+    "field": "Durability",
+    "value": "136 | 151 | 170 | 194 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-stability",
+    "subjectId": "weapon-il-toro",
+    "field": "Stability",
+    "value": "80.6",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-agility",
+    "subjectId": "weapon-il-toro",
+    "field": "Agility",
+    "value": "61.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-stealth",
+    "subjectId": "weapon-il-toro",
+    "field": "Stealth",
+    "value": "18",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-il-toro-weight",
+    "subjectId": "weapon-il-toro",
+    "field": "Weight",
+    "value": "8.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-il-toro"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-headshot-multiplier",
+    "subjectId": "weapon-vulcano",
+    "field": "Headshot Multiplier",
+    "value": "1.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-durability",
+    "subjectId": "weapon-vulcano",
+    "field": "Durability",
+    "value": "181 | 200 | 226 | 257 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-stability",
+    "subjectId": "weapon-vulcano",
+    "field": "Stability",
+    "value": "68.6",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-agility",
+    "subjectId": "weapon-vulcano",
+    "field": "Agility",
+    "value": "70.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-stealth",
+    "subjectId": "weapon-vulcano",
+    "field": "Stealth",
+    "value": "15",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-vulcano-weight",
+    "subjectId": "weapon-vulcano",
+    "field": "Weight",
+    "value": "8.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vulcano"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-headshot-multiplier",
+    "subjectId": "weapon-dolabra",
+    "field": "Headshot Multiplier",
+    "value": "1.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-durability",
+    "subjectId": "weapon-dolabra",
+    "field": "Durability",
+    "value": "?? shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-stability",
+    "subjectId": "weapon-dolabra",
+    "field": "Stability",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-agility",
+    "subjectId": "weapon-dolabra",
+    "field": "Agility",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-stealth",
+    "subjectId": "weapon-dolabra",
+    "field": "Stealth",
+    "value": "1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-dolabra-weight",
+    "subjectId": "weapon-dolabra",
+    "field": "Weight",
+    "value": "8.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-dolabra"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-headshot-multiplier",
+    "subjectId": "weapon-hairpin",
+    "field": "Headshot Multiplier",
+    "value": "2.5x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-durability",
+    "subjectId": "weapon-hairpin",
+    "field": "Durability",
+    "value": "274 | 304 | 342 | 391 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-stability",
+    "subjectId": "weapon-hairpin",
+    "field": "Stability",
+    "value": "90.9",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-agility",
+    "subjectId": "weapon-hairpin",
+    "field": "Agility",
+    "value": "78.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-stealth",
+    "subjectId": "weapon-hairpin",
+    "field": "Stealth",
+    "value": "70",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hairpin-weight",
+    "subjectId": "weapon-hairpin",
+    "field": "Weight",
+    "value": "3.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hairpin"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-headshot-multiplier",
+    "subjectId": "weapon-burletta",
+    "field": "Headshot Multiplier",
+    "value": "2.5×",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-durability",
+    "subjectId": "weapon-burletta",
+    "field": "Durability",
+    "value": "656 | 729 | 820 | 937 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-stability",
+    "subjectId": "weapon-burletta",
+    "field": "Stability",
+    "value": "74.5",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-agility",
+    "subjectId": "weapon-burletta",
+    "field": "Agility",
+    "value": "84.4",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-stealth",
+    "subjectId": "weapon-burletta",
+    "field": "Stealth",
+    "value": "24",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-burletta-weight",
+    "subjectId": "weapon-burletta",
+    "field": "Weight",
+    "value": "4.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-burletta"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-headshot-multiplier",
+    "subjectId": "weapon-venator",
+    "field": "Headshot Multiplier",
+    "value": "2x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-durability",
+    "subjectId": "weapon-venator",
+    "field": "Durability",
+    "value": "729 | 810 | 911 | 1041 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-stability",
+    "subjectId": "weapon-venator",
+    "field": "Stability",
+    "value": "61.3",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-agility",
+    "subjectId": "weapon-venator",
+    "field": "Agility",
+    "value": "76.4",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-stealth",
+    "subjectId": "weapon-venator",
+    "field": "Stealth",
+    "value": "12",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-venator-weight",
+    "subjectId": "weapon-venator",
+    "field": "Weight",
+    "value": "5.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-venator"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-headshot-multiplier",
+    "subjectId": "weapon-anvil",
+    "field": "Headshot Multiplier",
+    "value": "2.5×",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-durability",
+    "subjectId": "weapon-anvil",
+    "field": "Durability",
+    "value": "188 | 208 | 235 | 268 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-stability",
+    "subjectId": "weapon-anvil",
+    "field": "Stability",
+    "value": "75.2",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-agility",
+    "subjectId": "weapon-anvil",
+    "field": "Agility",
+    "value": "69.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-stealth",
+    "subjectId": "weapon-anvil",
+    "field": "Stealth",
+    "value": "10",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-anvil-weight",
+    "subjectId": "weapon-anvil",
+    "field": "Weight",
+    "value": "5.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-anvil"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-headshot-multiplier",
+    "subjectId": "weapon-torrente",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-durability",
+    "subjectId": "weapon-torrente",
+    "field": "Durability",
+    "value": "1113 | 1236 | 1391 | 1590 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-stability",
+    "subjectId": "weapon-torrente",
+    "field": "Stability",
+    "value": "74.2",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-agility",
+    "subjectId": "weapon-torrente",
+    "field": "Agility",
+    "value": "37.7",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-stealth",
+    "subjectId": "weapon-torrente",
+    "field": "Stealth",
+    "value": "1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-torrente-weight",
+    "subjectId": "weapon-torrente",
+    "field": "Weight",
+    "value": "12.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-torrente"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-headshot-multiplier",
+    "subjectId": "weapon-osprey",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-durability",
+    "subjectId": "weapon-osprey",
+    "field": "Durability",
+    "value": "135 | 149 | 168 | 192 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-stability",
+    "subjectId": "weapon-osprey",
+    "field": "Stability",
+    "value": "89.4",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-agility",
+    "subjectId": "weapon-osprey",
+    "field": "Agility",
+    "value": "45.9",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-stealth",
+    "subjectId": "weapon-osprey",
+    "field": "Stealth",
+    "value": "12",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-osprey-weight",
+    "subjectId": "weapon-osprey",
+    "field": "Weight",
+    "value": "7.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-osprey"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-headshot-multiplier",
+    "subjectId": "weapon-jupiter",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-durability",
+    "subjectId": "weapon-jupiter",
+    "field": "Durability",
+    "value": "222 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-stability",
+    "subjectId": "weapon-jupiter",
+    "field": "Stability",
+    "value": "73.5",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-agility",
+    "subjectId": "weapon-jupiter",
+    "field": "Agility",
+    "value": "39.2",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-stealth",
+    "subjectId": "weapon-jupiter",
+    "field": "Stealth",
+    "value": "5",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-jupiter-weight",
+    "subjectId": "weapon-jupiter",
+    "field": "Weight",
+    "value": "9.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-jupiter"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-headshot-multiplier",
+    "subjectId": "weapon-rascal",
+    "field": "Headshot Multiplier",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-durability",
+    "subjectId": "weapon-rascal",
+    "field": "Durability",
+    "value": "136 | 151 | 170 | 194 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-stability",
+    "subjectId": "weapon-rascal",
+    "field": "Stability",
+    "value": "87.8",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-agility",
+    "subjectId": "weapon-rascal",
+    "field": "Agility",
+    "value": "78.1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-stealth",
+    "subjectId": "weapon-rascal",
+    "field": "Stealth",
+    "value": "1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-rascal-weight",
+    "subjectId": "weapon-rascal",
+    "field": "Weight",
+    "value": "4.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rascal"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-headshot-multiplier",
+    "subjectId": "weapon-hullcracker",
+    "field": "Headshot Multiplier",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-durability",
+    "subjectId": "weapon-hullcracker",
+    "field": "Durability",
+    "value": "216 | 240 | 270 | 308 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-stability",
+    "subjectId": "weapon-hullcracker",
+    "field": "Stability",
+    "value": "97.2",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-agility",
+    "subjectId": "weapon-hullcracker",
+    "field": "Agility",
+    "value": "67.9",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-stealth",
+    "subjectId": "weapon-hullcracker",
+    "field": "Stealth",
+    "value": "1",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-hullcracker-weight",
+    "subjectId": "weapon-hullcracker",
+    "field": "Weight",
+    "value": "7.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hullcracker"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-headshot-multiplier",
+    "subjectId": "weapon-equalizer",
+    "field": "Headshot Multiplier",
+    "value": "2.0x",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-durability",
+    "subjectId": "weapon-equalizer",
+    "field": "Durability",
+    "value": "3450 shots",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-stability",
+    "subjectId": "weapon-equalizer",
+    "field": "Stability",
+    "value": "84.6",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-agility",
+    "subjectId": "weapon-equalizer",
+    "field": "Agility",
+    "value": "44.6",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-stealth",
+    "subjectId": "weapon-equalizer",
+    "field": "Stealth",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-weapon-equalizer-weight",
+    "subjectId": "weapon-equalizer",
+    "field": "Weight",
+    "value": "14.0",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-equalizer"
+    ],
+    "note": "Valor conservado en la escala declarada por la ficha; no se deducen unidades ni fórmulas.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-snitch-health",
+    "subjectId": "arc-snitch",
+    "field": "Health",
+    "value": "158",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-snitch"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-snitch-primary-attack",
+    "subjectId": "arc-snitch",
+    "field": "Primary Attack",
+    "value": "Ninguno declarado",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-snitch"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-snitch-abilities",
+    "subjectId": "arc-snitch",
+    "field": "Abilities",
+    "value": "Convoca ARC",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-snitch"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-wasp-health",
+    "subjectId": "arc-wasp",
+    "field": "Health",
+    "value": "110",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-wasp"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-wasp-primary-attack",
+    "subjectId": "arc-wasp",
+    "field": "Primary Attack",
+    "value": "Ráfaga de proyectiles",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-wasp"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-wasp-abilities",
+    "subjectId": "arc-wasp",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-wasp"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-hornet-health",
+    "subjectId": "arc-hornet",
+    "field": "Health",
+    "value": "200",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hornet"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-hornet-primary-attack",
+    "subjectId": "arc-hornet",
+    "field": "Primary Attack",
+    "value": "Proyectil de aturdimiento",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-hornet"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-hornet-abilities",
+    "subjectId": "arc-hornet",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-hornet"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-tick-health",
+    "subjectId": "arc-tick",
+    "field": "Health",
+    "value": "10",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tick"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-tick-primary-attack",
+    "subjectId": "arc-tick",
+    "field": "Primary Attack",
+    "value": "Salto",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tick"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-tick-abilities",
+    "subjectId": "arc-tick",
+    "field": "Abilities",
+    "value": "Escala superficies",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-tick"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-pop-health",
+    "subjectId": "arc-pop",
+    "field": "Health",
+    "value": "20",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-pop"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-pop-primary-attack",
+    "subjectId": "arc-pop",
+    "field": "Primary Attack",
+    "value": "Explosión",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-pop"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-pop-abilities",
+    "subjectId": "arc-pop",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-pop"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-fireball-health",
+    "subjectId": "arc-fireball",
+    "field": "Health",
+    "value": "20",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-fireball"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-fireball-primary-attack",
+    "subjectId": "arc-fireball",
+    "field": "Primary Attack",
+    "value": "Lanzallamas",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-fireball"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-fireball-abilities",
+    "subjectId": "arc-fireball",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-fireball"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-turret-health",
+    "subjectId": "arc-turret",
+    "field": "Health",
+    "value": "80",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-turret"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-turret-primary-attack",
+    "subjectId": "arc-turret",
+    "field": "Primary Attack",
+    "value": "Proyectiles",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-turret"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-turret-abilities",
+    "subjectId": "arc-turret",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-turret"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-sentinel-health",
+    "subjectId": "arc-sentinel",
+    "field": "Health",
+    "value": "300",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-sentinel"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-sentinel-primary-attack",
+    "subjectId": "arc-sentinel",
+    "field": "Primary Attack",
+    "value": "Proyectil de alta velocidad",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-sentinel"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-sentinel-abilities",
+    "subjectId": "arc-sentinel",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-sentinel"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-surveyor-health",
+    "subjectId": "arc-surveyor",
+    "field": "Health",
+    "value": "257",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-surveyor"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-surveyor-primary-attack",
+    "subjectId": "arc-surveyor",
+    "field": "Primary Attack",
+    "value": "Embestida",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-surveyor"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-surveyor-abilities",
+    "subjectId": "arc-surveyor",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-surveyor"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-shredder-health",
+    "subjectId": "arc-shredder",
+    "field": "Health",
+    "value": "385",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-shredder"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-shredder-primary-attack",
+    "subjectId": "arc-shredder",
+    "field": "Primary Attack",
+    "value": "Explosión de metralla",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-shredder"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-shredder-abilities",
+    "subjectId": "arc-shredder",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-shredder"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-comet-health",
+    "subjectId": "arc-comet",
+    "field": "Health",
+    "value": "150",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-comet"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-comet-primary-attack",
+    "subjectId": "arc-comet",
+    "field": "Primary Attack",
+    "value": "Explosión",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-comet"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-comet-abilities",
+    "subjectId": "arc-comet",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-comet"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-firefly-health",
+    "subjectId": "arc-firefly",
+    "field": "Health",
+    "value": "200",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-firefly"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-firefly-primary-attack",
+    "subjectId": "arc-firefly",
+    "field": "Primary Attack",
+    "value": "Lanzallamas",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-firefly"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-firefly-abilities",
+    "subjectId": "arc-firefly",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-firefly"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-spotter-health",
+    "subjectId": "arc-spotter",
+    "field": "Health",
+    "value": "80",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-spotter"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-spotter-primary-attack",
+    "subjectId": "arc-spotter",
+    "field": "Primary Attack",
+    "value": "Ninguno declarado",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-spotter"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-spotter-abilities",
+    "subjectId": "arc-spotter",
+    "field": "Abilities",
+    "value": "Reveals Raiders",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-spotter"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bombardier-health",
+    "subjectId": "arc-bombardier",
+    "field": "Health",
+    "value": "2,670",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bombardier"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bombardier-primary-attack",
+    "subjectId": "arc-bombardier",
+    "field": "Primary Attack",
+    "value": "Mortero",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bombardier"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bombardier-abilities",
+    "subjectId": "arc-bombardier",
+    "field": "Abilities",
+    "value": "Onda expansiva",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bombardier"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bastion-health",
+    "subjectId": "arc-bastion",
+    "field": "Health",
+    "value": "2,050",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bastion"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bastion-primary-attack",
+    "subjectId": "arc-bastion",
+    "field": "Primary Attack",
+    "value": "Ráfaga de proyectiles",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bastion"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-bastion-abilities",
+    "subjectId": "arc-bastion",
+    "field": "Abilities",
+    "value": "Ninguna declarada",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-bastion"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-leaper-health",
+    "subjectId": "arc-leaper",
+    "field": "Health",
+    "value": "1100",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-leaper"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-leaper-primary-attack",
+    "subjectId": "arc-leaper",
+    "field": "Primary Attack",
+    "value": "Salto",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-leaper"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-leaper-abilities",
+    "subjectId": "arc-leaper",
+    "field": "Abilities",
+    "value": "Onda expansiva",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-leaper"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-rocketeer-health",
+    "subjectId": "arc-rocketeer",
+    "field": "Health",
+    "value": "1,100",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rocketeer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-rocketeer-primary-attack",
+    "subjectId": "arc-rocketeer",
+    "field": "Primary Attack",
+    "value": "Descarga de misiles",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-rocketeer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-rocketeer-abilities",
+    "subjectId": "arc-rocketeer",
+    "field": "Abilities",
+    "value": null,
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-rocketeer"
+    ],
+    "note": "La ficha no declara este campo; no se completa por suposición.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-vaporizer-health",
+    "subjectId": "arc-vaporizer",
+    "field": "Health",
+    "value": "1500",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vaporizer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-vaporizer-primary-attack",
+    "subjectId": "arc-vaporizer",
+    "field": "Primary Attack",
+    "value": "Rayo láser",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vaporizer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-vaporizer-abilities",
+    "subjectId": "arc-vaporizer",
+    "field": "Abilities",
+    "value": "Escudo de energía",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-vaporizer"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-arc-turbine-health",
+    "subjectId": "arc-arc-turbine",
+    "field": "Health",
+    "value": "~4000",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-arc-turbine"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-arc-turbine-primary-attack",
+    "subjectId": "arc-arc-turbine",
+    "field": "Primary Attack",
+    "value": "Misiles eléctricos en racimo",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arc-turbine"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-arc-turbine-abilities",
+    "subjectId": "arc-arc-turbine",
+    "field": "Abilities",
+    "value": "Despliega minas · Aturdimiento en tierra · Descarga eléctrica",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-arc-turbine"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-queen-health",
+    "subjectId": "arc-queen",
+    "field": "Health",
+    "value": "23000[1]",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-queen"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-queen-primary-attack",
+    "subjectId": "arc-queen",
+    "field": "Primary Attack",
+    "value": "Mortero",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-queen"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-queen-abilities",
+    "subjectId": "arc-queen",
+    "field": "Abilities",
+    "value": "Rayo láser · Golpe al suelo · Pulso EMP",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-queen"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-matriarch-health",
+    "subjectId": "arc-matriarch",
+    "field": "Health",
+    "value": "23000[1]",
+    "unit": null,
+    "confidence": "no confirmado",
+    "sourceIds": [
+      "wiki-matriarch"
+    ],
+    "note": "La fuente marca una estimación, referencia o valor incierto. No se utiliza para calcular resultados de combate.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-matriarch-primary-attack",
+    "subjectId": "arc-matriarch",
+    "field": "Primary Attack",
+    "value": "Enjambre de misiles",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-matriarch"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  },
+  {
+    "id": "extra-arc-matriarch-abilities",
+    "subjectId": "arc-matriarch",
+    "field": "Abilities",
+    "value": "Escudo de energía · Granadas de gas · Granadas cegadoras · Convoca ARC",
+    "unit": null,
+    "confidence": "probable",
+    "sourceIds": [
+      "wiki-matriarch"
+    ],
+    "note": "Dato de infobox comunitaria; no confirmado por una fuente primaria.",
+    "availability": "disponible",
+    "effectiveFrom": null
+  }
+]

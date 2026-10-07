@@ -1,0 +1,1119 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-07T05:48:10.246Z",
+  "indexRevision": "39701",
+  "checkedPageCount": 112,
+  "sourceIds": [
+    "wiki-revision-review",
+    "metaforge-blueprint-review"
+  ],
+  "routes": [
+    {
+      "blueprintId": "blueprint-anvil-blueprint",
+      "itemRevision": "41011",
+      "secondaryId": "anvil-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-anvil"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-angled-grip-ii-blueprint",
+      "itemRevision": "37955",
+      "secondaryId": "angled-grip-ii-recipe",
+      "routeEvidence": "containers-only",
+      "containerDetails": [
+        "Residential Drawer",
+        "Residential Desk Drawer",
+        "Residential Closet",
+        "Residential Cabinet"
+      ],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-angled-grip-ii"
+      ],
+      "note": "La ficha enumera contenedores del plano; mapas y condiciones conservan evidencia del índice."
+    },
+    {
+      "blueprintId": "blueprint-angled-grip-iii-blueprint",
+      "itemRevision": "34372",
+      "secondaryId": "angled-grip-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-angled-grip-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-aphelion-blueprint",
+      "itemRevision": "40691",
+      "secondaryId": "aphelion-rifle-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-aphelion"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-barricade-kit-blueprint",
+      "itemRevision": "38635",
+      "secondaryId": "barricade-kit-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-barricade-kit"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-bettina-blueprint",
+      "itemRevision": "41101",
+      "secondaryId": "bettina-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-bettina"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-blaze-grenade-blueprint",
+      "itemRevision": "38637",
+      "secondaryId": "blaze-grenade-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-blaze-grenade"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-bobcat-blueprint",
+      "itemRevision": "40716",
+      "secondaryId": "bobcat-i-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-bobcat"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-burletta-blueprint",
+      "itemRevision": "41009",
+      "secondaryId": "burltetta-recipe",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-burletta"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-canto-blueprint",
+      "itemRevision": "41005",
+      "secondaryId": "canto-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-canto"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-combat-mk-3-aggressive-blueprint",
+      "itemRevision": "40693",
+      "secondaryId": "combat-mk3-aggressive-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-combat-mk-3-aggressive"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-combat-mk-3-flanking-blueprint",
+      "itemRevision": "35884",
+      "secondaryId": "combat-mk-3-flanking",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-combat-mk-3-flanking"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-compensator-ii-blueprint",
+      "itemRevision": "37924",
+      "secondaryId": "compensator-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-compensator-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-compensator-iii-blueprint",
+      "itemRevision": "34006",
+      "secondaryId": "compensator-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-compensator-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-crash-mat-blueprint",
+      "itemRevision": "41052",
+      "secondaryId": "crash-mat-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-crash-mat"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-complex-gun-parts-blueprint",
+      "itemRevision": "29089",
+      "secondaryId": "complex-gun-parts-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-complex-gun-parts"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-dolabra-blueprint",
+      "itemRevision": "41397",
+      "secondaryId": "dolabra-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-dolabra"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-deadline-blueprint",
+      "itemRevision": "41018",
+      "secondaryId": "deadline-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-deadline"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-defibrillator-blueprint",
+      "itemRevision": "38643",
+      "secondaryId": "defibrillator-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-defibrillator"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-explosive-mine-blueprint",
+      "itemRevision": "38646",
+      "secondaryId": "explosive-mine-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-explosive-mine"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-barrel-ii-blueprint",
+      "itemRevision": "35896",
+      "secondaryId": "extended-barrel-ii-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Contenedor"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-barrel-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-barrel-iii-blueprint",
+      "itemRevision": "41137",
+      "secondaryId": "extended-barrel-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-barrel-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-light-mag-ii-blueprint",
+      "itemRevision": "37958",
+      "secondaryId": "extended-light-mag-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-light-mag-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-light-mag-iii-blueprint",
+      "itemRevision": "40995",
+      "secondaryId": "extended-light-mag-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-light-mag-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-medium-mag-ii-blueprint",
+      "itemRevision": "37937",
+      "secondaryId": "extended-medium-mag-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-medium-mag-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-medium-mag-iii-blueprint",
+      "itemRevision": "37996",
+      "secondaryId": "extended-medium-mag-iii-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-medium-mag-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-shotgun-mag-ii-blueprint",
+      "itemRevision": "37938",
+      "secondaryId": "extended-shotgun-mag-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-shotgun-mag-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-extended-shotgun-mag-iii-blueprint",
+      "itemRevision": "35283",
+      "secondaryId": "extended-shotgun-mag-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-extended-shotgun-mag-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-equalizer-blueprint",
+      "itemRevision": "41016",
+      "secondaryId": "equalizer-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-equalizer"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-fireworks-box-blueprint",
+      "itemRevision": "38853",
+      "secondaryId": "fireworks-box-blueprint",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-fireworks-box"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-gas-mine-blueprint",
+      "itemRevision": "38648",
+      "secondaryId": "gas-mine-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-gas-mine"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-heavy-gun-parts-blueprint",
+      "itemRevision": "38650",
+      "secondaryId": "heavy-gun-parts-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-heavy-gun-parts"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-hullcracker-blueprint",
+      "itemRevision": "41015",
+      "secondaryId": "hullcracker-blueprint",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-hullcracker"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-il-toro-blueprint",
+      "itemRevision": "41006",
+      "secondaryId": "il-toro-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-il-toro"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-jolt-mine-blueprint",
+      "itemRevision": "38652",
+      "secondaryId": "jolt-mine-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-jolt-mine"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-jupiter-blueprint",
+      "itemRevision": "40690",
+      "secondaryId": "jupiter-i-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-jupiter"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-light-gun-parts-blueprint",
+      "itemRevision": "38655",
+      "secondaryId": "light-gun-parts-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-light-gun-parts"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-red-light-stick-blueprint",
+      "itemRevision": "38660",
+      "secondaryId": "red-light-stick-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-red-light-stick"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-green-light-stick-blueprint",
+      "itemRevision": "38649",
+      "secondaryId": "green-light-stick-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-green-light-stick"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-yellow-light-stick-blueprint",
+      "itemRevision": "38807",
+      "secondaryId": "yellow-light-stick-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-yellow-light-stick"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-blue-light-stick-blueprint",
+      "itemRevision": "38638",
+      "secondaryId": "blue-light-stick-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-blue-light-stick"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-lightweight-stock-blueprint",
+      "itemRevision": "34020",
+      "secondaryId": "lightweight-stock-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-lightweight-stock"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-looting-mk-3-safekeeper-blueprint",
+      "itemRevision": "35707",
+      "secondaryId": "looting-mk-3-safekeeper-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-looting-mk-3-safekeeper"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-looting-mk-3-survivor-blueprint",
+      "itemRevision": "35706",
+      "secondaryId": "looting-mk-3-survivor-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-looting-mk-3-survivor"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-lure-grenade-blueprint",
+      "itemRevision": "40190",
+      "secondaryId": "lure-grenade-recipe",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-lure-grenade"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-medium-gun-parts-blueprint",
+      "itemRevision": "38654",
+      "secondaryId": "medium-gun-parts-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-medium-gun-parts"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-muzzle-brake-ii-blueprint",
+      "itemRevision": "37902",
+      "secondaryId": "muzzle-brake-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-muzzle-brake-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-muzzle-brake-iii-blueprint",
+      "itemRevision": "34023",
+      "secondaryId": "muzzle-brake-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-muzzle-brake-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-osprey-blueprint",
+      "itemRevision": "41013",
+      "secondaryId": "osprey-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-osprey"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-padded-stock-blueprint",
+      "itemRevision": "34024",
+      "secondaryId": "padded-stock-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-padded-stock"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-pulse-mine-blueprint",
+      "itemRevision": "38658",
+      "secondaryId": "pulse-mine-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-pulse-mine"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-powered-descender-blueprint",
+      "itemRevision": "40696",
+      "secondaryId": "powered-descender-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Condición",
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-powered-descender"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-rascal-blueprint",
+      "itemRevision": "41014",
+      "secondaryId": "rascal-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-rascal"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-remote-raider-flare-blueprint",
+      "itemRevision": "38661",
+      "secondaryId": "remote-raider-flare-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-remote-raider-flare"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-seeker-grenade-blueprint",
+      "itemRevision": "38662",
+      "secondaryId": "seeker-grenade-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-seeker-grenade"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-shotgun-choke-ii-blueprint",
+      "itemRevision": "37956",
+      "secondaryId": "shotgun-choke-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-shotgun-choke-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-shotgun-choke-iii-blueprint",
+      "itemRevision": "34029",
+      "secondaryId": "shotgun-choke-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-shotgun-choke-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-shotgun-silencer-blueprint",
+      "itemRevision": "34028",
+      "secondaryId": "shotgun-silencer-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-shotgun-silencer"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-showstopper-blueprint",
+      "itemRevision": "38663",
+      "secondaryId": "showstopper-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-showstopper"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-silencer-i-blueprint",
+      "itemRevision": "34030",
+      "secondaryId": "silencer-i-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-silencer-i"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-silencer-ii-blueprint",
+      "itemRevision": "37959",
+      "secondaryId": "silencer-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-silencer-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-smoke-grenade-blueprint",
+      "itemRevision": "41022",
+      "secondaryId": "smoke-grenade-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-smoke-grenade"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-snap-hook-blueprint",
+      "itemRevision": "41306",
+      "secondaryId": "snap-hook-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-snap-hook"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-stable-stock-ii-blueprint",
+      "itemRevision": "38013",
+      "secondaryId": "stable-stock-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-stable-stock-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-stable-stock-iii-blueprint",
+      "itemRevision": "37919",
+      "secondaryId": "stable-stock-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-stable-stock-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-surge-coil-blueprint",
+      "itemRevision": "38666",
+      "secondaryId": "surge-coil-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Contenedor",
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-surge-coil"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tactical-mk-3-defensive-blueprint",
+      "itemRevision": "41021",
+      "secondaryId": "tactical-mk3-defensive-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tactical-mk-3-defensive"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tactical-mk-3-healing-blueprint",
+      "itemRevision": "38668",
+      "secondaryId": "tacical-mk3-healing-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tactical-mk-3-healing"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tactical-mk-3-revival-blueprint",
+      "itemRevision": "38017",
+      "secondaryId": "tactical-mk-3-revival-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tactical-mk-3-revival"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tactical-mk-3-smoke-blueprint",
+      "itemRevision": "39132",
+      "secondaryId": "utility-augment-t3-smoke-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [
+        "Mapa",
+        "Condición",
+        "Contenedor",
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tactical-mk-3-smoke"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tagging-grenade-blueprint",
+      "itemRevision": "38670",
+      "secondaryId": "tagging-grenade-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tagging-grenade"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-tempest-blueprint",
+      "itemRevision": "41000",
+      "secondaryId": "tempest-i-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-tempest"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-torrente-blueprint",
+      "itemRevision": "41012",
+      "secondaryId": "torrent-i-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-torrente"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-trailblazer-blueprint",
+      "itemRevision": "41017",
+      "secondaryId": "trailblazer-grenade-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-trailblazer"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-trigger-nade-blueprint",
+      "itemRevision": "38674",
+      "secondaryId": "trigger-nade-recipe",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [
+        "Trials"
+      ],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-trigger-nade"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-venator-blueprint",
+      "itemRevision": "41010",
+      "secondaryId": "venator-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-venator"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-vertical-grip-ii-blueprint",
+      "itemRevision": "38012",
+      "secondaryId": "vertical-grip-ii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-vertical-grip-ii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-vertical-grip-iii-blueprint",
+      "itemRevision": "34038",
+      "secondaryId": "vertical-grip-iii-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-vertical-grip-iii"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-vita-shot-blueprint",
+      "itemRevision": "38676",
+      "secondaryId": "vita-shot-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-vita-shot"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-vita-spray-blueprint",
+      "itemRevision": "40695",
+      "secondaryId": "vita-spray-recipe",
+      "routeEvidence": "explicit-blueprint",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-vita-spray"
+      ],
+      "note": "La ficha menciona explícitamente la recompensa del plano; no confirma todos los campos de botín."
+    },
+    {
+      "blueprintId": "blueprint-vulcano-blueprint",
+      "itemRevision": "41007",
+      "secondaryId": "vulcano-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-vulcano"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-wolfpack-blueprint",
+      "itemRevision": "40715",
+      "secondaryId": "wolfpack-recipe",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-wolfpack"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    },
+    {
+      "blueprintId": "blueprint-white-flag-blueprint",
+      "itemRevision": "38765",
+      "secondaryId": "white-flag-blueprint",
+      "routeEvidence": "index-only",
+      "containerDetails": [],
+      "pendingFields": [],
+      "sourceIds": [
+        "wiki-blueprints",
+        "wiki-white-flag"
+      ],
+      "note": "La ficha del objeto no aporta una ruta explícita del plano. El catálogo secundario confirma una entrada con el mismo nombre, pero no publica ubicaciones."
+    }
+  ]
+}

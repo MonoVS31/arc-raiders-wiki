@@ -38,6 +38,12 @@ Leaflet, el visor y las cachés de mapas se cargan por demanda. La versión 0.4 
 
 Repositorio: https://github.com/MonoVS31/arc-raiders-wiki. Las propuestas #1, #2 y #3 integraron mapas, combate y publicación tras CI. Este documento describe las verificaciones realizadas; no declara terminada la wiki completa.
 
+## Edición 1.0 para revisión
+
+43 pruebas, TypeScript estricto y compilación local correctos. Se verificaron 112 revisiones de objetos e índice/ARC; se capturaron los nueve proyectos. La navegación de Hornet a Dam conserva el foco y muestra sus seis reportes. La selección de piezas cambia la explicación de protección; las etapas de Trophy Display distinguen Bobcat IV de Bobcat Blueprint y enlazan el plano correspondiente.
+
+Los conteos de mapas por ARC coinciden con los archivos públicos de caché. Los datos de etapas, recompensas y zonas tienen fuentes verificables y estados de disponibilidad separados. Se corrigió una interpretación optimista de Aphelion y se conservaron conflictos de fechas. El paquete inicial ronda 780 kB minificado y 150 kB gzip; visor, Leaflet, etapas y zonas se cargan por demanda. Ver `10-edicion-para-revision.md` para alcance y límites.
+
 ## Configuración
 
 El proyecto no necesita secretos para consultar el catálogo. Solo se versiona .env.example con una etiqueta pública; las variables VITE_* son visibles en el navegador. La integración de datos incluye atribución y enlace a MetaForge, y exige revisar sus condiciones antes de monetizar un producto.

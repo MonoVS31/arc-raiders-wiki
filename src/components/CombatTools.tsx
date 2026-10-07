@@ -1,33 +1,35 @@
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { catalog, sourceById } from '../domain/catalog';
-import { combatClaim, grenadeGeometry, weaponTiers, withinReportedRadius } from '../domain/combat';
+import { combatClaim, grenadeGeometry, weaponTiers, weaponTierMetric, withinReportedRadius } from '../domain/combat';
 import type { Claim, Entity } from '../domain/schema';
 import '../styles/combat.css';
 import portraits from '../data/arc-portraits.json';
+const ARCZoneExplorer=lazy(()=>import('./ARCZoneExplorer'));
 
 function Evidence({ claim }: { claim: Claim | undefined }) {
   if (!claim) return <span className="unknown">Pendiente de verificar</span>;
   return <div className="combat-evidence"><strong>{claim.value === null ? 'Pendiente de verificar' : `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`}</strong><span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>{claim.confidence}</span>{claim.note && <p>{claim.note}</p>}<div className="source-links">{claim.sourceIds.map(id => { const source = sourceById.get(id); return source && <a key={id} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>; })}</div></div>;
 }
-function Tier({ entity }: { entity: Entity }) {
+function Tier({ entity,tier,onChange }: { entity: Entity;tier:string;onChange:(tier:string)=>void }) {
   const tiers = weaponTiers(entity.id);
-  const [tier, setTier] = useState(tiers[0] ?? '');
-  return <div className="tier-card"><label>Nivel de {entity.name}<select value={tier} onChange={event => setTier(event.target.value)} disabled={tiers.length < 2}>{tiers.map(value => <option key={value}>{value}</option>)}</select></label>{['II', 'III', 'IV'].includes(tier) ? <Evidence claim={combatClaim(entity.id, `${entity.name} ${tier} mejoras`)} /> : <p>Valores base. No se aplica un aumento de daño sin evidencia.</p>}</div>;
+  return <div className="tier-card"><label>Nivel de {entity.name}<select value={tier} onChange={event => onChange(event.target.value)} disabled={tiers.length < 2}>{tiers.map(value => <option key={value}>{value}</option>)}</select></label>{['II', 'III', 'IV'].includes(tier) ? <Evidence claim={combatClaim(entity.id, `${entity.name} ${tier} mejoras`)} /> : <p>Valores base. No se aplica un aumento de daño sin evidencia.</p>}</div>;
 }
 export function WeaponComparison({ entity }: { entity: Entity }) {
   const weapons = catalog.entities.filter(item => item.category === 'weapon' && item.availability === 'disponible' && item.id !== entity.id);
   const [otherId, setOtherId] = useState(weapons[0]?.id ?? '');
+  const [tier,setTier]=useState(weaponTiers(entity.id)[0]??'');
+  const [otherTier,setOtherTier]=useState(weaponTiers(weapons[0]?.id??'')[0]??'');
   const other = weapons.find(item => item.id === otherId);
   if (!other) return null;
-  const fields = [['Damage', 'Daño base'], ['Magazine Size', 'Cargador'], ['Ammo Type', 'Munición'], ['Firing Mode', 'Disparo'], ['ARC Armor Penetration', 'Penetración ARC'], ['Fire Rate', 'Cadencia declarada'], ['Range', 'Alcance declarado']];
-  return <section className="combat-tool"><h3>Comparar armas y niveles</h3><label>Comparar con<select value={otherId} onChange={event => setOtherId(event.target.value)}>{weapons.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label><div className="combat-pair"><Tier key={entity.id} entity={entity}/><Tier key={other.id} entity={other}/></div><p className="muted">Las mejoras se muestran por separado. La escala de alcance no se convierte a metros ni la cadencia a daño por segundo.</p><div className="combat-table"><table><thead><tr><th>Campo</th><th>{entity.name}</th><th>{other.name}</th></tr></thead><tbody>{fields.map(([field, title]) => <tr key={field}><th>{title}</th><td><Evidence claim={combatClaim(entity.id, field!)}/></td><td><Evidence claim={combatClaim(other.id, field!)}/></td></tr>)}</tbody></table></div></section>;
+  const fields = [['Damage', 'Daño declarado'], ['Magazine Size', 'Cargador'], ['Durability','Durabilidad'],['Headshot Multiplier','Multiplicador a la cabeza'],['Ammo Type', 'Munición'], ['Firing Mode', 'Disparo'], ['ARC Armor Penetration', 'Penetración ARC'], ['Fire Rate', 'Cadencia declarada'], ['Range', 'Alcance declarado']];
+  return <section className="combat-tool"><h3>Comparar armas y niveles</h3><label>Comparar con<select value={otherId} onChange={event => {setOtherId(event.target.value);setOtherTier(weaponTiers(event.target.value)[0]??'');}}>{weapons.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label><div className="combat-pair"><Tier key={entity.id} entity={entity} tier={tier} onChange={setTier}/><Tier key={other.id} entity={other} tier={otherTier} onChange={setOtherTier}/></div><p className="muted">Las cifras por nivel se muestran cuando la fuente publica la serie I–IV. Las mejoras se muestran por separado. La escala de alcance no se convierte a metros ni la cadencia a daño por segundo.</p><div className="combat-table"><table><thead><tr><th>Campo</th><th>{entity.name} · {tier}</th><th>{other.name} · {otherTier}</th></tr></thead><tbody>{fields.map(([field, title]) => <tr key={field}><th>{title}</th><td><Evidence claim={weaponTierMetric(entity.id, field!,tier)}/></td><td><Evidence claim={weaponTierMetric(other.id, field!,otherTier)}/></td></tr>)}</tbody></table></div></section>;
 }
 export function ARCCombatPanel({ entity }: { entity: Entity }) {
   const [field, setField] = useState('punto débil');
   const [imageFailed, setImageFailed] = useState(false);
   const portrait = portraits.portraits.find(item => item.entityId === entity.id);
   const tabs = ['punto débil', 'blindaje', 'consejo'];
-  return <section className="combat-tool"><h3>Preparar el combate</h3>{portrait && <figure className="arc-portrait">{imageFailed ? <p>La imagen de referencia no está disponible. Los datos de combate siguen accesibles.</p> : <img src={portrait.imageUrl} alt={`Referencia visual de ${entity.name}`} loading="lazy" referrerPolicy="no-referrer" onError={() => setImageFailed(true)}/>}<figcaption>Referencia visual probable vía <a href="https://metaforge.app/arc-raiders" target="_blank" rel="noreferrer">MetaForge</a>. Assets © Embark Studios. <a href={sourceById.get(portraits.sourceId)?.url} target="_blank" rel="noreferrer">Fuente de identidad ↗</a>. No marca zonas de impacto.</figcaption></figure>}<div className="combat-tabs" aria-label="Información de combate">{tabs.map(tab => <button key={tab} aria-pressed={field === tab} onClick={() => setField(tab)}>{tab}</button>)}</div><div className="combat-focus" key={field}><Evidence claim={combatClaim(entity.id, field)}/></div><p className="muted">El blindaje describe una categoría. No equivale a un porcentaje de resistencia ni a un modelo de zonas de impacto.</p></section>;
+  return <section className="combat-tool"><h3>Preparar el combate</h3>{portrait && <figure className="arc-portrait">{imageFailed ? <p>La imagen de referencia no está disponible. Los datos de combate siguen accesibles.</p> : <img src={portrait.imageUrl} alt={`Referencia visual de ${entity.name}`} loading="lazy" referrerPolicy="no-referrer" onError={() => setImageFailed(true)}/>}<figcaption>Referencia visual probable vía <a href="https://metaforge.app/arc-raiders" target="_blank" rel="noreferrer">MetaForge</a>. Assets © Embark Studios. <a href={sourceById.get(portraits.sourceId)?.url} target="_blank" rel="noreferrer">Fuente de identidad ↗</a>. No marca zonas de impacto.</figcaption></figure>}<Suspense fallback={<p>Cargando zonas de combate…</p>}><ARCZoneExplorer entityId={entity.id}/></Suspense><div className="combat-tabs" aria-label="Información de combate">{tabs.map(tab => <button key={tab} aria-pressed={field === tab} onClick={() => setField(tab)}>{tab}</button>)}</div><div className="combat-focus" key={field}><Evidence claim={combatClaim(entity.id, field)}/></div><p className="muted">El blindaje describe una categoría. No equivale a un porcentaje de resistencia ni a un modelo de zonas de impacto.</p></section>;
 }
 export function GrenadeEffectPanel({ entity }: { entity: Entity }) {
   const geometry = grenadeGeometry(entity.id);

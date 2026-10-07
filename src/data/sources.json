@@ -1478,5 +1478,115 @@
     "revision": null,
     "contentHash": "a49976379324c1ce1448f5bdf864cb23e6e9f4a177adfcd2b4e2423b10e6cd39",
     "locator": "data[].name / image; identidad por nombre, excluye anuncios y placeholders"
+  },
+  {
+    "id": "wiki-revision-review",
+    "title": "ARC Raiders Wiki — revisión de fichas y versiones",
+    "url": "https://arcraiders.wiki/w/api.php",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:48:10.246Z",
+    "revision": null,
+    "contentHash": "c61eaf82968595474b79845c5ea248a79081b95879dcec6d219bcb8db360a83e",
+    "locator": "query.pages[].revisions; objetos de planos, 21 ARC, índice y armas; redirección Surveyor -> ARC Surveyor resuelta"
+  },
+  {
+    "id": "metaforge-blueprint-review",
+    "title": "MetaForge — catálogo de 83 planos",
+    "url": "https://metaforge.app/api/arc-raiders/items?search=Blueprint&limit=100",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:48:10.246Z",
+    "revision": null,
+    "contentHash": "bd400309cb2f3006c3f56391324de865fcf7acc06f6d3917271a98bd53fcfa48",
+    "locator": "data[].name/id; las ubicaciones y fuentes de obtención están vacías y no corroboran rutas"
+  },
+  {
+    "id": "wiki-project-review-project-ascending-the-mountain",
+    "title": "ARC Raiders Wiki — etapas de Ascending The Mountain",
+    "url": "https://arcraiders.wiki/w/index.php?title=Ascending_The_Mountain&oldid=41500",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.021Z",
+    "revision": "41500",
+    "contentHash": "8da77a113084081fcfd4f4e43db4b07e34886d094a2e43ddcfd8df0ba992ceb5",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-trophy-display",
+    "title": "ARC Raiders Wiki — etapas de Trophy Display",
+    "url": "https://arcraiders.wiki/w/index.php?title=Trophy_Display&oldid=38800",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.118Z",
+    "revision": "38800",
+    "contentHash": "adcb457212f9f3f840ac2dd595fc2d0626272b9c74d6d614bfe496edff0007d1",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-expedition",
+    "title": "ARC Raiders Wiki — etapas de Expedition",
+    "url": "https://arcraiders.wiki/w/index.php?title=Expedition&oldid=41456",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.179Z",
+    "revision": "41456",
+    "contentHash": "6ecf64663b9cc7b2478d9b8e965d588416170884d249b02afe848b5fc31b1826",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-phantom-targets",
+    "title": "ARC Raiders Wiki — etapas de Phantom Targets",
+    "url": "https://arcraiders.wiki/w/index.php?title=Phantom_Targets&oldid=41484",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.639Z",
+    "revision": "41484",
+    "contentHash": "be2f7e7e9517a0ad42bae258814e94194e15f51c01ff10428ee16348b9ea9486",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-converging-paths",
+    "title": "ARC Raiders Wiki — etapas de Converging Paths",
+    "url": "https://arcraiders.wiki/w/index.php?title=Converging_Paths&oldid=39983",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.639Z",
+    "revision": "39983",
+    "contentHash": "aa995ffcc2095f04dbb38a2049a59832b0692708c11da38ffc22040e319a465a",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-avian-alarm",
+    "title": "ARC Raiders Wiki — etapas de Avian Alarm",
+    "url": "https://arcraiders.wiki/w/index.php?title=Avian_Alarm&oldid=40091",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:25.612Z",
+    "revision": "40091",
+    "contentHash": "b0a051014c1e50d0d7a1a9428889c24f56fc5479bdb5f1dacece1bce9484b020",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-high-gain-antenna",
+    "title": "ARC Raiders Wiki — etapas de High-Gain Antenna",
+    "url": "https://arcraiders.wiki/w/index.php?title=High-Gain_Antenna&oldid=37557",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:26.038Z",
+    "revision": "37557",
+    "contentHash": "e58cdcbf2d08b07b43881e28dadc7bbe0447eaa266c691f98b09eeeecf965c74",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-weather-monitor-system",
+    "title": "ARC Raiders Wiki — etapas de Weather Monitor System",
+    "url": "https://arcraiders.wiki/w/index.php?title=Weather_Monitor_System&oldid=37558",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:26.058Z",
+    "revision": "37558",
+    "contentHash": "2b0dc05ba72c6d9995b262216046ba9e689549c788cd0b36371154ba2d1b95f1",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-project-review-project-flickering-flames",
+    "title": "ARC Raiders Wiki — etapas de Flickering Flames",
+    "url": "https://arcraiders.wiki/w/index.php?title=Flickering_Flames&oldid=40092",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T05:21:26.013Z",
+    "revision": "40092",
+    "contentHash": "c668e9a1f77c6ce174315d8707dcd6911b104a7ea713e6ddbffd72d937264bc3",
+    "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
   }
 ]

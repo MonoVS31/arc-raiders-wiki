@@ -105,14 +105,14 @@
       "scavengable": true,
       "quest": null,
       "trialReward": "no",
-      "confidence": "probable",
-      "validation": "cross-checked",
+      "confidence": "posible",
+      "validation": "index-only",
       "sourceIds": [
         "wiki-blueprints",
         "wiki-aphelion"
       ],
       "mapEvidenceUrls": [],
-      "note": "El mapa coincide con la sección de obtención del plano en la ficha. La aparición sigue siendo aleatoria."
+      "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
     {
       "id": "route-blueprint-barricade-kit-blueprint",

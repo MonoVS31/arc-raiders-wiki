@@ -35,7 +35,9 @@ for(const row of index.rows[0].rows.slice(1)){
      if(snapshot.markers.some(marker=>marker.kind==='quest-objective'&&marker.subtype===questKey)){mapSlugs.push(map.slug);mapEvidenceUrls.push(map.sourceUrl);}
    }
  }
- const foundText=section.match(/Found (?:in|inside|during) ([^.]+?)(?= Quests:| Projects:| Crafting|$)/)?.[0]??'';
+ // Item acquisition is not evidence of blueprint acquisition.
+ const blueprintSourceText=section.replace(/Requires a learned Blueprint/g,'');
+ const foundText=blueprintSourceText.match(/Blueprint(?:s)? (?:can be |is |are )?(?:found|obtained) (?:in|inside|during) ([^.]+?)(?= Quests:| Projects:| Crafting|$)/i)?.[0]??'';
  const mapMatch=explicitMaps.length>0&&explicitMaps.every(map=>foundText.includes(map));
  const unknown=[mapText,conditionText,containerText].includes('?');
  const scavengable=scavengeText==='Yes'?true:scavengeText==='No'?false:null;
