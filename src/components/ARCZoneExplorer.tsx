@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { zonesForARC, type ARCZone } from '../domain/arc-zones';
 import { WikiLink, Sources } from '../app/WikiContext';
-import '../styles/zones.css';
 import { arcMapReports } from '../domain/arc-links';
 const kinds = {
   weak: 'Zona débil reportada',

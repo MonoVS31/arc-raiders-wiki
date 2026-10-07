@@ -8,7 +8,6 @@ import {
   withinReportedRadius,
 } from '../domain/combat';
 import type { Claim, Entity } from '../domain/schema';
-import '../styles/combat.css';
 import portraits from '../data/arc-portraits.json';
 import { Sources } from '../app/WikiContext';
 const ARCZoneExplorer = lazy(() => import('./ARCZoneExplorer'));

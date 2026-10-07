@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Fase 3 de mantenimiento:** CSS sin las 26 clases antiguas sin uso, tokens centralizados, capas explícitas, nesting nativo y reglas de portada y rutas consolidadas. Apariencia comparada en escritorio y celular; 54 pruebas aprobadas. [Arquitectura y comprobaciones del CSS](docs/13-fase-3-css.md).
+
 **Fase 2 de mantenimiento:** código de `src/` formateado, vistas separadas y navegación centralizada en `useWikiNavigation`. ESLint revisa TypeScript, Hooks y accesibilidad en ambos workflows. El historial recupera la posición de scroll. 52 pruebas aprobadas. [Cambios y comprobaciones de la fase](docs/12-fase-2-legibilidad.md).
 
 **Edición 2.0:** portada de enciclopedia con identidad propia, menú lateral, búsqueda global, galerías y animaciones CSS. La lectura de fichas, mapas, materiales, fabricación, reparaciones y objetivos ocurre dentro de ARC Atlas. Las fuentes originales son referencias opcionales. Incluye 123 expedientes de fabricación, seis guías de misión y 281 recursos del catálogo local; 47 pruebas aprobadas. [Diseño y navegación integrada](docs/11-wiki-integrada.md).

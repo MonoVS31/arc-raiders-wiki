@@ -1,3 +1,4 @@
+import '../styles/leaflet.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
 import {
@@ -15,7 +16,6 @@ import { routeForBlueprint } from '../domain/blueprints';
 import { catalog } from '../domain/catalog';
 import { Sources } from '../app/WikiContext';
 import { claimsFor } from '../domain/query';
-import 'leaflet/dist/leaflet.css';
 
 const kindNames = {
   'weapon-case': 'Cajas de armas',
