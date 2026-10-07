@@ -10,7 +10,9 @@ Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó 
 
 **Versión 0.2:** seis mapas interactivos con zoom, desplazamiento, pisos, filtros y lista accesible. Incluye 1.981 reportes comunitarios, entre ellos 201 reportes de cajas, y rutas documentadas para 83 planos. Siete rutas tienen corroboración específica; cuatro conservan campos desconocidos. Las posiciones de los reportes no garantizan aparición del botín. Al seleccionar un ARC se muestran sus datos de combate con fuentes.
 
-Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC, comparadores y simulaciones de granadas. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
+**Versión 0.3:** comparador de armas con niveles y mejoras, panel de puntos débiles/blindaje/consejos y visualización geométrica de granadas con fuentes. Detalles en `docs/08-combat-tools.md`.
+
+Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC, publicación del sitio y PDF final. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
 
 ## Ejecutar
 
