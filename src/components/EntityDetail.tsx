@@ -4,6 +4,7 @@ import type { Entity } from '../domain/schema';
 import { lazy, Suspense } from 'react';
 import { BlueprintRouteCard } from './BlueprintRouteCard';
 import { mapManifest } from '../domain/maps';
+import { WeaponComparison, ARCCombatPanel, GrenadeEffectPanel } from './CombatTools';
 const MapExplorer=lazy(()=>import('./MapExplorer'));
 
 export const categories = { map: 'Mapas', weapon: 'Armas', arc: 'Enemigos ARC', grenade: 'Granadas', blueprint: 'Planos', project: 'Proyectos', container: 'Contenedores' } as const;
@@ -25,6 +26,9 @@ export function EntityDetail({ entity, blueprintId, onNavigate }: { entity: Enti
     {hasMap&&<Suspense fallback={<p className="map-loading">Cargando visor de mapas…</p>}><MapExplorer mapId={entity.id} blueprintId={blueprintId}/></Suspense>}
     {entity.category==='map'&&!hasMap&&<div className="map-placeholder"><h3>Cartografía en verificación</h3><p>Este mapa aún no tiene coordenadas revisadas.</p></div>}
     {entity.category==='blueprint'&&<BlueprintRouteCard blueprintId={entity.id} onNavigate={onNavigate}/>}
+    {entity.availability==='disponible'&&entity.category==='weapon'&&<WeaponComparison entity={entity}/>}
+    {entity.availability==='disponible'&&entity.category==='arc'&&<ARCCombatPanel entity={entity}/>}
+    {entity.availability==='disponible'&&entity.category==='grenade'&&<GrenadeEffectPanel entity={entity}/>}
     <dl className="claims">{claims.map(claim => <div className="claim" key={claim.id}>
       <dt>{fieldNames[claim.field] ?? claim.field}<span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>{claim.confidence}</span></dt>
       <dd>{claim.value === null ? <span className="unknown">Pendiente de verificar</span> : `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`}</dd>
