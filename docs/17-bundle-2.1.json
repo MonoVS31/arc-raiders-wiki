@@ -1,0 +1,15 @@
+{
+  "version": "2.1.0",
+  "referenceOriginal": {
+    "kb": 725,
+    "gzipKb": 132,
+    "origin": "Referencia solicitada por el usuario"
+  },
+  "entryCurrent": {
+    "file": "assets/index-EoNJve0v.js",
+    "bytes": 4065,
+    "buildReportedKb": 4.06,
+    "buildReportedGzipKb": 1.94
+  },
+  "notes": "Solo compara el chunk de entrada. React, wiki, Zod, Motion, JSON, CSS e imágenes no están incluidos en la cifra actual."
+}

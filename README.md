@@ -1,51 +1,30 @@
-# ARC Atlas — ARC Raiders Wiki
+# ARC Atlas - Edición 2.1
 
-**Sitio publicado:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/).
+Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, armas, ARC, granadas, planos, proyectos, recetas, materiales y fuentes se consultan dentro del sitio. No está afiliada a Embark Studios.
 
-Base inicial de una wiki comunitaria en español, preparada para el repositorio público nuevo **MonoVS31/arc-raiders-wiki**. No está afiliada a Embark Studios.
+**URL pública:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/). La edición 2.0 ya está publicada; la edición 2.1 de esta entrega está preparada en la copia local y aún requiere publicar los commits.
 
-## Estado de esta entrega
+## Cambios de las siete fases
 
-**Fase 6 de mantenimiento:** View Transitions, entradas ligadas al scroll, diálogo y búsqueda con transiciones discretas, radar y bordes CSS, layout de galería y presencia de modales con Motion por demanda. 95 pruebas aprobadas; arranque de 4,06 KB. [Animaciones y extensiones futuras](docs/12-animaciones.md).
+| Fase | Resultado | Documentación |
+|---|---|---|
+| 1 | AGENTS.md con reglas del proyecto, contadores derivados de entidades disponibles y numeración por categorías | Reglas en la raíz del repositorio |
+| 2 | Prettier, ESLint, lint en CI, componentes separados, navegación en hook, búsqueda memoizada y scroll conservado en el historial | [Legibilidad](docs/12-fase-2-legibilidad.md) |
+| 3 | 26 clases sin uso retiradas, tokens semánticos, @layer, nesting y consolidación de reglas | [CSS](docs/13-fase-3-css.md) |
+| 4 | Texto mínimo de 12 px, contrastes corregidos, combobox de teclado, enlaces reales, breadcrumb y títulos por vista | [Accesibilidad](docs/14-fase-4-accesibilidad.md) |
+| 5 | JSON públicos con fetch y caché, reintento, validación antes de build, marcadores Canvas incrementales e imágenes/animaciones optimizadas | [Rendimiento](docs/15-fase-5-rendimiento.md) |
+| 6 | View Transitions, entradas por scroll, transiciones discretas, radar y bordes CSS, Motion cargado solo para galería y modales | [Animaciones](docs/12-animaciones.md) |
+| 7 | Favicon SVG propio, tarjeta social original, Open Graph/Twitter/canonical, plan de prerender y riesgos de assets remotos | [SEO](docs/16-seo-y-prerender.md), [publicación y riesgos](docs/09-publicacion-y-mantenimiento.md) |
 
-**Fase 5 de mantenimiento:** datos públicos cargados con caché, arranque de 4,06 KB, validación obligatoria antes de compilar, marcadores Canvas con selección incremental e imágenes y animaciones optimizadas. 88 pruebas aprobadas. [Mediciones y arquitectura de carga](docs/15-fase-5-rendimiento.md).
+Datos, fuentes, notas, disponibilidad y niveles de evidencia conservados. Los contenidos anunciados siguen separados de los disponibles. Se conserva la base relativa de Vite y las URLs con ?category, ?entity, ?blueprint y ?arc.
 
-**Fase 4 de mantenimiento:** textos de al menos 12 px, tokens de contraste corregidos, búsqueda accesible por teclado, tarjetas con enlaces, breadcrumb semántico y títulos dinámicos. 78 pruebas aprobadas. [Accesibilidad y ratios de contraste](docs/14-fase-4-accesibilidad.md).
+## Ejecutar y comprobar
 
-**Fase 3 de mantenimiento:** CSS sin las 26 clases antiguas sin uso, tokens centralizados, capas explícitas, nesting nativo y reglas de portada y rutas consolidadas. Apariencia comparada en escritorio y celular; 54 pruebas aprobadas. [Arquitectura y comprobaciones del CSS](docs/13-fase-3-css.md).
-
-**Fase 2 de mantenimiento:** código de `src/` formateado, vistas separadas y navegación centralizada en `useWikiNavigation`. ESLint revisa TypeScript, Hooks y accesibilidad en ambos workflows. El historial recupera la posición de scroll. 52 pruebas aprobadas. [Cambios y comprobaciones de la fase](docs/12-fase-2-legibilidad.md).
-
-**Edición 2.0:** portada de enciclopedia con identidad propia, menú lateral, búsqueda global, galerías y animaciones CSS. La lectura de fichas, mapas, materiales, fabricación, reparaciones y objetivos ocurre dentro de ARC Atlas. Las fuentes originales son referencias opcionales. Incluye 123 expedientes de fabricación, seis guías de misión y 281 recursos del catálogo local; 47 pruebas aprobadas. [Diseño y navegación integrada](docs/11-wiki-integrada.md).
-
-**Edición 1.0 lista para revisar:** zonas y condiciones interactivas para los 21 ARC, 83 rutas contrastadas con sus fichas y otro catálogo, etapas de nueve proyectos, recompensas de planos y enlaces directos entre materiales, enemigos y mapas. Cada ficha se puede compartir para señalar errores. [Alcance y revisión](docs/10-edicion-para-revision.md).
-
-Investigación pública con corte **6 de octubre de 2026**, arquitectura documentada antes de la implementación y primera aplicación local con búsqueda, filtros y fichas con fuentes por campo. Las estadísticas comunitarias están clasificadas como probables; anuncios oficiales confirmados se separan del contenido disponible. Los desconocidos y conflictos son visibles.
-
-Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó ninguno. La investigación, documentación, catálogo y base web están publicados en https://github.com/MonoVS31/arc-raiders-wiki. El contenido publicado coincide con la base revisada en la PC. El acceso de la conexión está limitado a este repositorio.
-
-**Versión 0.2:** seis mapas interactivos con zoom, desplazamiento, pisos, filtros y lista accesible. Incluye 1.981 reportes comunitarios, entre ellos 201 reportes de cajas, y rutas documentadas para 83 planos. Siete rutas tienen corroboración específica; cuatro conservan campos desconocidos. Las posiciones de los reportes no garantizan aparición del botín. Al seleccionar un ARC se muestran sus datos de combate con fuentes.
-
-**Versión 0.3:** comparador de armas con niveles y mejoras, panel de puntos débiles/blindaje/consejos y visualización geométrica de granadas con fuentes. Detalles en `docs/08-combat-tools.md`.
-
-La versión 0.4 añadió referencias visuales ARC y publicación con GitHub Pages; la 1.0 añade esquemas orientativos y revisión de rutas por campo. Sigue pendiente corroborar dentro del juego los datos sin evidencia primaria. Los diagramas no representan zonas exactas de impacto. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
-
-La entrega 0.4 pasó 29 pruebas, TypeScript y compilación en local y GitHub. La URL pública fue comprobada con el visor de Dam (48 reportes de cajas), carga de imagen ARC y consulta de blindaje. La guía PDF de 32 páginas se entrega por separado con el recorrido de construcción, instrucciones de uso, documentación de las fases y registro de 148 fuentes.
-
-La edición 1.0 pasa 43 pruebas y conserva 159 fuentes. Su revisión cubre 112 páginas de objetos/ARC y nueve fichas de proyectos. Se corrigió la interpretación de una ruta de Aphelion: la ficha del arma no confirma dónde aparece el plano. Las recompensas por misión, proyectos y botín conservan evidencia y disponibilidad separadas.
-
-## Ejecutar
-
-Requiere Node 22.12+ (se validó con Node 24) y npm.
+Requiere Node 22.12+; CI usa Node 24.
 
 ```sh
 npm ci
 npm run dev
-```
-
-La aplicación usa el catálogo versionado; no necesita cuenta, servidor de datos ni secretos. Opcionalmente copiar `.env.example` a `.env` para el nombre público del sitio. **VITE_* se publica en el navegador; nunca incluir credenciales.**
-
-```sh
 npm run lint
 npm run typecheck
 npm test
@@ -53,44 +32,61 @@ npm run build
 npm run preview
 ```
 
-`dist/` contiene el sitio estático. La base relativa permite servirlo en una subcarpeta. CI ejecuta lint, comprobación de tipos, pruebas y build. El workflow de Pages valida lint, pruebas y build antes de desplegar los cambios de main.
+La edición 2.1 pasó **96 tests**, lint, TypeScript, validación de datos y build.
 
-Para aplicar el formato del proyecto, ejecutá `npm run format`. ESLint usa configuración plana (`eslint.config.mjs`), Prettier usa `.prettierrc.json` y los tests de interfaz corren en jsdom. El modo estricto de TypeScript se conserva.
+`npm run build` ejecuta TypeScript, la validación de datos y el build de Vite. Un presupuesto impide que el chunk de entrada alcance 200.000 bytes. `npm run format` aplica el formato compartido. TypeScript sigue estricto; la rama 6.0 permite usar typescript-eslint sin forzar dependencias incompatibles.
 
-## Documentación
+La aplicación no necesita secretos. `.env.example` permite ajustar el rótulo público; VITE_* se incluye en el navegador. El nombre público no cambia automáticamente las URLs SEO absolutas: si se cambia el dominio, revisar index.html y las propuestas de canonicals.
 
-- [Investigación y política de evidencia](docs/01-investigacion.md)
-- [Arquitectura e inventario técnico](docs/02-arquitectura.md)
-- [Modelo de datos](docs/03-modelo-datos.md)
-- [Fases y estrategia de commits](docs/04-fases-y-commits.md)
-- [Cobertura](docs/05-cobertura.md)
-- [Verificación ejecutada y límites](docs/06-verificacion.md)
-- [Mapas, rutas y atribución](docs/07-mapas-y-rutas.md)
+## Bundle y carga
 
-## Datos y actualización
+Referencia original solicitada: **725 KB / 132 KB gzip**. El arranque actual está alrededor de **4,06 KB / 1,94 KB gzip**, medido con npm run build. El archivo principal cumple el objetivo de menos de 200 KB.
 
-`public/data/atlas/catalog.json` almacena entidades, afirmaciones y tareas de ubicación. `public/data/atlas/sources.json` conserva URLs, revisiones y hashes de consultas. `src/domain/schema.ts` valida procedencia, duplicados, unidades, posiciones e incertidumbre; la UI nunca consume HTML remoto. Cada edición debe conservar evidencia y pasar las pruebas. Después del 8 de octubre revisar Frozen Trail antes de cambiar disponibilidad o estadísticas.
+Esta cifra no representa toda la aplicación: React, la wiki y Zod se cargan después de los datos. Los mapas, recetas y Motion tienen chunks por demanda. Los 15 JSON propios suman 670.605 bytes sin comprimir y se transfieren aparte; las imágenes externas tampoco forman parte del bundle. [Mediciones detalladas](docs/15-bundle-mediciones.json) y [dependencias de animaciones](docs/12-animaciones-mediciones.json).
 
-La investigación inicial se preparó consultando fuentes públicas; los scripts y capturas de trabajo no forman parte de la aplicación. El catálogo es editable sin scraping automático: agregar la fuente, la entidad y los campos revisados; ejecutar las comprobaciones. Las rutas de obtención incompletas siguen marcadas como pendientes.
+## Datos y cobertura
 
-## Repositorio y trabajo local
+La investigación tiene corte al 6 de octubre de 2026. El catálogo y sus fuentes se sirven desde `public/data/atlas/`; los marcadores desde `public/data/maps/` y los expedientes desde `public/data/dossiers/`. El catálogo efectivo conserva la composición revisada y se valida en tests/build. Los archivos trasladados conservaron sus bytes.
 
-Repositorio público: https://github.com/MonoVS31/arc-raiders-wiki.
+El inventario documenta 83 planos, 123 expedientes de fabricación, seis guías de misión, 281 recursos y 166 fuentes. Las ubicaciones comunitarias son reportes posibles y no garantizan aparición. Los diagramas ARC son orientativos; no se inventan porcentajes, curvas de daño ni geometrías precisas. Después del 8 de octubre, revisar el parche oficial antes de cambiar Frozen Trail.
 
-La publicación separa investigación, arquitectura, catálogo y aplicación. No se reescribió historia de repositorios existentes.
+Los comandos data:maps, data:blueprints, data:audit y data:arc-links actualizan capturas deliberadamente. Algunas rutas requieren las capturas de investigación conservadas en Arc/work/research; no son pasos de instalación de un clon nuevo. Revisar cambios y fuentes antes de integrar.
 
-La [verificación automática de la base](https://github.com/MonoVS31/arc-raiders-wiki/actions/runs/37518686760) aprobó instalación, TypeScript, tests y build. Este repositorio contiene la base del proyecto; la web todavía no se desplegó en una URL pública.
+## SEO y preview al compartir
 
-Para continuar, crear una rama de trabajo desde main y ejecutar las comprobaciones antes de publicar. No incluir credenciales en archivos.
+index.html contiene favicon, canonical, og:title, og:description, og:image y Twitter Card. La imagen social de 1200 x 630 y el favicon son originales del símbolo de tres barras; no usan gráficos copiados del juego.
 
-## Actualizar mapas y rutas
+La preview actual es general. Las URLs por query sirven el mismo HTML y no producen previews diferentes por ficha para bots sin JavaScript. Se propone un piloto estático con Astro/islas React o SSG compatible con React, conservando los enlaces existentes. **No se implementó prerender ni migración de framework.** [Ventajas, costos y decisiones](docs/16-seo-y-prerender.md).
 
-Los marcadores se sirven desde cachés por mapa en public/data/maps; Leaflet y el visor se cargan por demanda. El navegador verifica SHA-256 de la caché contra el manifiesto antes de mostrar datos. Las imágenes se cargan desde MetaForge con atribución y enlace; no se copian sus tiles al repositorio. Esta integración usa las condiciones de su [API pública](https://metaforge.app/arc-raiders/api) para el proyecto gratuito actual. Un producto monetizado requiere contacto previo con el proveedor.
+## Publicación y mantenimiento
 
-`npm run data:maps` solicita una nueva captura deliberadamente y exige revisar la configuración si cambia. `npm run data:blueprints` necesita las capturas de investigación conservadas en Arc/work/research; no es un comando de instalación para un clon nuevo. Los datos ya versionados permiten ejecutar la aplicación sin esas capturas. Revisar diferencias, fuentes y pruebas antes de publicar actualizaciones.
+Repositorio: [MonoVS31/arc-raiders-wiki](https://github.com/MonoVS31/arc-raiders-wiki). Las siete fases se guardan en commits separados. GitHub Actions ejecuta lint, pruebas, tipos, validación y build; Pages publica dist cuando se integra main. No se reescribió la historia ni se modificaron otros repositorios.
 
-La captura original de public/data/atlas/catalog.json permanece como evidencia inicial. domain/catalog.ts compone los campos activos con la calibración de mapas y las rutas revisadas, para que los filtros no sigan usando pendientes sustituidos por nueva evidencia.
+La edición 2.1 debe publicarse y comprobarse en la URL pública; después verificar favicon, tarjeta PNG, HTML con metadatos, rutas, carga/reintento y funcionamiento de mapas. Los ZIP y bundles de Git se guardan fuera del árbol del repo, dentro de Arc.
+
+## Riesgos y decisiones pendientes
+
+- Las 142 referencias visuales (117 URLs únicas) y los tiles dependen de MetaForge/Supabase. Pueden cambiar, fallar o limitar solicitudes. Los datos textuales siguen siendo propios y accesibles. [Riesgos y alternativas](docs/09-publicacion-y-mantenimiento.md).
+- Confirmar las licencias de cada archivo antes de copiar imágenes externas. No se descargaron ni copiaron imágenes del juego o tiles en estas fases. Elegir entre imágenes autorizadas en el repo, proxy/caché o continuar con referencias remotas.
+- Elegir y aprobar el piloto de prerender por ficha. No se agregó Astro ni un plugin SSG.
+- Publicar la edición 2.1. La URL pública anterior no demuestra que esta edición esté desplegada.
+- Corroborar datos pendientes dentro del juego y revisar Frozen Trail después de su lanzamiento.
+- GSAP/ScrollTrigger y un ARC 3D quedan como propuestas futuras para escritorio, no como dependencias instaladas.
+
+## Documentación e historial
+
+[Investigación](docs/01-investigacion.md), [arquitectura](docs/02-arquitectura.md), [modelo de datos](docs/03-modelo-datos.md), [fases iniciales](docs/04-fases-y-commits.md), [cobertura](docs/05-cobertura.md), [mapas](docs/07-mapas-y-rutas.md), [combate](docs/08-combat-tools.md) y [diseño de edición 2.0](docs/11-wiki-integrada.md). La guía PDF histórica de 2.0 se conserva fuera del repo; no se presenta como documentación actualizada de las siete fases.
+
+| Fase | Commit |
+|---|---|
+| 1 | 8535b95 |
+| 2 | bbf5911 |
+| 3 | fbb6ac9 |
+| 4 | 54ccff6 |
+| 5 | dbe1f54 |
+| 6 | b306a15 |
+| 7 | Commit final de esta entrega; ver git log -1 |
 
 ## Atribución y propiedad
 
-ARC RAIDERS, nombres y material del juego pertenecen a Embark Studios. Las fuentes de la wiki señalan contenido comunitario CC BY-SA salvo excepciones; revisar la licencia de cada material antes de redistribuirlo. Este proyecto conserva enlaces y datos factuales, sin copiar artículos completos ni gráficos del juego. No se ha elegido una licencia abierta para el código. Convertir un repositorio público a privado no elimina las copias que otros hayan obtenido.
+ARC Raiders y los assets del juego pertenecen a Embark Studios y sus titulares correspondientes. Las referencias comunitarias conservan procedencia y atribución. Una URL pública no autoriza redistribución; los permisos de imágenes y tiles deben revisarse por separado. No se eligió una licencia abierta para el código. Hacer privado un repo no elimina copias ya obtenidas ni garantiza mantener el mismo alojamiento de Pages.
