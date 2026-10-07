@@ -1,14 +1,15 @@
 import { lazy, Suspense, useState } from 'react';
-import { catalog, sourceById } from '../domain/catalog';
+import { catalog } from '../domain/catalog';
 import { combatClaim, grenadeGeometry, weaponTiers, weaponTierMetric, withinReportedRadius } from '../domain/combat';
 import type { Claim, Entity } from '../domain/schema';
 import '../styles/combat.css';
 import portraits from '../data/arc-portraits.json';
+import { Sources } from '../app/WikiContext';
 const ARCZoneExplorer=lazy(()=>import('./ARCZoneExplorer'));
 
 function Evidence({ claim }: { claim: Claim | undefined }) {
   if (!claim) return <span className="unknown">Pendiente de verificar</span>;
-  return <div className="combat-evidence"><strong>{claim.value === null ? 'Pendiente de verificar' : `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`}</strong><span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>{claim.confidence}</span>{claim.note && <p>{claim.note}</p>}<div className="source-links">{claim.sourceIds.map(id => { const source = sourceById.get(id); return source && <a key={id} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>; })}</div></div>;
+  return <div className="combat-evidence"><strong>{claim.value === null ? 'Pendiente de verificar' : `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`}</strong><span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>{claim.confidence}</span>{claim.note && <p>{claim.note}</p>}<Sources ids={claim.sourceIds}/></div>;
 }
 function Tier({ entity,tier,onChange }: { entity: Entity;tier:string;onChange:(tier:string)=>void }) {
   const tiers = weaponTiers(entity.id);
@@ -29,7 +30,7 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
   const [imageFailed, setImageFailed] = useState(false);
   const portrait = portraits.portraits.find(item => item.entityId === entity.id);
   const tabs = ['punto débil', 'blindaje', 'consejo'];
-  return <section className="combat-tool"><h3>Preparar el combate</h3>{portrait && <figure className="arc-portrait">{imageFailed ? <p>La imagen de referencia no está disponible. Los datos de combate siguen accesibles.</p> : <img src={portrait.imageUrl} alt={`Referencia visual de ${entity.name}`} loading="lazy" referrerPolicy="no-referrer" onError={() => setImageFailed(true)}/>}<figcaption>Referencia visual probable vía <a href="https://metaforge.app/arc-raiders" target="_blank" rel="noreferrer">MetaForge</a>. Assets © Embark Studios. <a href={sourceById.get(portraits.sourceId)?.url} target="_blank" rel="noreferrer">Fuente de identidad ↗</a>. No marca zonas de impacto.</figcaption></figure>}<Suspense fallback={<p>Cargando zonas de combate…</p>}><ARCZoneExplorer entityId={entity.id}/></Suspense><div className="combat-tabs" aria-label="Información de combate">{tabs.map(tab => <button key={tab} aria-pressed={field === tab} onClick={() => setField(tab)}>{tab}</button>)}</div><div className="combat-focus" key={field}><Evidence claim={combatClaim(entity.id, field)}/></div><p className="muted">El blindaje describe una categoría. No equivale a un porcentaje de resistencia ni a un modelo de zonas de impacto.</p></section>;
+  return <section className="combat-tool"><h3>Preparar el combate</h3>{portrait && <figure className="arc-portrait">{imageFailed ? <p>La imagen de referencia no está disponible. Los datos de combate siguen accesibles.</p> : <img src={portrait.imageUrl} alt={`Referencia visual de ${entity.name}`} loading="lazy" referrerPolicy="no-referrer" onError={() => setImageFailed(true)}/>}<figcaption>Referencia visual vía MetaForge · Assets © Embark Studios. <Sources ids={[portraits.sourceId]} label="Procedencia de la imagen"/></figcaption></figure>}<Suspense fallback={<p>Cargando zonas de combate…</p>}><ARCZoneExplorer entityId={entity.id}/></Suspense><div className="combat-tabs" aria-label="Información de combate">{tabs.map(tab => <button key={tab} aria-pressed={field === tab} onClick={() => setField(tab)}>{tab}</button>)}</div><div className="combat-focus" key={field}><Evidence claim={combatClaim(entity.id, field)}/></div><p className="muted">El blindaje describe una categoría. No equivale a un porcentaje de resistencia ni a un modelo de zonas de impacto.</p></section>;
 }
 export function GrenadeEffectPanel({ entity }: { entity: Entity }) {
   const geometry = grenadeGeometry(entity.id);

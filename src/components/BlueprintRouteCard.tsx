@@ -1,9 +1,9 @@
 import { routeForBlueprint } from '../domain/blueprints';
-import { sourceById } from '../domain/catalog';
 import { mapManifest } from '../domain/maps';
 import { auditForBlueprint, researchAudit } from '../domain/research-audit';
 import { projectBlueprintRewards } from '../domain/project-rewards';
-import { entityLink } from '../domain/navigation';
+import { WikiLink,Sources } from '../app/WikiContext';
+import { QuestGuide } from './QuestGuide';
 function RouteEvidence({unknown=false}:{unknown?:boolean}){return <span className={`confidence ${unknown?'no-confirmado':'posible'}`}>{unknown?'no confirmado':'posible'}</span>;}
 
 export function BlueprintRouteCard({blueprintId,onNavigate}:{blueprintId:string;onNavigate?:((mapId:string,blueprintId:string)=>void)|undefined}){
@@ -20,11 +20,12 @@ export function BlueprintRouteCard({blueprintId,onNavigate}:{blueprintId:string;
      <div><dt>Recompensa de Trials <RouteEvidence unknown={route.trialReward==='unknown'}/></dt><dd>{route.trialReward==='yes'?'Reportada':route.trialReward==='no'?'No reportada':'Sin verificar'}</dd></div>
    </dl>
    <p>{route.note}</p>
-   {rewards.length>0&&<div className="project-reward-routes"><h4>También como recompensa de proyecto</h4>{rewards.map(reward=><div key={reward.projectId+reward.stageName}><span className="confidence probable">probable</span><p>{reward.projectName} · {reward.stageName}: {reward.reward}</p><p>Estado del proyecto: {reward.availability}.{reward.availability!=='disponible'?' No se presenta como una obtención vigente.':''}</p>{typeof window!=='undefined'&&<a href={entityLink(window.location.href,reward.projectId)}>Ver etapas del proyecto ↗</a>}</div>)}</div>}
-   {audit&&<details className="route-audit"><summary>Revisión de evidencia · {researchAudit.checkedAt.slice(0,10)}</summary><p>{audit.note}</p>{audit.containerDetails.length>0&&<p><strong>Contenedores específicos reportados:</strong> {audit.containerDetails.join(' · ')} <span className="confidence probable">probable</span></p>}{audit.pendingFields.length>0&&<p>Campos sin verificar: {audit.pendingFields.join(' · ')}.</p>}<p>La revisión comprobó la versión de la ficha y su presencia en otro catálogo. No equivale a verificar una aparición dentro del juego.</p><div className="source-links">{researchAudit.sourceIds.map(id=>{const source=sourceById.get(id);return source&&<a key={id} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>;})}</div></details>}
+   {route.quest&&<QuestGuide name={route.quest}/>}
+   {rewards.length>0&&<div className="project-reward-routes"><h4>También como recompensa de proyecto</h4>{rewards.map(reward=><div key={reward.projectId+reward.stageName}><span className="confidence probable">probable</span><p>{reward.projectName} · {reward.stageName}: {reward.reward}</p><p>Estado del proyecto: {reward.availability}.{reward.availability!=='disponible'?' No se presenta como una obtención vigente.':''}</p><WikiLink entityId={reward.projectId}>Ver etapas del proyecto →</WikiLink></div>)}</div>}
+   {audit&&<details className="route-audit"><summary>Revisión de evidencia · {researchAudit.checkedAt.slice(0,10)}</summary><p>{audit.note}</p>{audit.containerDetails.length>0&&<p><strong>Contenedores específicos reportados:</strong> {audit.containerDetails.join(' · ')} <span className="confidence probable">probable</span></p>}{audit.pendingFields.length>0&&<p>Campos sin verificar: {audit.pendingFields.join(' · ')}.</p>}<p>La revisión comprobó la versión de la ficha y su presencia en otro catálogo. No equivale a verificar una aparición dentro del juego.</p><Sources ids={researchAudit.sourceIds}/></details>}
    {route.maps.length>0&&<div className="route-maps"><span>{route.mapScope==='quest'?'Mapas con objetivos de misión reportados':route.mapScope==='condition-only'?'Mapas con la condición reportada; ruta por corroborar':'Mapas reportados'}</span>{route.maps.map(slug=>{const map=mapManifest.maps.find(map=>map.slug===slug);return map&&<button key={slug} type="button" onClick={()=>onNavigate?.(map.id,blueprintId)} disabled={!onNavigate}>{map.name} ↗</button>;})}</div>}
    {route.mapScope==='quest'&&<p>El plano se obtiene al completar la misión. Sus objetivos no son puntos de aparición del plano.</p>}
-   <div className="source-links">{route.sourceIds.map(id=>{const source=sourceById.get(id);return source&&<a key={id} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>;})}</div>
-   <div className="source-links">{route.mapEvidenceUrls.map(url=><a key={url} href={url} target="_blank" rel="noreferrer">Objetivos en MetaForge ↗</a>)}</div>
+   <Sources ids={route.sourceIds}/>
+   
  </section>;
 }

@@ -524,7 +524,9 @@
       "stages": [
         {
           "name": "Part 1 / Upgrade Cargo Elevator Antennas (1)",
-          "requirements": [],
+          "requirements": [
+            "Upgrade 3 antennas found on top of any Cargo Elevator"
+          ],
           "rewards": [
             "1× Combat Mk. 3 (Aggressive)",
             "1× Heavy Shield",
@@ -534,7 +536,11 @@
         },
         {
           "name": "Part 1 / Test ARC Parts For Irregular Behavior (2)",
-          "requirements": [],
+          "requirements": [
+            "Deal 50 damage to any ARC enemies using Pop Triggers",
+            "Deal 500 damage to any ARC enemies using Wasp Drivers",
+            "Deal 1,000 damage to any ARC enemies using Leaper Pulse Unit"
+          ],
           "rewards": [
             "50× Raider Tokens",
             "1× Aphelion",
@@ -545,7 +551,11 @@
         },
         {
           "name": "Part 1 / Test Multiple Destruction Methods (3)",
-          "requirements": [],
+          "requirements": [
+            "Deal 1,500 damage to ARC enemies using fire damage items (Blaze Grenade, Firefly Burner, Fireball Burner, Flame Spray)",
+            "Destroy 3 Bastion, Leapers, Vaporizers or Rocketeers using energy weapons (Aphelion, Dolabra, Jupiter, Equalizer)",
+            "Destroy 20 Flying ARC using Launcher Ammo weapons (Hullcracker, Rascal)"
+          ],
           "rewards": [
             "50× Raider Tokens",
             "1× Powered Descender",
@@ -626,7 +636,9 @@
       "stages": [
         {
           "name": "Secure safe passage for the nomads (1)",
-          "requirements": [],
+          "requirements": [
+            "Infligir 1200 de daño a enemigos ARC en Swamp, solo en Dam Battlegrounds."
+          ],
           "rewards": [
             "3× Pulse Mine",
             "3× Lure Grenade Trap",
@@ -700,7 +712,7 @@
         {
           "name": "Use nomad tactics to fight ARC (6)",
           "requirements": [
-            "950 damage"
+            "Infligir daño a ARC mediante minas o trampas: Blaze Grenade Trap, Pulse Mine, Jolt Mine, Explosive Mine o Surge Coil."
           ],
           "rewards": [
             "1× Sextant",
@@ -739,7 +751,9 @@
       "stages": [
         {
           "name": "Initial Flock Intake (1)",
-          "requirements": [],
+          "requirements": [
+            "Lay a bird trap next to the buoys along the Seabed in Riven Tides"
+          ],
           "rewards": [
             "1× Dockmaster's Detector",
             "25× Raider Tokens"
