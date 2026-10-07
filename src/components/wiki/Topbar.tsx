@@ -41,7 +41,7 @@ export function Topbar({
         <button onClick={openNews}>
           Frozen Trail <span className="new-label">ANUNCIADO</span>
         </button>
-        <span className="edition-chip">EDICIÓN 2.1</span>
+        <span className="edition-chip">EDICIÓN 2.2</span>
       </div>
     </header>
   );

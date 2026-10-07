@@ -31,7 +31,10 @@ export function startAtlas(root: HTMLElement, options: BootstrapOptions = {}) {
       button.addEventListener('click', () => void run(), { once: true });
       main.append(button);
     }
-    root.replaceChildren(main);
+    if (root.querySelector('[data-prerender]')) {
+      root.querySelector('.boot-state')?.remove();
+      root.prepend(main);
+    } else root.replaceChildren(main);
   };
   const run = async () => {
     const attempt = ++generation;

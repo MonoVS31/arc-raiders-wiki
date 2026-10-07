@@ -1,3 +1,4 @@
+import { atlasAsset } from './assets';
 export const atlasFiles = [
   'arc-map-reports.json',
   'arc-portraits.json',
@@ -5,6 +6,7 @@ export const atlasFiles = [
   'blueprint-routes.json',
   'catalog.json',
   'entity-visuals.json',
+  'image-assets.json',
   'extra-stats.json',
   'maps/manifest.json',
   'material-arc-hints.json',
@@ -25,7 +27,7 @@ export function createJsonCache(request: typeof fetch = (...args) => fetch(...ar
       if (values.has(path)) return values.get(path) as T;
       let task = pending.get(path);
       if (!task) {
-        task = request(`${import.meta.env.BASE_URL}data/atlas/${path}`)
+        task = request(atlasAsset(`data/atlas/${path}`))
           .then(async (response) => {
             if (!response.ok) throw new Error('No se pudo cargar el archivo de datos');
             const data: unknown = await response.json();

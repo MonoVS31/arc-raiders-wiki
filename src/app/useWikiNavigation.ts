@@ -1,7 +1,7 @@
 import { transitionNavigation } from './view-transitions';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { catalog } from '../domain/catalog';
-import { requestedEntity, entityLink } from '../domain/navigation';
+import { requestedEntity, entityLink, atlasRoot } from '../domain/navigation';
 import { categorySchema, type Category } from '../domain/schema';
 import type { Filters } from '../domain/query';
 import { mapManifest } from '../domain/maps';
@@ -20,7 +20,7 @@ const defaultFilters: Filters = {
 };
 export function readLocation() {
   const params = new URLSearchParams(window.location.search);
-  const entity = requestedEntity(params.toString(), catalog.entities);
+  const entity = requestedEntity(params.toString(), catalog.entities, window.location.pathname);
   const category = categorySchema.safeParse(params.get('category'));
   const map = entity && mapManifest.maps.find((map) => map.id === entity.id);
   const blueprintId = params.get('blueprint');
@@ -138,7 +138,7 @@ export function useWikiNavigation(onNavigate: () => void) {
       setView('home');
       setSelectedId(null);
       setFocus({ blueprintId: null, arcId: null });
-      const url = new URL(window.location.href);
+      const url = atlasRoot(window.location.href);
       url.search = '';
       url.hash = '';
       push(url.toString());
@@ -153,7 +153,7 @@ export function useWikiNavigation(onNavigate: () => void) {
       setView('category');
       setSelectedId(null);
       setFocus({ blueprintId: null, arcId: null });
-      const url = new URL(window.location.href);
+      const url = atlasRoot(window.location.href);
       url.search = '';
       url.searchParams.set('category', value);
       url.hash = 'catalog';

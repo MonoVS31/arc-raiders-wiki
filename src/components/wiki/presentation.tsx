@@ -1,3 +1,4 @@
+import { localImage } from '../../domain/images';
 import { entityTransitionName } from '../../app/view-transitions';
 import { readAtlasData } from '../../domain/data-loader';
 import { useState } from 'react';
@@ -23,7 +24,10 @@ export const availableCount = (category: Category) =>
       (entity) => entity.category === category && entity.availability === 'disponible',
     ).length,
   );
-export const artFor = (id: string) => visuals.find((visual) => visual.entityId === id)?.url;
+export const artFor = (id: string) => {
+  const url = visuals.find((visual) => visual.entityId === id)?.url;
+  return url ? localImage(url) : undefined;
+};
 export function EntityImage({ id, name }: { id: string; name: string }) {
   const [failed, setFailed] = useState(false);
   const url = artFor(id);

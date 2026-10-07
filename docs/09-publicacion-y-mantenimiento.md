@@ -64,3 +64,9 @@ Guardar copias ZIP del código y bundles de Git fuera del árbol del repositorio
 Hacer privado el repositorio más adelante no elimina copias que otros ya hayan descargado. Según el plan de GitHub, también puede cambiar la disponibilidad de Pages. Revisar las condiciones del alojamiento antes de hacerlo. No se incluyó una licencia abierta para conceder derechos sobre código o assets del juego.
 
 La cobertura es un inventario verificable, no una afirmación de exhaustividad. Quedan pendientes verificaciones dentro del juego, rutas incompletas y diagramas anatómicos con evidencia primaria. Las imágenes de referencia no equivalen a esos diagramas.
+
+## Actualización: imágenes locales en la fase 8
+
+El usuario autorizó después la descarga y uso de las imágenes, declarando que no tiene permisos de redistribución. Se copiaron 381 imágenes de fichas, ARC y materiales a un caché local (54,7 MB). Sus licencias siguen sin confirmar: atribuirlas o encontrarlas públicas no concede autorización. Los términos de MetaForge reservan las imágenes y marcas a sus titulares: https://metaforge.app/terms.
+
+El build verifica el snapshot con SHA-256 y publica las imágenes desde Pages. El navegador deja de depender de static.metaforge.app y Supabase para esas imágenes. Los tiles permanecen externos. El caché binario está fuera de Git y se guarda en Arc; CI lo reconstruye desde URLs públicas verificadas. Esto reduce el tamaño del repositorio, pero mantiene una dependencia externa durante las nuevas compilaciones. Una imagen modificada, borrada o inaccesible bloquea el build sin borrar el sitio publicado. Un reclamo del titular requiere retirar las imágenes afectadas o reemplazarlas por recursos propios/autorizados. No se agregó proxy, servicio de pago ni permiso nuevo de GitHub.

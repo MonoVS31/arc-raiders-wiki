@@ -1,3 +1,9 @@
+# Actualización de la edición 2.2
+
+El prerender fue autorizado después de la entrega 2.1 y ya está implementado mediante un generador de HTML adicional con Vite. Se generan 167 rutas /fichas/<id>/, con campos efectivos, fuentes y notas legibles sin JavaScript, canonical y metadatos exclusivos, tarjetas PNG originales y sitemap. No se migró a Astro. Ver [implementación y riesgos de la fase 8](18-fichas-estaticas.md). Los enlaces por query anteriores siguen funcionando; para una preview por ficha se usa el nuevo enlace permanente o Copiar enlace. Discord puede mantener previews en caché.
+
+Los apartados siguientes conservan la evaluación y propuesta de la entrega 2.1 como registro histórico.
+
 # SEO y previews compartidas: edición 2.1
 
 ## Implementado
