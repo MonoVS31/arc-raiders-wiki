@@ -169,7 +169,22 @@
       color: var(--color-text-breadcrumb-button);
       padding: 0;
     }
-    & > span:last-child {
+    & ol {
+      display: flex;
+      align-items: center;
+      gap: inherit;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+    }
+    & li {
+      display: flex;
+      align-items: center;
+      gap: inherit;
+      min-width: 0;
+    }
+    & li:last-child > span:last-child {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -257,11 +272,11 @@
       );
       pointer-events: none;
     }
-    &:has(.global-results) {
+    &:has(.global-results:not([hidden])) {
       overflow: visible;
       z-index: 23;
     }
-    &:has(.global-results) .banner-orbit {
+    &:has(.global-results:not([hidden])) .banner-orbit {
       display: none;
     }
   }
@@ -657,6 +672,11 @@
     margin-top: var(--space-25);
   }
   .gallery-card {
+    display: block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
     border: 1px solid var(--color-border-gallery-card);
     border-radius: var(--radius-10);
     background: var(--color-surface-gallery-card);
@@ -1222,7 +1242,7 @@
     .breadcrumb button {
       font-size: var(--font-size-0-6875);
     }
-    .breadcrumb > span:last-child {
+    .breadcrumb li:last-child > span:last-child {
       max-width: 120px;
     }
     .welcome-banner {
@@ -1405,7 +1425,14 @@
     box-shadow: var(--shadow-global-results);
     z-index: 10;
     overflow: hidden;
-    & button {
+    & ul {
+      max-height: min(22rem, 45vh);
+      overflow-y: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    & [role='option'] {
       display: block;
       width: 100%;
       text-align: left;
@@ -1415,7 +1442,8 @@
       background: none;
       color: var(--color-text-global-results-button);
     }
-    & button:hover {
+    & [role='option']:hover,
+    & [role='option'][aria-selected='true'] {
       background: var(--color-surface-global-results-button-hover);
     }
     & small {

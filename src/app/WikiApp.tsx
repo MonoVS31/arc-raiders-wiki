@@ -1,7 +1,8 @@
-import { lazy, Suspense, useCallback, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useMemo, useState, useEffect } from 'react';
 import { catalog } from '../domain/catalog';
 import { findEntities } from '../domain/query';
 import type { Category } from '../domain/schema';
+import { categories } from '../components/EntityDetail';
 import { WikiContext } from './WikiContext';
 import type { WikiPanel } from '../components/WikiModal';
 import { useWikiNavigation } from './useWikiNavigation';
@@ -36,6 +37,15 @@ export function App() {
   );
   const entities = useMemo(() => findEntities(catalog, filters), [filters]);
   const siteName = import.meta.env.VITE_SITE_NAME || 'ARC Atlas';
+  useEffect(() => {
+    const name =
+      view === 'article'
+        ? selected?.name
+        : view === 'category'
+          ? categories[filters.category as Category]
+          : 'Archivo de campo';
+    document.title = `${name ?? 'Archivo de campo'} · ARC Atlas`;
+  }, [view, selected?.name, filters.category]);
   const open = (value: WikiPanel) => setPanels((current) => [...current, value]);
   const actions = {
     navigate,
@@ -78,12 +88,7 @@ export function App() {
               navigate={navigate}
             />
           ) : view === 'category' ? (
-            <CategoryView
-              filters={filters}
-              setFilters={setFilters}
-              entities={entities}
-              navigate={navigate}
-            />
+            <CategoryView filters={filters} setFilters={setFilters} entities={entities} />
           ) : selected ? (
             <ArticleView
               selected={selected}

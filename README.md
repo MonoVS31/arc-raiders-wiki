@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Fase 4 de mantenimiento:** textos de al menos 12 px, tokens de contraste corregidos, búsqueda accesible por teclado, tarjetas con enlaces, breadcrumb semántico y títulos dinámicos. 78 pruebas aprobadas. [Accesibilidad y ratios de contraste](docs/14-fase-4-accesibilidad.md).
+
 **Fase 3 de mantenimiento:** CSS sin las 26 clases antiguas sin uso, tokens centralizados, capas explícitas, nesting nativo y reglas de portada y rutas consolidadas. Apariencia comparada en escritorio y celular; 54 pruebas aprobadas. [Arquitectura y comprobaciones del CSS](docs/13-fase-3-css.md).
 
 **Fase 2 de mantenimiento:** código de `src/` formateado, vistas separadas y navegación centralizada en `useWikiNavigation`. ESLint revisa TypeScript, Hooks y accesibilidad en ambos workflows. El historial recupera la posición de scroll. 52 pruebas aprobadas. [Cambios y comprobaciones de la fase](docs/12-fase-2-legibilidad.md).

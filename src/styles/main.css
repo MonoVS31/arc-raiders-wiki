@@ -1,4 +1,8 @@
 @layer base {
+  input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
   html {
     font-family: var(--font-family-body);
     font-synthesis: none;
@@ -400,6 +404,9 @@
   }
 }
 @layer utilities {
+  [hidden] {
+    display: none !important;
+  }
   .skip-link {
     position: absolute;
     left: 20px;

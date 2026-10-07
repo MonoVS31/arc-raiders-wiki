@@ -1,3 +1,4 @@
+import { WikiLink } from '../../app/WikiContext';
 import type { Category, Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
 import type { CSSProperties, Dispatch, SetStateAction } from 'react';
@@ -10,12 +11,10 @@ export function CategoryView({
   filters,
   setFilters,
   entities,
-  navigate,
 }: {
   filters: Filters;
   setFilters: Dispatch<SetStateAction<Filters>>;
   entities: Entity[];
-  navigate: (id: string) => void;
 }) {
   return (
     <>
@@ -82,11 +81,11 @@ export function CategoryView({
       </p>
       <div className="entity-gallery">
         {entities.map((entity, index) => (
-          <button
+          <WikiLink
             key={entity.id}
             className={`gallery-card category-${entity.category}`}
             style={{ '--delay': `${Math.min(index, 12) * 35}ms` } as CSSProperties}
-            onClick={() => navigate(entity.id)}
+            entityId={entity.id}
           >
             <div className="gallery-art">
               <WikiIcon category={entity.category} />
@@ -98,7 +97,7 @@ export function CategoryView({
               <span className={`availability ${entity.availability}`}>{entity.availability}</span>
               <span className="gallery-arrow">→</span>
             </div>
-          </button>
+          </WikiLink>
         ))}
       </div>
       {entities.length === 0 && (

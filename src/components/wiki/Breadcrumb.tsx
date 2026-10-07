@@ -14,10 +14,18 @@ export function Breadcrumb({
   activeCategory: Category;
 }) {
   return (
-    <div className="breadcrumb">
-      <button onClick={home}>{siteName}</button>
-      <span>/</span>
-      <span>{view === 'home' ? 'Portada' : (selected?.name ?? categories[activeCategory])}</span>
-    </div>
+    <nav className="breadcrumb" aria-label="Ruta de navegación">
+      <ol>
+        <li>
+          <button onClick={home}>{siteName}</button>
+        </li>
+        <li aria-current="page">
+          <span aria-hidden="true">/</span>
+          <span>
+            {view === 'home' ? 'Portada' : (selected?.name ?? categories[activeCategory])}
+          </span>
+        </li>
+      </ol>
+    </nav>
   );
 }
