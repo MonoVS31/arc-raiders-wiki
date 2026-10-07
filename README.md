@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Fase 2 de mantenimiento:** código de `src/` formateado, vistas separadas y navegación centralizada en `useWikiNavigation`. ESLint revisa TypeScript, Hooks y accesibilidad en ambos workflows. El historial recupera la posición de scroll. 52 pruebas aprobadas. [Cambios y comprobaciones de la fase](docs/12-fase-2-legibilidad.md).
+
 **Edición 2.0:** portada de enciclopedia con identidad propia, menú lateral, búsqueda global, galerías y animaciones CSS. La lectura de fichas, mapas, materiales, fabricación, reparaciones y objetivos ocurre dentro de ARC Atlas. Las fuentes originales son referencias opcionales. Incluye 123 expedientes de fabricación, seis guías de misión y 281 recursos del catálogo local; 47 pruebas aprobadas. [Diseño y navegación integrada](docs/11-wiki-integrada.md).
 
 **Edición 1.0 lista para revisar:** zonas y condiciones interactivas para los 21 ARC, 83 rutas contrastadas con sus fichas y otro catálogo, etapas de nueve proyectos, recompensas de planos y enlaces directos entre materiales, enemigos y mapas. Cada ficha se puede compartir para señalar errores. [Alcance y revisión](docs/10-edicion-para-revision.md).
@@ -36,13 +38,16 @@ npm run dev
 La aplicación usa el catálogo versionado; no necesita cuenta, servidor de datos ni secretos. Opcionalmente copiar `.env.example` a `.env` para el nombre público del sitio. **VITE_* se publica en el navegador; nunca incluir credenciales.**
 
 ```sh
+npm run lint
 npm run typecheck
 npm test
 npm run build
 npm run preview
 ```
 
-`dist/` contiene el sitio estático. La base relativa permite servirlo en una subcarpeta. CI ejecuta comprobación de tipos, pruebas y build; no despliega automáticamente.
+`dist/` contiene el sitio estático. La base relativa permite servirlo en una subcarpeta. CI ejecuta lint, comprobación de tipos, pruebas y build. El workflow de Pages valida lint, pruebas y build antes de desplegar los cambios de main.
+
+Para aplicar el formato del proyecto, ejecutá `npm run format`. ESLint usa configuración plana (`eslint.config.mjs`), Prettier usa `.prettierrc.json` y los tests de interfaz corren en jsdom. El modo estricto de TypeScript se conserva.
 
 ## Documentación
 

@@ -1,55 +1,134 @@
-import { lazy,Suspense,useEffect,useMemo,useState } from 'react';
-import type { CSSProperties } from 'react';
-import { catalog,sources } from '../domain/catalog';
-import { findEntities,type Filters } from '../domain/query';
-import { categorySchema,availabilitySchema,confidenceSchema,type Category } from '../domain/schema';
-import { EntityDetail,categories } from '../components/EntityDetail';
-import { requestedEntity,entityLink } from '../domain/navigation';
-import { mapManifest } from '../domain/maps';
-import { blueprintRoutes } from '../domain/blueprints';
-import { arcMapReports } from '../domain/arc-links';
-import { WikiContext,WikiLink } from './WikiContext';
-import { WikiIcon } from '../components/WikiIcon';
+import { lazy, Suspense, useCallback, useMemo, useState } from 'react';
+import { catalog } from '../domain/catalog';
+import { findEntities } from '../domain/query';
+import type { Category } from '../domain/schema';
+import { WikiContext } from './WikiContext';
 import type { WikiPanel } from '../components/WikiModal';
-import visuals from '../data/entity-visuals.json';
-const WikiModal=lazy(()=>import('../components/WikiModal'));
-const defaultFilters:Filters={category:'map',query:'',availability:'disponible',confidence:'all'};
-function readLocation(){
- const params=new URLSearchParams(typeof window==='undefined'?'':window.location.search);const entity=requestedEntity(params.toString(),catalog.entities);
- const category=categorySchema.safeParse(params.get('category'));const map=entity&&mapManifest.maps.find(map=>map.id===entity.id);const blueprintId=params.get('blueprint');const arcId=params.get('arc');
- const validBlueprint=map&&blueprintId&&blueprintRoutes.some(route=>route.blueprintId===blueprintId&&route.maps.includes(map.slug));
- const validARC=!validBlueprint&&map&&arcId&&arcMapReports.some(report=>report.entityId===arcId&&report.maps.some(report=>report.mapId===map.id));
- return {view:entity?'article':category.success?'category':'home',id:entity?.id??null,category:entity?.category??(category.success?category.data:'map'),availability:entity?.availability??(category.success&&category.data==='project'?'all':'disponible'),blueprintId:validBlueprint?blueprintId:null,arcId:validARC?arcId:null} as const;
-}
-const descriptions:Record<Category,string>={map:'Cartografía, pisos y reportes de botín',weapon:'Arsenal, niveles y mantenimiento',arc:'Máquinas, zonas débiles y combate',grenade:'Explosivos, efectos y alcance',blueprint:'Recetas, misiones y obtención',project:'Etapas, materiales y recompensas',container:'Cajas y contenedores de la incursión'};
-const formatCount=(count:number)=>String(count).padStart(2,'0');
-const availableCount=(category:Category)=>formatCount(catalog.entities.filter(entity=>entity.category===category&&entity.availability==='disponible').length);
-const artFor=(id:string)=>visuals.find(visual=>visual.entityId===id)?.url;
-function EntityImage({id,name}:{id:string;name:string}){const [failed,setFailed]=useState(false);const url=artFor(id);return url&&!failed?<img src={url} alt={name} loading="lazy" onError={()=>setFailed(true)}/>:null;}
-export function App(){
- const [initial]=useState(readLocation);const [view,setView]=useState<'home'|'category'|'article'>(initial.view);const [selectedId,setSelectedId]=useState<string|null>(initial.id);
- const [filters,setFilters]=useState<Filters>({...defaultFilters,category:initial.category,availability:initial.availability});const [focus,setFocus]=useState({blueprintId:initial.blueprintId,arcId:initial.arcId});
- const [panels,setPanels]=useState<WikiPanel[]>([]);const panel=panels.at(-1);const [menu,setMenu]=useState(false);
- const [globalSearch,setGlobalSearch]=useState('');
- const globalResults=globalSearch.trim().length>1?findEntities(catalog,{category:'all',query:globalSearch,availability:'all',confidence:'all'}).slice(0,7):[];
- const selected=catalog.entities.find(entity=>entity.id===selectedId);const entities=useMemo(()=>findEntities(catalog,filters),[filters]);const siteName=import.meta.env.VITE_SITE_NAME||'ARC Atlas';
- const moveURL=(url:string)=>{if(typeof window!=='undefined'){window.history.pushState(null,'',url);}};
- const home=()=>{setView('home');setSelectedId(null);setPanels([]);setMenu(false);setFocus({blueprintId:null,arcId:null});if(typeof window!=='undefined'){const url=new URL(window.location.href);url.search='';url.hash='';moveURL(url.toString());}};
- const category=(value:Category)=>{setFilters({...defaultFilters,category:value,availability:value==='project'?'all':'disponible'});setView('category');setSelectedId(null);setFocus({blueprintId:null,arcId:null});setPanels([]);setMenu(false);if(typeof window!=='undefined'){const url=new URL(window.location.href);url.search='';url.searchParams.set('category',value);url.hash='catalog';moveURL(url.toString());}};
- const navigate=(id:string,next?:{blueprintId?:string;arcId?:string})=>{const entity=catalog.entities.find(entity=>entity.id===id);if(!entity)return;setSelectedId(id);setFilters({...defaultFilters,category:entity.category,availability:entity.availability});setFocus({blueprintId:next?.blueprintId??null,arcId:next?.arcId??null});setView('article');setPanels([]);setMenu(false);if(typeof window!=='undefined')moveURL(entityLink(window.location.href,id,next?.blueprintId,next?.arcId));};
- useEffect(()=>{const back=()=>{const location=readLocation();setView(location.view);setSelectedId(location.id);setFilters({...defaultFilters,category:location.category,availability:location.availability});setFocus({blueprintId:location.blueprintId,arcId:location.arcId});setPanels([]);};window.addEventListener('popstate',back);return()=>window.removeEventListener('popstate',back);},[]);
- useEffect(()=>{window.scrollTo({top:0,behavior:'instant'});if(view==='article')document.getElementById('catalog')?.focus({preventScroll:true});},[view,selectedId]);
- const open=(value:WikiPanel)=>setPanels(current=>[...current,value]);
- const actions={navigate,references:(ids:string[])=>open({kind:'references',ids}),material:(name:string)=>open({kind:'material',name})};
- return <WikiContext.Provider value={actions}><a className="skip-link" href="#catalog">Ir al contenido</a>
- {menu&&<button className="menu-backdrop" aria-label="Cerrar navegación" onClick={()=>setMenu(false)}/>}<aside className={`wiki-sidebar ${menu?'is-open':''}`}><button className="sidebar-close" aria-label="Cerrar menú" onClick={()=>setMenu(false)}>×</button><button className="wiki-brand" onClick={home}><span className="atlas-symbol" aria-hidden="true"><i/><i/><i/></span><span>ARC <b>ATLAS</b><small>ARCHIVO DEL RUST BELT</small></span></button><div className="sidebar-label">EXPLORAR</div><nav aria-label="Categorías del catálogo"><button onClick={home} aria-current={view==='home'?'page':undefined}><span className="home-icon" aria-hidden="true">⌂</span>Portada</button>{categorySchema.options.map(value=><button key={value} onClick={()=>category(value)} aria-current={view!=='home'&&filters.category===value?'page':undefined}><WikiIcon category={value}/><span>{categories[value]}</span><small>{catalog.entities.filter(entity=>entity.category===value).length}</small></button>)}<button onClick={()=>open({kind:'materials'})}><span aria-hidden="true">◈</span> Materiales y recursos</button></nav><div className="sidebar-bottom"><span className="signal-dot"/> ARCHIVO EN LÍNEA<small>Datos con evidencia por campo<br/>Comunidad independiente</small></div></aside>
- <div className="wiki-shell"><header className="wiki-topbar"><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label="Abrir menú" aria-expanded={menu}>☰</button><div className="breadcrumb"><button onClick={home}>{siteName}</button><span>/</span><span>{view==='home'?'Portada':selected?.name??categories[filters.category as Category]}</span></div><div className="topbar-actions"><button onClick={()=>open({kind:'news'})}>Frozen Trail <span className="new-label">ANUNCIADO</span></button><span className="edition-chip">EDICIÓN 2.0</span></div></header>
- <main id="catalog" className="wiki-main" tabIndex={-1}>
- {view==='home'?<><section className="welcome-banner"><div className="banner-grid" aria-hidden="true"/><div className="banner-orbit" aria-hidden="true"/><div className="welcome-copy"><span className="section-kicker">INTELIGENCIA PARA LA PRÓXIMA INCURSIÓN</span><h1>EL RUST BELT.<br/><em>EN TUS MANOS.</em></h1><p>Explorá mapas, entendé a las máquinas y prepará tu equipo. Toda la información del archivo, conectada dentro de una misma wiki.</p><div className="portal-search"><label><span className="sr-only">Buscar en toda la wiki</span><input type="search" value={globalSearch} onChange={event=>setGlobalSearch(event.target.value)} placeholder="Buscar armas, ARC, mapas o planos…"/></label><span className="search-shortcut" aria-hidden="true">⌕</span>{globalSearch.trim().length>1&&<div className="global-results">{globalResults.length?globalResults.map(entity=><button key={entity.id} onClick={()=>{setGlobalSearch('');navigate(entity.id);}}><strong>{entity.name}</strong><small>{categories[entity.category]} · {entity.availability}</small></button>):<p>No hay coincidencias en el archivo.</p>}</div>}</div><div className="welcome-actions"><button onClick={()=>category('map')}>Explorar mapas <span>→</span></button><button onClick={()=>category('weapon')}>Abrir arsenal</button></div></div><div className="banner-machine" aria-hidden="true"><img src={artFor('arc-rocketeer')} alt=""/><span>ARC / ARCHIVO DE COMBATE</span></div></section>
- <div className="portal-stats"><div><strong>{availableCount('map')}</strong><span>mapas de incursión</span></div><div><strong>{availableCount('weapon')}</strong><span>armas disponibles</span></div><div><strong>{availableCount('blueprint')}</strong><span>planos documentados</span></div><div><strong>{availableCount('arc')}</strong><span>máquinas ARC</span></div></div>
- <section className="portal-categories"><div className="wiki-section-title"><div><span className="section-kicker">EL ARCHIVO</span><h2>Elegí por dónde empezar.</h2></div><span>Mapas · equipo · supervivencia</span></div><div className="portal-grid">{categorySchema.options.map((value,index)=><button className={`portal-tile tile-${value}`} key={value} style={{'--delay':`${index*55}ms`} as CSSProperties} onClick={()=>category(value)}><div className="tile-art"><WikiIcon category={value}/></div><span className="tile-number">{formatCount(index+1)}</span><h3>{categories[value]}</h3><p>{descriptions[value]}</p><span className="tile-arrow">↗</span></button>)}<button className="portal-tile tile-material" onClick={()=>open({kind:'materials'})}><div className="tile-art"><WikiIcon category="container"/></div><span className="tile-number">{formatCount(categorySchema.options.length+1)}</span><h3>Materiales</h3><p>Recursos, valor reportado y botín asociado</p><span className="tile-arrow">↗</span></button></div></section>
- <section className="featured-grid"><div className="featured-editorial"><span className="section-kicker">MÁQUINAS BAJO LA LUPA</span><h2>Conocé lo que<br/>te está buscando.</h2><p>Elegí una máquina, recorré sus piezas y encontrá los mapas con reportes de su presencia.</p><WikiLink entityId="arc-hornet">Explorar Hornet →</WikiLink><img src={artFor('arc-hornet')} alt="Hornet" loading="lazy"/></div><div className="home-guide"><span className="section-kicker">TU PRÓXIMO OBJETIVO</span><h3>De un plano<br/>a una ruta.</h3><p>Recompensas, proyectos y condiciones de obtención reunidos en el artículo. Abrí el mapa sin salir de la wiki.</p><WikiLink entityId="blueprint-hullcracker-blueprint">Ver Hullcracker →</WikiLink><hr/><WikiLink entityId="project-trophy-display">Preparar Trophy Display →</WikiLink></div></section><div className="home-evidence"><span className="signal-dot"/><p>{sources.length} fuentes registradas · Cada dato conserva su nivel de evidencia. Los reportes de ubicaciones no garantizan aparición.</p><button onClick={()=>open({kind:'references',ids:sources.filter(source=>source.kind==='official').map(source=>source.id)})}>Cómo se verifica el archivo</button></div></>:view==='category'?<><div className="category-heading"><span className="section-kicker">ENCICLOPEDIA / {categories[filters.category as Category]}</span><h1>{categories[filters.category as Category]}</h1><p>{descriptions[filters.category as Category]}</p></div><div className="filters"><label className="search-label">Buscar<input type="search" value={filters.query} onChange={event=>setFilters(current=>({...current,query:event.target.value}))} placeholder="Buscar por nombre…"/></label><label>Disponibilidad<select value={filters.availability} onChange={event=>setFilters(current=>({...current,availability:event.target.value==='all'?'all':availabilitySchema.parse(event.target.value)}))}><option value="all">Todos los estados</option>{availabilitySchema.options.map(value=><option key={value}>{value}</option>)}</select></label><label>Evidencia<select value={filters.confidence} onChange={event=>setFilters(current=>({...current,confidence:event.target.value==='all'?'all':confidenceSchema.parse(event.target.value)}))}><option value="all">Todos los niveles</option>{confidenceSchema.options.map(value=><option key={value}>{value}</option>)}</select></label></div><p role="status" className="result-count">{entities.length} fichas encontradas</p><div className="entity-gallery">{entities.map((entity,index)=><button key={entity.id} className={`gallery-card category-${entity.category}`} style={{'--delay':`${Math.min(index,12)*35}ms`} as CSSProperties} onClick={()=>navigate(entity.id)}><div className="gallery-art"><WikiIcon category={entity.category}/><EntityImage id={entity.id} name={entity.name}/></div><div className="gallery-body"><small>{categories[entity.category]}</small><h2>{entity.name}</h2><span className={`availability ${entity.availability}`}>{entity.availability}</span><span className="gallery-arrow">→</span></div></button>)}</div>{entities.length===0&&<p className="empty-state">No hay coincidencias. Cambiá el nombre o los filtros.</p>}</>:selected?<div className="article-layout"><div><button className="back-to-category" onClick={()=>category(selected.category)}>← {categories[selected.category]}</button><EntityDetail key={selected.id} entity={selected} blueprintId={focus.blueprintId??undefined} arcId={focus.arcId??undefined} onNavigate={(mapId,blueprintId)=>navigate(mapId,{blueprintId})}/></div><aside className="article-index"><span className="section-kicker">EN ESTA PÁGINA</span><a href="#detail-title">Ficha general</a><a href="#datos">Estadísticas y datos</a>{['weapon','grenade','blueprint'].includes(selected.category)&&<a href="#fabricacion">Fabricación y mantenimiento</a>}<p>La navegación entre fichas, materiales y mapas ocurre dentro de ARC Atlas.</p><span className="confidence posible">evidencia por campo</span></aside></div>:null}
- </main><footer className="wiki-footer"><span className="footer-brand">ARC <b>ATLAS</b></span><p>Wiki comunitaria independiente. ARC Raiders y sus assets pertenecen a Embark Studios. Datos y referencias visuales con atribución a sus fuentes.</p><button onClick={()=>open({kind:'references',ids:['metaforge-local-item-catalog','metaforge-calibration']})}>Créditos y fuentes</button><span>V2.0 / ARCHIVO EN ESPAÑOL</span></footer></div>
- {panel&&<Suspense fallback={<div className="panel-loading" role="status">Abriendo archivo…</div>}><WikiModal key={panels.length+panel.kind} panel={panel} onClose={()=>setPanels(current=>current.slice(0,-1))}/></Suspense>}
- </WikiContext.Provider>;
+import { useWikiNavigation } from './useWikiNavigation';
+import { Sidebar } from '../components/wiki/Sidebar';
+import { Topbar } from '../components/wiki/Topbar';
+import { HomeView } from '../components/wiki/HomeView';
+import { CategoryView } from '../components/wiki/CategoryView';
+import { ArticleView } from '../components/wiki/ArticleView';
+const WikiModal = lazy(() => import('../components/WikiModal'));
+export function App() {
+  const [panels, setPanels] = useState<WikiPanel[]>([]);
+  const panel = panels.at(-1);
+  const [menu, setMenu] = useState(false);
+  const closeNavigationPanels = useCallback(() => {
+    setPanels([]);
+    setMenu(false);
+  }, []);
+  const { view, selected, filters, setFilters, focus, home, category, navigate } =
+    useWikiNavigation(closeNavigationPanels);
+  const [globalSearch, setGlobalSearch] = useState('');
+  const globalResults = useMemo(
+    () =>
+      globalSearch.trim().length > 1
+        ? findEntities(catalog, {
+            category: 'all',
+            query: globalSearch,
+            availability: 'all',
+            confidence: 'all',
+          }).slice(0, 7)
+        : [],
+    [globalSearch],
+  );
+  const entities = useMemo(() => findEntities(catalog, filters), [filters]);
+  const siteName = import.meta.env.VITE_SITE_NAME || 'ARC Atlas';
+  const open = (value: WikiPanel) => setPanels((current) => [...current, value]);
+  const actions = {
+    navigate,
+    references: (ids: string[]) => open({ kind: 'references', ids }),
+    material: (name: string) => open({ kind: 'material', name }),
+  };
+  return (
+    <WikiContext.Provider value={actions}>
+      <a className="skip-link" href="#catalog">
+        Ir al contenido
+      </a>
+      <Sidebar
+        menu={menu}
+        setMenu={setMenu}
+        view={view}
+        activeCategory={filters.category as Category}
+        home={home}
+        category={category}
+        openMaterials={() => open({ kind: 'materials' })}
+      />
+      <div className="wiki-shell">
+        <Topbar
+          menu={menu}
+          setMenu={setMenu}
+          siteName={siteName}
+          home={home}
+          view={view}
+          selected={selected}
+          activeCategory={filters.category as Category}
+          openNews={() => open({ kind: 'news' })}
+        />
+        <main id="catalog" className="wiki-main" tabIndex={-1}>
+          {view === 'home' ? (
+            <HomeView
+              category={category}
+              open={open}
+              globalSearch={globalSearch}
+              setGlobalSearch={setGlobalSearch}
+              globalResults={globalResults}
+              navigate={navigate}
+            />
+          ) : view === 'category' ? (
+            <CategoryView
+              filters={filters}
+              setFilters={setFilters}
+              entities={entities}
+              navigate={navigate}
+            />
+          ) : selected ? (
+            <ArticleView
+              selected={selected}
+              focus={focus}
+              category={category}
+              navigate={navigate}
+            />
+          ) : null}
+        </main>
+        <footer className="wiki-footer">
+          <span className="footer-brand">
+            ARC <b>ATLAS</b>
+          </span>
+          <p>
+            Wiki comunitaria independiente. ARC Raiders y sus assets pertenecen a Embark Studios.
+            Datos y referencias visuales con atribución a sus fuentes.
+          </p>
+          <button
+            onClick={() =>
+              open({
+                kind: 'references',
+                ids: ['metaforge-local-item-catalog', 'metaforge-calibration'],
+              })
+            }
+          >
+            Créditos y fuentes
+          </button>
+          <span>V2.0 / ARCHIVO EN ESPAÑOL</span>
+        </footer>
+      </div>
+      {panel && (
+        <Suspense
+          fallback={
+            <div className="panel-loading" role="status">
+              Abriendo archivo…
+            </div>
+          }
+        >
+          <WikiModal
+            key={panels.length + panel.kind}
+            panel={panel}
+            onClose={() => setPanels((current) => current.slice(0, -1))}
+          />
+        </Suspense>
+      )}
+    </WikiContext.Provider>
+  );
 }

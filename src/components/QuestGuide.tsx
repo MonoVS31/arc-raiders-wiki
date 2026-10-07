@@ -1,5 +1,53 @@
 import { z } from 'zod';
 import rawQuests from '../data/quest-guides.json';
 import { Sources } from '../app/WikiContext';
-export const questGuides=z.array(z.object({name:z.string(),sourceId:z.string(),objectives:z.array(z.string()).min(1),info:z.array(z.object({cells:z.array(z.string())}).strict()),confidence:z.literal('probable')}).strict()).parse(rawQuests);
-export function QuestGuide({name}:{name:string}){const quest=questGuides.find(quest=>quest.name===name);if(!quest)return null;const labels:Record<string,string>={Trader:'Contacto',Location:'Mapa',Previous:'Misión previa',Next:'Misión siguiente'};return <section className="quest-guide"><h4>Objetivos de {quest.name}</h4><span className="confidence probable">probable</span><dl>{quest.info.map(row=><div key={row.cells[0]}><dt>{labels[row.cells[0]!]??row.cells[0]}</dt><dd>{row.cells[1]?.replaceAll('Dam BattlegroundsBuried CitySpaceport','Dam Battlegrounds · Buried City · Spaceport').replace('Any','Cualquier mapa reportado')}</dd></div>)}</dl><ol>{quest.objectives.map((objective,index)=><li key={index}>{objective}</li>)}</ol><Sources ids={[quest.sourceId]}/></section>;}
+export const questGuides = z
+  .array(
+    z
+      .object({
+        name: z.string(),
+        sourceId: z.string(),
+        objectives: z.array(z.string()).min(1),
+        info: z.array(z.object({ cells: z.array(z.string()) }).strict()),
+        confidence: z.literal('probable'),
+      })
+      .strict(),
+  )
+  .parse(rawQuests);
+export function QuestGuide({ name }: { name: string }) {
+  const quest = questGuides.find((quest) => quest.name === name);
+  if (!quest) return null;
+  const labels: Record<string, string> = {
+    Trader: 'Contacto',
+    Location: 'Mapa',
+    Previous: 'Misión previa',
+    Next: 'Misión siguiente',
+  };
+  return (
+    <section className="quest-guide">
+      <h4>Objetivos de {quest.name}</h4>
+      <span className="confidence probable">probable</span>
+      <dl>
+        {quest.info.map((row) => (
+          <div key={row.cells[0]}>
+            <dt>{labels[row.cells[0]!] ?? row.cells[0]}</dt>
+            <dd>
+              {row.cells[1]
+                ?.replaceAll(
+                  'Dam BattlegroundsBuried CitySpaceport',
+                  'Dam Battlegrounds · Buried City · Spaceport',
+                )
+                .replace('Any', 'Cualquier mapa reportado')}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <ol>
+        {quest.objectives.map((objective, index) => (
+          <li key={index}>{objective}</li>
+        ))}
+      </ol>
+      <Sources ids={[quest.sourceId]} />
+    </section>
+  );
+}

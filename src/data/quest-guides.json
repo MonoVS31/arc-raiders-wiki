@@ -9,28 +9,16 @@
     ],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Tian Wen"
-        ]
+        "cells": ["Trader", "Tian Wen"]
       },
       {
-        "cells": [
-          "Location",
-          "Buried City"
-        ]
+        "cells": ["Location", "Buried City"]
       },
       {
-        "cells": [
-          "Previous",
-          "Eyes On The Prize"
-        ]
+        "cells": ["Previous", "Eyes On The Prize"]
       },
       {
-        "cells": [
-          "Next",
-          "Unexpected Initiative"
-        ]
+        "cells": ["Next", "Unexpected Initiative"]
       }
     ],
     "confidence": "probable"
@@ -46,28 +34,16 @@
     ],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Apollo"
-        ]
+        "cells": ["Trader", "Apollo"]
       },
       {
-        "cells": [
-          "Location",
-          "Any"
-        ]
+        "cells": ["Location", "Any"]
       },
       {
-        "cells": [
-          "Previous",
-          "The League"
-        ]
+        "cells": ["Previous", "The League"]
       },
       {
-        "cells": [
-          "Next",
-          "—"
-        ]
+        "cells": ["Next", "—"]
       }
     ],
     "confidence": "probable"
@@ -82,28 +58,16 @@
     ],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Tian Wen"
-        ]
+        "cells": ["Trader", "Tian Wen"]
       },
       {
-        "cells": [
-          "Location",
-          "Dam Battlegrounds"
-        ]
+        "cells": ["Location", "Dam Battlegrounds"]
       },
       {
-        "cells": [
-          "Previous",
-          "A Symbol of Unification"
-        ]
+        "cells": ["Previous", "A Symbol of Unification"]
       },
       {
-        "cells": [
-          "Next",
-          "Back on Top"
-        ]
+        "cells": ["Next", "Back on Top"]
       }
     ],
     "confidence": "probable"
@@ -118,28 +82,16 @@
     ],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Celeste"
-        ]
+        "cells": ["Trader", "Celeste"]
       },
       {
-        "cells": [
-          "Location",
-          "Dam Battlegrounds · Buried City · Spaceport"
-        ]
+        "cells": ["Location", "Dam Battlegrounds · Buried City · Spaceport"]
       },
       {
-        "cells": [
-          "Previous",
-          "A Better Use"
-        ]
+        "cells": ["Previous", "A Better Use"]
       },
       {
-        "cells": [
-          "Next",
-          "Doctor's Orders · Dormant Barons"
-        ]
+        "cells": ["Next", "Doctor's Orders · Dormant Barons"]
       }
     ],
     "confidence": "probable"
@@ -147,33 +99,19 @@
   {
     "name": "Sparks Fly",
     "sourceId": "wiki-quest-sparks-fly",
-    "objectives": [
-      "Destruir un Hornet con Trigger 'Nade o Snap Blast Grenade."
-    ],
+    "objectives": ["Destruir un Hornet con Trigger 'Nade o Snap Blast Grenade."],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Apollo"
-        ]
+        "cells": ["Trader", "Apollo"]
       },
       {
-        "cells": [
-          "Location",
-          "Any"
-        ]
+        "cells": ["Location", "Any"]
       },
       {
-        "cells": [
-          "Previous",
-          "What Goes Around"
-        ]
+        "cells": ["Previous", "What Goes Around"]
       },
       {
-        "cells": [
-          "Next",
-          "Out Of The Shadows · The League"
-        ]
+        "cells": ["Next", "Out Of The Shadows · The League"]
       }
     ],
     "confidence": "probable"
@@ -189,28 +127,16 @@
     ],
     "info": [
       {
-        "cells": [
-          "Trader",
-          "Celeste"
-        ]
+        "cells": ["Trader", "Celeste"]
       },
       {
-        "cells": [
-          "Location",
-          "Spaceport"
-        ]
+        "cells": ["Location", "Spaceport"]
       },
       {
-        "cells": [
-          "Previous",
-          "Groundbreaking"
-        ]
+        "cells": ["Previous", "Groundbreaking"]
       },
       {
-        "cells": [
-          "Next",
-          "On Deaf Ears"
-        ]
+        "cells": ["Next", "On Deaf Ears"]
       }
     ],
     "confidence": "probable"

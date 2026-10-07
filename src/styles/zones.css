@@ -1,3 +1,194 @@
-.arc-zones{margin:24px 0;padding-top:20px;border-top:1px solid var(--line)}.arc-zones h4{font-size:18px;margin:0 0 12px}.zone-diagram{position:relative;width:100%;max-width:500px;margin:18px auto;color:#77917e;border:1px solid #3d5144;border-radius:12px;background:radial-gradient(ellipse,#283c2c,#14231a)}.zone-diagram svg{display:block;width:100%}.diagram-orientation{position:absolute;top:8px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.18em;color:#b4c4b5}.zone-point{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#132018;border:2px solid currentColor;cursor:pointer;color:#cde594;font-size:22px;box-shadow:0 0 15px #cde59422}.zone-point.protected{color:#e2af77}.zone-point[aria-pressed=true]{box-shadow:0 0 0 5px #efffc533;animation:zone-beacon 1.8s ease-in-out infinite}.front-left{left:31.7%;top:28.9%}.front-right{left:68.3%;top:28.9%}.rear-left{left:31.7%;top:71.1%}.rear-right{left:68.3%;top:71.1%}.center-point{left:50%;top:50%}.shell-point{left:26%;top:50%}.zone-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px;margin:18px 0}.zone-option{display:grid;gap:7px;text-align:left;background:#18291e;border:1px solid #3b5845;padding:14px;color:inherit;border-radius:8px;cursor:pointer}.zone-option[aria-pressed=true]{border-color:#d9ed99;background:#2b3c23}.zone-option.protected[aria-pressed=true]{border-color:#e2af77;background:#3c3223}.zone-kind{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#acc5a0}.protected .zone-kind{color:#e2af77}.zone-detail{border-left:3px solid #cde594;background:#17271c;padding:18px;animation:combat-reveal .25s ease}.zone-detail.protected{border-color:#e2af77}.zone-detail h5{margin:0 0 12px;font-size:16px}.zone-detail p,.anatomy-table p{font-size:12px;line-height:1.7}.zone-condition{color:#e3cb9b}.anatomy-table,.route-audit{margin:18px 0;padding:12px;border:1px solid #3c5043;border-radius:8px}.anatomy-table summary,.route-audit summary{cursor:pointer;font-size:12px}.anatomy-table>a{display:block;font-size:12px;margin-top:14px}.blueprint-route dt>.confidence{display:inline-block;margin-left:8px}.route-audit p{font-size:12px;line-height:1.7}@keyframes zone-beacon{50%{box-shadow:0 0 0 9px #efffc515}}@media(prefers-reduced-motion:reduce){.zone-detail,.zone-point[aria-pressed=true]{animation:none}}@media(max-width:500px){.zone-options{grid-template-columns:1fr}.zone-point{width:38px;height:38px}.zone-detail{padding:12px}}
+.arc-zones {
+  margin: 24px 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.arc-zones h4 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+.zone-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 18px auto;
+  color: #77917e;
+  border: 1px solid #3d5144;
+  border-radius: 12px;
+  background: radial-gradient(ellipse, #283c2c, #14231a);
+}
+.zone-diagram svg {
+  display: block;
+  width: 100%;
+}
+.diagram-orientation {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: #b4c4b5;
+}
+.zone-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #132018;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  color: #cde594;
+  font-size: 22px;
+  box-shadow: 0 0 15px #cde59422;
+}
+.zone-point.protected {
+  color: #e2af77;
+}
+.zone-point[aria-pressed='true'] {
+  box-shadow: 0 0 0 5px #efffc533;
+  animation: zone-beacon 1.8s ease-in-out infinite;
+}
+.front-left {
+  left: 31.7%;
+  top: 28.9%;
+}
+.front-right {
+  left: 68.3%;
+  top: 28.9%;
+}
+.rear-left {
+  left: 31.7%;
+  top: 71.1%;
+}
+.rear-right {
+  left: 68.3%;
+  top: 71.1%;
+}
+.center-point {
+  left: 50%;
+  top: 50%;
+}
+.shell-point {
+  left: 26%;
+  top: 50%;
+}
+.zone-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 9px;
+  margin: 18px 0;
+}
+.zone-option {
+  display: grid;
+  gap: 7px;
+  text-align: left;
+  background: #18291e;
+  border: 1px solid #3b5845;
+  padding: 14px;
+  color: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.zone-option[aria-pressed='true'] {
+  border-color: #d9ed99;
+  background: #2b3c23;
+}
+.zone-option.protected[aria-pressed='true'] {
+  border-color: #e2af77;
+  background: #3c3223;
+}
+.zone-kind {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #acc5a0;
+}
+.protected .zone-kind {
+  color: #e2af77;
+}
+.zone-detail {
+  border-left: 3px solid #cde594;
+  background: #17271c;
+  padding: 18px;
+  animation: combat-reveal 0.25s ease;
+}
+.zone-detail.protected {
+  border-color: #e2af77;
+}
+.zone-detail h5 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+.zone-detail p,
+.anatomy-table p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.zone-condition {
+  color: #e3cb9b;
+}
+.anatomy-table,
+.route-audit {
+  margin: 18px 0;
+  padding: 12px;
+  border: 1px solid #3c5043;
+  border-radius: 8px;
+}
+.anatomy-table summary,
+.route-audit summary {
+  cursor: pointer;
+  font-size: 12px;
+}
+.anatomy-table > a {
+  display: block;
+  font-size: 12px;
+  margin-top: 14px;
+}
+.blueprint-route dt > .confidence {
+  display: inline-block;
+  margin-left: 8px;
+}
+.route-audit p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+@keyframes zone-beacon {
+  50% {
+    box-shadow: 0 0 0 9px #efffc515;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zone-detail,
+  .zone-point[aria-pressed='true'] {
+    animation: none;
+  }
+}
+@media (max-width: 500px) {
+  .zone-options {
+    grid-template-columns: 1fr;
+  }
+  .zone-point {
+    width: 38px;
+    height: 38px;
+  }
+  .zone-detail {
+    padding: 12px;
+  }
+}
 
-.arc-map-links{margin:24px 0}.arc-map-links>div{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;font-size:12px}.arc-map-links a{color:var(--lime)}
+.arc-map-links {
+  margin: 24px 0;
+}
+.arc-map-links > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  font-size: 12px;
+}
+.arc-map-links a {
+  color: var(--lime);
+}
