@@ -12,7 +12,7 @@ Se inspeccionaron los tres repositorios públicos de MonoVS31 y no se modificó 
 
 **Versión 0.3:** comparador de armas con niveles y mejoras, panel de puntos débiles/blindaje/consejos y visualización geométrica de granadas con fuentes. Detalles en `docs/08-combat-tools.md`.
 
-Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC, publicación del sitio y PDF final. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
+Siguen pendientes la corroboración individual de las otras rutas, diagramas anatómicos de ARC y verificación dentro del juego. La versión 0.4 añade 21 referencias visuales ARC y un flujo verificado de publicación con GitHub Pages; ver `docs/09-publicacion-y-mantenimiento.md`. No se inventan tasas, curvas de daño ni posiciones de planos. Los objetivos de misión se distinguen de puntos de aparición del plano.
 
 ## Ejecutar
 

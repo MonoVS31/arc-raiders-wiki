@@ -1468,5 +1468,15 @@
     "revision": null,
     "contentHash": "63e6f0df5dedd6371647b3d37472fee5428476b1610e09270cba0da7bb339b79",
     "locator": "Anclajes worldExtent/tileExtent y transformación afín"
+  },
+  {
+    "id": "metaforge-arc-portraits",
+    "title": "MetaForge — referencias visuales ARC",
+    "url": "https://metaforge.app/api/arc-raiders/arcs?limit=100",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T04:17:47.954Z",
+    "revision": null,
+    "contentHash": "a49976379324c1ce1448f5bdf864cb23e6e9f4a177adfcd2b4e2423b10e6cd39",
+    "locator": "data[].name / image; identidad por nombre, excluye anuncios y placeholders"
   }
 ]

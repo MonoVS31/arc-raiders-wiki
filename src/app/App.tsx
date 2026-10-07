@@ -14,7 +14,7 @@ export function App() {
   const siteName = import.meta.env.VITE_SITE_NAME || 'ARC Atlas';
   return <>
     <a className="skip-link" href="#catalog">Ir al catálogo</a>
-    <header className="topbar"><a className="brand" href="#"><span className="brand-mark" aria-hidden="true">A<span>/</span></span>{siteName}</a><span className="top-label">ARCHIVO COMUNITARIO <span className="status-dot" /> FASE 03</span><a href="https://arcraiders.com/news" target="_blank" rel="noreferrer">Noticias oficiales ↗</a></header>
+    <header className="topbar"><a className="brand" href="#"><span className="brand-mark" aria-hidden="true">A<span>/</span></span>{siteName}</a><span className="top-label">ARCHIVO COMUNITARIO <span className="status-dot" /> FASE 04</span><a href="https://arcraiders.com/news" target="_blank" rel="noreferrer">Noticias oficiales ↗</a></header>
     <main>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy"><p className="eyebrow">SPERANZA / INTELIGENCIA DE CAMPO</p><h1 id="hero-title">Conocé el terreno.<br /><em>Elegí tu próxima incursión.</em></h1><p>Mapas, equipamiento y máquinas ARC en un archivo con fuentes rastreables. Explorá lo que sabemos y lo que todavía falta verificar.</p><a className="primary-link" href="#catalog">Explorar archivo <span>↓</span></a></div>
@@ -37,6 +37,6 @@ export function App() {
       </section>
       <section className="evidence-guide"><p className="eyebrow">CÓMO LEER EL ARCHIVO</p><div>{[['confirmado','Respaldo oficial para el dato concreto.'],['probable','Ficha comunitaria consistente, pendiente de corroboración primaria.'],['posible','Obtención o reporte que no garantiza aparición.'],['no confirmado','Falta evidencia o hay una contradicción.']].map(([level,description])=><div key={level}><span className={`confidence ${level?.replaceAll(' ','-')}`}>{level}</span><p>{description}</p></div>)}</div></section>
     </main>
-    <footer><strong>{siteName}</strong><p>Proyecto comunitario independiente. ARC Raiders pertenece a Embark Studios. Datos con atribución a sus fuentes; cobertura inicial sujeta a revisión.</p><span>ARCHIVO / v0.3</span></footer>
+    <footer><strong>{siteName}</strong><p>Proyecto comunitario independiente. ARC Raiders pertenece a Embark Studios. Datos con atribución a sus fuentes; cobertura inicial sujeta a revisión.</p><span>ARCHIVO / v0.4</span></footer>
   </>;
 }
