@@ -29,11 +29,11 @@ Lint, typecheck, 96 pruebas, validación de datos y build aprobados. El HTML com
 
 ## Pendientes y decisiones
 
-- Publicar los siete commits y comprobar Pages. La edición pública anterior es 2.0; los nuevos metadatos no se consideran desplegados hasta verificar el sitio.
+- La entrega conserva los siete commits de fase y un commit de cierre de documentación. Pages publica solo después de superar los controles de GitHub Actions.
 - Aprobar un piloto de prerender de tres fichas y elegir Astro o SSG compatible con React; la preview actual es general. Las estimaciones, ventajas y costos se explican en 16-seo-y-prerender.md.
 - Confirmar licencias y permisos por archivo antes de copiar cualquier imagen externa. Elegir entre imágenes autorizadas en repo, proxy/caché o referencias remotas. Los tiles tienen evaluación separada; riesgos en 09-publicacion-y-mantenimiento.md.
 - Definir presupuesto/proveedor si se elige proxy: Pages no lo ejecuta.
 - Revisar el parche Frozen Trail y los datos pendientes después del lanzamiento con fuentes; ninguna disponibilidad se cambió en estas fases.
-- La guía PDF 2.0 es histórica. Si se requiere una guía final PDF de 2.1, actualizarla desde la documentación de las siete fases.
+- La guía PDF 2.1 se actualiza desde la documentación de las siete fases, con 166 fuentes y la verificación de 96 pruebas; queda en Arc/outputs. La versión 2.0 permanece como respaldo.
 
 GSAP/ScrollTrigger y ARC 3D siguen como ideas futuras, sin dependencias instaladas. No se envió un mensaje a Discord para probar previews.

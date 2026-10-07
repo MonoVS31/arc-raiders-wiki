@@ -2,7 +2,7 @@
 
 Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, armas, ARC, granadas, planos, proyectos, recetas, materiales y fuentes se consultan dentro del sitio. No está afiliada a Embark Studios.
 
-**URL pública:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/). La edición 2.0 ya está publicada; la edición 2.1 de esta entrega está preparada en la copia local y aún requiere publicar los commits.
+**URL pública:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/). La edición 2.1 se publica mediante GitHub Actions: lint, tipos, datos, tests y build deben pasar antes del despliegue.
 
 ## Cambios de las siete fases
 
@@ -75,7 +75,7 @@ La edición 2.1 debe publicarse y comprobarse en la URL pública; después verif
 
 ## Documentación e historial
 
-[Investigación](docs/01-investigacion.md), [arquitectura](docs/02-arquitectura.md), [modelo de datos](docs/03-modelo-datos.md), [fases iniciales](docs/04-fases-y-commits.md), [cobertura](docs/05-cobertura.md), [mapas](docs/07-mapas-y-rutas.md), [combate](docs/08-combat-tools.md) y [diseño de edición 2.0](docs/11-wiki-integrada.md). La guía PDF histórica de 2.0 se conserva fuera del repo; no se presenta como documentación actualizada de las siete fases.
+[Investigación](docs/01-investigacion.md), [arquitectura](docs/02-arquitectura.md), [modelo de datos](docs/03-modelo-datos.md), [fases iniciales](docs/04-fases-y-commits.md), [cobertura](docs/05-cobertura.md), [mapas](docs/07-mapas-y-rutas.md), [combate](docs/08-combat-tools.md) y [diseño de edición 2.0](docs/11-wiki-integrada.md). La guía PDF de la edición 2.1 reúne las siete fases y las fuentes, y se entrega en Arc/outputs fuera del repo. La guía 2.0 se conserva como respaldo histórico.
 
 | Fase | Commit |
 |---|---|
