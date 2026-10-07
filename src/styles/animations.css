@@ -1,0 +1,179 @@
+@layer components {
+  ::view-transition-group(*) {
+    animation-duration: var(--duration-350);
+    animation-timing-function: var(--ease-ease-in-out);
+  }
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--duration-250);
+    animation-timing-function: var(--ease-ease-out);
+  }
+  .gallery-card,
+  .portal-tile {
+    animation: none;
+  }
+  @supports (animation-timeline: view()) {
+    .gallery-card,
+    .portal-tile {
+      animation-name: atlas-entry;
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry;
+    }
+  }
+  @keyframes atlas-entry {
+    from {
+      opacity: 0.95;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .banner-radar {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -100%;
+      background: conic-gradient(
+        from var(--sweep-angle),
+        transparent 0deg,
+        color-mix(in srgb, var(--color-accent) 20%, transparent) 42deg,
+        transparent 66deg
+      );
+      opacity: 0.2;
+      animation: atlas-sweep var(--duration-18000) var(--ease-linear) infinite;
+    }
+  }
+  .tile-border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    padding: 1px;
+    opacity: 0;
+    transition: opacity var(--duration-250);
+    mask:
+      linear-gradient(var(--color-mask-opaque) 0 0) content-box,
+      linear-gradient(var(--color-mask-opaque) 0 0);
+    mask-composite: exclude;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -100%;
+      background: conic-gradient(
+        from var(--sweep-angle),
+        transparent 0%,
+        var(--color-accent) 35%,
+        var(--color-action-primary) 65%,
+        transparent 100%
+      );
+      animation: atlas-sweep var(--duration-8000) var(--ease-linear) infinite paused;
+    }
+  }
+  .portal-tile:hover .tile-border {
+    opacity: 1;
+  }
+  .portal-tile:hover .tile-border::before {
+    animation-play-state: running;
+  }
+  @keyframes atlas-sweep {
+    from {
+      transform: rotate(var(--sweep-angle));
+    }
+    to {
+      transform: rotate(calc(var(--sweep-angle) + 1turn));
+    }
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .wiki-modal {
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
+      transition:
+        opacity var(--duration-200),
+        transform var(--duration-200),
+        display var(--duration-200) allow-discrete,
+        overlay var(--duration-200) allow-discrete;
+      transition-behavior: allow-discrete;
+      &[open] {
+        opacity: 1;
+        transform: none;
+      }
+      &::backdrop {
+        opacity: 0;
+        transition:
+          opacity var(--duration-200),
+          display var(--duration-200) allow-discrete,
+          overlay var(--duration-200) allow-discrete;
+      }
+      &[open]::backdrop {
+        opacity: 1;
+      }
+    }
+    .global-results {
+      opacity: 1;
+      transform: none;
+      transition:
+        opacity var(--duration-200),
+        transform var(--duration-200),
+        display var(--duration-200) allow-discrete;
+      transition-behavior: allow-discrete;
+      &[hidden] {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      & ul {
+        transition: display var(--duration-200) allow-discrete;
+      }
+    }
+    @starting-style {
+      .wiki-modal[open] {
+        opacity: 0;
+        transform: translateY(10px) scale(0.985);
+      }
+      .wiki-modal[open]::backdrop {
+        opacity: 0;
+      }
+      .global-results:not([hidden]) {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+    }
+  }
+}
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    [data-view-art] {
+      view-transition-name: none !important;
+    }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+    .banner-radar,
+    .tile-border {
+      display: none;
+    }
+    .gallery-card:hover img,
+    .portal-tile:hover .tile-art,
+    .portal-tile:hover .tile-arrow,
+    .welcome-actions button:hover,
+    .featured-editorial:hover img {
+      transform: none !important;
+    }
+    .gallery-card:hover {
+      translate: none;
+    }
+  }
+}

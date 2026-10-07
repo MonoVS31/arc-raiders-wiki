@@ -87,9 +87,9 @@ for(const [slug,[mapId,name]] of Object.entries(names)) {
 }
 const manifest={schemaVersion:1,asOf:'2026-10-06',retrievedAt:new Date().toISOString(),provider:'MetaForge',termsUrl:'https://metaforge.app/arc-raiders/api',
   attributionUrl:'https://metaforge.app/arc-raiders',configUrl,configHash:hash(config),transformUrl,transformHash:hash(transform),maps};
-await fs.mkdir(path.join(root,'src/data/maps'),{recursive:true});
-await fs.writeFile(path.join(root,'src/data/maps/manifest.json'),JSON.stringify(manifest,null,2)+'\n');
-const sourceFile=path.join(root,'src/data/sources.json');
+await fs.mkdir(path.join(root,'public/data/atlas/maps'),{recursive:true});
+await fs.writeFile(path.join(root,'public/data/atlas/maps/manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+const sourceFile=path.join(root,'public/data/atlas/sources.json');
 const existingSources=JSON.parse(await fs.readFile(sourceFile,'utf8'));
 const newSources=[];
 for(const map of maps){const snapshot=JSON.parse(await fs.readFile(path.join(out,`${map.slug}.json`),'utf8'));newSources.push({id:`metaforge-${map.slug}`,title:`MetaForge — ${map.name}`,url:snapshot.sourceUrl,kind:'community',retrievedAt:snapshot.retrievedAt,revision:null,contentHash:snapshot.contentHash,locator:'allData; community distinto de false; subconjunto de cajas, ARC, caches y objetivos de misión'});}

@@ -11,7 +11,7 @@ if(revisionCheck.changed.length)throw Error('Revisiones modificadas: revisar cap
 const providerFile=path.join(research,'phase5-blueprints-provider.json');
 const provider=await read(providerFile);
 if(provider.pagination.hasNextPage)throw Error('Catálogo secundario incompleto');
-const routes=await read(path.join(root,'src/data/blueprint-routes.json'));
+const routes=await read(path.join(root,'public/data/atlas/blueprint-routes.json'));
 const normalize=text=>text.toLowerCase().replace(/[^a-z0-9]/g,'');
 const rows=[];
 for(const route of routes.routes){
@@ -31,8 +31,8 @@ for(const route of routes.routes){
  });
 }
 const checkedAt=revisionCheck.checkedAt;
-await fs.writeFile(path.join(root,'src/data/research-audit.json'),JSON.stringify({schemaVersion:1,checkedAt,indexRevision:index.revision,checkedPageCount:revisionCheck.pages.length,sourceIds:['wiki-revision-review','metaforge-blueprint-review'],routes:rows},null,2)+'\n');
-const sources=await read(path.join(root,'src/data/sources.json'));
+await fs.writeFile(path.join(root,'public/data/atlas/research-audit.json'),JSON.stringify({schemaVersion:1,checkedAt,indexRevision:index.revision,checkedPageCount:revisionCheck.pages.length,sourceIds:['wiki-revision-review','metaforge-blueprint-review'],routes:rows},null,2)+'\n');
+const sources=await read(path.join(root,'public/data/atlas/sources.json'));
 for(const item of [
  {id:'wiki-revision-review',title:'ARC Raiders Wiki — revisión de fichas y versiones',url:'https://arcraiders.wiki/w/api.php',file:path.join(research,'phase5-revision-check.json'),locator:'query.pages[].revisions; objetos de planos, 21 ARC, índice y armas; redirección Surveyor -> ARC Surveyor resuelta'},
  {id:'metaforge-blueprint-review',title:'MetaForge — catálogo de 83 planos',url:'https://metaforge.app/api/arc-raiders/items?search=Blueprint&limit=100',file:providerFile,locator:'data[].name/id; las ubicaciones y fuentes de obtención están vacías y no corroboran rutas'},
@@ -40,5 +40,5 @@ for(const item of [
  const source={id:item.id,title:item.title,url:item.url,kind:'community',retrievedAt:checkedAt,revision:null,contentHash:crypto.createHash('sha256').update(await fs.readFile(item.file)).digest('hex'),locator:item.locator};
  const existing=sources.findIndex(s=>s.id===item.id);if(existing===-1)sources.push(source);else sources[existing]=source;
 }
-await fs.writeFile(path.join(root,'src/data/sources.json'),JSON.stringify(sources,null,2)+'\n');
+await fs.writeFile(path.join(root,'public/data/atlas/sources.json'),JSON.stringify(sources,null,2)+'\n');
 console.log(JSON.stringify({reviewed:rows.length,explicit:rows.filter(r=>r.routeEvidence==='explicit-blueprint').length,containerDetails:rows.filter(r=>r.containerDetails.length).length,pending:rows.filter(r=>r.pendingFields.length).length}));

@@ -7,14 +7,7 @@
       "id": "route-blueprint-anvil-blueprint",
       "blueprintId": "blueprint-anvil-blueprint",
       "name": "Anvil",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -24,10 +17,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-anvil"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-anvil"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -35,14 +25,7 @@
       "id": "route-blueprint-angled-grip-ii-blueprint",
       "blueprintId": "blueprint-angled-grip-ii-blueprint",
       "name": "Angled Grip II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -52,10 +35,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-angled-grip-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-angled-grip-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -63,20 +43,9 @@
       "id": "route-blueprint-angled-grip-iii-blueprint",
       "blueprintId": "blueprint-angled-grip-iii-blueprint",
       "name": "Angled Grip III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -84,10 +53,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-angled-grip-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-angled-grip-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -95,9 +61,7 @@
       "id": "route-blueprint-aphelion-blueprint",
       "blueprintId": "blueprint-aphelion-blueprint",
       "name": "Aphelion",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -107,10 +71,7 @@
       "trialReward": "no",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-aphelion"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-aphelion"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -118,14 +79,7 @@
       "id": "route-blueprint-barricade-kit-blueprint",
       "blueprintId": "blueprint-barricade-kit-blueprint",
       "name": "Barricade Kit",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -135,10 +89,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-barricade-kit"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-barricade-kit"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -146,14 +97,7 @@
       "id": "route-blueprint-bettina-blueprint",
       "blueprintId": "blueprint-bettina-blueprint",
       "name": "Bettina",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -163,10 +107,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-bettina"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-bettina"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -174,14 +115,7 @@
       "id": "route-blueprint-blaze-grenade-blueprint",
       "blueprintId": "blueprint-blaze-grenade-blueprint",
       "name": "Blaze Grenade",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -191,10 +125,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-blaze-grenade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-blaze-grenade"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -202,17 +133,9 @@
       "id": "route-blueprint-bobcat-blueprint",
       "blueprintId": "blueprint-bobcat-blueprint",
       "name": "Bobcat",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Hurricane",
-        "Locked Gate"
-      ],
+      "conditions": ["Hurricane", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Anywhere, First Wave Cache",
       "scavengable": true,
@@ -220,10 +143,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-bobcat"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-bobcat"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -231,9 +151,7 @@
       "id": "route-blueprint-burletta-blueprint",
       "blueprintId": "blueprint-burletta-blueprint",
       "name": "Burletta",
-      "maps": [
-        "buried-city"
-      ],
+      "maps": ["buried-city"],
       "mapScope": "quest",
       "conditions": [],
       "conditionUnknown": false,
@@ -243,29 +161,17 @@
       "trialReward": "yes",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-burletta"
-      ],
-      "mapEvidenceUrls": [
-        "https://metaforge.app/arc-raiders/map/buried-city"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-burletta"],
+      "mapEvidenceUrls": ["https://metaforge.app/arc-raiders/map/buried-city"],
       "note": "La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado."
     },
     {
       "id": "route-blueprint-canto-blueprint",
       "blueprintId": "blueprint-canto-blueprint",
       "name": "Canto",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Hurricane"
-      ],
+      "conditions": ["Hurricane"],
       "conditionUnknown": false,
       "containers": "First Wave Cache",
       "scavengable": true,
@@ -273,10 +179,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-canto"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-canto"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -284,10 +187,7 @@
       "id": "route-blueprint-combat-mk-3-aggressive-blueprint",
       "blueprintId": "blueprint-combat-mk-3-aggressive-blueprint",
       "name": "Combat Mk. 3 (Aggressive)",
-      "maps": [
-        "blue-gate",
-        "stella-montis"
-      ],
+      "maps": ["blue-gate", "stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -297,10 +197,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-combat-mk-3-aggressive"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-combat-mk-3-aggressive"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -308,10 +205,7 @@
       "id": "route-blueprint-combat-mk-3-flanking-blueprint",
       "blueprintId": "blueprint-combat-mk-3-flanking-blueprint",
       "name": "Combat Mk. 3 (Flanking)",
-      "maps": [
-        "blue-gate",
-        "stella-montis"
-      ],
+      "maps": ["blue-gate", "stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -321,10 +215,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-combat-mk-3-flanking"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-combat-mk-3-flanking"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -332,14 +223,7 @@
       "id": "route-blueprint-compensator-ii-blueprint",
       "blueprintId": "blueprint-compensator-ii-blueprint",
       "name": "Compensator II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -349,10 +233,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-compensator-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-compensator-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -360,20 +241,9 @@
       "id": "route-blueprint-compensator-iii-blueprint",
       "blueprintId": "blueprint-compensator-iii-blueprint",
       "name": "Compensator III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -381,10 +251,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-compensator-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-compensator-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -392,9 +259,7 @@
       "id": "route-blueprint-crash-mat-blueprint",
       "blueprintId": "blueprint-crash-mat-blueprint",
       "name": "Crash Mat",
-      "maps": [
-        "riven-tides"
-      ],
+      "maps": ["riven-tides"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -404,10 +269,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-crash-mat"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-crash-mat"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -415,14 +277,7 @@
       "id": "route-blueprint-complex-gun-parts-blueprint",
       "blueprintId": "blueprint-complex-gun-parts-blueprint",
       "name": "Complex Gun Parts",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -432,10 +287,7 @@
       "trialReward": "no",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-complex-gun-parts"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-complex-gun-parts"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -443,16 +295,9 @@
       "id": "route-blueprint-dolabra-blueprint",
       "blueprintId": "blueprint-dolabra-blueprint",
       "name": "Dolabra",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Close Scrutiny"
-      ],
+      "conditions": ["Close Scrutiny"],
       "conditionUnknown": false,
       "containers": "ARC Assessor",
       "scavengable": true,
@@ -460,10 +305,7 @@
       "trialReward": "no",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-dolabra"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-dolabra"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -471,9 +313,7 @@
       "id": "route-blueprint-deadline-blueprint",
       "blueprintId": "blueprint-deadline-blueprint",
       "name": "Deadline",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -483,10 +323,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-deadline"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-deadline"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -494,14 +331,7 @@
       "id": "route-blueprint-defibrillator-blueprint",
       "blueprintId": "blueprint-defibrillator-blueprint",
       "name": "Defibrillator",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -511,10 +341,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-defibrillator"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-defibrillator"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -522,14 +349,7 @@
       "id": "route-blueprint-explosive-mine-blueprint",
       "blueprintId": "blueprint-explosive-mine-blueprint",
       "name": "Explosive Mine",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -539,10 +359,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-explosive-mine"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-explosive-mine"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -550,14 +367,7 @@
       "id": "route-blueprint-extended-barrel-ii-blueprint",
       "blueprintId": "blueprint-extended-barrel-ii-blueprint",
       "name": "Extended Barrel II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -567,10 +377,7 @@
       "trialReward": "yes",
       "confidence": "no confirmado",
       "validation": "incomplete",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-barrel-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-barrel-ii"],
       "mapEvidenceUrls": [],
       "note": "El índice tiene campos desconocidos; no se completan por suposición."
     },
@@ -578,20 +385,9 @@
       "id": "route-blueprint-extended-barrel-iii-blueprint",
       "blueprintId": "blueprint-extended-barrel-iii-blueprint",
       "name": "Extended Barrel III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -599,10 +395,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-barrel-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-barrel-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -610,14 +403,7 @@
       "id": "route-blueprint-extended-light-mag-ii-blueprint",
       "blueprintId": "blueprint-extended-light-mag-ii-blueprint",
       "name": "Extended Light Mag II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -627,10 +413,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-light-mag-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-light-mag-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -638,20 +421,9 @@
       "id": "route-blueprint-extended-light-mag-iii-blueprint",
       "blueprintId": "blueprint-extended-light-mag-iii-blueprint",
       "name": "Extended Light Mag III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -659,10 +431,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-light-mag-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-light-mag-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -670,18 +439,9 @@
       "id": "route-blueprint-extended-medium-mag-ii-blueprint",
       "blueprintId": "blueprint-extended-medium-mag-ii-blueprint",
       "name": "Extended Medium Mag II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
-      "conditions": [
-        "Night Raid"
-      ],
+      "conditions": ["Night Raid"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -689,10 +449,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-medium-mag-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-medium-mag-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -700,20 +457,9 @@
       "id": "route-blueprint-extended-medium-mag-iii-blueprint",
       "blueprintId": "blueprint-extended-medium-mag-iii-blueprint",
       "name": "Extended Medium Mag III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -721,10 +467,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-medium-mag-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-medium-mag-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -732,14 +475,7 @@
       "id": "route-blueprint-extended-shotgun-mag-ii-blueprint",
       "blueprintId": "blueprint-extended-shotgun-mag-ii-blueprint",
       "name": "Extended Shotgun Mag II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -749,10 +485,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-shotgun-mag-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-shotgun-mag-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -760,20 +493,9 @@
       "id": "route-blueprint-extended-shotgun-mag-iii-blueprint",
       "blueprintId": "blueprint-extended-shotgun-mag-iii-blueprint",
       "name": "Extended Shotgun Mag III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -781,10 +503,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-extended-shotgun-mag-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-extended-shotgun-mag-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -792,15 +511,9 @@
       "id": "route-blueprint-equalizer-blueprint",
       "blueprintId": "blueprint-equalizer-blueprint",
       "name": "Equalizer",
-      "maps": [
-        "dam",
-        "spaceport",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Harvester"
-      ],
+      "conditions": ["Harvester"],
       "conditionUnknown": false,
       "containers": "Harvester",
       "scavengable": false,
@@ -808,10 +521,7 @@
       "trialReward": "no",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-equalizer"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-equalizer"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -819,16 +529,9 @@
       "id": "route-blueprint-fireworks-box-blueprint",
       "blueprintId": "blueprint-fireworks-box-blueprint",
       "name": "Fireworks Box",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Cold Snap"
-      ],
+      "conditions": ["Cold Snap"],
       "conditionUnknown": false,
       "containers": "Anywhere",
       "scavengable": true,
@@ -836,10 +539,7 @@
       "trialReward": "unknown",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-fireworks-box"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-fireworks-box"],
       "mapEvidenceUrls": [],
       "note": "La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado."
     },
@@ -847,9 +547,7 @@
       "id": "route-blueprint-gas-mine-blueprint",
       "blueprintId": "blueprint-gas-mine-blueprint",
       "name": "Gas Mine",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -859,10 +557,7 @@
       "trialReward": "unknown",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-gas-mine"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-gas-mine"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -870,14 +565,7 @@
       "id": "route-blueprint-heavy-gun-parts-blueprint",
       "blueprintId": "blueprint-heavy-gun-parts-blueprint",
       "name": "Heavy Gun Parts",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -887,10 +575,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-heavy-gun-parts"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-heavy-gun-parts"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -898,9 +583,7 @@
       "id": "route-blueprint-hullcracker-blueprint",
       "blueprintId": "blueprint-hullcracker-blueprint",
       "name": "Hullcracker",
-      "maps": [
-        "dam"
-      ],
+      "maps": ["dam"],
       "mapScope": "quest",
       "conditions": [],
       "conditionUnknown": false,
@@ -910,27 +593,15 @@
       "trialReward": "no",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-hullcracker"
-      ],
-      "mapEvidenceUrls": [
-        "https://metaforge.app/arc-raiders/map/dam"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-hullcracker"],
+      "mapEvidenceUrls": ["https://metaforge.app/arc-raiders/map/dam"],
       "note": "La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado."
     },
     {
       "id": "route-blueprint-il-toro-blueprint",
       "blueprintId": "blueprint-il-toro-blueprint",
       "name": "Il Toro",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -940,10 +611,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-il-toro"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-il-toro"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -951,14 +619,7 @@
       "id": "route-blueprint-jolt-mine-blueprint",
       "blueprintId": "blueprint-jolt-mine-blueprint",
       "name": "Jolt Mine",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -968,10 +629,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-jolt-mine"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-jolt-mine"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -979,15 +637,9 @@
       "id": "route-blueprint-jupiter-blueprint",
       "blueprintId": "blueprint-jupiter-blueprint",
       "name": "Jupiter",
-      "maps": [
-        "dam",
-        "spaceport",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Harvester"
-      ],
+      "conditions": ["Harvester"],
       "conditionUnknown": false,
       "containers": "Harvester",
       "scavengable": false,
@@ -995,10 +647,7 @@
       "trialReward": "no",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-jupiter"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-jupiter"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1006,14 +655,7 @@
       "id": "route-blueprint-light-gun-parts-blueprint",
       "blueprintId": "blueprint-light-gun-parts-blueprint",
       "name": "Light Gun Parts",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1023,10 +665,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-light-gun-parts"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-light-gun-parts"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1034,14 +673,7 @@
       "id": "route-blueprint-red-light-stick-blueprint",
       "blueprintId": "blueprint-red-light-stick-blueprint",
       "name": "Red Light Stick",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1051,10 +683,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-red-light-stick"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-red-light-stick"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1062,14 +691,7 @@
       "id": "route-blueprint-green-light-stick-blueprint",
       "blueprintId": "blueprint-green-light-stick-blueprint",
       "name": "Green Light Stick",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1079,10 +701,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-green-light-stick"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-green-light-stick"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1090,14 +709,7 @@
       "id": "route-blueprint-yellow-light-stick-blueprint",
       "blueprintId": "blueprint-yellow-light-stick-blueprint",
       "name": "Yellow Light Stick",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1107,10 +719,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-yellow-light-stick"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-yellow-light-stick"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1118,14 +727,7 @@
       "id": "route-blueprint-blue-light-stick-blueprint",
       "blueprintId": "blueprint-blue-light-stick-blueprint",
       "name": "Blue Light Stick",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1135,10 +737,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-blue-light-stick"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-blue-light-stick"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1146,20 +745,9 @@
       "id": "route-blueprint-lightweight-stock-blueprint",
       "blueprintId": "blueprint-lightweight-stock-blueprint",
       "name": "Lightweight Stock",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1167,10 +755,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-lightweight-stock"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-lightweight-stock"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1178,14 +763,7 @@
       "id": "route-blueprint-looting-mk-3-safekeeper-blueprint",
       "blueprintId": "blueprint-looting-mk-3-safekeeper-blueprint",
       "name": "Looting Mk. 3 (Safekeeper)",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1195,10 +773,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-looting-mk-3-safekeeper"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-looting-mk-3-safekeeper"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1206,14 +781,7 @@
       "id": "route-blueprint-looting-mk-3-survivor-blueprint",
       "blueprintId": "blueprint-looting-mk-3-survivor-blueprint",
       "name": "Looting Mk. 3 (Survivor)",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1223,10 +791,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-looting-mk-3-survivor"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-looting-mk-3-survivor"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1234,11 +799,7 @@
       "id": "route-blueprint-lure-grenade-blueprint",
       "blueprintId": "blueprint-lure-grenade-blueprint",
       "name": "Lure Grenade",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city"
-      ],
+      "maps": ["dam", "spaceport", "buried-city"],
       "mapScope": "quest",
       "conditions": [],
       "conditionUnknown": false,
@@ -1248,10 +809,7 @@
       "trialReward": "no",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-lure-grenade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-lure-grenade"],
       "mapEvidenceUrls": [
         "https://metaforge.app/arc-raiders/map/dam",
         "https://metaforge.app/arc-raiders/map/spaceport",
@@ -1263,14 +821,7 @@
       "id": "route-blueprint-medium-gun-parts-blueprint",
       "blueprintId": "blueprint-medium-gun-parts-blueprint",
       "name": "Medium Gun Parts",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1280,10 +831,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-medium-gun-parts"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-medium-gun-parts"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1291,14 +839,7 @@
       "id": "route-blueprint-muzzle-brake-ii-blueprint",
       "blueprintId": "blueprint-muzzle-brake-ii-blueprint",
       "name": "Muzzle Brake II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1308,10 +849,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-muzzle-brake-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-muzzle-brake-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1319,20 +857,9 @@
       "id": "route-blueprint-muzzle-brake-iii-blueprint",
       "blueprintId": "blueprint-muzzle-brake-iii-blueprint",
       "name": "Muzzle Brake III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1340,10 +867,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-muzzle-brake-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-muzzle-brake-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1351,14 +875,7 @@
       "id": "route-blueprint-osprey-blueprint",
       "blueprintId": "blueprint-osprey-blueprint",
       "name": "Osprey",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1368,10 +885,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-osprey"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-osprey"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1379,21 +893,9 @@
       "id": "route-blueprint-padded-stock-blueprint",
       "blueprintId": "blueprint-padded-stock-blueprint",
       "name": "Padded Stock",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Hidden Bunker",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Hidden Bunker", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1401,10 +903,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-padded-stock"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-padded-stock"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1412,9 +911,7 @@
       "id": "route-blueprint-pulse-mine-blueprint",
       "blueprintId": "blueprint-pulse-mine-blueprint",
       "name": "Pulse Mine",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -1424,10 +921,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-pulse-mine"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-pulse-mine"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1435,9 +929,7 @@
       "id": "route-blueprint-powered-descender-blueprint",
       "blueprintId": "blueprint-powered-descender-blueprint",
       "name": "Powered Descender",
-      "maps": [
-        "riven-tides"
-      ],
+      "maps": ["riven-tides"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": true,
@@ -1447,10 +939,7 @@
       "trialReward": "unknown",
       "confidence": "no confirmado",
       "validation": "incomplete",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-powered-descender"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-powered-descender"],
       "mapEvidenceUrls": [],
       "note": "El índice tiene campos desconocidos; no se completan por suposición."
     },
@@ -1458,14 +947,7 @@
       "id": "route-blueprint-rascal-blueprint",
       "blueprintId": "blueprint-rascal-blueprint",
       "name": "Rascal",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1475,10 +957,7 @@
       "trialReward": "unknown",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-rascal"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-rascal"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1486,14 +965,7 @@
       "id": "route-blueprint-remote-raider-flare-blueprint",
       "blueprintId": "blueprint-remote-raider-flare-blueprint",
       "name": "Remote Raider Flare",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1503,10 +975,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-remote-raider-flare"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-remote-raider-flare"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1514,9 +983,7 @@
       "id": "route-blueprint-seeker-grenade-blueprint",
       "blueprintId": "blueprint-seeker-grenade-blueprint",
       "name": "Seeker Grenade",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -1526,10 +993,7 @@
       "trialReward": "unknown",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-seeker-grenade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-seeker-grenade"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1537,14 +1001,7 @@
       "id": "route-blueprint-shotgun-choke-ii-blueprint",
       "blueprintId": "blueprint-shotgun-choke-ii-blueprint",
       "name": "Shotgun Choke II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1554,10 +1011,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-shotgun-choke-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-shotgun-choke-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1565,20 +1019,9 @@
       "id": "route-blueprint-shotgun-choke-iii-blueprint",
       "blueprintId": "blueprint-shotgun-choke-iii-blueprint",
       "name": "Shotgun Choke III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1586,10 +1029,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-shotgun-choke-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-shotgun-choke-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1597,21 +1037,9 @@
       "id": "route-blueprint-shotgun-silencer-blueprint",
       "blueprintId": "blueprint-shotgun-silencer-blueprint",
       "name": "Shotgun Silencer",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Hidden Bunker",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Hidden Bunker", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1619,10 +1047,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-shotgun-silencer"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-shotgun-silencer"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1630,14 +1055,7 @@
       "id": "route-blueprint-showstopper-blueprint",
       "blueprintId": "blueprint-showstopper-blueprint",
       "name": "Showstopper",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1647,10 +1065,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-showstopper"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-showstopper"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1658,14 +1073,7 @@
       "id": "route-blueprint-silencer-i-blueprint",
       "blueprintId": "blueprint-silencer-i-blueprint",
       "name": "Silencer I",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1675,10 +1083,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-silencer-i"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-silencer-i"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1686,14 +1091,7 @@
       "id": "route-blueprint-silencer-ii-blueprint",
       "blueprintId": "blueprint-silencer-ii-blueprint",
       "name": "Silencer II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1703,10 +1101,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-silencer-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-silencer-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1714,14 +1109,7 @@
       "id": "route-blueprint-smoke-grenade-blueprint",
       "blueprintId": "blueprint-smoke-grenade-blueprint",
       "name": "Smoke Grenade",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1731,10 +1119,7 @@
       "trialReward": "unknown",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-smoke-grenade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-smoke-grenade"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1742,15 +1127,9 @@
       "id": "route-blueprint-snap-hook-blueprint",
       "blueprintId": "blueprint-snap-hook-blueprint",
       "name": "Snap Hook",
-      "maps": [
-        "dam",
-        "spaceport",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm"
-      ],
+      "conditions": ["Electromagnetic Storm"],
       "conditionUnknown": false,
       "containers": "Anywhere",
       "scavengable": true,
@@ -1758,10 +1137,7 @@
       "trialReward": "unknown",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-snap-hook"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-snap-hook"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1769,14 +1145,7 @@
       "id": "route-blueprint-stable-stock-ii-blueprint",
       "blueprintId": "blueprint-stable-stock-ii-blueprint",
       "name": "Stable Stock II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1786,10 +1155,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-stable-stock-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-stable-stock-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1797,20 +1163,9 @@
       "id": "route-blueprint-stable-stock-iii-blueprint",
       "blueprintId": "blueprint-stable-stock-iii-blueprint",
       "name": "Stable Stock III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -1818,10 +1173,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-stable-stock-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-stable-stock-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1829,15 +1181,9 @@
       "id": "route-blueprint-surge-coil-blueprint",
       "blueprintId": "blueprint-surge-coil-blueprint",
       "name": "Surge Coil",
-      "maps": [
-        "dam",
-        "spaceport",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm"
-      ],
+      "conditions": ["Electromagnetic Storm"],
       "conditionUnknown": false,
       "containers": null,
       "scavengable": true,
@@ -1845,10 +1191,7 @@
       "trialReward": "unknown",
       "confidence": "no confirmado",
       "validation": "incomplete",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-surge-coil"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-surge-coil"],
       "mapEvidenceUrls": [],
       "note": "El índice tiene campos desconocidos; no se completan por suposición."
     },
@@ -1856,10 +1199,7 @@
       "id": "route-blueprint-tactical-mk-3-defensive-blueprint",
       "blueprintId": "blueprint-tactical-mk-3-defensive-blueprint",
       "name": "Tactical Mk. 3 (Defensive)",
-      "maps": [
-        "blue-gate",
-        "stella-montis"
-      ],
+      "maps": ["blue-gate", "stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -1869,10 +1209,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tactical-mk-3-defensive"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tactical-mk-3-defensive"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1880,10 +1217,7 @@
       "id": "route-blueprint-tactical-mk-3-healing-blueprint",
       "blueprintId": "blueprint-tactical-mk-3-healing-blueprint",
       "name": "Tactical Mk. 3 (Healing)",
-      "maps": [
-        "blue-gate",
-        "stella-montis"
-      ],
+      "maps": ["blue-gate", "stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -1893,10 +1227,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tactical-mk-3-healing"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tactical-mk-3-healing"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1904,10 +1235,7 @@
       "id": "route-blueprint-tactical-mk-3-revival-blueprint",
       "blueprintId": "blueprint-tactical-mk-3-revival-blueprint",
       "name": "Tactical Mk. 3 (Revival)",
-      "maps": [
-        "blue-gate",
-        "stella-montis"
-      ],
+      "maps": ["blue-gate", "stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -1917,10 +1245,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tactical-mk-3-revival"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tactical-mk-3-revival"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1938,10 +1263,7 @@
       "trialReward": "unknown",
       "confidence": "no confirmado",
       "validation": "incomplete",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tactical-mk-3-smoke"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tactical-mk-3-smoke"],
       "mapEvidenceUrls": [],
       "note": "El índice tiene campos desconocidos; no se completan por suposición."
     },
@@ -1949,14 +1271,7 @@
       "id": "route-blueprint-tagging-grenade-blueprint",
       "blueprintId": "blueprint-tagging-grenade-blueprint",
       "name": "Tagging Grenade",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -1966,10 +1281,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tagging-grenade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tagging-grenade"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -1977,19 +1289,9 @@
       "id": "route-blueprint-tempest-blueprint",
       "blueprintId": "blueprint-tempest-blueprint",
       "name": "Tempest",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Night Raid",
-        "Hurricane"
-      ],
+      "conditions": ["Night Raid", "Hurricane"],
       "conditionUnknown": false,
       "containers": "Residential Containers, First Wave Cache",
       "scavengable": true,
@@ -1997,10 +1299,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-tempest"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-tempest"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2008,14 +1307,7 @@
       "id": "route-blueprint-torrente-blueprint",
       "blueprintId": "blueprint-torrente-blueprint",
       "name": "Torrente",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2025,10 +1317,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-torrente"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-torrente"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2036,9 +1325,7 @@
       "id": "route-blueprint-trailblazer-blueprint",
       "blueprintId": "blueprint-trailblazer-blueprint",
       "name": "Trailblazer",
-      "maps": [
-        "stella-montis"
-      ],
+      "maps": ["stella-montis"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -2048,10 +1335,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-trailblazer"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-trailblazer"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2059,14 +1343,7 @@
       "id": "route-blueprint-trigger-nade-blueprint",
       "blueprintId": "blueprint-trigger-nade-blueprint",
       "name": "Trigger 'Nade",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2076,10 +1353,7 @@
       "trialReward": "unknown",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-trigger-nade"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-trigger-nade"],
       "mapEvidenceUrls": [],
       "note": "La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado."
     },
@@ -2087,14 +1361,7 @@
       "id": "route-blueprint-venator-blueprint",
       "blueprintId": "blueprint-venator-blueprint",
       "name": "Venator",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2104,10 +1371,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-venator"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-venator"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2115,14 +1379,7 @@
       "id": "route-blueprint-vertical-grip-ii-blueprint",
       "blueprintId": "blueprint-vertical-grip-ii-blueprint",
       "name": "Vertical Grip II",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2132,10 +1389,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-vertical-grip-ii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-vertical-grip-ii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2143,20 +1397,9 @@
       "id": "route-blueprint-vertical-grip-iii-blueprint",
       "blueprintId": "blueprint-vertical-grip-iii-blueprint",
       "name": "Vertical Grip III",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Electromagnetic Storm",
-        "Night Raid",
-        "Locked Gate"
-      ],
+      "conditions": ["Electromagnetic Storm", "Night Raid", "Locked Gate"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -2164,10 +1407,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-vertical-grip-iii"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-vertical-grip-iii"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2175,14 +1415,7 @@
       "id": "route-blueprint-vita-shot-blueprint",
       "blueprintId": "blueprint-vita-shot-blueprint",
       "name": "Vita Shot",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2192,10 +1425,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-vita-shot"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-vita-shot"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2203,14 +1433,7 @@
       "id": "route-blueprint-vita-spray-blueprint",
       "blueprintId": "blueprint-vita-spray-blueprint",
       "name": "Vita Spray",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "all",
       "conditions": [],
       "conditionUnknown": false,
@@ -2220,10 +1443,7 @@
       "trialReward": "yes",
       "confidence": "probable",
       "validation": "cross-checked",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-vita-spray"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-vita-spray"],
       "mapEvidenceUrls": [],
       "note": "La ficha distingue explícitamente la recompensa del plano de la del objeto fabricado."
     },
@@ -2231,17 +1451,9 @@
       "id": "route-blueprint-vulcano-blueprint",
       "blueprintId": "blueprint-vulcano-blueprint",
       "name": "Vulcano",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Hurricane",
-        "Hidden Bunker"
-      ],
+      "conditions": ["Hurricane", "Hidden Bunker"],
       "conditionUnknown": false,
       "containers": "Anywhere, First Wave Cache",
       "scavengable": true,
@@ -2249,10 +1461,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-vulcano"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-vulcano"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2260,18 +1469,9 @@
       "id": "route-blueprint-wolfpack-blueprint",
       "blueprintId": "blueprint-wolfpack-blueprint",
       "name": "Wolfpack",
-      "maps": [
-        "dam",
-        "spaceport",
-        "buried-city",
-        "blue-gate",
-        "stella-montis",
-        "riven-tides"
-      ],
+      "maps": ["dam", "spaceport", "buried-city", "blue-gate", "stella-montis", "riven-tides"],
       "mapScope": "condition-only",
-      "conditions": [
-        "Night Raid"
-      ],
+      "conditions": ["Night Raid"],
       "conditionUnknown": false,
       "containers": "Residential Containers",
       "scavengable": true,
@@ -2279,10 +1479,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-wolfpack"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-wolfpack"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     },
@@ -2290,9 +1487,7 @@
       "id": "route-blueprint-white-flag-blueprint",
       "blueprintId": "blueprint-white-flag-blueprint",
       "name": "White Flag",
-      "maps": [
-        "riven-tides"
-      ],
+      "maps": ["riven-tides"],
       "mapScope": "specific",
       "conditions": [],
       "conditionUnknown": false,
@@ -2302,10 +1497,7 @@
       "trialReward": "yes",
       "confidence": "posible",
       "validation": "index-only",
-      "sourceIds": [
-        "wiki-blueprints",
-        "wiki-white-flag"
-      ],
+      "sourceIds": ["wiki-blueprints", "wiki-white-flag"],
       "mapEvidenceUrls": [],
       "note": "Ruta del índice comunitario; el mapa, condición y contenedor no están corroborados individualmente. No garantiza un plano."
     }

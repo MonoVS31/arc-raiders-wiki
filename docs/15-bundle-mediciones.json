@@ -1,0 +1,128 @@
+{
+  "units": "bytes; KB decimal = 1000 bytes",
+  "before": [
+    {
+      "file": "ARCZoneExplorer-CaD0O9AI.js",
+      "bytes": 20617
+    },
+    {
+      "file": "index-C8XCdQMd.js",
+      "bytes": 729221
+    },
+    {
+      "file": "index-HKMOH3Zo.css",
+      "bytes": 62890
+    },
+    {
+      "file": "leaflet-src-BF0sg77Q.js",
+      "bytes": 148742
+    },
+    {
+      "file": "LocalDossier-Cks_6QeT.js",
+      "bytes": 2867
+    },
+    {
+      "file": "MapExplorer-_aE4QWms.js",
+      "bytes": 10136
+    },
+    {
+      "file": "MapExplorer-dxjuKBTK.css",
+      "bytes": 15108
+    },
+    {
+      "file": "ProjectSteps-RHeIgU5G.js",
+      "bytes": 21569
+    },
+    {
+      "file": "rolldown-runtime-CbXtAM7H.js",
+      "bytes": 589
+    },
+    {
+      "file": "WikiContext-B-BaMY__.js",
+      "bytes": 97969
+    },
+    {
+      "file": "WikiModal-DE21JPO5.js",
+      "bytes": 6559
+    }
+  ],
+  "after": [
+    {
+      "file": "ARCZoneExplorer-wgf4wIVn.js",
+      "bytes": 5933,
+      "gzip": 2302
+    },
+    {
+      "file": "catalog-6ns4Hmtz.js",
+      "bytes": 8837,
+      "gzip": 3582
+    },
+    {
+      "file": "index-B-AzVh0o.js",
+      "bytes": 4065,
+      "gzip": 1941
+    },
+    {
+      "file": "index-BeNGwBjF.css",
+      "bytes": 63488,
+      "gzip": 12281
+    },
+    {
+      "file": "leaflet-src-D6yJ2DYL.js",
+      "bytes": 148742,
+      "gzip": 43063
+    },
+    {
+      "file": "LocalDossier-BmcKbGXF.js",
+      "bytes": 2926,
+      "gzip": 1454
+    },
+    {
+      "file": "MapExplorer-C87jwdv5.js",
+      "bytes": 10779,
+      "gzip": 4319
+    },
+    {
+      "file": "MapExplorer-dxjuKBTK.css",
+      "bytes": 15108,
+      "gzip": 6379
+    },
+    {
+      "file": "ProjectSteps-B1y-Uiet.js",
+      "bytes": 3266,
+      "gzip": 1344
+    },
+    {
+      "file": "react-DMIk7ksi.js",
+      "bytes": 218833,
+      "gzip": 67525
+    },
+    {
+      "file": "render-app-BKzdnz03.js",
+      "bytes": 39482,
+      "gzip": 12257
+    },
+    {
+      "file": "rolldown-runtime-hePW80VL.js",
+      "bytes": 716,
+      "gzip": 428
+    },
+    {
+      "file": "WikiContext-Dtx_Ea-f.js",
+      "bytes": 1031,
+      "gzip": 585
+    },
+    {
+      "file": "WikiModal-D5NLuIsc.js",
+      "bytes": 6734,
+      "gzip": 2556
+    },
+    {
+      "file": "zod-rheUNOxz.js",
+      "bytes": 88706,
+      "gzip": 24987
+    }
+  ],
+  "dataFiles": 15,
+  "dataBytes": 670605
+}

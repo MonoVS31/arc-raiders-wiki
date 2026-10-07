@@ -33,11 +33,7 @@
             "10× Explosive Compound",
             "2× Headphones"
           ],
-          "rewards": [
-            "1× Burletta IV",
-            "1× Extended Light Mag III",
-            "1× Silencer III"
-          ],
+          "rewards": ["1× Burletta IV", "1× Extended Light Mag III", "1× Silencer III"],
           "confidence": "probable"
         },
         {
@@ -48,12 +44,7 @@
             "2× Sentinel Firing Core",
             "1× Rocket Thruster"
           ],
-          "rewards": [
-            "2× Wolfpack",
-            "2× Deadline",
-            "3× Trailblazer",
-            "1× Crash Mat Blueprint"
-          ],
+          "rewards": ["2× Wolfpack", "2× Deadline", "3× Trailblazer", "1× Crash Mat Blueprint"],
           "confidence": "probable"
         },
         {
@@ -167,12 +158,7 @@
             "8× Rocketeer Driver",
             "3× Queen Reactor"
           ],
-          "rewards": [
-            "1× Bobcat IV",
-            "5× Wolfpack",
-            "40× Raider Tokens",
-            "1× Bobcat Blueprint"
-          ],
+          "rewards": ["1× Bobcat IV", "5× Wolfpack", "40× Raider Tokens", "1× Bobcat Blueprint"],
           "confidence": "probable"
         },
         {
@@ -183,12 +169,7 @@
             "8× Bombardier Cell",
             "3× Matriarch Reactor"
           ],
-          "rewards": [
-            "2× Snap Hook",
-            "1× Aphelion",
-            "50× Raider Tokens",
-            "1× Snap Hook Blueprint"
-          ],
+          "rewards": ["2× Snap Hook", "1× Aphelion", "50× Raider Tokens", "1× Snap Hook Blueprint"],
           "confidence": "probable"
         }
       ],
@@ -244,12 +225,7 @@
         },
         {
           "name": "Expedition 1 / Framework (3)",
-          "requirements": [
-            "5× Light Bulb",
-            "30× Battery",
-            "20× Sensors",
-            "1× Exodus Modules"
-          ],
+          "requirements": ["5× Light Bulb", "30× Battery", "20× Sensors", "1× Exodus Modules"],
           "rewards": [],
           "confidence": "probable"
         },
@@ -387,12 +363,7 @@
         },
         {
           "name": "Expedition 4 / Foundation (1)",
-          "requirements": [
-            "150× Metal Parts",
-            "100× Chemicals",
-            "80× ARC Alloy",
-            "15× Canister"
-          ],
+          "requirements": ["150× Metal Parts", "100× Chemicals", "80× ARC Alloy", "15× Canister"],
           "rewards": [],
           "confidence": "probable"
         },
@@ -442,12 +413,7 @@
         },
         {
           "name": "Expedition 5 / Foundation (1)",
-          "requirements": [
-            "150× Metal Parts",
-            "100× Plastic Parts",
-            "80× ARC Alloy",
-            "15× Magnet"
-          ],
+          "requirements": ["150× Metal Parts", "100× Plastic Parts", "80× ARC Alloy", "15× Magnet"],
           "rewards": [],
           "confidence": "probable"
         },
@@ -524,14 +490,8 @@
       "stages": [
         {
           "name": "Part 1 / Upgrade Cargo Elevator Antennas (1)",
-          "requirements": [
-            "Upgrade 3 antennas found on top of any Cargo Elevator"
-          ],
-          "rewards": [
-            "1× Combat Mk. 3 (Aggressive)",
-            "1× Heavy Shield",
-            "1× Vita Spray"
-          ],
+          "requirements": ["Upgrade 3 antennas found on top of any Cargo Elevator"],
+          "rewards": ["1× Combat Mk. 3 (Aggressive)", "1× Heavy Shield", "1× Vita Spray"],
           "confidence": "probable"
         },
         {
@@ -541,12 +501,7 @@
             "Deal 500 damage to any ARC enemies using Wasp Drivers",
             "Deal 1,000 damage to any ARC enemies using Leaper Pulse Unit"
           ],
-          "rewards": [
-            "50× Raider Tokens",
-            "1× Aphelion",
-            "1× Dolabra",
-            "1× Jupiter"
-          ],
+          "rewards": ["50× Raider Tokens", "1× Aphelion", "1× Dolabra", "1× Jupiter"],
           "confidence": "probable"
         },
         {
@@ -639,11 +594,7 @@
           "requirements": [
             "Infligir 1200 de daño a enemigos ARC en Swamp, solo en Dam Battlegrounds."
           ],
-          "rewards": [
-            "3× Pulse Mine",
-            "3× Lure Grenade Trap",
-            "25× Raider Tokens"
-          ],
+          "rewards": ["3× Pulse Mine", "3× Lure Grenade Trap", "25× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -654,11 +605,7 @@
             "2× Air Freshener",
             "6× ARC Thermo Lining"
           ],
-          "rewards": [
-            "3× Smoke Grenade Trap",
-            "3× Explosive Mine",
-            "25× Raider Tokens"
-          ],
+          "rewards": ["3× Smoke Grenade Trap", "3× Explosive Mine", "25× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -669,12 +616,7 @@
             "5× Metal Brackets",
             "7× ARC Performance Steel"
           ],
-          "rewards": [
-            "3× Blaze Grenade Trap",
-            "3× Jolt Mine",
-            "1× Rascal II",
-            "50× Raider Tokens"
-          ],
+          "rewards": ["3× Blaze Grenade Trap", "3× Jolt Mine", "1× Rascal II", "50× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -751,13 +693,8 @@
       "stages": [
         {
           "name": "Initial Flock Intake (1)",
-          "requirements": [
-            "Lay a bird trap next to the buoys along the Seabed in Riven Tides"
-          ],
-          "rewards": [
-            "1× Dockmaster's Detector",
-            "25× Raider Tokens"
-          ],
+          "requirements": ["Lay a bird trap next to the buoys along the Seabed in Riven Tides"],
+          "rewards": ["1× Dockmaster's Detector", "25× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -768,11 +705,7 @@
             "12× Moss",
             "5× \"Twilight Compass\" Ship Model"
           ],
-          "rewards": [
-            "1× Heavy Gun Parts Blueprint",
-            "3× Surge Coil",
-            "25× Raider Tokens"
-          ],
+          "rewards": ["1× Heavy Gun Parts Blueprint", "3× Surge Coil", "25× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -783,11 +716,7 @@
             "8× Rusted Tools",
             "5× \"Velocity\" Ship Model"
           ],
-          "rewards": [
-            "1× Anvil IV",
-            "1× Anvil Splitter",
-            "50× Raider Tokens"
-          ],
+          "rewards": ["1× Anvil IV", "1× Anvil Splitter", "50× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -925,28 +854,13 @@
       "stages": [
         {
           "name": "Atmospheric Pressure (1)",
-          "requirements": [
-            "25× Plastic Parts",
-            "15× Metal Parts",
-            "5× ARC Alloy",
-            "3× Oil"
-          ],
-          "rewards": [
-            "5× Durable Cloth",
-            "5× Great Mullein",
-            "5× Antiseptic",
-            "3× Vita Shot"
-          ],
+          "requirements": ["25× Plastic Parts", "15× Metal Parts", "5× ARC Alloy", "3× Oil"],
+          "rewards": ["5× Durable Cloth", "5× Great Mullein", "5× Antiseptic", "3× Vita Shot"],
           "confidence": "probable"
         },
         {
           "name": "Sunlight (2)",
-          "requirements": [
-            "1× Snitch Scanner",
-            "3× Wires",
-            "3× Sensors",
-            "1× Comet Igniter"
-          ],
+          "requirements": ["1× Snitch Scanner", "3× Wires", "3× Sensors", "1× Comet Igniter"],
           "rewards": [
             "10× Processor",
             "5× Advanced Electrical Components",
@@ -973,12 +887,7 @@
         },
         {
           "name": "Humidity (4)",
-          "requirements": [
-            "10× Duct Tape",
-            "3× Rusted Bolts",
-            "1× Water Pump",
-            "3× Wasp Driver"
-          ],
+          "requirements": ["10× Duct Tape", "3× Rusted Bolts", "1× Water Pump", "3× Wasp Driver"],
           "rewards": [
             "10× Explosive Compound",
             "3× Showstopper",
@@ -1004,10 +913,7 @@
           "confidence": "probable"
         }
       ],
-      "completion": [
-        "1× Anemometer (Backpack Charm)",
-        "250× Raider Tokens"
-      ],
+      "completion": ["1× Anemometer (Backpack Charm)", "250× Raider Tokens"],
       "sourceId": "wiki-project-review-project-weather-monitor-system"
     },
     {
@@ -1041,12 +947,7 @@
             "5× Durable Cloth",
             "20× Candleberries"
           ],
-          "rewards": [
-            "5× Firecracker",
-            "1,000× Merit",
-            "1,000× Merit",
-            "50× Raider Tokens"
-          ],
+          "rewards": ["5× Firecracker", "1,000× Merit", "1,000× Merit", "50× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -1073,12 +974,7 @@
             "1× Film Reel",
             "60× Candleberries"
           ],
-          "rewards": [
-            "3× Trailblazer",
-            "1,000× Merit",
-            "1,000× Merit",
-            "50× Raider Tokens"
-          ],
+          "rewards": ["3× Trailblazer", "1,000× Merit", "1,000× Merit", "50× Raider Tokens"],
           "confidence": "probable"
         },
         {
@@ -1089,28 +985,13 @@
             "2× Water Filter",
             "60× Candleberries"
           ],
-          "rewards": [
-            "1× Vita Spray",
-            "1,000× Merit",
-            "1,000× Merit",
-            "50× Raider Tokens"
-          ],
+          "rewards": ["1× Vita Spray", "1,000× Merit", "1,000× Merit", "50× Raider Tokens"],
           "confidence": "probable"
         },
         {
           "name": "Meals (5)",
-          "requirements": [
-            "7× Mushroom",
-            "2× Frying Pan",
-            "2× Music Album",
-            "70× Candleberries"
-          ],
-          "rewards": [
-            "1× Snap Hook",
-            "1,000× Merit",
-            "1,000× Merit",
-            "50× Raider Tokens"
-          ],
+          "requirements": ["7× Mushroom", "2× Frying Pan", "2× Music Album", "70× Candleberries"],
+          "rewards": ["1× Snap Hook", "1,000× Merit", "1,000× Merit", "50× Raider Tokens"],
           "confidence": "probable"
         }
       ],
