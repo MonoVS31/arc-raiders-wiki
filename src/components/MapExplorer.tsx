@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
 import { arcIdForSubtype, calibration, loadMapSnapshot, mapManifest, markerMatches, type MapConfig, type MapFilters, type MapMarker, type MapSnapshot } from '../domain/maps';
 import { routeForBlueprint } from '../domain/blueprints';
-import { catalog,sourceById } from '../domain/catalog';
+import { catalog } from '../domain/catalog';
+import { Sources } from '../app/WikiContext';
 import { claimsFor } from '../domain/query';
 import 'leaflet/dist/leaflet.css';
 
@@ -71,18 +72,18 @@ export default function MapExplorer({mapId,blueprintId,arcId}:{mapId:string;blue
 }
 function LoadedMap({config,blueprintId,arcId}:{config:MapConfig;blueprintId?:string|undefined;arcId?:string|undefined}){
  const route=blueprintId?routeForBlueprint(blueprintId):undefined;
- const [snapshot,setSnapshot]=useState<MapSnapshot|null>(null),[error,setError]=useState<string|null>(null);
+ const [snapshot,setSnapshot]=useState<MapSnapshot|null>(null),[error,setError]=useState<string|null>(null),[retry,setRetry]=useState(0);
  const [floorId,setFloorId]=useState(config.defaultFloorId),[kind,setKind]=useState<MapFilters['kind']>(arcId?'arc':route?.mapScope==='quest'?'quest-objective':'weapon-case');
  const [conditionBit,setConditionBit]=useState<number|null>(null),[query,setQuery]=useState(''),[selectedId,setSelectedId]=useState<string|null>(null);
  const floor=config.floors.find(floor=>floor.id===floorId)??config.floors[0]!;
- useEffect(()=>{const abort=new AbortController();loadMapSnapshot(config,abort.signal).then(data=>setSnapshot(data)).catch(error=>{if(error instanceof Error&&error.name!=='AbortError')setError('No se pudo cargar la información del mapa. Intentá nuevamente.');});return()=>abort.abort();},[config]);
+ useEffect(()=>{const abort=new AbortController();setError(null);loadMapSnapshot(config,abort.signal).then(data=>setSnapshot(data)).catch(error=>{if(error instanceof Error&&error.name!=='AbortError')setError('No se pudo cargar la información del mapa. Intentá nuevamente.');});return()=>abort.abort();},[config,retry]);
  const questKey=route?.quest?.replaceAll("'",'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
  const markers=useMemo(()=>snapshot?.markers.filter(marker=>markerMatches(marker,{kind,floorIndex:floor.index,conditionBit,query})&&
   !(kind==='quest-objective'&&route?.mapScope==='quest'&&questKey&&marker.subtype!==questKey)&&!(kind==='arc'&&arcId&&arcIdForSubtype(marker.subtype)!==arcId))??[],[snapshot,kind,floor.index,conditionBit,query,route?.mapScope,questKey,arcId]);
  const selected=markers.find(marker=>marker.id===selectedId);
  const arc=selected?.kind==='arc'?catalog.entities.find(entity=>entity.id===arcIdForSubtype(selected.subtype)&&entity.category==='arc'):undefined;
  const arcClaims=arc?claimsFor(catalog,arc.id).filter(claim=>['punto débil','blindaje','consejo'].includes(claim.field)):[];
- if(error)return <p role="alert" className="notice">{error} <a href={config.sourceUrl} target="_blank" rel="noreferrer">Consultar MetaForge ↗</a></p>;
+ if(error)return <p role="alert" className="notice">{error} <button onClick={()=>setRetry(value=>value+1)}>Reintentar</button></p>;
  if(!snapshot)return <p role="status" className="map-loading">Cargando mapa y reportes comunitarios…</p>;
  return <section className="map-explorer" aria-label="Explorador de ubicaciones">
   <p className="map-note">Ubicaciones posibles de una fuente comunitaria. La posición del reporte se conserva; su aparición no está garantizada.</p>
@@ -97,9 +98,9 @@ function LoadedMap({config,blueprintId,arcId}:{config:MapConfig;blueprintId?:str
   <p role="status" className="result-count">{markers.length} reportes en esta selección · {floor.label}. Las etiquetas de evento no son reglas de aparición verificadas.</p>
   <MapCanvas config={config} floorId={floorId} markers={markers} selectedId={selectedId} onSelect={setSelectedId}/>
   <div className="map-legend">{Object.entries(kindNames).map(([key,label])=><span key={key}><i style={{background:colors[key as keyof typeof colors]}}/>{label}</span>)}</div>
-  {selected&&<section className="marker-detail" aria-label="Reporte seleccionado"><div className="route-heading"><h4>{selected.label}</h4><span className="confidence posible">posible</span></div><p>{kindNames[selected.kind]} · {selected.behindLockedDoor?'La fuente lo sitúa detrás de una puerta cerrada.':'Acceso específico no verificado.'}</p><p>{selected.layerMask===2147483647?'La fuente no asigna un piso exclusivo.':'La fuente sitúa este reporte en el piso seleccionado.'}</p>{selected.kind==='quest-objective'&&<p>Objetivo de misión; no es un punto de aparición del plano.</p>}<p className="claim-note">Actualizado en la fuente: {selected.sourceUpdatedAt?sourceDate(selected.sourceUpdatedAt):'sin fecha'}</p><a href={`${config.sourceUrl}?markerID=${encodeURIComponent(selected.id)}`} target="_blank" rel="noreferrer">Abrir reporte en la fuente ↗</a></section>}
-  {arc&&<section className="marker-detail" aria-label="Consejos contra el ARC"><h4>{arc.name} · combate</h4>{arcClaims.map(claim=><div className="claim" key={claim.id}><div className="route-heading"><span>{claim.field}</span><span className={`confidence ${claim.confidence.replaceAll(' ','-')}`}>{claim.confidence}</span></div><p>{claim.value===null?'Pendiente de verificar':String(claim.value)}</p><div className="source-links">{claim.sourceIds.map(id=>{const source=sourceById.get(id);return source&&<a key={id} href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a>;})}</div></div>)}</section>}
+  {selected&&<section className="marker-detail" aria-label="Reporte seleccionado"><div className="route-heading"><h4>{selected.label}</h4><span className="confidence posible">posible</span></div><p>{kindNames[selected.kind]} · {selected.behindLockedDoor?'La fuente lo sitúa detrás de una puerta cerrada.':'Acceso específico no verificado.'}</p><p>{selected.layerMask===2147483647?'La fuente no asigna un piso exclusivo.':'La fuente sitúa este reporte en el piso seleccionado.'}</p>{selected.kind==='quest-objective'&&<p>Objetivo de misión; no es un punto de aparición del plano.</p>}<p className="claim-note">Actualizado en la fuente: {selected.sourceUpdatedAt?sourceDate(selected.sourceUpdatedAt):'sin fecha'}</p><Sources ids={['metaforge-'+config.slug]} label="Procedencia del reporte"/></section>}
+  {arc&&<section className="marker-detail" aria-label="Consejos contra el ARC"><h4>{arc.name} · combate</h4>{arcClaims.map(claim=><div className="claim" key={claim.id}><div className="route-heading"><span>{claim.field}</span><span className={`confidence ${claim.confidence.replaceAll(' ','-')}`}>{claim.confidence}</span></div><p>{claim.value===null?'Pendiente de verificar':String(claim.value)}</p><Sources ids={claim.sourceIds}/></div>)}</section>}
   <details className="map-reports"><summary>Lista accesible de ubicaciones ({markers.length})</summary><ul>{markers.map(marker=><li key={marker.id}><button type="button" aria-pressed={marker.id===selectedId} onClick={()=>setSelectedId(marker.id)}>{marker.label} <small>{kindNames[marker.kind]} · posible</small></button></li>)}</ul>{markers.length===0&&<p>No hay reportes con estos filtros. La ausencia de un registro no demuestra que no pueda aparecer.</p>}</details>
-  <p className="map-attribution">Datos y mapas: <a href="https://metaforge.app/arc-raiders" target="_blank" rel="noreferrer">MetaForge ↗</a> · Material del juego © Embark Studios. Datos consultados: {sourceDate(snapshot.retrievedAt)}. <a href={mapManifest.termsUrl} target="_blank" rel="noreferrer">Condiciones de uso ↗</a></p>
+  <p className="map-attribution">Datos y mapas: MetaForge · Material del juego © Embark Studios. Captura: {sourceDate(snapshot.retrievedAt)}. <Sources ids={['metaforge-'+config.slug,'metaforge-calibration']} label="Créditos y procedencia"/></p>
  </section>;
 }

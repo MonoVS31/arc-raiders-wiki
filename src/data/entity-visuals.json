@@ -1,0 +1,712 @@
+[
+  {
+    "entityId": "weapon-kettle",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/6eb605bf6b6e2c4fd69593aca5a520936c86f23c5a72ea71e29567650aef9823.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-rattler",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/5a37f4b6b837f6d209a911e1fca050ec11e41b0da36830aac458e7a98443746d.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-arpeggio",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/dc3c4f9e8305eb41d5048c817029995c8197586441640c96f006e206f2ac95f2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-tempest",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/51f180b2f6cb06bd5fca1aafb988e065a31a950b1cb9e8e7cf074ba26ca9fa35.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-bettina",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/06d8b439ec8641b72149d65110cb898fd16164349ed124f14c9391810d56e526.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-ferro",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/fe769a6a4d3138fc4ab1cd5dbc9d8894b1f0f7cbfd117d27243d60f4dd251ab5.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-renegade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b5e14eb05a013525e57114ccaf7e1d0a0248b10eec866e36965df7376350a7eb.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-stitcher",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f3426ccf14570cd8823771e669ad08dc3650e4464b51bf4a6071d6a1f3a2fada.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-canto",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/98ca26be2da12d290d00b451ed6b738581335d77b2a36d9ba3317c160923c331.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-bobcat",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/234ed5bfd984b29d6c08c0bd3290a9ef862ad0b1b97e9c8d8b145c7d4c43d2bb.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-il-toro",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/07b56ac03f97e123f766b771a6757aa30d66fd7517af99130accf95d63414ec6.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-vulcano",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a166927f097577535968c08df9db2dda5b6142133afcf75cbb0d90af16b9a646.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-dolabra",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b2827c8b5214e825d552056b77e93b6b40302868e25d51fe4273af47ce8ee399.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-hairpin",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/5a865fad284b381230c7f98be198e94a0ba848ea049477316947eb52164bd22b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-burletta",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/9ecca70d1bb2420829cdcf6cc7a868dc14b70c1217ae689863f5b3a9adaf35f2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-venator",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/096ed6dc7e583d2bdea0a27c04143716ca411a379a79b03e7a5b709618cbdc20.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-anvil",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a6f5ae7dd4f8bb866752445dad31655a1d934feb2aa2cd106c2ff8b9d70d10e1.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-torrente",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f7e3ca5bd3de28e12b6f23219076ade2887e09404ee1b3791fcf1c08fdda9e0b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-osprey",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/49875185a4588aee78100ca9c47e525183ed257ca1b4d988efc2f649e5f62e82.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-jupiter",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/2d362cc57d7afab8806b349868e6ebababf0066c4ced7accdea5cafde1b273ea.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-rascal",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/0aabb8da784330210cdc35fd3e081f52e12790eb6ebfb2a1ddd1c94ff7e315fe.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-hullcracker",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/bb34cb6de72f17249fa398720b89d5cdcdce713cc258b24f5bb88cc315908418.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-equalizer",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b3f9cde8f883d8f923d0c6ae110f44e74dfe5ca1bcdb5dd50f7b95a5d20c4334.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "arc-snitch",
+    "url": "https://static.metaforge.app/arc-raiders/images/snitch.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-wasp",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/wasp.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-hornet",
+    "url": "https://static.metaforge.app/arc-raiders/images/hornet.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-tick",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/tick.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-pop",
+    "url": "https://static.metaforge.app/arc-raiders/images/pop.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-fireball",
+    "url": "https://static.metaforge.app/arc-raiders/images/fireball.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-turret",
+    "url": "https://static.metaforge.app/arc-raiders/images/turret.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-sentinel",
+    "url": "https://static.metaforge.app/arc-raiders/images/sentinel.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-surveyor",
+    "url": "https://static.metaforge.app/arc-raiders/images/rollbot.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-shredder",
+    "url": "https://static.metaforge.app/arc-raiders/images/shredder.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-comet",
+    "url": "https://static.metaforge.app/arc-raiders/images/comet.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-firefly",
+    "url": "https://static.metaforge.app/arc-raiders/images/firefly.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-spotter",
+    "url": "https://static.metaforge.app/arc-raiders/images/spotter.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-bombardier",
+    "url": "https://static.metaforge.app/arc-raiders/images/bombardier.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-bastion",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/bastion.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-leaper",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/bison.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-rocketeer",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/rocketeer.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-vaporizer",
+    "url": "https://static.metaforge.app/arc-raiders/images/vaporizer.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-arc-turbine",
+    "url": "https://static.metaforge.app/arc-raiders/images/turbine.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-queen",
+    "url": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/queen_image.jpg",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "arc-matriarch",
+    "url": "https://static.metaforge.app/arc-raiders/images/matriarch.webp",
+    "sourceId": "metaforge-arc-portraits"
+  },
+  {
+    "entityId": "grenade-light-impact-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ced18ad0e901b00d5da061cfdbecab1623ebef96f0a76a9d6312f1ff2f61d5d0.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-heavy-fuze-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/c796c3f134a51ab984cdf1d425d55bcb4af05ee6222dbf842de77621d423be20.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-blaze-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/04aa543b63dda602e46d32d16f106e30cdde922af601538981bf3d9c68247da2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-gas-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/8f1479e6d22cf5c3d6c1a5943b2d2907883b6503ff9b3a3013791ebc1328d754.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-showstopper",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/1eff7156ed2d249410b310dc0bee59917ced50e41db9adaba18ea0a84414e755.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-snap-blast-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/9b9e391f487918f4e189a378de15669b4e0ce4bb982acac55b230e1ccf40b92c.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-seeker-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/336cef5ecc82b2f0a3f51e4bcd554a52cf2e8c9627b6a7a9726d5deb18716575.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-shrapnel-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/04670c0362ee114e92db93e6cd99ab0cc7f66b74cbd882ce462af7265cdddeef.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-trigger-nade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/d0a7d586ba65a83857a075ab8bccbeaaa682b14b9366e2eef2965fc418f01984.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-trailblazer",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/6d3a90c234d0786b4266c9aafab334af98e7fe995d504d9e6566adab25c4bda7.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-wolfpack",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/5049f52ab01f27e18bc938a171317b4ee69173612968aa43b914e90665b2a275.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-lure-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4c403880e106a69575813cb0c8052a335704bd3034f1580ca30d93b826a8f53b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-li-l-smoke-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4c4b65c93497bafb3edaae716017990cb52589c9b9bbebc00ecf8d5d8260cb3f.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-smoke-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/81b720e276f139362d59b6ffa79fc4470634a4d36662772b4dff421ca6d30719.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "grenade-tagging-grenade",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4a3ce0cbe8fe87cf44cd051e675901a17af99ea46231fd15ac5bb485d264632d.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-anvil-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a6f5ae7dd4f8bb866752445dad31655a1d934feb2aa2cd106c2ff8b9d70d10e1.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-angled-grip-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ca9c7e950391d0bd2178e314d76a2a2416cc5e157873b8093f543fd6a8b69944.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-angled-grip-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a1be5d197069e1627c19c78c9983e6a94719d88600a48308756126640c62c008.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-aphelion-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/c1c59f3cf0cd556bd66aeacc32db364e8db92fc8da6986f5f4fd60c1a3476ec2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-barricade-kit-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ba60825f710a56390176a874af212a413552a4a7a458d7a0ff55ae75f547a911.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-bettina-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/06d8b439ec8641b72149d65110cb898fd16164349ed124f14c9391810d56e526.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-blaze-grenade-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/04aa543b63dda602e46d32d16f106e30cdde922af601538981bf3d9c68247da2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-bobcat-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/234ed5bfd984b29d6c08c0bd3290a9ef862ad0b1b97e9c8d8b145c7d4c43d2bb.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-burletta-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/9ecca70d1bb2420829cdcf6cc7a868dc14b70c1217ae689863f5b3a9adaf35f2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-canto-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/98ca26be2da12d290d00b451ed6b738581335d77b2a36d9ba3317c160923c331.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-combat-mk-3-aggressive-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/cc8898f40ea215bb6d3436830b6bca2bbe70b6565caa07801fbc06ba6221bfab.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-combat-mk-3-flanking-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b3edb8677edcedbbae18bf33ae761786cabb3f542fb94161056b0078a3aa833b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-compensator-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/d7f730b4f4809fff3b1e2065e4856fc8bcf72176d59cde06a5c62c1f9986e910.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-compensator-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/294d7f82b4da2e39c9c89c19f7cedc8ae90fadad4af33305150806b11065a118.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-crash-mat-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/6581de6faad5f93d3955f209b0790a88f796a5b967531aa10b8913dc3d4aa670.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-complex-gun-parts-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f89ec15fe5f8d48de02a92dd5cccc8537281af9eaa1e75740c4238be64978965.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-dolabra-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b2827c8b5214e825d552056b77e93b6b40302868e25d51fe4273af47ce8ee399.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-deadline-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/8af3c45402fe1d383e6eeb175d17b566b7622c0488543f3dccc8479724307410.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-defibrillator-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/1aef07229aa99c8801612a889958b02f7faf5928905d6912bb6af480bbe403f1.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-explosive-mine-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/8f9763acaff22b5030b063a28f73f7b3bc97b30016cfd0a3d06437fa6a1b297e.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-barrel-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/38b672c44d34919e1c3290674ec672cdd59ac192046c0388abd32801760186a7.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-barrel-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b145aae2d954220de3ca426e3963d4775e17a5eac150a6455ca8a7b92414a2bc.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-light-mag-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/2c3769fa21cd983c0803ddd5b2db2cd07ce3962a3a676acafcecc7258f503930.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-light-mag-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/6ed9285787a45c859de10dffe895b1c6e7c16bf3a028f5e9581186aec01f9041.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-medium-mag-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f119f93a0345d1e7c439f2c4262401d9d364422f74a17435541895d2bd5cb834.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-medium-mag-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/cd860795ceab3ce1b622a3583d12b44b44c81b2c6b739ae30d53d7a2cf0283b4.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-shotgun-mag-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/418e6b3b8b3c99f38da5a7ffdb669f97ef26c80b490619105434964101cca2a5.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-extended-shotgun-mag-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/eade70ed836f18d3d9d49cf96d654a0e81b8cbc0c4cfbcea83720833de06ff69.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-equalizer-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b3f9cde8f883d8f923d0c6ae110f44e74dfe5ca1bcdb5dd50f7b95a5d20c4334.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-fireworks-box-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/fa7ca398b8d73c60cfb9583abc7e9935c0fda58f9d288011fac09a2f1204a34c.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-gas-mine-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ed58f4a842dd36a2abf3b7e18e24170f2bdaad057c047b8bc7bb808d9567ad2e.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-heavy-gun-parts-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f2ede9fe29a567c0a343d6ada527f6e925ef2543920a4a750cc06fc2dd0bbb7d.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-hullcracker-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/bb34cb6de72f17249fa398720b89d5cdcdce713cc258b24f5bb88cc315908418.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-il-toro-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/07b56ac03f97e123f766b771a6757aa30d66fd7517af99130accf95d63414ec6.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-jolt-mine-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/2666019a2bd9bf9cc0bb76b8791dab4da5c58adffb3d6b59434538d6ed0a07bb.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-jupiter-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/2d362cc57d7afab8806b349868e6ebababf0066c4ced7accdea5cafde1b273ea.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-light-gun-parts-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/1be7419fdc6f633471990d0feb957b7c40be01df270060177ca42724a03669d8.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-red-light-stick-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/8c893eebbe2ebf4900665c433f601f3be83c285a65ee819905a71a07579c3280.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-green-light-stick-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/d48dfae88f2a33d6b20c7022cfbfcbeb4ea79a19f60eeb74251929b9b473a022.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-yellow-light-stick-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/57070f06e3814e72e7a47695f5b193501bca7c2193471b17518536ec2bfc1e0f.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-blue-light-stick-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ae0627b40d61747106b940cb528e9c9643c3f4eca78a74fecd0a9a4487bedbd0.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-lightweight-stock-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a3af616e5c40dbd8b5b87471e765569578ebc78725fb8db704637896b9c0694b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-looting-mk-3-safekeeper-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/611c3bb83f041b0785dfca6e14b429aae80c7f59688d13cec07ba9e1c8b45802.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-looting-mk-3-survivor-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/3d24268f3a4fd2270296d4b550bc39d5f5a2a5f4c3ac68becd0be8e81f142fa5.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-lure-grenade-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4c403880e106a69575813cb0c8052a335704bd3034f1580ca30d93b826a8f53b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-medium-gun-parts-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/40186d5a2191a5a8c06242c8a8465a03abe3133ab1c12739beeaa2be79e870b7.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-muzzle-brake-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/e3ce53319076513a3879386aab647eb59231401929fd27341a30ca2b918841ec.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-muzzle-brake-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/686a0ee2ddcfbaeaed9972fd3d8e60204b4a5fd8cd51f43d8808d69dd7af2fc9.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-osprey-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/49875185a4588aee78100ca9c47e525183ed257ca1b4d988efc2f649e5f62e82.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-padded-stock-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/0d9ddf9cc48aee1283232cc368a68c4cde522f6ac44557cf4c9adb49eaa554f0.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-pulse-mine-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/d36042196f569ee41bdc9648e8dbd7b4ec3f8113cc7657141165fd4a3d31ddf0.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-powered-descender-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/9af66ed2b5b80b2445a3a8d8cad66676f055f3955c8ee90d5c05cac6f9dfd1d2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-rascal-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/0aabb8da784330210cdc35fd3e081f52e12790eb6ebfb2a1ddd1c94ff7e315fe.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-remote-raider-flare-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/05dfecbd9531d3cb12ff76726e0f0876e653b801ec411db48aa32d27aa214176.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-seeker-grenade-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/336cef5ecc82b2f0a3f51e4bcd554a52cf2e8c9627b6a7a9726d5deb18716575.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-shotgun-choke-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/93a51965b523f0599e50ab631e220b2961065f9fc5252483acc0fb9959c3bc65.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-shotgun-choke-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b965b92d3fda34264be42e0b565bab4a3c823ec13b9f23801f94851edde880c3.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-shotgun-silencer-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4fefc79ca6e661f11222d62d7fb66658d25398e0b8adbe9fbe97ca94fa987737.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-showstopper-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/1eff7156ed2d249410b310dc0bee59917ced50e41db9adaba18ea0a84414e755.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-silencer-i-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/3de4387123e8094140ebb2db9373c71c07b2afa52a3711d10958fe23d4fc7153.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-silencer-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/3ef02e9b50b103ef4fab56063981ce8beb6b4748cafb3f87fa637fc1ea811a1c.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-smoke-grenade-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/81b720e276f139362d59b6ffa79fc4470634a4d36662772b4dff421ca6d30719.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-snap-hook-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/47b3fca0293a250f1ea89bc67025a2378f74e015fcf7ad6a4b781182f225e0ea.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-stable-stock-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/9aa1618879abe135929039f107cae63ab73dd4cad10089e829c5b83b7bce15c9.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-stable-stock-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/b898b53324aeafe90c32c522f175ccc9f3ef98c6cbe8a5ecab1eeaa87554730f.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-surge-coil-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/8d3eb5bd13f02e1bf83416336d5e7bef5b8523cb157927eefceca758c5e9f51a.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tactical-mk-3-defensive-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/0515fecc6dfbb04c6f1d7b43f7afbcd2d47d9e3b00575c7dc5514d4bbb4e71be.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tactical-mk-3-healing-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/e6971c65fcfbdff43cc9008bd507c37d5dfd3c5f93ea360c7ea8f8f6391eb3be.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tactical-mk-3-revival-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/09979fa9a2505e367c5d5e568a2cee6b24b7ff94141b93ebb411dbc465598101.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tactical-mk-3-smoke-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/ae0d6b3a3f145d88622835abf56bb5eb2ea21043348f1b89225f8f0507ad9a3e.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tagging-grenade-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/4a3ce0cbe8fe87cf44cd051e675901a17af99ea46231fd15ac5bb485d264632d.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-tempest-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/51f180b2f6cb06bd5fca1aafb988e065a31a950b1cb9e8e7cf074ba26ca9fa35.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-torrente-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/f7e3ca5bd3de28e12b6f23219076ade2887e09404ee1b3791fcf1c08fdda9e0b.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-trailblazer-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/6d3a90c234d0786b4266c9aafab334af98e7fe995d504d9e6566adab25c4bda7.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-venator-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/096ed6dc7e583d2bdea0a27c04143716ca411a379a79b03e7a5b709618cbdc20.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-vertical-grip-ii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/030c1af748f7e628893a095f76a675df22bda11f53f5d5744a45b65601dca262.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-vertical-grip-iii-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/c1d998cab906f28edb22f22198faa731e89e3b7cb0ec2b739d034e7eee297ec7.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-vita-shot-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/1844ef6c22fc27909cd5ccc4e5b3ec411b6e49098c6a32043aa585e9548b562f.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-vita-spray-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/0f36b9acf8cb90ab29bbc3cc360bacbf3d6577dca0b093797b42f324ecd0f71a.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-vulcano-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/a166927f097577535968c08df9db2dda5b6142133afcf75cbb0d90af16b9a646.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-wolfpack-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/5049f52ab01f27e18bc938a171317b4ee69173612968aa43b914e90665b2a275.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "blueprint-white-flag-blueprint",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/16febcfdfb27c60df2d593d5ef03f1a41eacf31fd85bb8235f733d0f808abccc.png",
+    "sourceId": "metaforge-local-item-catalog"
+  },
+  {
+    "entityId": "weapon-aphelion",
+    "url": "https://static.metaforge.app/arc-raiders/preview/20260919/c1c59f3cf0cd556bd66aeacc32db364e8db92fc8da6986f5f4fd60c1a3476ec2.png",
+    "sourceId": "metaforge-local-item-catalog"
+  }
+]

@@ -6,6 +6,8 @@ Base inicial de una wiki comunitaria en español, preparada para el repositorio 
 
 ## Estado de esta entrega
 
+**Edición 2.0:** portada de enciclopedia con identidad propia, menú lateral, búsqueda global, galerías y animaciones CSS. La lectura de fichas, mapas, materiales, fabricación, reparaciones y objetivos ocurre dentro de ARC Atlas. Las fuentes originales son referencias opcionales. Incluye 123 expedientes de fabricación, seis guías de misión y 281 recursos del catálogo local; 47 pruebas aprobadas. [Diseño y navegación integrada](docs/11-wiki-integrada.md).
+
 **Edición 1.0 lista para revisar:** zonas y condiciones interactivas para los 21 ARC, 83 rutas contrastadas con sus fichas y otro catálogo, etapas de nueve proyectos, recompensas de planos y enlaces directos entre materiales, enemigos y mapas. Cada ficha se puede compartir para señalar errores. [Alcance y revisión](docs/10-edicion-para-revision.md).
 
 Investigación pública con corte **6 de octubre de 2026**, arquitectura documentada antes de la implementación y primera aplicación local con búsqueda, filtros y fichas con fuentes por campo. Las estadísticas comunitarias están clasificadas como probables; anuncios oficiales confirmados se separan del contenido disponible. Los desconocidos y conflictos son visibles.

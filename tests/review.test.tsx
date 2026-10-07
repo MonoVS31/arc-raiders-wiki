@@ -50,7 +50,7 @@ describe('proyectos y reportes enlazados',()=>{
   expect(catalog.entities.find(entity=>entity.id==='project-ascending-the-mountain')?.availability).toBe('desconocido');
   expect(catalog.claims.find(claim=>claim.subjectId==='project-ascending-the-mountain'&&claim.field==='cierre de ficha')?.value).toBe('2026-10-07');
   expect(catalog.claims.find(claim=>claim.subjectId==='project-avian-alarm'&&claim.field==='periodo del índice')?.confidence).toBe('no confirmado');
-  expect(stepsForProject('project-converging-paths')?.stages[0]?.requirements).toEqual([]);
+  expect(stepsForProject('project-converging-paths')?.stages[0]?.requirements[0]).toContain('1200');
   expect(stepsForProject('project-converging-paths')?.stages[0]?.rewards).toContain('3× Pulse Mine');
  });
  it('los conteos de ARC enlazados corresponden a reportes reales, incluidas las variantes internas',()=>{

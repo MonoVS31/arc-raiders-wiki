@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Industrial Espionage",
+    "sourceId": "wiki-quest-industrial-espionage",
+    "objectives": [
+      "Encontrar el escondite de armas de Tian Wen cerca de Gas Station, en Outskirts.",
+      "Dejar una Burletta en el escondite rival.",
+      "Instalar un dispositivo de escucha en el escondite."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Tian Wen"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Buried City"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "Eyes On The Prize"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "Unexpected Initiative"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  },
+  {
+    "name": "Test Case",
+    "sourceId": "wiki-quest-test-case",
+    "objectives": [
+      "Entregar un Hornet Driver a Apollo.",
+      "Entregar un Fireball Burner a Apollo.",
+      "Destruir un Firefly.",
+      "Entregar un Firefly Burner a Apollo."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Apollo"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Any"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "The League"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "—"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  },
+  {
+    "name": "The Major's Footlocker",
+    "sourceId": "wiki-quest-the-major-s-footlocker",
+    "objectives": [
+      "Completar los objetivos en una sola ronda.",
+      "Buscar los recuerdos de Major Aiva en los apartamentos al noroeste de The Dam.",
+      "Entregar Major Aiva's Mementos a Tian Wen."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Tian Wen"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Dam Battlegrounds"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "A Symbol of Unification"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "Back on Top"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  },
+  {
+    "name": "Greasing Her Palms",
+    "sourceId": "wiki-quest-greasing-her-palms",
+    "objectives": [
+      "En Dam Battlegrounds, visitar la habitación cerrada de Water Treatment Control.",
+      "En Spaceport, examinar los propulsores de cohete fuera de Rocket Assembly.",
+      "En Buried City, visitar el área barricada del piso 6 de Space Travel Building."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Celeste"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Dam Battlegrounds · Buried City · Spaceport"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "A Better Use"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "Doctor's Orders · Dormant Barons"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  },
+  {
+    "name": "Sparks Fly",
+    "sourceId": "wiki-quest-sparks-fly",
+    "objectives": [
+      "Destruir un Hornet con Trigger 'Nade o Snap Blast Grenade."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Apollo"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Any"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "What Goes Around"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "Out Of The Shadows · The League"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  },
+  {
+    "name": "Worth Your Salt",
+    "sourceId": "wiki-quest-worth-your-salt",
+    "objectives": [
+      "Completar la secuencia en una sola ronda.",
+      "Ir a Rocket Assembly y buscar el Battery Prototype en un lugar elevado.",
+      "Llevar el prototipo al Industrial Recharger y usar la máquina para cargarlo.",
+      "Dejar la batería cargada en el punto de entrega de la esquina."
+    ],
+    "info": [
+      {
+        "cells": [
+          "Trader",
+          "Celeste"
+        ]
+      },
+      {
+        "cells": [
+          "Location",
+          "Spaceport"
+        ]
+      },
+      {
+        "cells": [
+          "Previous",
+          "Groundbreaking"
+        ]
+      },
+      {
+        "cells": [
+          "Next",
+          "On Deaf Ears"
+        ]
+      }
+    ],
+    "confidence": "probable"
+  }
+]

@@ -4,12 +4,14 @@ import { App } from '../src/app/App';
 import { EntityDetail } from '../src/components/EntityDetail';
 import { catalog } from '../src/domain/catalog';
 
-it('renderiza la navegación, fuentes y el estado real del mapa', () => {
+it('renderiza la portada y navegación interna de la wiki', () => {
   const html=renderToStaticMarkup(<App/>);
   expect(html).toContain('aria-label="Categorías del catálogo"');
   expect(html).toContain('Buscar');
-  expect(html).toContain('Cargando visor de mapas');
-  expect(html).toContain('ARC Raiders Wiki');
+  expect(html).toContain('Buscar en toda la wiki');
+  expect(html).toContain('Elegí por dónde empezar');
+  expect(html).toContain('Créditos y fuentes');
+  expect(html).not.toContain('href="https://arcraiders.wiki');
 });
 it('separa rutas de planos de los objetos fabricados',()=>{
  const entity=catalog.entities.find(entity=>entity.id==='blueprint-hullcracker-blueprint')!;

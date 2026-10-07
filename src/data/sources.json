@@ -1588,5 +1588,75 @@
     "revision": "40092",
     "contentHash": "c668e9a1f77c6ce174315d8707dcd6911b104a7ea713e6ddbffd72d937264bc3",
     "locator": "Infobox y paneles de etapas; requisitos y recompensas separados; Completion cuando está presente"
+  },
+  {
+    "id": "wiki-quest-industrial-espionage",
+    "title": "ARC Raiders Wiki — misión Industrial Espionage",
+    "url": "https://arcraiders.wiki/w/index.php?title=Industrial_Espionage&oldid=39312",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.392Z",
+    "revision": "39312",
+    "contentHash": "a56402aa7860fa80dd5f63c8ee67be7d97498ce15c0e0f941085ec4efac166e1",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "wiki-quest-test-case",
+    "title": "ARC Raiders Wiki — misión Test Case",
+    "url": "https://arcraiders.wiki/w/index.php?title=Test_Case&oldid=39350",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.369Z",
+    "revision": "39350",
+    "contentHash": "750e8d5c3459bbb4146c211ec63c196cc9eed1349e21f1fecf657b1ee57273db",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "wiki-quest-the-major-s-footlocker",
+    "title": "ARC Raiders Wiki — misión The Major's Footlocker",
+    "url": "https://arcraiders.wiki/w/index.php?title=The_Major's_Footlocker&oldid=40754",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.404Z",
+    "revision": "40754",
+    "contentHash": "202cdefe977399cbe25e6058d53df4da13d696ea790a2644dc4b6dca0a856c37",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "wiki-quest-greasing-her-palms",
+    "title": "ARC Raiders Wiki — misión Greasing Her Palms",
+    "url": "https://arcraiders.wiki/w/index.php?title=Greasing_Her_Palms&oldid=41452",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.715Z",
+    "revision": "41452",
+    "contentHash": "940036551eded930ab1a12b9de9e6f75eb42c7be7235bbff2b8b1eb4d37af055",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "wiki-quest-sparks-fly",
+    "title": "ARC Raiders Wiki — misión Sparks Fly",
+    "url": "https://arcraiders.wiki/w/index.php?title=Sparks_Fly&oldid=40266",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.744Z",
+    "revision": "40266",
+    "contentHash": "4f3045cadb8293140024e4e0228034dd8a750dbbfeec136f7cf3a6acd3ecdc0f",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "wiki-quest-worth-your-salt",
+    "title": "ARC Raiders Wiki — misión Worth Your Salt",
+    "url": "https://arcraiders.wiki/w/index.php?title=Worth_Your_Salt&oldid=40902",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:52:39.738Z",
+    "revision": "40902",
+    "contentHash": "f461f571efa44f124fbe8ee8bc9f4663cf577fb7a535eafc9fc2c6e8b08d9fc6",
+    "locator": "Objetivos e infobox de misión; se excluye diálogo narrativo"
+  },
+  {
+    "id": "metaforge-local-item-catalog",
+    "title": "MetaForge — catálogo de objetos e imágenes",
+    "url": "https://metaforge.app/api/arc-raiders/items?limit=100",
+    "kind": "community",
+    "retrievedAt": "2026-10-07T06:48:33.592Z",
+    "revision": null,
+    "contentHash": "9d7f33322810fbc8b7483002af05ea97517971cf5fd7a7fbcdd5094e6191c55e",
+    "locator": "Páginas 1–7; identidad, iconos y datos explícitos de objetos. Descripciones narrativas y ceros de stat_block excluidos."
   }
 ]
