@@ -10,3 +10,6 @@ coverage/
 Thumbs.db
 .npm-cache/
 .openai/
+.sites-checkout/
+.sites-checkout-*/
+.sites-runtime/

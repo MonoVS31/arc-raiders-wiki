@@ -1,0 +1,131 @@
+{
+  "sourceId": "metaforge-arc-portraits",
+  "portraits": [
+    {
+      "entityId": "arc-snitch",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/snitch.webp",
+      "providerId": "snitch",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-wasp",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/wasp.webp",
+      "providerId": "wasp",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-hornet",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/hornet.webp",
+      "providerId": "hornet",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-tick",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/tick.webp",
+      "providerId": "tick",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-pop",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/pop.webp",
+      "providerId": "pop",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-fireball",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/fireball.webp",
+      "providerId": "fireball",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-turret",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/turret.webp",
+      "providerId": "turret",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-sentinel",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/sentinel.webp",
+      "providerId": "sentinel",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-surveyor",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/rollbot.webp",
+      "providerId": "rollbot",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-shredder",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/shredder.webp",
+      "providerId": "shredder",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-comet",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/comet.webp",
+      "providerId": "comet",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-firefly",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/firefly.webp",
+      "providerId": "firefly",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-spotter",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/spotter.webp",
+      "providerId": "spotter",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-bombardier",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/bombardier.webp",
+      "providerId": "bombardier",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-bastion",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/bastion.webp",
+      "providerId": "bastion",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-leaper",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/bison.webp",
+      "providerId": "bison",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-rocketeer",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/rocketeer.webp",
+      "providerId": "rocketeer",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-vaporizer",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/vaporizer.webp",
+      "providerId": "vaporizer",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-arc-turbine",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/turbine.webp",
+      "providerId": "turbine",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-queen",
+      "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/queen_image.jpg",
+      "providerId": "queen",
+      "confidence": "probable"
+    },
+    {
+      "entityId": "arc-matriarch",
+      "imageUrl": "https://static.metaforge.app/arc-raiders/images/matriarch.webp",
+      "providerId": "matriarch",
+      "confidence": "probable"
+    }
+  ]
+}

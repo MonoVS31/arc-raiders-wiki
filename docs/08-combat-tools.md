@@ -6,6 +6,8 @@ Las armas se comparan por campos base, con evidencia individual. Los niveles mue
 
 Los enemigos ARC permiten alternar entre puntos débiles, blindaje y consejos. No se asignan porcentajes de resistencia ni posiciones anatómicas ficticias.
 
+La siguiente fase añade 21 referencias visuales por nombre desde la API comunitaria de MetaForge. La identidad se clasifica probable; fuente, hash y fecha quedan registrados. Los archivos permanecen remotos y se atribuyen a Embark. No son diagramas anatómicos ni evidencia de zonas de impacto.
+
 La figura de granadas representa únicamente radios numéricos en metros con evidencia confirmada o probable. Seeker utiliza alcance de búsqueda, no radio explosivo. Wolfpack no tiene una figura porque su radio es incierto; Trailblazer tampoco porque su cadena no corresponde a un área circular completa. La distancia interactiva compara geometría, sin inferir impacto, daño, paredes o reducción por distancia. El aturdimiento se consulta por objetivo.
 
 Las animaciones respetan la preferencia de movimiento reducido. Los controles tienen etiquetas accesibles y las tablas admiten desplazamiento en pantallas pequeñas.
