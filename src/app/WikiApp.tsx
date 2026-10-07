@@ -1,3 +1,4 @@
+import { useVisualEffects } from './useVisualEffects';
 import { useVisibleAnimations } from './useVisibleAnimations';
 import { lazy, Suspense, useCallback, useMemo, useState, useEffect } from 'react';
 import { catalog } from '../domain/catalog';
@@ -15,6 +16,7 @@ import { ArticleView } from '../components/wiki/ArticleView';
 const ModalStack = lazy(() => import('../components/ModalStack'));
 export function App() {
   useVisibleAnimations();
+  useVisualEffects();
   const [panels, setPanels] = useState<WikiPanel[]>([]);
   const [modalLoaded, setModalLoaded] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -121,7 +123,7 @@ export function App() {
           >
             Créditos y fuentes
           </button>
-          <span>V2.2 / ARCHIVO EN ESPAÑOL</span>
+          <span>V2.3 / ARCHIVO EN ESPAÑOL</span>
         </footer>
       </div>
       {modalLoaded && (

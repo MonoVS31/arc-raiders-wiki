@@ -1,4 +1,6 @@
-# ARC Atlas - Edición 2.2
+> Rediseño de la fase 9 aprobado el 7 de octubre de 2026. Ver [diseño y validación](docs/19-rediseno-visual.md).
+
+# ARC Atlas - Edición 2.3
 
 Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, armas, ARC, granadas, planos, proyectos, recetas, materiales y fuentes se consultan dentro del sitio. No está afiliada a Embark Studios.
 
@@ -16,6 +18,7 @@ Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, ar
 | 6 | View Transitions, entradas por scroll, transiciones discretas, radar y bordes CSS, Motion cargado solo para galería y modales | [Animaciones](docs/12-animaciones.md) |
 | 7 | Favicon SVG propio, tarjeta social original, Open Graph/Twitter/canonical, plan de prerender y riesgos de assets remotos | [SEO](docs/16-seo-y-prerender.md), [publicación y riesgos](docs/09-publicacion-y-mantenimiento.md) |
 | 8 | 167 fichas estáticas con metadatos y tarjetas propias, sitemap, enlaces de compartir y 381 imágenes servidas localmente | [Fichas estáticas](docs/18-fichas-estaticas.md) |
+| 9 | Rediseño visual aprobado, bento completo, estadísticas con barras, índice por scroll y optimizaciones de animación | [Rediseño visual](docs/19-rediseno-visual.md) |
 
 Datos, fuentes, notas, disponibilidad y niveles de evidencia conservados. Los contenidos anunciados siguen separados de los disponibles. Se conserva la base relativa de Vite y las URLs con ?category, ?entity, ?blueprint y ?arc.
 
@@ -33,7 +36,7 @@ npm run build
 npm run preview
 ```
 
-La edición 2.2 pasó **103 tests**, lint, TypeScript, validación de datos y build.
+La edición 2.3 pasó **109 tests**, lint, TypeScript, validación de datos y build.
 
 `npm run build` ejecuta TypeScript, la validación de datos, la recuperación/verificación del snapshot de imágenes, Vite y el prerender. `npm run dev` recupera las imágenes antes de iniciar. Un presupuesto impide que el chunk de entrada alcance 200.000 bytes. `npm run format` aplica el formato compartido. TypeScript sigue estricto; la rama 6.0 permite usar typescript-eslint sin forzar dependencias incompatibles.
 

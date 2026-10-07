@@ -1,3 +1,4 @@
+import { CountUp } from './CountUp';
 import type { Category, Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
 import { categorySchema } from '../../domain/schema';
@@ -32,9 +33,27 @@ export function HomeView({
         <div className="welcome-copy">
           <span className="section-kicker">INTELIGENCIA PARA LA PRÓXIMA INCURSIÓN</span>
           <h1>
-            EL RUST BELT.
+            <span className="hero-word" style={{ '--word': 0 } as React.CSSProperties}>
+              EL{' '}
+            </span>
+            <span className="hero-word" style={{ '--word': 1 } as React.CSSProperties}>
+              RUST{' '}
+            </span>
+            <span className="hero-word" style={{ '--word': 2 } as React.CSSProperties}>
+              BELT.
+            </span>
             <br />
-            <em>EN TUS MANOS.</em>
+            <em>
+              <span className="hero-word" style={{ '--word': 3 } as React.CSSProperties}>
+                EN{' '}
+              </span>
+              <span className="hero-word" style={{ '--word': 4 } as React.CSSProperties}>
+                TUS{' '}
+              </span>
+              <span className="hero-word" style={{ '--word': 5 } as React.CSSProperties}>
+                MANOS.
+              </span>
+            </em>
           </h1>
           <p>
             Explorá mapas, entendé a las máquinas y prepará tu equipo. Toda la información del
@@ -58,21 +77,31 @@ export function HomeView({
           <span>ARC / ARCHIVO DE COMBATE</span>
         </div>
       </section>
+      <div className="release-ticker">
+        <button onClick={() => open({ kind: 'news' })} aria-label="Ver el anuncio de Frozen Trail">
+          <span className="ticker-track">
+            <span>FROZEN TRAIL / ANUNCIADO / 08 OCT 2026 / ARCHIVO EN ACTUALIZACIÓN / </span>
+            <span aria-hidden="true">
+              FROZEN TRAIL / ANUNCIADO / 08 OCT 2026 / ARCHIVO EN ACTUALIZACIÓN /{' '}
+            </span>
+          </span>
+        </button>
+      </div>
       <div className="portal-stats">
         <div>
-          <strong>{availableCount('map')}</strong>
+          <CountUp value={availableCount('map')} />
           <span>mapas de incursión</span>
         </div>
         <div>
-          <strong>{availableCount('weapon')}</strong>
+          <CountUp value={availableCount('weapon')} />
           <span>armas disponibles</span>
         </div>
         <div>
-          <strong>{availableCount('blueprint')}</strong>
+          <CountUp value={availableCount('blueprint')} />
           <span>planos documentados</span>
         </div>
         <div>
-          <strong>{availableCount('arc')}</strong>
+          <CountUp value={availableCount('arc')} />
           <span>máquinas ARC</span>
         </div>
       </div>
@@ -91,6 +120,18 @@ export function HomeView({
               key={value}
               onClick={() => category(value)}
             >
+              <span className="card-spotlight" aria-hidden="true" />
+              {(value === 'map' || value === 'arc') && (
+                <img
+                  className="bento-photo"
+                  src={artFor(value === 'map' ? 'arc-rocketeer' : 'arc-hornet')}
+                  width={512}
+                  height={512}
+                  decoding="async"
+                  loading="lazy"
+                  alt=""
+                />
+              )}
               <span className="tile-border" aria-hidden="true" />
               <div className="tile-art">
                 <WikiIcon category={value} />
@@ -104,7 +145,7 @@ export function HomeView({
           <button className="portal-tile tile-material" onClick={() => open({ kind: 'materials' })}>
             <span className="tile-border" aria-hidden="true" />
             <div className="tile-art">
-              <WikiIcon category="container" />
+              <WikiIcon category="material" />
             </div>
             <span className="tile-number">{formatCount(categorySchema.options.length + 1)}</span>
             <h3>Materiales</h3>
@@ -125,14 +166,16 @@ export function HomeView({
             Elegí una máquina, recorré sus piezas y encontrá los mapas con reportes de su presencia.
           </p>
           <WikiLink entityId="arc-hornet">Explorar Hornet →</WikiLink>
-          <img
-            width={512}
-            height={512}
-            decoding="async"
-            src={artFor('arc-hornet')}
-            alt="Hornet"
-            loading="lazy"
-          />
+          <div className="featured-art">
+            <img
+              width={512}
+              height={512}
+              decoding="async"
+              src={artFor('arc-hornet')}
+              alt="Hornet"
+              loading="lazy"
+            />
+          </div>
         </div>
         <div className="home-guide">
           <span className="section-kicker">TU PRÓXIMO OBJETIVO</span>

@@ -1,5 +1,5 @@
 import { localImage } from '../domain/images';
-import { entityTransitionName } from '../app/view-transitions';
+import { StatBars } from './wiki/StatBars';
 import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
 import { catalog } from '../domain/catalog';
@@ -16,7 +16,7 @@ const portraits =
 import { Sources } from '../app/WikiContext';
 const ARCZoneExplorer = lazy(() => import('./ARCZoneExplorer'));
 
-function Evidence({ claim }: { claim: Claim | undefined }) {
+function Evidence({ claim, weapon = false }: { claim: Claim | undefined; weapon?: boolean }) {
   if (!claim) return <span className="unknown">Pendiente de verificar</span>;
   return (
     <div className="combat-evidence">
@@ -25,6 +25,7 @@ function Evidence({ claim }: { claim: Claim | undefined }) {
           ? 'Pendiente de verificar'
           : `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`}
       </strong>
+      {weapon && <StatBars claim={claim} category="weapon" />}
       <span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>
         {claim.confidence}
       </span>
@@ -114,6 +115,10 @@ export function WeaponComparison({ entity }: { entity: Entity }) {
         muestran por separado. La escala de alcance no se convierte a metros ni la cadencia a daño
         por segundo.
       </p>
+      <p className="muted bar-legend">
+        Las barras comparan el mismo campo y unidad dentro del archivo. No representan límites del
+        juego.
+      </p>
       <div className="combat-table">
         <table>
           <thead>
@@ -132,10 +137,10 @@ export function WeaponComparison({ entity }: { entity: Entity }) {
               <tr key={field}>
                 <th>{title}</th>
                 <td>
-                  <Evidence claim={weaponTierMetric(entity.id, field!, tier)} />
+                  <Evidence claim={weaponTierMetric(entity.id, field!, tier)} weapon />
                 </td>
                 <td>
-                  <Evidence claim={weaponTierMetric(other.id, field!, otherTier)} />
+                  <Evidence claim={weaponTierMetric(other.id, field!, otherTier)} weapon />
                 </td>
               </tr>
             ))}
@@ -161,8 +166,6 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
             </p>
           ) : (
             <img
-              data-view-art={entity.id}
-              style={{ viewTransitionName: entityTransitionName(entity.id) }}
               width={512}
               height={512}
               decoding="async"

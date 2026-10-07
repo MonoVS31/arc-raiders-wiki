@@ -9,7 +9,8 @@ const statCategories: Category[] = ['map', 'weapon', 'blueprint', 'arc'];
 function verifyCounters() {
   const html = renderToStaticMarkup(<App />);
   const stats = html.match(/<div class="portal-stats">(.*?)<section/s)?.[1] ?? '';
-  const counts = Array.from(stats.matchAll(/<strong>(\d+)<\/strong>/g), (match) => match[1]);
+  const page = new DOMParser().parseFromString(stats, 'text/html');
+  const counts = [...page.querySelectorAll('strong')].map((node) => node.textContent);
   expect(counts).toEqual(
     statCategories.map((category) =>
       String(

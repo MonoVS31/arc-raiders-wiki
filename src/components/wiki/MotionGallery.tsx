@@ -15,7 +15,7 @@ export default function MotionGallery({ entities }: { entities: Entity[] }) {
             <MotionWikiLink
               key={entity.id}
               entityId={entity.id}
-              className={`gallery-card category-${entity.category}`}
+              className={`gallery-card category-${entity.category} status-${entity.availability}`}
               layout={reduced ? false : 'position'}
               initial={false}
               transition={{ layout: { duration: reduced ? 0 : 0.25, ease: 'easeOut' } }}

@@ -5,7 +5,10 @@ import { WikiLink } from '../../app/WikiContext';
 import { EntityImage } from './presentation';
 export function GalleryCardContent({ entity }: { entity: Entity }) {
   return (
-    <>
+    <div className="card-tilt">
+      <span className="card-light-clip" aria-hidden="true">
+        <span className="card-spotlight" />
+      </span>
       <div className="gallery-art">
         <WikiIcon category={entity.category} />
         <EntityImage id={entity.id} name={entity.name} />
@@ -16,7 +19,7 @@ export function GalleryCardContent({ entity }: { entity: Entity }) {
         <span className={`availability ${entity.availability}`}>{entity.availability}</span>
         <span className="gallery-arrow">→</span>
       </div>
-    </>
+    </div>
   );
 }
 export function Gallery({ entities }: { entities: Entity[] }) {
@@ -26,7 +29,7 @@ export function Gallery({ entities }: { entities: Entity[] }) {
         <WikiLink
           key={entity.id}
           entityId={entity.id}
-          className={`gallery-card category-${entity.category}`}
+          className={`gallery-card category-${entity.category} status-${entity.availability}`}
         >
           <GalleryCardContent entity={entity} />
         </WikiLink>
