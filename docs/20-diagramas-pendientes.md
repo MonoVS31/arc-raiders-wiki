@@ -55,3 +55,11 @@ Kettle: no se pudo identificar inequívocamente un cargador separado en su image
 Las 16 granadas quedan sin puntos sobre su imagen: los claims actuales no describen una relación pieza visible–campo. Efecto, radio, daño, retardo, duración, búsqueda y aturdimiento siguen en el visor y las estadísticas, con sus marcos nuevos. No se interpreta un pasador como temporizador ni una carcasa como radio de daño.
 
 Se mantienen los cinco diagramas ARC anteriores. Total de fichas con puntos al cerrar la fase 3: siete. Las etiquetas y cifras siempre se leen del dato original.
+
+## Mapas y planos · fase 4
+
+Los seis mapas con snapshot reciben marco, escaneo, pulso de selección y guía al reporte. El mapa anunciado sin cartografía mantiene su mensaje original. No se agregaron marcadores, coordenadas ni nombres.
+
+Los 83 registros de rutas son metadatos de obtención; ninguno tiene geometría ni orden de coordenadas respaldado para dibujar un recorrido. No se enlazan cajas, ARC u objetivos de misión por orden arbitrario. Para cada plano, el recorrido cartográfico continúa como Pendiente de verificar, aunque su método de obtención conserve su evidencia original.
+
+Para cargar un trazo futuro: fuente que respalde el orden, mapa, piso e IDs de reportes existentes. El esquema admite traces, pero el JSON no fue modificado. Para etiquetas de región, MapConfig reserva lat, lng, texto y fuente; regionLabels está vacío por ausencia y no tiene representación nueva en esta fase.

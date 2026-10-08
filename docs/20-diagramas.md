@@ -1,6 +1,6 @@
-# Diagramas animados · fases 1 a 3
+# Diagramas animados · fases 1 a 4
 
-Rama: `feat/diagramas`. Están implementadas la base, la integración ARC y la de armas/granadas. Las fases 4–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
+Rama: `feat/diagramas`. Están implementadas la base y las integraciones ARC, armas/granadas y mapas. Las fases 5–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
 
 ## Componentes y datos
 
@@ -64,4 +64,18 @@ Las barras siguen siendo aria-hidden: el valor textual original está fuera de l
 
 Cierre de fase 3: lint, TypeScript, 132 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. El hash del catálogo y sus fuentes no cambió. Se comprobó Rattler a 375 y 1366 px sin scroll horizontal, el punto con Enter, la serie original en el panel y el nivel IV del comparador (24). Heavy Fuze conserva max=11.25 en el control de distancia, círculo r=65 en su SVG y la advertencia de impacto no garantizado; no tiene puntos sobre su imagen. La revisión completa con todos los anchos y estados de movimiento se reserva para la fase 6.
 
-Pendiente: las piezas sin ancla y los ARC de [20-diagramas-pendientes.md](20-diagramas-pendientes.md), más las armas/granadas sin una relación pieza-campo revisada. Leaflet, rutas, proyectos, dossiers y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.
+## Mapas y planos · fase 4
+
+MapExplorer conserva CRS, calibración, tiles, zoom, arrastre, centrado, filtros, eventos, coordenadas, máscaras de piso, selección Canvas y lista accesible. El mapa tiene un marco con esquinas y escaneo; ningún contenedor del mapa recibe tilt, parallax, rotación ni una transformación nueva. El detalle aparece al costado en escritorio y debajo hasta 1100 px.
+
+MapDiagramOverlay usa latLngToContainerPoint de la instancia Leaflet para ubicar un pulso sobre el marcador seleccionado y una línea hacia el encabezado del reporte. Las reproyecciones se agrupan en un requestAnimationFrame por evento move/zoom/resize, sin reconstruir los marcadores ni actualizar toda la lista React en cada movimiento. Al salir de la superficie visible, pulso y guía se ocultan. La guía no intercepta clics y se oculta en celular. El frame pausa sus adornos fuera de pantalla; reduced motion desactiva pulso, escaneo y entradas animadas.
+
+Los 83 registros de blueprint-routes.json contienen metadatos de obtención, mapas y misiones, pero ningún recorrido de coordenadas ordenadas. Por eso las rutas actuales muestran Pendiente de verificar y no dibujan polilíneas. Tampoco se une automáticamente una lista de objetivos de misión, cajas ni reportes ARC.
+
+Queda preparado el campo opcional `traces` en el esquema de rutas: mapSlug, floorId, orderedMarkerIds (al menos dos IDs únicos) y sourceIds. Se requieren mapa/piso y fuentes existentes. traceForMap conserva el orden declarado y devuelve los objetos originales; si falta un punto, otro piso o un filtro excluye parte del trazo, no se dibuja un recorrido parcial. Los segmentos usan las coordenadas de los reportes existentes y entrada por opacity, sin stroke-dashoffset ni nuevos cálculos de navegación. Los trazos geográficos se presentan como posibles, sin garantizar botín ni acceso. No hay ninguna entrada traces en los datos actuales.
+
+El esquema MapConfig reserva `regionLabels?: [{lat, lng, texto, fuente}]`, vacío por ausencia en todos los mapas. Exige números finitos, texto y una fuente existente del índice de fuentes. El campo está reservado: no se renderizan etiquetas nuevas ni se cargaron nombres de zonas, extracciones o curvas de nivel.
+
+Cierre de fase 4: lint, TypeScript, 137 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. Se conservan hashes de snapshots y catálogo. En Dam se comprobó selección por Enter, tiles cargados, contenedor sin transformación y guía al panel a 1366 px. A 375 px el mapa conserva 360 px de altura, el detalle queda debajo y no hay scroll horizontal. Con ?blueprint=blueprint-hullcracker-blueprint sigue el filtro de misión, su reporte y la advertencia de que no es una aparición del plano, sin trazo inventado.
+
+Pendiente: las piezas sin ancla y los recorridos sin geometría de [20-diagramas-pendientes.md](20-diagramas-pendientes.md). Proyectos, dossiers, imágenes sin puntos y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.

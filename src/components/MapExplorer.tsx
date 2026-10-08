@@ -1,6 +1,9 @@
 import { updateMarkerSelection } from '../domain/map-markers';
 import '../styles/leaflet.css';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import { DiagramFrame } from './wiki/DiagramFrame';
+import { MapDiagramOverlay } from './wiki/MapDiagramOverlay';
+import { traceForMap } from '../domain/map-diagrams';
 import type * as Leaflet from 'leaflet';
 import {
   arcIdForSubtype,
@@ -44,12 +47,18 @@ function MapCanvas({
   markers,
   selectedId,
   onSelect,
+  trace,
+  layoutRef,
+  detailRef,
 }: {
   config: MapConfig;
   floorId: string;
   markers: MapMarker[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  trace: MapMarker[];
+  layoutRef: RefObject<HTMLDivElement | null>;
+  detailRef: RefObject<HTMLElement | null>;
 }) {
   const host = useRef<HTMLDivElement>(null),
     mapRef = useRef<Leaflet.Map | null>(null),
@@ -216,12 +225,23 @@ function MapCanvas({
         </button>
         <span>Arrastrá para mover · +/− para zoom · flechas con el mapa enfocado</span>
       </div>
-      <div
-        ref={host}
-        className="map-canvas"
-        role="region"
-        aria-label={`Mapa interactivo de ${config.name}`}
-      />
+      <DiagramFrame className="map-diagram-frame">
+        <div className="map-diagram-surface">
+          <div
+            ref={host}
+            className="map-canvas"
+            role="region"
+            aria-label={`Mapa interactivo de ${config.name}`}
+          />
+          <MapDiagramOverlay
+            map={mapRef.current}
+            selected={markers.find((marker) => marker.id === selectedId)}
+            trace={trace}
+            layoutRef={layoutRef}
+            detailRef={detailRef}
+          />
+        </div>
+      </DiagramFrame>
       {error && (
         <p role="alert" className="map-warning">
           {error}
@@ -266,6 +286,8 @@ function LoadedMap({
   arcId?: string | undefined;
 }) {
   const route = blueprintId ? routeForBlueprint(blueprintId) : undefined;
+  const layoutRef = useRef<HTMLDivElement>(null),
+    detailRef = useRef<HTMLElement>(null);
   const [snapshot, setSnapshot] = useState<MapSnapshot | null>(null),
     [error, setError] = useState<string | null>(null),
     [retry, setRetry] = useState(0);
@@ -308,6 +330,10 @@ function LoadedMap({
     [snapshot, kind, floor.index, conditionBit, query, route?.mapScope, questKey, arcId],
   );
   const selected = markers.find((marker) => marker.id === selectedId);
+  const trace = useMemo(
+    () => traceForMap(route, config, floorId, markers),
+    [route, config, floorId, markers],
+  );
   const arc =
     selected?.kind === 'arc'
       ? catalog.entities.find(
@@ -357,6 +383,21 @@ function LoadedMap({
               ? 'Los puntos son objetivos de la misión; el plano se recompensa al completarla.'
               : 'Este mapa muestra reportes de cajas y ARC. No representa posiciones exactas de ese plano.'}
           </p>
+          <p className="map-trace-status">
+            {trace.length > 1
+              ? 'Trazo posible de reportes, en el orden respaldado por su fuente. No garantiza botín ni acceso.'
+              : 'Recorrido con coordenadas ordenadas: Pendiente de verificar.'}
+          </p>
+          {trace.length > 1 && (
+            <Sources
+              ids={
+                route.traces?.find(
+                  (item) => item.mapSlug === config.slug && item.floorId === floorId,
+                )?.sourceIds ?? []
+              }
+              label="Fuente del trazo"
+            />
+          )}
         </aside>
       )}
       <div className="map-filters">
@@ -424,13 +465,59 @@ function LoadedMap({
         {markers.length} reportes en esta selección · {floor.label}. Las etiquetas de evento no son
         reglas de aparición verificadas.
       </p>
-      <MapCanvas
-        config={config}
-        floorId={floorId}
-        markers={markers}
-        selectedId={selectedId}
-        onSelect={setSelectedId}
-      />
+      <div ref={layoutRef} className="map-diagram-layout">
+        <div>
+          <MapCanvas
+            config={config}
+            floorId={floorId}
+            markers={markers}
+            selectedId={selectedId}
+            onSelect={setSelectedId}
+            trace={trace}
+            layoutRef={layoutRef}
+            detailRef={detailRef}
+          />
+        </div>
+        <div className="map-detail-column">
+          {selected && (
+            <section
+              ref={detailRef}
+              className="marker-detail"
+              aria-label="Reporte seleccionado"
+              aria-live="polite"
+            >
+              <div className="route-heading">
+                <h4>{selected.label}</h4>
+                <span className="confidence posible">posible</span>
+              </div>
+              <p>
+                {kindNames[selected.kind]} ·{' '}
+                {selected.behindLockedDoor
+                  ? 'La fuente lo sitúa detrás de una puerta cerrada.'
+                  : 'Acceso específico no verificado.'}
+              </p>
+              <p>
+                {selected.layerMask === 2147483647
+                  ? 'La fuente no asigna un piso exclusivo.'
+                  : 'La fuente sitúa este reporte en el piso seleccionado.'}
+              </p>
+              {selected.kind === 'quest-objective' && (
+                <p>Objetivo de misión; no es un punto de aparición del plano.</p>
+              )}
+              <p className="claim-note">
+                Actualizado en la fuente:{' '}
+                {selected.sourceUpdatedAt ? sourceDate(selected.sourceUpdatedAt) : 'sin fecha'}
+              </p>
+              <Sources ids={['metaforge-' + config.slug]} label="Procedencia del reporte" />
+            </section>
+          )}
+          {!selected && (
+            <aside className="marker-detail map-detail-placeholder">
+              Elegí un reporte del mapa o de la lista para ver sus datos y fuentes.
+            </aside>
+          )}
+        </div>
+      </div>
       <div className="map-legend">
         {Object.entries(kindNames).map(([key, label]) => (
           <span key={key}>
@@ -439,33 +526,6 @@ function LoadedMap({
           </span>
         ))}
       </div>
-      {selected && (
-        <section className="marker-detail" aria-label="Reporte seleccionado">
-          <div className="route-heading">
-            <h4>{selected.label}</h4>
-            <span className="confidence posible">posible</span>
-          </div>
-          <p>
-            {kindNames[selected.kind]} ·{' '}
-            {selected.behindLockedDoor
-              ? 'La fuente lo sitúa detrás de una puerta cerrada.'
-              : 'Acceso específico no verificado.'}
-          </p>
-          <p>
-            {selected.layerMask === 2147483647
-              ? 'La fuente no asigna un piso exclusivo.'
-              : 'La fuente sitúa este reporte en el piso seleccionado.'}
-          </p>
-          {selected.kind === 'quest-objective' && (
-            <p>Objetivo de misión; no es un punto de aparición del plano.</p>
-          )}
-          <p className="claim-note">
-            Actualizado en la fuente:{' '}
-            {selected.sourceUpdatedAt ? sourceDate(selected.sourceUpdatedAt) : 'sin fecha'}
-          </p>
-          <Sources ids={['metaforge-' + config.slug]} label="Procedencia del reporte" />
-        </section>
-      )}
       {arc && (
         <section className="marker-detail" aria-label="Consejos contra el ARC">
           <h4>{arc.name} · combate</h4>

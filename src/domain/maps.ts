@@ -5,6 +5,14 @@ const rawManifest =
   readAtlasData<typeof import('../../public/data/atlas/maps/manifest.json')>('maps/manifest.json');
 
 const coordinate = z.number().finite();
+export const regionLabelSchema = z
+  .object({
+    lat: coordinate,
+    lng: coordinate,
+    texto: z.string().trim().min(1),
+    fuente: z.string().trim().min(1),
+  })
+  .strict();
 const extent = z.tuple([coordinate, coordinate, coordinate, coordinate]);
 const tiles = z
   .string()
@@ -42,9 +50,22 @@ export const mapConfigSchema = z
     snapshotHash: z.string().regex(/^[a-f0-9]{64}$/),
     markerCount: z.number().int().nonnegative(),
     caseCount: z.number().int().nonnegative(),
+    regionLabels: z.array(regionLabelSchema).optional(),
   })
   .strict()
   .superRefine((map, ctx) => {
+    for (const [index, label] of (map.regionLabels ?? []).entries()) {
+      if (
+        !readAtlasData<{ id: string }[]>('sources.json').some(
+          (source) => source.id === label.fuente,
+        )
+      )
+        ctx.addIssue({
+          code: 'custom',
+          message: 'Etiqueta de región sin fuente existente',
+          path: ['regionLabels', index, 'fuente'],
+        });
+    }
     if (
       map.worldExtent[0] === map.worldExtent[2] ||
       map.worldExtent[1] === map.worldExtent[3] ||

@@ -23,6 +23,28 @@ const routeSchema = z
     sourceIds: z.array(z.string()).min(1),
     mapEvidenceUrls: z.array(z.string().startsWith('https://metaforge.app/arc-raiders/map/')),
     note: z.string().min(1),
+    traces: z
+      .array(
+        z
+          .object({
+            mapSlug: z.enum([
+              'dam',
+              'spaceport',
+              'buried-city',
+              'blue-gate',
+              'stella-montis',
+              'riven-tides',
+            ]),
+            floorId: z.string().min(1),
+            orderedMarkerIds: z
+              .array(z.string().min(1))
+              .min(2)
+              .refine((ids) => new Set(ids).size === ids.length, 'Marcadores de trazo duplicados'),
+            sourceIds: z.array(z.string().min(1)).min(1),
+          })
+          .strict(),
+      )
+      .optional(),
   })
   .strict();
 export const acquisitionData = z
