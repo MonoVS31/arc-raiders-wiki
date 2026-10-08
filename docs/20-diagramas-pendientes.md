@@ -10,7 +10,8 @@ Las posiciones son anclas editoriales en porcentajes de la imagen original, no g
 | Firefly | tank | Depósito amarillo visible bajo el cuerpo | Se conserva la condición Lanzallamas extendido. No se afirma exposición permanente ni se anclan los cuatro propulsores a una placa supuesta |
 | Fireball | shell | Superficie de la carcasa cerrada claramente visible | Núcleo oculto; sigue disponible por opción y con la condición Panel frontal abierto, sin punto sobre la foto |
 | Bombardier | joints | Articulación amarilla visible en la unión superior de una pata | Cilindro trasero oculto; el blindaje ligero es una categoría general, sin placa calibrada |
-| Leaper | eye | Ojo circular frontal visible | Articulaciones y placas requieren ubicar con mayor precisión la pieza y su protección; no se transforma el blindaje pesado general en una zona |
+| Leaper | eye, joints, plates | Ojo frontal, articulación descubierta de la pata derecha y placa visible de la pata izquierda | Los puntos no delimitan todas las placas ni articulaciones; el blindaje pesado general sigue sin ancla |
+| Vaporizer | thrusters | Abertura azul del propulsor bajo el cilindro superior derecho | Núcleo inferior oculto y escudo inactivo; no se señalan como expuestos |
 
 Imágenes: las mismas entradas de arc-portraits.json, con resolución al snapshot local y atribución existente. No se descargó ni editó ninguna imagen. Los puntos no delinean superficies, rangos ni medidas.
 
@@ -30,7 +31,6 @@ Imágenes: las mismas entradas de arc-portraits.json, con resolución al snapsho
 | Spotter | Pendiente de una revisión positiva y calibración del propulsor sobre su imagen | components |
 | Bastion | Piezas inferiores y cilindro trasero no tienen una ubicación inequívoca en la foto revisada | components |
 | Rocketeer | Las referencias exigen vista desde arriba o retirar una placa; pendiente de una imagen con esa condición verificable | components |
-| Vaporizer | El núcleo exige retirar el panel inferior; falta calibrar propulsores y escudo activo sobre una imagen adecuada | components |
 | ARC Turbine | Los depósitos requieren aterrizaje y tren desplegado; falta una imagen y calibración positiva de esa condición | components |
 | Queen | La propia descripción del núcleo indica ausencia de posición calibrada; articulaciones pendientes de revisión positiva | components |
 | Matriarch | El núcleo exige retirar placas faciales; falta una imagen inequívoca de esa condición y del escudo | components |
@@ -49,6 +49,8 @@ Una selección de zona sin ancla apaga la selección de los puntos de foto y mue
 |---|---|---|
 | Rattler | Magazine Size | Superficie del cargador semicircular visible debajo del receptor |
 | Tempest | Magazine Size | Cargador rectangular visible en la parte inferior trasera |
+| Arpeggio | Magazine Size | Cargador rectangular visible delante del guardamonte |
+| Canto | Magazine Size | Cargador grande visible delante de la empuñadura |
 
 Kettle: no se pudo identificar inequívocamente un cargador separado en su imagen. Il Toro: la vista no permite separar con certeza el depósito de munición de otras piezas. Ferro: la capacidad de un disparo no justifica señalar un cargador externo que no se ve. Las otras armas siguen pendientes de revisión/calibración, sin puntos agregados por suposición.
 
@@ -67,22 +69,20 @@ Para cargar un trazo futuro: fuente que respalde el orden, mapa, piso e IDs de r
 
 ## Inventario completo sin puntos nuevos · fase 6
 
-Los 20 ARC sin ancla están enumerados arriba, junto con sus motivos y esquemas conservados. Las zonas ocultas o no calibradas de los cinco ARC con foto también permanecen pendientes; se pueden consultar en las opciones existentes.
+Los 19 ARC sin ancla están enumerados arriba, junto con sus motivos y esquemas conservados. Las zonas ocultas o no calibradas de los seis ARC con foto también permanecen pendientes; se pueden consultar en las opciones existentes. La segunda revisión mantuvo Snitch y Spotter sin puntos: el tamaño o la apariencia de las aberturas no permiten identificar un propulsor con suficiente seguridad. Los núcleos cerrados o condicionados siguen sin anclas por suposición.
 
-### Armas: 24 fichas
+### Armas: 22 fichas
 
 Kettle, Il Toro y Ferro tienen los motivos particulares indicados arriba. Las otras armas disponibles necesitan una revisión positiva de una pieza visible relacionada con un claim existente. Las anunciadas no reciben posiciones por suposición.
 
 | Ficha | ID | Disponibilidad original |
 |---|---|---|
 | Kettle | weapon-kettle | disponible |
-| Arpeggio | weapon-arpeggio | disponible |
 | Bettina | weapon-bettina | disponible |
 | Ferro | weapon-ferro | disponible |
 | Renegade | weapon-renegade | disponible |
 | Aphelion | weapon-aphelion | disponible |
 | Stitcher | weapon-stitcher | disponible |
-| Canto | weapon-canto | disponible |
 | Bobcat | weapon-bobcat | disponible |
 | Il Toro | weapon-il-toro | disponible |
 | Vulcano | weapon-vulcano | disponible |

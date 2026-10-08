@@ -374,7 +374,7 @@
     position: absolute;
     transform: translate(-50%, -50%);
     width: max-content;
-    max-width: 42%;
+    max-width: 48%;
     padding: var(--space-4);
     background: var(--color-background);
     font: var(--font-size-0-75)/1.5 var(--font-family-mono);

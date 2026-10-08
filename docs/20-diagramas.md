@@ -1,6 +1,6 @@
 # Diagramas animados · fases 1 a 6
 
-Rama: `feat/diagramas`. Están implementadas y revisadas las seis fases: base, ARC, armas/granadas, mapas, resto del sitio y revisión final. No se integra a main ni se publica en este cierre; queda pendiente la aprobación del usuario.
+Rama de desarrollo: `feat/diagramas`. Están implementadas y revisadas las seis fases: base, ARC, armas/granadas, mapas, resto del sitio y revisión final. El usuario aprobó integrar y publicar el 8 de octubre de 2026, con una revisión visual adicional y ampliación conservadora de puntos. Ver [cierre de publicación](21-publicacion-diagramas.md).
 
 ## Componentes y datos
 
@@ -113,9 +113,12 @@ Lint, TypeScript, las 142 pruebas, data:validate y build pasaron después del aj
 | Fireball | arc-fireball | shell |
 | Bombardier | arc-bombardier | joints |
 | Leaper | arc-leaper | eye |
+| Vaporizer | arc-vaporizer | thrusters |
 | Rattler | weapon-rattler | Magazine Size |
 | Tempest | weapon-tempest | Magazine Size |
+| Arpeggio | weapon-arpeggio | Magazine Size |
+| Canto | weapon-canto | Magazine Size |
 
-Hay siete entradas y siete puntos sobre imagen. Los botones de los esquemas SVG previos son orientativos y no representan posiciones nuevas sobre retratos. Los otros 20 ARC, 24 armas y 16 granadas siguen sin anclas nuevas por los motivos documentados en [pendientes](20-diagramas-pendientes.md). Los 83 planos siguen sin trazos cartográficos respaldados; las etiquetas de región están vacías. Tener marco o barras no convierte una ficha sin puntos en una anatomía calibrada.
+Tras la revisión de publicación hay diez entradas y doce puntos sobre imagen; Leaper suma joints y plates a eye. Los botones de los esquemas SVG previos son orientativos y no representan posiciones nuevas sobre retratos. Los otros 19 ARC, 22 armas y 16 granadas siguen sin anclas nuevas por los motivos documentados en [pendientes](20-diagramas-pendientes.md). Los 83 planos siguen sin trazos cartográficos respaldados; las etiquetas de región están vacías. Tener marco o barras no convierte una ficha sin puntos en una anatomía calibrada.
 
-El cierre deja la rama y la vista previa disponibles para aprobación. Main y GitHub Pages no se modifican. Continúa vigente el límite de medición de Performance de la fase 9: no se certifican 60 fps sin una traza de Chrome válida.
+El cierre original de fase 6 dejó la rama y la vista previa disponibles para aprobación, sin modificar main ni Pages. La autorización posterior de publicación queda registrada en la revisión adicional. Continúa vigente el límite de medición de Performance de la fase 9: no se certifican 60 fps sin una traza de Chrome válida.

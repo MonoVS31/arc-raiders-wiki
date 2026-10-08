@@ -149,7 +149,7 @@ function DiagramImage({
                         style={{
                           left: `${point.lx}%`,
                           top: `${point.ly}%`,
-                          maxWidth: `${Math.min(42, point.lx * 2, (100 - point.lx) * 2)}%`,
+                          maxWidth: `${Math.min(48, point.lx * 2, (100 - point.lx) * 2)}%`,
                         }}
                       >
                         {resolved.label}

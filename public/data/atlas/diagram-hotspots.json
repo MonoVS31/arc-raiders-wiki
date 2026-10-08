@@ -55,7 +55,7 @@
         "id": "bombardier-articulacion-visible",
         "x": 37.6,
         "y": 61.4,
-        "lx": 19,
+        "lx": 23,
         "ly": 78,
         "ref": {
           "zoneId": "joints"
@@ -71,10 +71,30 @@
         "id": "leaper-ojo-visible",
         "x": 49.2,
         "y": 44.2,
-        "lx": 76,
-        "ly": 29,
+        "lx": 78,
+        "ly": 14,
         "ref": {
           "zoneId": "eye"
+        }
+      },
+      {
+        "id": "leaper-articulacion-visible",
+        "x": 72.2,
+        "y": 48,
+        "lx": 23,
+        "ly": 16,
+        "ref": {
+          "zoneId": "joints"
+        }
+      },
+      {
+        "id": "leaper-placa-visible",
+        "x": 27,
+        "y": 47.5,
+        "lx": 20,
+        "ly": 83,
+        "ref": {
+          "zoneId": "plates"
         }
       }
     ]
@@ -105,6 +125,54 @@
         "y": 79,
         "lx": 78,
         "ly": 52,
+        "ref": {
+          "field": "Magazine Size"
+        }
+      }
+    ]
+  },
+  {
+    "entityId": "arc-vaporizer",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/images/vaporizer.webp",
+    "puntos": [
+      {
+        "id": "vaporizer-propulsor-visible",
+        "x": 69.5,
+        "y": 33.5,
+        "lx": 79,
+        "ly": 16,
+        "ref": {
+          "zoneId": "thrusters"
+        }
+      }
+    ]
+  },
+  {
+    "entityId": "weapon-arpeggio",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/preview/20260919/dc3c4f9e8305eb41d5048c817029995c8197586441640c96f006e206f2ac95f2.png",
+    "puntos": [
+      {
+        "id": "arpeggio-cargador-visible",
+        "x": 47,
+        "y": 58,
+        "lx": 22,
+        "ly": 73,
+        "ref": {
+          "field": "Magazine Size"
+        }
+      }
+    ]
+  },
+  {
+    "entityId": "weapon-canto",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/preview/20260919/98ca26be2da12d290d00b451ed6b738581335d77b2a36d9ba3317c160923c331.png",
+    "puntos": [
+      {
+        "id": "canto-cargador-visible",
+        "x": 35,
+        "y": 56,
+        "lx": 21,
+        "ly": 79,
         "ref": {
           "field": "Magazine Size"
         }
