@@ -1,3 +1,5 @@
+import { weaponStudyFor } from '../domain/weapon-studies';
+import { WeaponStudyViewer } from './wiki/WeaponStudyViewer';
 import { numericBarScale } from '../domain/numeric-scale';
 import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
@@ -54,10 +56,19 @@ export function EntityDetail({
   const pendingLocations = catalog.locations.filter((location) => location.mapId === entity.id);
   const visual = visuals.find((visual) => visual.entityId === entity.id);
   const entry = ['weapon', 'grenade'].includes(entity.category) ? diagramFor(entity.id) : undefined;
-  const diagram = entry?.puntos.length ? entry : undefined;
+  const study = entity.category === 'weapon' ? weaponStudyFor(entity.id) : undefined;
+  const diagram = !study && entry?.puntos.length ? entry : undefined;
   return (
     <article className="detail" aria-labelledby="detail-title">
-      <header className={diagram ? 'article-hero article-hero-diagram' : 'article-hero'}>
+      <header
+        className={
+          study
+            ? 'article-hero article-hero-weapon-study'
+            : diagram
+              ? 'article-hero article-hero-diagram'
+              : 'article-hero'
+        }
+      >
         <div>
           <div className="detail-header">
             <span className="eyebrow">{categories[entity.category]} / expediente</span>
@@ -67,31 +78,54 @@ export function EntityDetail({
           <span className="article-code" aria-hidden="true">
             ARCHIVO / {entity.id.toUpperCase()}
           </span>
+          {study && (
+            <dl className="weapon-study-summary">
+              {claims
+                .filter((claim) =>
+                  ['clase', 'Ammo Type', 'Firing Mode', 'Magazine Size'].includes(claim.field),
+                )
+                .map((claim) => (
+                  <div key={claim.id}>
+                    <dt>{fieldNames[claim.field] ?? claim.field}</dt>
+                    <dd>
+                      {claim.value} <small>· {claim.confidence}</small>{' '}
+                      <Sources ids={claim.sourceIds} />
+                    </dd>
+                  </div>
+                ))}
+            </dl>
+          )}
         </div>
-        {visual && (
-          <div className={diagram ? 'article-visual article-visual-diagram' : 'article-visual'}>
-            <HotspotLayer
-              key={entity.id}
-              diagram={diagram}
-              fallback={
-                <DiagramFrame className="diagram-static-image">
-                  <AtlasImage
-                    key={visual.url}
-                    url={localImage(visual.url)}
-                    name={entity.category === 'arc' ? '' : entity.name}
-                    id={entity.id}
-                    lazy={false}
-                  />
-                </DiagramFrame>
-              }
-            />
-            {diagram && (
-              <p className="diagram-attribution">
-                Imagen del catálogo existente · Assets © Embark Studios.{' '}
-                <Sources ids={[visual.sourceId]} label="Procedencia de la imagen" />
-              </p>
-            )}
+        {study ? (
+          <div className="article-visual article-visual-weapon-study">
+            <WeaponStudyViewer entityId={entity.id} name={entity.name} />
           </div>
+        ) : (
+          visual && (
+            <div className={diagram ? 'article-visual article-visual-diagram' : 'article-visual'}>
+              <HotspotLayer
+                key={entity.id}
+                diagram={diagram}
+                fallback={
+                  <DiagramFrame className="diagram-static-image">
+                    <AtlasImage
+                      key={visual.url}
+                      url={localImage(visual.url)}
+                      name={entity.category === 'arc' ? '' : entity.name}
+                      id={entity.id}
+                      lazy={false}
+                    />
+                  </DiagramFrame>
+                }
+              />
+              {diagram && (
+                <p className="diagram-attribution">
+                  Imagen del catálogo existente · Assets © Embark Studios.{' '}
+                  <Sources ids={[visual.sourceId]} label="Procedencia de la imagen" />
+                </p>
+              )}
+            </div>
+          )
         )}
       </header>
       <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId} />

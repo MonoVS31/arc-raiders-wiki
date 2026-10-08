@@ -43,10 +43,10 @@ it('los puntos de objetos leen campos originales del mismo sujeto', () => {
     }
   }
 });
-it('el cargador de Rattler aparece en la cabecera con la serie, evidencia y fuente originales', async () => {
-  const references = vi.fn();
-  const claim = combatClaim('weapon-rattler', 'Magazine Size')!;
-  const before = JSON.stringify(claim);
+it('el estudio de Rattler reemplaza la imagen y conserva el cargador, evidencia y fuente originales', async () => {
+  const references = vi.fn(),
+    claim = combatClaim('weapon-rattler', 'Magazine Size')!,
+    before = JSON.stringify(claim);
   await act(async () =>
     root.render(
       <WikiContext.Provider value={{ navigate: vi.fn(), material: vi.fn(), references }}>
@@ -54,23 +54,14 @@ it('el cargador de Rattler aparece en la cabecera con la serie, evidencia y fuen
       </WikiContext.Provider>,
     ),
   );
-  const image = host.querySelector<HTMLImageElement>('.article-visual-diagram img')!;
-  Object.defineProperties(image, {
-    complete: { value: true, configurable: true },
-    naturalWidth: { value: 512, configurable: true },
-    naturalHeight: { value: 512, configurable: true },
-  });
-  await act(async () => image.dispatchEvent(new Event('load')));
-  const point = host.querySelector<HTMLButtonElement>('.article-visual-diagram .diagram-hotspot')!;
-  expect(point.getAttribute('aria-label')).toContain('Cargador');
-  point.focus();
-  expect(document.activeElement).toBe(point);
-  await act(async () => point.click());
-  const panel = host.querySelector('.article-visual-diagram .diagram-panel')!;
-  expect(panel.textContent).toContain(String(claim.value));
-  expect(panel.querySelector('.confidence')!.textContent).toBe(claim.confidence);
-  expect(panel.querySelectorAll('.stat-bar')).toHaveLength(4);
-  await act(async () => (panel.querySelector('.evidence-button') as HTMLButtonElement).click());
+  expect(host.querySelector('.weapon-study')).not.toBeNull();
+  expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
+  const field = Array.from(host.querySelectorAll('.weapon-study-summary>div')).find(
+    (field) => field.querySelector('dt')?.textContent === 'Cargador',
+  )!;
+  expect(field.textContent).toContain(String(claim.value));
+  expect(field.textContent).toContain(claim.confidence);
+  await act(async () => field.querySelector<HTMLButtonElement>('button')!.click());
   expect(references).toHaveBeenCalledWith(claim.sourceIds);
   expect(JSON.stringify(claim)).toBe(before);
 });
@@ -79,9 +70,21 @@ it('sin relación pieza-campo conserva la cabecera normal y no agrega puntos', a
     expect(diagramFor(id)).toBeUndefined();
     await act(async () => root.render(<EntityDetail key={id} entity={entity(id)} />));
     expect(host.querySelector('.article-hero-diagram')).toBeNull();
-    expect(host.querySelector('.article-visual .diagram-static-image')).not.toBeNull();
+    expect(
+      host.querySelector(
+        id.startsWith('weapon-')
+          ? '.article-visual .weapon-study'
+          : '.article-visual .diagram-static-image',
+      ),
+    ).not.toBeNull();
     expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
-    expect(host.querySelector('.article-visual .atlas-image')).not.toBeNull();
+    expect(
+      host.querySelector(
+        id.startsWith('weapon-')
+          ? '.article-visual .weapon-study-fallback'
+          : '.article-visual .atlas-image',
+      ),
+    ).not.toBeNull();
   }
 });
 it('el marco del comparador conserva la selección I–IV y sus números', async () => {

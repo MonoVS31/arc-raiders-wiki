@@ -1,6 +1,12 @@
 @layer tokens, base, components, utilities;
 @layer tokens {
   :root {
+    --color-weapon-scene: #0c121d;
+    --color-weapon-steel: #68787d;
+    --color-weapon-yellow: #d8bd72;
+    --color-weapon-control: #192530;
+    --color-weapon-label-background: #0c121dcc;
+
     --map-icon-color: #fff;
     --map-group-color: var(--color-text);
     --map-overlay-backdrop: #000b;

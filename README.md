@@ -56,6 +56,10 @@ El inventario documenta 83 planos, 123 expedientes de fabricación, seis guías 
 
 Los comandos data:maps, data:blueprints, data:audit y data:arc-links actualizan capturas deliberadamente. Algunas rutas requieren las capturas de investigación conservadas en Arc/work/research; no son pasos de instalación de un clon nuevo. Revisar cambios y fuentes antes de integrar.
 
+## Armas: estudios originales en 3D
+
+Las 24 armas disponibles tienen modelos originales completos, creados por código, con giro/pausa, vista de perfil, reinicio y zoom. El listado usa miniaturas livianas y cada ficha carga un único visor al verse en pantalla. Con movimiento reducido se pausa el giro automático; sin WebGL se muestra un perfil SVG de la misma pieza. Los diseños son orientativos y no representan los assets del juego. Los datos, comparaciones, fabricación y enlaces se conservan. Ver [arte, archivos y validación](docs/24-estudios-armas-3d.md).
+
 ## Mapas interactivos
 
 [El visor de mapas](https://monovs31.github.io/arc-raiders-wiki/?category=map) reúne seis mapas y los 1.981 reportes originales. Incluye búsqueda, filtros por categoría/capa, enlaces a marcadores, progreso y notas personales. `?mapa=<slug>&editor=1` habilita puntos, etiquetas, zonas, líneas e importación/exportación de JSON como borradores guardados en el navegador. No publica cambios automáticamente ni inventa ubicaciones. Se mantienen las fichas y los enlaces anteriores. Ver [datos, cobertura y decisiones](docs/23-mapas-interactivos.md).
@@ -74,7 +78,7 @@ La edición 2.3 se verifica antes de publicar: rutas profundas, metadatos, PNG, 
 
 ## Diagramas animados
 
-Diez fichas tienen puntos sobre imágenes existentes: Wasp, Firefly, Fireball, Bombardier, Leaper, Vaporizer, Rattler, Tempest, Arpeggio y Canto. Hay doce puntos: Leaper tiene ojo, articulación y placa visible. Los puntos leen textos, valores, evidencia y fuentes del dato original; el registro nuevo guarda solamente posiciones y referencias. Las zonas ARC sin ancla siguen disponibles en sus opciones, con posición pendiente de verificar.
+El registro original de diagramas conserva diez fichas con puntos sobre imágenes existentes: Wasp, Firefly, Fireball, Bombardier, Leaper, Vaporizer, Rattler, Tempest, Arpeggio y Canto. La presentación de armas ahora usa los estudios originales en 3D; se mantienen sus referencias históricas de imagen. Hay doce puntos en el registro original: Leaper tiene ojo, articulación y placa visible. Los puntos leen textos, valores, evidencia y fuentes del dato original; el registro nuevo guarda solamente posiciones y referencias. Las zonas ARC sin ancla siguen disponibles en sus opciones, con posición pendiente de verificar.
 
 Los marcos, el escaneo y las entradas se extienden a los esquemas ARC anteriores, estadísticas, comparadores, granadas, proyectos, planos, contenedores, dossiers e imágenes sin puntos. Leaflet conserva sus coordenadas y herramientas; ningún plano tiene un recorrido de coordenadas ordenadas respaldado en los datos actuales. No se agregan zonas, extracciones, medidas ni detección.
 

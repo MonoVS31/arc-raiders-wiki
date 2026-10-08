@@ -1,0 +1,220 @@
+@layer components {
+  .article-hero-weapon-study #detail-title {
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
+    overflow-wrap: normal;
+  }
+  .weapon-study-summary {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .weapon-study-summary div {
+    margin: 0.5rem 0;
+  }
+  .weapon-study-summary dt {
+    color: var(--color-text-muted);
+    font-family: var(--font-family-mono);
+    font-size: 0.75rem;
+  }
+  .weapon-study-summary dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+  .article-hero-weapon-study {
+    grid-template-columns: minmax(170px, 0.55fr) minmax(0, 1.45fr);
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .article-hero .article-visual-weapon-study {
+    height: auto;
+    min-height: 0;
+    clip-path: none;
+    overflow: visible;
+    border: 0;
+    background: none;
+    transform: none;
+    animation: none;
+  }
+  .weapon-study {
+    border: 1px solid var(--color-border);
+    background: var(--color-weapon-scene);
+    color: var(--color-text);
+    width: 100%;
+    min-width: 0;
+    clip-path: polygon(
+      0 0,
+      calc(100% - 12px) 0,
+      100% 12px,
+      100% 100%,
+      12px 100%,
+      0 calc(100% - 12px)
+    );
+  }
+  .weapon-study-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    font: 0.75rem var(--font-family-mono);
+    color: var(--color-secondary);
+  }
+  .weapon-study-heading span:last-child {
+    color: var(--color-accent);
+  }
+  .weapon-study-stage {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .weapon-study-stage canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    cursor: grab;
+    outline-offset: -4px;
+  }
+  .weapon-study-stage canvas:active {
+    cursor: grabbing;
+  }
+  .weapon-study-stage canvas:focus-visible {
+    outline: 2px solid var(--color-secondary);
+  }
+  .weapon-study-fallback {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .weapon3d-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .weapon3d-labels svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .weapon3d-labels line {
+    stroke: var(--color-secondary);
+    stroke-width: 1;
+    opacity: 0.35;
+  }
+  .weapon3d-labels span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font: 0.75rem var(--font-family-mono);
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: 0.15rem 0.25rem;
+    background: var(--color-weapon-label-background);
+    will-change: transform;
+  }
+  .weapon-study-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .weapon-study-controls button {
+    min-height: 40px;
+    border: 1px solid var(--color-border);
+    background: var(--color-weapon-control);
+    color: var(--color-text);
+    font: 0.75rem var(--font-family-body);
+    padding: 0.55rem 0.7rem;
+  }
+  .weapon-study-controls button:hover:enabled {
+    border-color: var(--color-secondary);
+  }
+  .weapon-study-controls button[aria-pressed='true'] {
+    border-color: var(--color-accent);
+  }
+  .weapon-study-controls button:disabled {
+    opacity: 0.5;
+  }
+  .weapon-study-help,
+  .weapon-study-note {
+    margin: 0;
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+  .weapon-study-note {
+    padding-bottom: 0.8rem;
+  }
+  .weapon-study-status {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 0 1rem 0.5rem;
+    color: var(--color-secondary);
+  }
+  .weapon-study-status:empty {
+    display: none;
+  }
+  .gallery-card.category-weapon .gallery-art img.weapon-study-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+  .category-weapon .gallery-art:has(.weapon-study-thumbnail) {
+    background: var(--color-weapon-scene);
+  }
+  @media (max-width: 1100px) {
+    .article-hero-weapon-study {
+      grid-template-columns: 1fr;
+    }
+    .article-hero .article-visual-weapon-study {
+      height: auto;
+    }
+    .weapon-study-stage {
+      height: 380px;
+    }
+  }
+  @media (max-width: 700px) {
+    .weapon-study-stage {
+      height: 280px;
+    }
+    .weapon-study-heading {
+      font-size: 0.75rem;
+      padding: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .weapon-study-controls {
+      gap: 0.35rem;
+      padding: 0.65rem;
+    }
+    .weapon-study-controls button {
+      padding: 0.5rem 0.6rem;
+      min-height: 44px;
+    }
+    .weapon-study-help,
+    .weapon-study-note {
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+    }
+    .weapon3d-labels span {
+      font-size: 0.75rem;
+      letter-spacing: 0;
+    }
+  }
+}
