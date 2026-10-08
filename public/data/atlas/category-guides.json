@@ -1,0 +1,669 @@
+{
+  "checkedAt": "2026-10-08",
+  "sections": [
+    {
+      "id": "missions",
+      "title": "Misiones",
+      "subtitle": "ENCARGOS / PROGRESIÓN",
+      "intro": "Los comerciantes te encargan objetivos y entregan monedas u objetos como recompensa. Algunas misiones incluyen equipo al aceptarlas.",
+      "note": "Selección inicial de misiones; no es la cadena completa. Se conservan los nombres en inglés para encontrarlas en el juego.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Quests",
+      "entries": [
+        {
+          "id": "missions-1",
+          "title": "Picking Up The Pieces",
+          "text": "Shani · Cualquier mapa.",
+          "details": [
+            "Visitá un área con un ícono de categoría de botín.",
+            "Saqueá 3 contenedores.",
+            "Recompensa: Rattler III y 80 Medium Ammo."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces"
+        },
+        {
+          "id": "missions-2",
+          "title": "Clearer Skies",
+          "text": "Shani · Después de Picking Up The Pieces.",
+          "details": [
+            "Destruí 3 enemigos ARC.",
+            "Conseguí 3 ARC Alloy para Shani.",
+            "Recompensa: color Black de Hiker, 1 Light Shield y 3 Sterilized Bandage."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Clearer_Skies"
+        },
+        {
+          "id": "missions-3",
+          "title": "Trash Into Treasure",
+          "text": "Shani · Después de Picking Up The Pieces.",
+          "details": [
+            "Conseguí 6 Wires y 1 Battery.",
+            "Equipo al aceptar: 1 Binoculars.",
+            "Recompensa: Tactical Mk. 1 y 3 Adrenaline Shot."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trash_Into_Treasure"
+        }
+      ]
+    },
+    {
+      "id": "equipment",
+      "title": "Equipo",
+      "subtitle": "CARGA / PROTECCIÓN / RECUPERACIÓN",
+      "intro": "La carga combina armas, escudos, aumentos y objetos de uso rápido. Estos últimos incluyen curación, herramientas, dispositivos y granadas.",
+      "note": "Las cifras son reportes de la wiki comunitaria. Los escudos mitigan daño: su carga no equivale a vida adicional. Revisá la compatibilidad del aumento.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Equipment",
+      "entries": [
+        {
+          "id": "equipment-1",
+          "title": "Aumentos",
+          "text": "Definen espacios de mochila, capacidad de peso y compatibilidad de escudo.",
+          "details": [
+            "No se pueden quitar ni reemplazar en la superficie.",
+            "Pierden 30 de durabilidad al quedar derribado."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Augments"
+        },
+        {
+          "id": "equipment-2",
+          "title": "Combat Mk. 1",
+          "text": "Aumento de combate.",
+          "details": [
+            "Capacidad de peso: 45.",
+            "Compatible con escudos ligeros y medianos.",
+            "16 espacios generales, 4 de uso rápido y 1 bolsillo seguro."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Augments"
+        },
+        {
+          "id": "equipment-3",
+          "title": "Light Shield",
+          "text": "Escudo ligero.",
+          "details": [
+            "Carga: 40 · Mitigación: 40%.",
+            "Sin penalización de movimiento · Peso: 5.",
+            "Compatible con todos los aumentos."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Shields"
+        },
+        {
+          "id": "equipment-4",
+          "title": "Medium Shield",
+          "text": "Escudo mediano.",
+          "details": [
+            "Carga: 70 · Mitigación: 42,5%.",
+            "Penalización de movimiento: 5% · Peso: 7."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Shields"
+        },
+        {
+          "id": "equipment-5",
+          "title": "Heavy Shield",
+          "text": "Escudo pesado.",
+          "details": [
+            "Carga: 80 · Mitigación: 52,5%.",
+            "Penalización de movimiento: 15% · Peso: 9."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Shields"
+        },
+        {
+          "id": "equipment-6",
+          "title": "Bandage",
+          "text": "Recuperación gradual de vida.",
+          "details": [
+            "Curación: 2 por segundo durante 10 segundos.",
+            "Tiempo de uso: 1,5 segundos."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Healing"
+        },
+        {
+          "id": "equipment-7",
+          "title": "Herbal Bandage",
+          "text": "Venda de curación gradual.",
+          "details": [
+            "Curación: 3,5 por segundo durante 10 segundos.",
+            "Tiempo de uso: 1,5 segundos."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Healing"
+        },
+        {
+          "id": "equipment-8",
+          "title": "Defibrillator",
+          "text": "Revive a un Raider derribado y recupera parte de su vida.",
+          "details": ["Vida recuperada: 50 · Tiempo de uso: 1,5 segundos."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Healing"
+        }
+      ]
+    },
+    {
+      "id": "traders",
+      "title": "Comerciantes",
+      "subtitle": "SPERANZA / INTERCAMBIOS",
+      "intro": "Los comerciantes ofrecen encargos y suministros para tus incursiones. Cada uno trabaja con distintos objetos y monedas.",
+      "note": "La oferta listada describe sus especialidades; no garantiza stock ni precios actuales.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Traders",
+      "entries": [
+        {
+          "id": "traders-1",
+          "title": "Celeste",
+          "text": "Materiales básicos y de la superficie.",
+          "details": ["Moneda: semillas."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        },
+        {
+          "id": "traders-2",
+          "title": "Shani",
+          "text": "Seguridad: aumentos, accesorios de armas, medicina y Raider Hatch Key.",
+          "details": ["Moneda: Cred."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        },
+        {
+          "id": "traders-3",
+          "title": "Tian Wen",
+          "text": "Armería: armas, munición y accesorios.",
+          "details": ["Moneda: monedas."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        },
+        {
+          "id": "traders-4",
+          "title": "Lance",
+          "text": "Clínica: aumentos, escudos y medicina.",
+          "details": ["Acepta monedas y Free Loadout Augment."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        },
+        {
+          "id": "traders-5",
+          "title": "Apollo",
+          "text": "Granadas y dispositivos.",
+          "details": ["Moneda: monedas."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        },
+        {
+          "id": "traders-6",
+          "title": "Ermal",
+          "text": "Emisarios nómadas: recursos, cosméticos y ampliaciones del depósito.",
+          "details": ["Incluye Expedition Vault.", "Intercambios con recursos."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Traders"
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "title": "Taller",
+      "subtitle": "FABRICACIÓN / ESTACIONES",
+      "intro": "El taller fabrica equipo y consumibles. Las estaciones se construyen con materiales y se mejoran hasta nivel 3; ciertos objetos también exigen aprender su plano.",
+      "note": "Esta guía resume las estaciones. Las recetas ya documentadas siguen en las fichas y planos del archivo.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Workshop",
+      "entries": [
+        {
+          "id": "workshop-1",
+          "title": "Workbench · Banco básico",
+          "text": "Fabrica armas sencillas y la mayoría de las municiones.",
+          "details": ["Incluye Ferro, Hairpin, Kettle y Stitcher."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-2",
+          "title": "Gunsmith · Armería",
+          "text": "Fabrica armas y accesorios.",
+          "details": ["Nivel 1: 20 Metal Parts y 30 Rubber Parts."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-3",
+          "title": "Gear Bench · Banco de equipo",
+          "text": "Fabrica aumentos y escudos.",
+          "details": ["Nivel 1: 25 Plastic Parts y 30 Fabric."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-4",
+          "title": "Medical Lab · Laboratorio médico",
+          "text": "Fabrica vendas, recargadores y consumibles médicos.",
+          "details": ["Nivel 1: 50 Fabric y 6 ARC Alloy."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-5",
+          "title": "Explosives Station · Explosivos",
+          "text": "Fabrica granadas y minas.",
+          "details": ["Nivel 1: 50 Chemicals y 6 ARC Alloy."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-6",
+          "title": "Utility Station · Utilidad",
+          "text": "Fabrica dispositivos y herramientas.",
+          "details": ["Nivel 1: 50 Plastic Parts y 6 ARC Alloy."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-7",
+          "title": "Refiner · Refinador",
+          "text": "Produce materiales de fabricación.",
+          "details": ["Nivel 1: 60 Metal Parts y 5 ARC Powercell."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        },
+        {
+          "id": "workshop-8",
+          "title": "Scrappy",
+          "text": "Trae materiales básicos mientras hacés incursiones.",
+          "details": ["Recogé sus recursos: se llena tras 5 rondas."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Workshop"
+        }
+      ]
+    },
+    {
+      "id": "trials",
+      "title": "Juicios",
+      "subtitle": "DESAFÍOS SEMANALES",
+      "intro": "Los Trials son desafíos semanales con puntuación, recompensas y clasificación. Se desbloquean en el nivel 15.",
+      "note": "No se publica una lista semanal vigente: la fuente aún no detalla la nueva temporada. Consultá el menú del juego para los desafíos actuales.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Trials",
+      "entries": [
+        {
+          "id": "trials-1",
+          "title": "Cinco desafíos por semana",
+          "text": "Cada acción indicada suma puntos a su desafío.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trials"
+        },
+        {
+          "id": "trials-2",
+          "title": "Mejor resultado",
+          "text": "Al extraer se computan los puntos; se conserva tu mejor marca por desafío.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trials"
+        },
+        {
+          "id": "trials-3",
+          "title": "Recompensas y clasificación",
+          "text": "Los umbrales de puntuación entregan premios y la tabla permite competir por ascensos.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trials"
+        },
+        {
+          "id": "trials-4",
+          "title": "Ejemplos históricos",
+          "text": "Las semanas anteriores incluyeron destruir Fireballs, dañar Wasps y abrir ARC Probes.",
+          "details": ["Son ejemplos anteriores, no los objetivos de esta semana."],
+          "confidence": "probable",
+          "availability": "histórico",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trials"
+        },
+        {
+          "id": "trials-5",
+          "title": "Temporada 6",
+          "text": "La fuente anuncia su comienzo para el 8 de octubre de 2026.",
+          "details": ["Lista vigente de desafíos: Pendiente de verificar."],
+          "confidence": "probable",
+          "availability": "anunciado",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Trials"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Habilidades",
+      "subtitle": "ÁRBOL / ESPECIALIZACIONES",
+      "intro": "Los puntos de habilidad compran mejoras pasivas y capacidades. El árbol tiene tres ramas: acondicionamiento, movilidad y supervivencia.",
+      "note": "Selección de habilidades, no un simulador completo. Se omiten porcentajes aproximados procedentes de pruebas de jugadores.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Skills",
+      "entries": [
+        {
+          "id": "skills-1",
+          "title": "Puntos y reinicio",
+          "text": "Subir de nivel otorga 1 punto; la fuente enumera 76 y hasta 5 adicionales por expedición.",
+          "details": [
+            "Reiniciar el árbol completo cuesta 2.000 monedas por punto.",
+            "No hay reinicio individual de ramas o habilidades."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-2",
+          "title": "Used To The Weight · Acondicionamiento",
+          "text": "Reduce la lentitud al llevar escudo.",
+          "details": ["Máximo: 5 puntos · Sin requisito previo."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-3",
+          "title": "Gentle Pressure · Acondicionamiento",
+          "text": "Hace menos ruido al forzar accesos.",
+          "details": ["Máximo: 5 puntos · Requiere Used To The Weight."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-4",
+          "title": "Nimble Climber · Movilidad",
+          "text": "Permite trepar y superar obstáculos más rápido.",
+          "details": ["Máximo: 5 puntos · Sin requisito previo."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-5",
+          "title": "Marathon Runner · Movilidad",
+          "text": "Reduce el consumo de resistencia al moverte.",
+          "details": ["Máximo: 5 puntos · Requiere Nimble Climber."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-6",
+          "title": "Agile Croucher · Supervivencia",
+          "text": "Aumenta la velocidad al moverte agachado.",
+          "details": ["Máximo: 5 puntos · Sin requisito previo."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-7",
+          "title": "Looter's Instincts · Supervivencia",
+          "text": "Revela el botín de los contenedores más rápido.",
+          "details": ["Máximo: 5 puntos · Requiere Agile Croucher."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-8",
+          "title": "In-round Crafting · Supervivencia",
+          "text": "Habilita fabricación en la superficie.",
+          "details": ["Máximo: 1 punto · Requiere Revitalizing Squat."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        },
+        {
+          "id": "skills-9",
+          "title": "Security Breach · Supervivencia",
+          "text": "Permite abrir Security Lockers.",
+          "details": [
+            "Máximo: 1 punto · Requiere Looter's Luck o One Raider's Scraps y 36 puntos en Supervivencia."
+          ],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Skills"
+        }
+      ]
+    },
+    {
+      "id": "customization",
+      "title": "Personalización",
+      "subtitle": "APARIENCIA / ESTILO",
+      "intro": "Podés modificar a tu Raider, sus gestos y a Scrappy. Hay opciones obtenidas mediante proyectos, eventos, desafíos, encargos y la tienda.",
+      "note": "El catálogo de la fuente no sigue la disponibilidad de cada cosmético. No se afirma que un aspecto concreto esté a la venta hoy.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Customization",
+      "entries": [
+        {
+          "id": "customization-1",
+          "title": "Rostro",
+          "text": "Cambia facciones y tono de piel desde Apariencia.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-2",
+          "title": "Pelo y vello facial",
+          "text": "Cambia peinado y vello facial.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-3",
+          "title": "Estilo facial y cuerpo",
+          "text": "Opciones para la cara y la forma del cuerpo.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-4",
+          "title": "Atuendos",
+          "text": "Cambian la ropa del Raider desde Estilo.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-5",
+          "title": "Mochila",
+          "text": "Se combina con accesorios y adornos.",
+          "details": ["La mochila debe estar equipada."],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-6",
+          "title": "Herramienta del Raider",
+          "text": "Permite cambiar la apariencia de la herramienta de combate cuerpo a cuerpo.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-7",
+          "title": "Gestos",
+          "text": "Personalizan la selección radial de emotes.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        },
+        {
+          "id": "customization-8",
+          "title": "Scrappy",
+          "text": "Permite cambiar sus colores de plumas y su atuendo.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Customization"
+        }
+      ]
+    },
+    {
+      "id": "decks",
+      "title": "Mazos",
+      "subtitle": "ARCHIVO / PASES DE RECOMPENSAS",
+      "intro": "Los mazos fueron recorridos de recompensas por páginas, compradas con Cred. La fuente los identifica como el sistema anterior al pase de recompensas.",
+      "note": "Separá el archivo histórico de lo anunciado. La disponibilidad efectiva del nuevo pase sigue pendiente de comprobar tras la actualización.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Decks",
+      "entries": [
+        {
+          "id": "decks-1",
+          "title": "Starter · Ryder & Voyager",
+          "text": "Mazo gratuito lanzado el 30/10/2025.",
+          "details": ["6 páginas · 36 recompensas · Total: 2.190 Cred."],
+          "confidence": "probable",
+          "availability": "histórico",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Decks"
+        },
+        {
+          "id": "decks-2",
+          "title": "Goalie",
+          "text": "Mazo gratuito lanzado el 26/12/2025.",
+          "details": ["5 páginas · 28 recompensas · Total: 1.330 Cred."],
+          "confidence": "probable",
+          "availability": "histórico",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Decks"
+        },
+        {
+          "id": "decks-3",
+          "title": "Surgeon",
+          "text": "Mazo gratuito lanzado el 23/02/2026.",
+          "details": ["5 páginas · 25 recompensas · Total: 1.070 Cred."],
+          "confidence": "probable",
+          "availability": "histórico",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Decks"
+        },
+        {
+          "id": "decks-4",
+          "title": "Reward Pass · Pase de recompensas",
+          "text": "Anunciado para Frozen Trail el 8 de octubre de 2026: progresión mediante Feats.",
+          "details": [
+            "La fuente enumera Legacy Pass, Free Pass y Premium Pass.",
+            "Recompensas anunciadas: atuendos, cosméticos, dispositivos, armas, objetos y Raider Tokens."
+          ],
+          "confidence": "probable",
+          "availability": "anunciado",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Reward_Pass"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Ciencia",
+      "subtitle": "HISTORIA Y MUNDO / LORE",
+      "intro": "El libro de la wiki de referencia abre Lore: historia y trasfondo de ARC Raiders. Acá reúne ese contexto bajo el nombre de tu botón.",
+      "note": "Incluye contexto narrativo. No agrega estadísticas de combate ni explicaciones sobre el origen de ARC que la fuente desconozca.",
+      "sourceUrl": "https://arcraiders.wiki/wiki/Lore",
+      "entries": [
+        {
+          "id": "science-1",
+          "title": "El colapso",
+          "text": "Un desastre ambiental dejó pocas tierras habitables y comunidades entre las ruinas.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-2",
+          "title": "Las oleadas ARC",
+          "text": "Tras resistir la primera oleada, el regreso de las máquinas empujó a los supervivientes bajo tierra.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-3",
+          "title": "Speranza",
+          "text": "La comunidad subterránea desde la que se buscan suministros en la superficie.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-4",
+          "title": "ARC",
+          "text": "Máquinas que caen del cielo. Su propósito sigue siendo desconocido.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-5",
+          "title": "Toledo",
+          "text": "Ciudad subterránea construida entre edificios hundidos.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-6",
+          "title": "Astraventuro",
+          "text": "Organización vinculada a viajes espaciales en Acerra Spaceport.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-7",
+          "title": "Popet",
+          "text": "Organización que desarrolló androides.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        },
+        {
+          "id": "science-8",
+          "title": "Enelica",
+          "text": "Investigación agrícola y operación de la central de Alcantara.",
+          "details": [],
+          "confidence": "probable",
+          "availability": "disponible",
+          "sourceUrl": "https://arcraiders.wiki/wiki/Lore"
+        }
+      ]
+    }
+  ]
+}

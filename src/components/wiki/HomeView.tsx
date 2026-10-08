@@ -1,6 +1,6 @@
 import { CountUp } from './CountUp';
 import type { Category, Entity } from '../../domain/schema';
-import { useState } from 'react';
+import type { GuideSection } from '../../domain/category-guides';
 import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
 import { sources } from '../../domain/catalog';
 import { WikiLink } from '../../app/WikiContext';
@@ -13,21 +13,22 @@ const homeCategories: {
   icon: HomeCategoryIconName;
   category?: Category;
   materials?: boolean;
+  guide?: GuideSection;
 }[] = [
   { name: 'ARCO', icon: 'arc', category: 'arc' },
   { name: 'Mapas', icon: 'map', category: 'map' },
-  { name: 'Misiones', icon: 'missions' },
+  { name: 'Misiones', icon: 'missions', guide: 'missions' },
   { name: 'Armas', icon: 'weapon', category: 'weapon' },
-  { name: 'Equipo', icon: 'equipment' },
+  { name: 'Equipo', icon: 'equipment', guide: 'equipment' },
   { name: 'Botín', icon: 'loot', materials: true },
-  { name: 'Comerciantes', icon: 'traders' },
-  { name: 'Taller', icon: 'workshop' },
+  { name: 'Comerciantes', icon: 'traders', guide: 'traders' },
+  { name: 'Taller', icon: 'workshop', guide: 'workshop' },
   { name: 'Proyectos', icon: 'projects', category: 'project' },
-  { name: 'Juicios', icon: 'trials' },
-  { name: 'Habilidades', icon: 'skills' },
-  { name: 'Personalización', icon: 'customization' },
-  { name: 'Mazos', icon: 'decks' },
-  { name: 'Ciencia', icon: 'science' },
+  { name: 'Juicios', icon: 'trials', guide: 'trials' },
+  { name: 'Habilidades', icon: 'skills', guide: 'skills' },
+  { name: 'Personalización', icon: 'customization', guide: 'customization' },
+  { name: 'Mazos', icon: 'decks', guide: 'decks' },
+  { name: 'Ciencia', icon: 'science', guide: 'science' },
 ];
 
 export function HomeView({
@@ -45,7 +46,6 @@ export function HomeView({
   globalResults: Entity[];
   navigate: (id: string) => void;
 }) {
-  const [unavailable, setUnavailable] = useState('');
   return (
     <>
       <section className="welcome-banner">
@@ -141,13 +141,10 @@ export function HomeView({
               type="button"
               className="home-category-button"
               key={item.icon}
-              aria-describedby={
-                !item.category && !item.materials ? 'home-category-status' : undefined
-              }
               onClick={() => {
                 if (item.category) category(item.category);
                 else if (item.materials) open({ kind: 'materials' });
-                else setUnavailable(`${item.name}: esta sección todavía no está disponible.`);
+                else if (item.guide) open({ kind: 'guide', sectionId: item.guide });
               }}
             >
               <HomeCategoryIcon name={item.icon} />
@@ -157,9 +154,6 @@ export function HomeView({
             </button>
           ))}
         </div>
-        <p id="home-category-status" className="home-category-status" role="status">
-          {unavailable}
-        </p>
       </section>
       <section className="featured-grid">
         <div className="featured-editorial">

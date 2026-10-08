@@ -7,7 +7,10 @@ import { z } from 'zod';
 import { sourceById, catalog } from '../domain/catalog';
 import { materialArcHints } from '../domain/arc-links';
 import { WikiLink, Sources } from '../app/WikiContext';
+import { CategoryGuide } from './wiki/CategoryGuide';
+import type { GuideSection } from '../domain/category-guides';
 export type WikiPanel =
+  | { kind: 'guide'; sectionId: GuideSection }
   | { kind: 'references'; ids: string[] }
   | { kind: 'material'; name: string }
   | { kind: 'materials' }
@@ -114,7 +117,9 @@ export default function WikiModal({ panel, onClose }: { panel: WikiPanel; onClos
           ×
         </button>
       </div>
-      {panel.kind === 'references' ? (
+      {panel.kind === 'guide' ? (
+        <CategoryGuide sectionId={panel.sectionId} />
+      ) : panel.kind === 'references' ? (
         <>
           <h2 id="modal-title">Fuentes y verificación</h2>
           <p className="muted">

@@ -6,14 +6,30 @@ import { validateCatalog } from '../src/domain/schema';
 import '../src/domain/blueprints';
 import '../src/domain/arc-zones';
 import { diagramHotspotsSchema } from '../src/domain/diagram-hotspots';
+import { categoryGuidesSchema } from '../src/domain/category-guides';
 import '../src/domain/projects';
 import '../src/domain/arc-links';
 import '../src/domain/project-rewards';
 import '../src/components/QuestGuide';
 it('valida el catálogo original y efectivo antes de compilar', () => {
+  categoryGuidesSchema.parse(readAtlasData('category-guides.json'));
   diagramHotspotsSchema.parse(readAtlasData('diagram-hotspots.json'));
   validateCatalog(readAtlasData('catalog.json'), readAtlasData('sources.json'));
   expect(validateCatalog(catalog, sources).catalog).toEqual(catalog);
+});
+it('las guías nuevas conservan fuentes y distinguen mazos históricos de pases anunciados', () => {
+  const data = categoryGuidesSchema.parse(readAtlasData('category-guides.json'));
+  const decks = data.sections.find((section) => section.id === 'decks')!;
+  expect(decks.entries.filter((entry) => entry.availability === 'histórico')).toHaveLength(3);
+  expect(
+    decks.entries.find((entry) => entry.sourceUrl.endsWith('/Reward_Pass'))?.availability,
+  ).toBe('anunciado');
+  const duplicate = structuredClone(data);
+  duplicate.sections[1]!.id = duplicate.sections[0]!.id;
+  expect(categoryGuidesSchema.safeParse(duplicate).success).toBe(false);
+  const missingSource = structuredClone(data);
+  missingSource.sections[0]!.entries[0]!.sourceUrl = '';
+  expect(categoryGuidesSchema.safeParse(missingSource).success).toBe(false);
 });
 it('el catálogo efectivo conserva su evidencia, fuentes y notas al mover los archivos', () => {
   // Baseline exported from the previous composition, not from the new loader.

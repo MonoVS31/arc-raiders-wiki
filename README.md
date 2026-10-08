@@ -80,6 +80,8 @@ La revisión cubrió 375, 900, 1024 y 1366 px, con movimiento normal y reducido,
 
 ## Riesgos y decisiones pendientes
 
+Los catorce accesos de portada usan los colores de ARC Atlas y un contorno naranja tenue en los SVG originales. Nueve paneles nuevos reúnen 59 entradas seleccionadas de ARC Raiders Wiki, traducidas y resumidas con fuentes, búsqueda y estados de evidencia. Mazos distingue el archivo histórico del pase anunciado; Ciencia reúne historia y mundo. Ver [cobertura, fuentes y atribución](docs/22-categorias-y-guias.md).
+
 - Las 381 imágenes de fichas, ARC y materiales se guardan en Arc y se sirven desde Pages. Su caché está excluido de Git; CI recupera el snapshot desde los proveedores y verifica hashes antes de publicar. Si una imagen cambia o falla, se bloquea el nuevo build y el despliegue anterior permanece.
 - El usuario solicitó la descarga sin disponer de permisos. Las licencias siguen no confirmadas; descargar o atribuir no concede derechos de redistribución. Ante un reclamo, retirar o sustituir los archivos afectados.
 - Los tiles del mapa siguen dependiendo de MetaForge. No se descargó un atlas completo de tiles ni se contrató un proxy.
