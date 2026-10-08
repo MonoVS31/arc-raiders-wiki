@@ -567,6 +567,30 @@
     padding: 2rem 1rem;
     background: var(--color-background);
     backdrop-filter: none;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) var(--color-background);
+  }
+  .wiki-sidebar > * {
+    flex-shrink: 0;
+  }
+  .wiki-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .wiki-sidebar::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  .wiki-sidebar::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 6px;
+  }
+  .wiki-sidebar nav svg {
+    width: 22px;
+    height: 22px;
+    color: currentColor;
   }
   .wiki-sidebar nav button {
     border-radius: 0;

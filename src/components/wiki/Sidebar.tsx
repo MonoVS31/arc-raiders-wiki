@@ -1,8 +1,19 @@
 import type { Category } from '../../domain/schema';
 import { categories } from '../EntityDetail';
 import { catalog } from '../../domain/catalog';
-import { categorySchema } from '../../domain/schema';
-import { WikiIcon } from '../WikiIcon';
+import type { GuideSection } from '../../domain/category-guides';
+import { categoryGuides } from '../../domain/category-guides';
+import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
+
+const categoryIcons: Record<Category, HomeCategoryIconName> = {
+  map: 'map',
+  weapon: 'weapon',
+  arc: 'arc',
+  grenade: 'equipment',
+  blueprint: 'science',
+  project: 'projects',
+  container: 'container',
+};
 
 export function Sidebar({
   menu,
@@ -12,6 +23,7 @@ export function Sidebar({
   home,
   category,
   openMaterials,
+  openGuide,
 }: {
   menu: boolean;
   setMenu: (value: boolean) => void;
@@ -20,6 +32,7 @@ export function Sidebar({
   home: () => void;
   category: (value: Category) => void;
   openMaterials: () => void;
+  openGuide: (value: GuideSection) => void;
 }) {
   return (
     <>
@@ -48,25 +61,30 @@ export function Sidebar({
         <div className="sidebar-label">EXPLORAR</div>
         <nav aria-label="Categorías del catálogo">
           <button onClick={home} aria-current={view === 'home' ? 'page' : undefined}>
-            <span className="home-icon" aria-hidden="true">
-              ⌂
-            </span>
-            Portada
+            <HomeCategoryIcon name="home" />
+            <span>Portada</span>
           </button>
-          {categorySchema.options.map((value) => (
+          {(Object.keys(categoryIcons) as Category[]).map((value) => (
             <button
               key={value}
               onClick={() => category(value)}
               aria-current={view !== 'home' && activeCategory === value ? 'page' : undefined}
             >
-              <WikiIcon category={value} />
+              <HomeCategoryIcon name={categoryIcons[value]} />
               <span>{categories[value]}</span>
               <small>{catalog.entities.filter((entity) => entity.category === value).length}</small>
             </button>
           ))}
           <button onClick={openMaterials}>
-            <span aria-hidden="true">◈</span> Materiales y recursos
+            <HomeCategoryIcon name="loot" />
+            <span>Botín y materiales</span>
           </button>
+          {categoryGuides.sections.map((section) => (
+            <button key={section.id} onClick={() => openGuide(section.id)}>
+              <HomeCategoryIcon name={section.id} />
+              <span>{section.title}</span>
+            </button>
+          ))}
         </nav>
         <div className="sidebar-bottom">
           <span className="signal-dot" /> ARCHIVO EN LÍNEA

@@ -10,7 +10,8 @@ it('renderiza la portada y navegación interna de la wiki', () => {
   expect(html).toContain('aria-label="Categorías del catálogo"');
   expect(html).toContain('Buscar');
   expect(html).toContain('Buscar en toda la wiki');
-  expect(html).toContain('Elegí por dónde empezar');
+  expect(html).toContain('Conocé lo que');
+  expect(html).not.toContain('Elegí por dónde empezar');
   expect(html).toContain('Créditos y fuentes');
   expect(html).not.toContain('href="https://arcraiders.wiki');
 });

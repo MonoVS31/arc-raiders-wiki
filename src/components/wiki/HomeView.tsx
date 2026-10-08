@@ -1,35 +1,10 @@
 import { CountUp } from './CountUp';
 import type { Category, Entity } from '../../domain/schema';
-import type { GuideSection } from '../../domain/category-guides';
-import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
 import { sources } from '../../domain/catalog';
 import { WikiLink } from '../../app/WikiContext';
 import type { WikiPanel } from '../WikiModal';
 import { GlobalSearch } from './GlobalSearch';
 import { artFor, availableCount } from './presentation';
-
-const homeCategories: {
-  name: string;
-  icon: HomeCategoryIconName;
-  category?: Category;
-  materials?: boolean;
-  guide?: GuideSection;
-}[] = [
-  { name: 'ARCO', icon: 'arc', category: 'arc' },
-  { name: 'Mapas', icon: 'map', category: 'map' },
-  { name: 'Misiones', icon: 'missions', guide: 'missions' },
-  { name: 'Armas', icon: 'weapon', category: 'weapon' },
-  { name: 'Equipo', icon: 'equipment', guide: 'equipment' },
-  { name: 'Botín', icon: 'loot', materials: true },
-  { name: 'Comerciantes', icon: 'traders', guide: 'traders' },
-  { name: 'Taller', icon: 'workshop', guide: 'workshop' },
-  { name: 'Proyectos', icon: 'projects', category: 'project' },
-  { name: 'Juicios', icon: 'trials', guide: 'trials' },
-  { name: 'Habilidades', icon: 'skills', guide: 'skills' },
-  { name: 'Personalización', icon: 'customization', guide: 'customization' },
-  { name: 'Mazos', icon: 'decks', guide: 'decks' },
-  { name: 'Ciencia', icon: 'science', guide: 'science' },
-];
 
 export function HomeView({
   category,
@@ -127,34 +102,6 @@ export function HomeView({
           <span>máquinas ARC</span>
         </div>
       </div>
-      <section className="portal-categories">
-        <div className="wiki-section-title">
-          <div>
-            <span className="section-kicker">EL ARCHIVO</span>
-            <h2>Elegí por dónde empezar.</h2>
-          </div>
-          <span>Mapas · equipo · supervivencia</span>
-        </div>
-        <div className="home-category-grid">
-          {homeCategories.map((item) => (
-            <button
-              type="button"
-              className="home-category-button"
-              key={item.icon}
-              onClick={() => {
-                if (item.category) category(item.category);
-                else if (item.materials) open({ kind: 'materials' });
-                else if (item.guide) open({ kind: 'guide', sectionId: item.guide });
-              }}
-            >
-              <HomeCategoryIcon name={item.icon} />
-              <span className={item.icon === 'customization' ? 'category-name-long' : undefined}>
-                {item.name}
-              </span>
-            </button>
-          ))}
-        </div>
-      </section>
       <section className="featured-grid">
         <div className="featured-editorial">
           <span className="section-kicker">MÁQUINAS BAJO LA LUPA</span>

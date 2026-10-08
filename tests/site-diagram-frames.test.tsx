@@ -9,6 +9,8 @@ import LocalDossier from '../src/components/LocalDossier';
 import { EntityDetail } from '../src/components/EntityDetail';
 import { GalleryCardContent } from '../src/components/wiki/Gallery';
 import { HomeView } from '../src/components/wiki/HomeView';
+import { Sidebar } from '../src/components/wiki/Sidebar';
+import { categoryGuides } from '../src/domain/category-guides';
 import { stepsForProject } from '../src/domain/projects';
 import { routeForBlueprint } from '../src/domain/blueprints';
 import { catalog } from '../src/domain/catalog';
@@ -122,6 +124,44 @@ it('portada y galería mantienen una sola capa de tilt y no se apilan marcos de 
     ),
   );
   expect(host.querySelectorAll('.welcome-banner')).toHaveLength(1);
-  expect(host.querySelectorAll('.home-category-button')).toHaveLength(14);
+  expect(host.querySelectorAll('.home-category-button')).toHaveLength(0);
+  expect(host.querySelectorAll('.featured-grid')).toHaveLength(1);
   expect(host.querySelector('.diagram-frame')).toBeNull();
+});
+
+it('el menú conserva los destinos del catálogo y da acceso a todas las guías retiradas de la portada', async () => {
+  const category = vi.fn(),
+    openGuide = vi.fn(),
+    openMaterials = vi.fn();
+  await act(async () =>
+    root.render(
+      <Sidebar
+        menu={false}
+        setMenu={vi.fn()}
+        view="category"
+        activeCategory="weapon"
+        home={vi.fn()}
+        category={category}
+        openMaterials={openMaterials}
+        openGuide={openGuide}
+      />,
+    ),
+  );
+  const buttons = Array.from(host.querySelectorAll<HTMLButtonElement>('nav button'));
+  expect(buttons).toHaveLength(18);
+  expect(buttons.every((button) => button.querySelector('svg path[fill="currentColor"]'))).toBe(
+    true,
+  );
+  const weapons = buttons.find((button) => button.textContent === 'Armas26')!;
+  expect(weapons.getAttribute('aria-current')).toBe('page');
+  await act(async () => weapons.click());
+  expect(category).toHaveBeenCalledWith('weapon');
+  await act(async () =>
+    buttons.find((button) => button.textContent === 'Botín y materiales')!.click(),
+  );
+  expect(openMaterials).toHaveBeenCalledOnce();
+  for (const section of categoryGuides.sections) {
+    await act(async () => buttons.find((button) => button.textContent === section.title)!.click());
+    expect(openGuide).toHaveBeenLastCalledWith(section.id);
+  }
 });

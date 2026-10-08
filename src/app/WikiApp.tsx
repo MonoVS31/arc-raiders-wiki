@@ -71,7 +71,14 @@ export function App() {
         activeCategory={filters.category as Category}
         home={home}
         category={category}
-        openMaterials={() => open({ kind: 'materials' })}
+        openMaterials={() => {
+          setMenu(false);
+          open({ kind: 'materials' });
+        }}
+        openGuide={(sectionId) => {
+          setMenu(false);
+          open({ kind: 'guide', sectionId });
+        }}
       />
       <div className="wiki-shell">
         <Topbar
