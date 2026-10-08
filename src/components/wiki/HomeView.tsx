@@ -1,13 +1,34 @@
 import { CountUp } from './CountUp';
 import type { Category, Entity } from '../../domain/schema';
-import { categories } from '../EntityDetail';
-import { categorySchema } from '../../domain/schema';
+import { useState } from 'react';
+import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
 import { sources } from '../../domain/catalog';
 import { WikiLink } from '../../app/WikiContext';
 import type { WikiPanel } from '../WikiModal';
-import { WikiIcon } from '../WikiIcon';
 import { GlobalSearch } from './GlobalSearch';
-import { descriptions, artFor, availableCount, formatCount } from './presentation';
+import { artFor, availableCount } from './presentation';
+
+const homeCategories: {
+  name: string;
+  icon: HomeCategoryIconName;
+  category?: Category;
+  materials?: boolean;
+}[] = [
+  { name: 'ARCO', icon: 'arc', category: 'arc' },
+  { name: 'Mapas', icon: 'map', category: 'map' },
+  { name: 'Misiones', icon: 'missions' },
+  { name: 'Armas', icon: 'weapon', category: 'weapon' },
+  { name: 'Equipo', icon: 'equipment' },
+  { name: 'Botín', icon: 'loot', materials: true },
+  { name: 'Comerciantes', icon: 'traders' },
+  { name: 'Taller', icon: 'workshop' },
+  { name: 'Proyectos', icon: 'projects', category: 'project' },
+  { name: 'Juicios', icon: 'trials' },
+  { name: 'Habilidades', icon: 'skills' },
+  { name: 'Personalización', icon: 'customization' },
+  { name: 'Mazos', icon: 'decks' },
+  { name: 'Ciencia', icon: 'science' },
+];
 
 export function HomeView({
   category,
@@ -24,6 +45,7 @@ export function HomeView({
   globalResults: Entity[];
   navigate: (id: string) => void;
 }) {
+  const [unavailable, setUnavailable] = useState('');
   return (
     <>
       <section className="welcome-banner">
@@ -113,46 +135,31 @@ export function HomeView({
           </div>
           <span>Mapas · equipo · supervivencia</span>
         </div>
-        <div className="portal-grid">
-          {categorySchema.options.map((value, index) => (
+        <div className="home-category-grid">
+          {homeCategories.map((item) => (
             <button
-              className={`portal-tile tile-${value}`}
-              key={value}
-              onClick={() => category(value)}
+              type="button"
+              className="home-category-button"
+              key={item.icon}
+              aria-describedby={
+                !item.category && !item.materials ? 'home-category-status' : undefined
+              }
+              onClick={() => {
+                if (item.category) category(item.category);
+                else if (item.materials) open({ kind: 'materials' });
+                else setUnavailable(`${item.name}: esta sección todavía no está disponible.`);
+              }}
             >
-              <span className="card-spotlight" aria-hidden="true" />
-              {(value === 'map' || value === 'arc') && (
-                <img
-                  className="bento-photo"
-                  src={artFor(value === 'map' ? 'arc-rocketeer' : 'arc-hornet')}
-                  width={512}
-                  height={512}
-                  decoding="async"
-                  loading="lazy"
-                  alt=""
-                />
-              )}
-              <span className="tile-border" aria-hidden="true" />
-              <div className="tile-art">
-                <WikiIcon category={value} />
-              </div>
-              <span className="tile-number">{formatCount(index + 1)}</span>
-              <h3>{categories[value]}</h3>
-              <p>{descriptions[value]}</p>
-              <span className="tile-arrow">↗</span>
+              <HomeCategoryIcon name={item.icon} />
+              <span className={item.icon === 'customization' ? 'category-name-long' : undefined}>
+                {item.name}
+              </span>
             </button>
           ))}
-          <button className="portal-tile tile-material" onClick={() => open({ kind: 'materials' })}>
-            <span className="tile-border" aria-hidden="true" />
-            <div className="tile-art">
-              <WikiIcon category="material" />
-            </div>
-            <span className="tile-number">{formatCount(categorySchema.options.length + 1)}</span>
-            <h3>Materiales</h3>
-            <p>Recursos, valor reportado y botín asociado</p>
-            <span className="tile-arrow">↗</span>
-          </button>
         </div>
+        <p id="home-category-status" className="home-category-status" role="status">
+          {unavailable}
+        </p>
       </section>
       <section className="featured-grid">
         <div className="featured-editorial">

@@ -3,7 +3,7 @@ import { expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { App } from '../src/app/WikiApp';
 import { catalog } from '../src/domain/catalog';
-import { categorySchema, type Category } from '../src/domain/schema';
+import { type Category } from '../src/domain/schema';
 
 const statCategories: Category[] = ['map', 'weapon', 'blueprint', 'arc'];
 function verifyCounters() {
@@ -20,10 +20,6 @@ function verifyCounters() {
       ).padStart(2, '0'),
     ),
   );
-  const material = html.match(
-    /class="portal-tile tile-material".*?<span class="tile-number">(\d+)<\/span>/s,
-  )?.[1];
-  expect(material).toBe(String(categorySchema.options.length + 1).padStart(2, '0'));
 }
 it(
   'los contadores de portada coinciden con las entidades disponibles y las categorías',

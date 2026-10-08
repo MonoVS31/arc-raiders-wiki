@@ -1,6 +1,10 @@
 @layer tokens, base, components, utilities;
 @layer tokens {
   :root {
+    --color-home-categories: #0b0d12;
+    --color-home-category-button: #0f1218;
+    --color-home-category-border: #ffffff14;
+    --color-home-category-hover: #ffffff45;
     --color-secondary: #79c7bb;
     --color-accent-dim: #a75130;
     --color-surface-raised: #2b261e;

@@ -122,6 +122,6 @@ it('portada y galería mantienen una sola capa de tilt y no se apilan marcos de 
     ),
   );
   expect(host.querySelectorAll('.welcome-banner')).toHaveLength(1);
-  expect(host.querySelectorAll('.portal-tile')).toHaveLength(8);
+  expect(host.querySelectorAll('.home-category-button')).toHaveLength(14);
   expect(host.querySelector('.diagram-frame')).toBeNull();
 });
