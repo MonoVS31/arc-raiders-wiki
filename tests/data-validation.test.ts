@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { interactiveMapSchema } from '../src/domain/interactive-maps';
+import { mapManifest } from '../src/domain/maps';
 import { createHash } from 'node:crypto';
 import { expect, it } from 'vitest';
 import { readAtlasData } from '../src/domain/data-loader';
@@ -74,4 +77,29 @@ it('una referencia ARC usa la zona original', async () => {
   expect(resolved.zone).toBe(enemy.zones[0]);
   expect(resolved.sourceIds).toBe(enemy.sourceIds);
   expect(resolved.confidence).toBe(enemy.zones[0]!.confidence);
+});
+
+it('los seis mapas interactivos conservan todos los reportes, posiciones, pisos y evidencia originales', () => {
+  for (const config of mapManifest.maps) {
+    const original = JSON.parse(readFileSync(`public/data/maps/${config.slug}.json`, 'utf8'));
+    const data = interactiveMapSchema.parse(
+      JSON.parse(readFileSync(`public/data/mapas/${config.slug}.json`, 'utf8')),
+    );
+    expect(data.marcadores).toHaveLength(config.markerCount);
+    expect(data.zonas).toEqual([]);
+    expect(data.lineas).toEqual([]);
+    for (const [index, point] of data.marcadores.entries()) {
+      const source = original.markers[index];
+      expect(point.original).toEqual(source);
+      expect(point.id).toBe(source.id);
+      expect([point.x, point.y]).toEqual([source.lng, source.lat]);
+      expect(point.evidencia).toBe(source.confidence);
+      expect(point.fuente).toBe(original.sourceUrl);
+      expect(point.capas).toEqual(
+        config.floors
+          .filter((floor) => (source.layerMask & (1 << floor.index)) !== 0)
+          .map((floor) => floor.id),
+      );
+    }
+  }
 });

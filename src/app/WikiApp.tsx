@@ -13,6 +13,7 @@ import { Topbar } from '../components/wiki/Topbar';
 import { HomeView } from '../components/wiki/HomeView';
 import { CategoryView } from '../components/wiki/CategoryView';
 import { ArticleView } from '../components/wiki/ArticleView';
+const InteractiveMaps = lazy(() => import('../components/InteractiveMaps'));
 const ModalStack = lazy(() => import('../components/ModalStack'));
 export function App() {
   useVisibleAnimations();
@@ -102,7 +103,13 @@ export function App() {
               navigate={navigate}
             />
           ) : view === 'category' ? (
-            <CategoryView filters={filters} setFilters={setFilters} entities={entities} />
+            filters.category === 'map' ? (
+              <Suspense fallback={<p role="status">Cargando cartografía…</p>}>
+                <InteractiveMaps />
+              </Suspense>
+            ) : (
+              <CategoryView filters={filters} setFilters={setFilters} entities={entities} />
+            )
           ) : selected ? (
             <ArticleView
               selected={selected}

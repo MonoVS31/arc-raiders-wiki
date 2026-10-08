@@ -56,6 +56,10 @@ El inventario documenta 83 planos, 123 expedientes de fabricación, seis guías 
 
 Los comandos data:maps, data:blueprints, data:audit y data:arc-links actualizan capturas deliberadamente. Algunas rutas requieren las capturas de investigación conservadas en Arc/work/research; no son pasos de instalación de un clon nuevo. Revisar cambios y fuentes antes de integrar.
 
+## Mapas interactivos
+
+[El visor de mapas](https://monovs31.github.io/arc-raiders-wiki/?category=map) reúne seis mapas y los 1.981 reportes originales. Incluye búsqueda, filtros por categoría/capa, enlaces a marcadores, progreso y notas personales. `?mapa=<slug>&editor=1` habilita puntos, etiquetas, zonas, líneas e importación/exportación de JSON como borradores guardados en el navegador. No publica cambios automáticamente ni inventa ubicaciones. Se mantienen las fichas y los enlaces anteriores. Ver [datos, cobertura y decisiones](docs/23-mapas-interactivos.md).
+
 ## SEO y preview al compartir
 
 index.html contiene favicon, canonical, og:title, og:description, og:image y Twitter Card. La imagen social de 1200 x 630 y el favicon son originales del símbolo de tres barras; no usan gráficos copiados del juego.

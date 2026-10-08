@@ -1,6 +1,27 @@
 @layer tokens, base, components, utilities;
 @layer tokens {
   :root {
+    --map-icon-color: #fff;
+    --map-group-color: var(--color-text);
+    --map-overlay-backdrop: #000b;
+    --map-pin-shadow: #0008;
+    --map-label-outline: #17130f;
+    --map-zone-high: #c8675f;
+    --map-zone-medium: #f2be4d;
+    --map-zone-low: #f7f8fa;
+    --shadow-map-detail: 0 10px 25px #0005;
+    --shadow-map-drawer: 0 -15px 40px #0008;
+
+    --map-color-locations: #7d9a9d;
+    --map-color-services: #70b897;
+    --map-color-loot: #83b5bc;
+    --map-color-nature: #c59b79;
+    --map-color-missions: #cfb678;
+    --map-color-enemies: #d48273;
+    --map-color-other: #b1ada5;
+    --map-color-events: #80b6d2;
+    --map-color-zones: var(--color-accent);
+
     --color-home-categories: var(--color-background);
     --color-home-category-button: var(--color-surface);
     --color-home-category-border: color-mix(in srgb, var(--color-border) 35%, transparent);

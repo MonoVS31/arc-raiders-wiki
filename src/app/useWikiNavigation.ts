@@ -21,7 +21,7 @@ const defaultFilters: Filters = {
 export function readLocation() {
   const params = new URLSearchParams(window.location.search);
   const entity = requestedEntity(params.toString(), catalog.entities, window.location.pathname);
-  const category = categorySchema.safeParse(params.get('category'));
+  const category = categorySchema.safeParse(params.has('mapa') ? 'map' : params.get('category'));
   const map = entity && mapManifest.maps.find((map) => map.id === entity.id);
   const blueprintId = params.get('blueprint');
   const arcId = params.get('arc');
