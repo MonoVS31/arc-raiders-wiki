@@ -79,7 +79,8 @@ it('sin relación pieza-campo conserva la cabecera normal y no agrega puntos', a
     expect(diagramFor(id)).toBeUndefined();
     await act(async () => root.render(<EntityDetail key={id} entity={entity(id)} />));
     expect(host.querySelector('.article-hero-diagram')).toBeNull();
-    expect(host.querySelector('.article-visual .diagram-frame')).toBeNull();
+    expect(host.querySelector('.article-visual .diagram-static-image')).not.toBeNull();
+    expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
     expect(host.querySelector('.article-visual .atlas-image')).not.toBeNull();
   }
 });

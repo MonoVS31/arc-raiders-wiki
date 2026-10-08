@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
+import { DiagramFrame } from './wiki/DiagramFrame';
 import { loadDossiers, type Dossier } from '../domain/dossiers';
 import type { Entity } from '../domain/schema';
 import { Sources, useWiki } from '../app/WikiContext';
@@ -56,52 +58,59 @@ export default function LocalDossier({ entity }: { entity: Entity }) {
     );
   };
   return (
-    <section id="fabricacion" className="local-dossier">
-      <div className="section-kicker">TALLER / ARCHIVO LOCAL</div>
-      <h3>
-        {entity.category === 'blueprint'
-          ? `Fabricar ${dossier.objectName}`
-          : 'Fabricación, mejoras y mantenimiento'}
-      </h3>
-      {entity.category === 'blueprint' && (
-        <p className="muted">
-          Estas recetas fabrican el objeto después de aprender el plano. La obtención del plano está
-          en la sección anterior.
-        </p>
-      )}
-      {dossier.tables.map((table, index) => (
-        <details key={index} open={index === 0}>
-          <summary>
-            {table.title} <span className="confidence probable">probable</span>
-          </summary>
-          <div className="combat-table">
-            <table>
-              <thead>
-                <tr>
-                  {table.headers.map((heading, i) => (
-                    <th key={i}>{headings[heading] ?? heading}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {table.rows.map((row, i) => (
-                  <tr key={i}>
-                    {row.map((cell, j) => (
-                      <td
-                        key={j}
-                        className={table.headers[j] === '' ? 'table-arrow-cell' : undefined}
-                      >
-                        {itemText(cell)}
-                      </td>
+    <DiagramFrame className="diagram-section-frame" scan={false}>
+      <section id="fabricacion" className="local-dossier">
+        <div className="section-kicker">TALLER / ARCHIVO LOCAL</div>
+        <h3>
+          {entity.category === 'blueprint'
+            ? `Fabricar ${dossier.objectName}`
+            : 'Fabricación, mejoras y mantenimiento'}
+        </h3>
+        {entity.category === 'blueprint' && (
+          <p className="muted">
+            Estas recetas fabrican el objeto después de aprender el plano. La obtención del plano
+            está en la sección anterior.
+          </p>
+        )}
+        {dossier.tables.map((table, index) => (
+          <details
+            key={index}
+            open={index === 0}
+            className="diagram-section-reveal"
+            style={{ '--diagram-order': index } as CSSProperties}
+          >
+            <summary>
+              {table.title} <span className="confidence probable">probable</span>
+            </summary>
+            <div className="combat-table">
+              <table>
+                <thead>
+                  <tr>
+                    {table.headers.map((heading, i) => (
+                      <th key={i}>{headings[heading] ?? heading}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </details>
-      ))}
-      <Sources ids={dossier.sourceIds} />
-    </section>
+                </thead>
+                <tbody>
+                  {table.rows.map((row, i) => (
+                    <tr key={i}>
+                      {row.map((cell, j) => (
+                        <td
+                          key={j}
+                          className={table.headers[j] === '' ? 'table-arrow-cell' : undefined}
+                        >
+                          {itemText(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        ))}
+        <Sources ids={dossier.sourceIds} />
+      </section>
+    </DiagramFrame>
   );
 }

@@ -2,13 +2,14 @@ import { numericBarScale } from '../domain/numeric-scale';
 import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
 import { AtlasImage } from './wiki/AtlasImage';
+import { DiagramFrame } from './wiki/DiagramFrame';
 import { HotspotLayer } from './wiki/HotspotLayer';
 import { diagramFor } from '../domain/diagram-hotspots';
 import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
 import { catalog } from '../domain/catalog';
 import type { Entity } from '../domain/schema';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ReactNode, type CSSProperties } from 'react';
 import { BlueprintRouteCard } from './BlueprintRouteCard';
 import { mapManifest } from '../domain/maps';
 import { WeaponComparison, ARCCombatPanel, GrenadeEffectPanel } from './CombatTools';
@@ -24,6 +25,15 @@ const LocalDossier = lazy(() => import('./LocalDossier'));
 
 import { categories, fieldNames } from '../domain/presentation';
 export { categories } from '../domain/presentation';
+function ContainerClaimsFrame({ enabled, children }: { enabled: boolean; children: ReactNode }) {
+  return enabled ? (
+    <DiagramFrame className="diagram-container-frame" scan={false}>
+      {children}
+    </DiagramFrame>
+  ) : (
+    <>{children}</>
+  );
+}
 export function EntityDetail({
   entity,
   blueprintId,
@@ -64,13 +74,15 @@ export function EntityDetail({
               key={entity.id}
               diagram={diagram}
               fallback={
-                <AtlasImage
-                  key={visual.url}
-                  url={localImage(visual.url)}
-                  name={entity.category === 'arc' ? '' : entity.name}
-                  id={entity.id}
-                  lazy={false}
-                />
+                <DiagramFrame className="diagram-static-image">
+                  <AtlasImage
+                    key={visual.url}
+                    url={localImage(visual.url)}
+                    name={entity.category === 'arc' ? '' : entity.name}
+                    id={entity.id}
+                    lazy={false}
+                  />
+                </DiagramFrame>
               }
             />
             {diagram && (
@@ -126,28 +138,40 @@ export function EntityDetail({
             representan límites del juego ni modifican los valores.
           </p>
         )}
-        <dl className="claims">
-          {claims.map((claim) => (
-            <div className="claim" key={claim.id}>
-              <dt>
-                {fieldNames[claim.field] ?? claim.field}
-                <span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>
-                  {claim.confidence}
-                </span>
-              </dt>
-              <dd>
-                {claim.value === null ? (
-                  <span className="unknown">Pendiente de verificar</span>
-                ) : (
-                  `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`
-                )}
-              </dd>
-              <StatBars claim={claim} category={entity.category} />
-              {claim.note && <p className="claim-note">{claim.note}</p>}
-              <Sources ids={claim.sourceIds} />
-            </div>
-          ))}
-        </dl>
+        <ContainerClaimsFrame enabled={entity.category === 'container'}>
+          <dl className="claims">
+            {claims.map((claim, index) => (
+              <div
+                className={
+                  entity.category === 'container' ? 'claim diagram-section-reveal' : 'claim'
+                }
+                style={
+                  entity.category === 'container'
+                    ? ({ '--diagram-order': index } as CSSProperties)
+                    : undefined
+                }
+                key={claim.id}
+              >
+                <dt>
+                  {fieldNames[claim.field] ?? claim.field}
+                  <span className={`confidence ${claim.confidence.replaceAll(' ', '-')}`}>
+                    {claim.confidence}
+                  </span>
+                </dt>
+                <dd>
+                  {claim.value === null ? (
+                    <span className="unknown">Pendiente de verificar</span>
+                  ) : (
+                    `${claim.value}${claim.unit ? ` ${claim.unit}` : ''}`
+                  )}
+                </dd>
+                <StatBars claim={claim} category={entity.category} />
+                {claim.note && <p className="claim-note">{claim.note}</p>}
+                <Sources ids={claim.sourceIds} />
+              </div>
+            ))}
+          </dl>
+        </ContainerClaimsFrame>
       </section>
       {['weapon', 'grenade', 'blueprint', 'container'].includes(entity.category) &&
         entity.availability === 'disponible' && (

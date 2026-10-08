@@ -1,6 +1,6 @@
-# Diagramas animados · fases 1 a 4
+# Diagramas animados · fases 1 a 5
 
-Rama: `feat/diagramas`. Están implementadas la base y las integraciones ARC, armas/granadas y mapas. Las fases 5–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
+Rama: `feat/diagramas`. Están implementadas la base y las integraciones ARC, armas/granadas, mapas y resto del sitio. La fase 6 requiere aprobación del usuario antes de continuar. No se integra a main ni se publica en este cierre.
 
 ## Componentes y datos
 
@@ -78,4 +78,14 @@ El esquema MapConfig reserva `regionLabels?: [{lat, lng, texto, fuente}]`, vací
 
 Cierre de fase 4: lint, TypeScript, 137 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. Se conservan hashes de snapshots y catálogo. En Dam se comprobó selección por Enter, tiles cargados, contenedor sin transformación y guía al panel a 1366 px. A 375 px el mapa conserva 360 px de altura, el detalle queda debajo y no hay scroll horizontal. Con ?blueprint=blueprint-hullcracker-blueprint sigue el filtro de misión, su reporte y la advertencia de que no es una aparición del plano, sin trazo inventado.
 
-Pendiente: las piezas sin ancla y los recorridos sin geometría de [20-diagramas-pendientes.md](20-diagramas-pendientes.md). Proyectos, dossiers, imágenes sin puntos y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.
+Pendiente: las piezas sin ancla y los recorridos sin geometría de [20-diagramas-pendientes.md](20-diagramas-pendientes.md). La revisión completa a cuatro anchos permanece en la fase 6. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.
+
+## Resto del sitio · fase 5
+
+ProjectSteps, BlueprintRouteCard y LocalDossier reciben un marco sin escaneo y entradas escalonadas para requisitos, recompensas, campos y tablas. Se conservan etapas, selección, navegación, enlaces de fuentes, avisos, detalles desplegables y reintento de carga. Los campos de los contenedores reciben el mismo marco y escalonado sin duplicar sus valores ni evidencia.
+
+Las imágenes principales sin puntos reciben DiagramFrame como fallback de EntityDetail: esquinas, escaneo y entrada. HotspotLayer sigue devolviendo el fallback recibido cuando no hay puntos; no crea controles superpuestos. Se retira la animación flotante heredada en estas imágenes para conservar una única entrada. Portada, galería y bento mantienen sus efectos existentes, con una única capa de tilt y sin otro parallax.
+
+Los nuevos efectos usan únicamente transform y opacity y los tokens existentes. Al enfocar un control se elimina la espera de su entrada; reduced motion mantiene todo visible y sin animación. Los marcos ya están incluidos en la pausa por visibilidad. No se agregaron posiciones, datos, dependencias ni rutas.
+
+Cierre de fase 5: lint, TypeScript, 142 pruebas, data:validate y build en verde; 381 imágenes verificadas y 167 fichas prerenderizadas. El catálogo conserva su hash original. Las pruebas cubren cambio de etapa, navegación al mapa desde un plano, fallo y reintento del dossier, campos de contenedores, imagen sin puntos y ausencia de capas duplicadas en portada y galería. Se comprobaron proyectos, planos, contenedores y portada a 375 px sin desborde horizontal. Quedan pendientes la revisión completa a 375, 900, 1024 y 1366 px con ambos estados de movimiento y la actualización final del README en la fase 6.
