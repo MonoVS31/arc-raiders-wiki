@@ -1,4 +1,253 @@
 @layer components {
+  /* Diagramas: coordenadas editoriales de imagen; no geometría del juego. */
+  .diagram-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--space-20);
+    align-items: start;
+  }
+  .diagram-layout > * {
+    min-width: 0;
+  }
+  .diagram-frame {
+    position: relative;
+    isolation: isolate;
+    background: var(--color-background);
+    border: var(--diagram-border-width) solid var(--color-border);
+  }
+  .diagram-corner {
+    position: absolute;
+    width: var(--diagram-corner-size);
+    height: var(--diagram-corner-size);
+    color: var(--color-accent);
+    pointer-events: none;
+    z-index: 4;
+  }
+  .diagram-corner-start {
+    inset: 0 auto auto 0;
+    border-top: var(--diagram-border-width) solid;
+    border-left: var(--diagram-border-width) solid;
+  }
+  .diagram-corner-end {
+    inset: auto 0 0 auto;
+    border-bottom: var(--diagram-border-width) solid;
+    border-right: var(--diagram-border-width) solid;
+  }
+  .diagram-scan-track {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .diagram-scan {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-top: var(--diagram-border-width) solid var(--color-secondary);
+    opacity: 0.5;
+    animation: diagram-scan var(--duration-diagram-scan) linear infinite alternate;
+  }
+  .diagram-image-plane {
+    position: relative;
+    overflow: hidden;
+  }
+  .diagram-image-plane > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .diagram-image-error {
+    padding: var(--space-20);
+    font: var(--font-size-help)/var(--line-height-help) var(--font-family-body);
+  }
+  .diagram-reveal {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    color: var(--color-accent);
+  }
+  .diagram-kind-weak {
+    color: var(--color-weak-point);
+  }
+  .diagram-kind-protected {
+    color: var(--color-armor);
+  }
+  .diagram-kind-unarmored {
+    color: var(--color-secondary);
+  }
+  .diagram-kind-unknown {
+    color: var(--color-evidence-unknown);
+  }
+  .diagram-guide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: var(--diagram-border-width);
+  }
+  .diagram-label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    max-width: 42%;
+    padding: var(--space-4);
+    background: var(--color-background);
+    font: var(--font-size-0-75)/1.5 var(--font-family-mono);
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+  .diagram-hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: var(--diagram-point-size);
+    height: var(--diagram-point-size);
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    pointer-events: auto;
+    z-index: 2;
+  }
+  .diagram-hotspot:active:not(:disabled) {
+    transform: translate(-50%, -50%);
+  }
+  .diagram-hotspot > span,
+  .diagram-hotspot::after {
+    width: var(--diagram-dot-size);
+    height: var(--diagram-dot-size);
+    border-radius: 50%;
+  }
+  .diagram-hotspot > span {
+    background: currentColor;
+  }
+  .diagram-hotspot::after {
+    content: '';
+    position: absolute;
+    border: var(--diagram-border-width) solid currentColor;
+    animation: diagram-pulse var(--duration-2000) ease-out infinite;
+  }
+  .diagram-hotspot[aria-pressed='true'] > span {
+    outline: var(--diagram-border-width) solid var(--color-text);
+    outline-offset: var(--space-4);
+  }
+  .diagram-frame[data-entered] .diagram-reveal {
+    animation: diagram-entry var(--duration-600) ease-out both;
+    animation-delay: calc(var(--diagram-order, 0) * var(--duration-diagram-stagger));
+  }
+  .diagram-frame .diagram-reveal:focus-within {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .diagram-panel {
+    padding: var(--space-20);
+    border: var(--diagram-border-width) solid var(--color-border);
+    background: var(--color-surface);
+    overflow-wrap: anywhere;
+  }
+  .diagram-panel h3 {
+    font-family: var(--font-family-display);
+    margin-block: var(--space-12);
+  }
+  .diagram-panel p,
+  .diagram-notice,
+  .diagram-editor {
+    font: var(--font-size-help)/var(--line-height-help) var(--font-family-body);
+  }
+  .diagram-value,
+  .diagram-editor output {
+    font-family: var(--font-family-mono);
+  }
+  .diagram-panel-entry {
+    animation: diagram-entry var(--duration-300) ease-out;
+  }
+  .diagram-panel .stat-bar > span {
+    animation: diagram-bar-fill var(--duration-600) ease-out;
+  }
+  .diagram-notice {
+    color: var(--color-text-muted);
+  }
+  .diagram-editor-plane {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: none;
+    cursor: crosshair;
+  }
+  .diagram-image-plane[data-editor] .diagram-hotspot {
+    pointer-events: none;
+  }
+  .diagram-editor {
+    padding: var(--space-12);
+    border: var(--diagram-border-width) solid var(--color-border);
+    background: var(--color-background);
+  }
+  .diagram-frame.animation-paused *,
+  .diagram-frame.animation-paused *::after,
+  .diagram-frame.animation-paused *::before,
+  .diagram-panel.animation-paused * {
+    animation-play-state: paused !important;
+  }
+  .diagram-frame[data-reduced-motion] *,
+  .diagram-frame[data-reduced-motion] *::after {
+    animation: none;
+  }
+  @keyframes diagram-scan {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes diagram-pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    to {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  @keyframes diagram-entry {
+    from {
+      transform: translateY(var(--space-8));
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes diagram-bar-fill {
+    from {
+      transform: scaleX(0);
+    }
+  }
+  @media (max-width: 900px) {
+    .diagram-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .diagram-scan,
+    .diagram-hotspot::after,
+    .diagram-frame[data-entered] .diagram-reveal,
+    .diagram-panel-entry,
+    .diagram-panel .stat-bar > span {
+      animation: none;
+    }
+    .diagram-scan {
+      display: none;
+    }
+  }
   /* Archivo de campo: superficie cálida, óptica analógica y retícula militar. */
   /* Sin filtro SVG de pantalla completa: el scroll no necesita rasterizar grano. */
   h1,

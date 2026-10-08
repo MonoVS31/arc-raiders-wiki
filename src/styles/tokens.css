@@ -27,6 +27,13 @@
     --font-family-mono: 'JetBrains Mono Variable', monospace;
     --font-family-body: 'Inter Variable', Inter, sans-serif;
     --font-family-display: 'Barlow Condensed', Impact, sans-serif;
+    --diagram-point-size: 2.75rem;
+    --diagram-order: 0;
+    --diagram-dot-size: 0.75rem;
+    --diagram-corner-size: 1.5rem;
+    --diagram-border-width: 1px;
+    --duration-diagram-stagger: 150ms;
+    --duration-diagram-scan: 6000ms;
     --font-size-label: 0.8125rem;
     --font-size-help: 0.8125rem;
     --line-height-help: 1.65;

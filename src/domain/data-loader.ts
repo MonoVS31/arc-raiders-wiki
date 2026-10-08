@@ -5,6 +5,7 @@ export const atlasFiles = [
   'arc-zones.json',
   'blueprint-routes.json',
   'catalog.json',
+  'diagram-hotspots.json',
   'entity-visuals.json',
   'image-assets.json',
   'extra-stats.json',
