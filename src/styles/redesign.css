@@ -9,6 +9,59 @@
   .diagram-layout > * {
     min-width: 0;
   }
+  .article-hero.article-hero-diagram {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .article-hero .article-visual.article-visual-diagram {
+    height: auto;
+    min-height: 0;
+  }
+  .article-hero .article-visual-diagram .diagram-image-plane > img {
+    height: auto;
+    width: 100%;
+    max-height: none;
+    filter: none;
+  }
+  .article-visual-diagram .diagram-attribution {
+    text-align: left;
+  }
+  .diagram-tool-frame {
+    margin: var(--space-24) 0;
+    border: 0;
+    background: none;
+  }
+  .diagram-tool-frame > .combat-tool {
+    margin: 0;
+    border-radius: 0;
+  }
+  .diagram-stat-frame {
+    --diagram-corner-size: var(--space-8);
+    padding: var(--space-4) 0;
+    margin: var(--space-12) 0;
+    border: 0;
+    background: none;
+  }
+  .diagram-stat-frame .stat-bar,
+  .diagram-stat-frame .stat-series {
+    margin: 0;
+  }
+  .combat-evidence > .diagram-stat-frame {
+    margin: var(--space-4) 0;
+  }
+  .diagram-tool-frame[data-entered] .diagram-content-reveal,
+  .diagram-stat-frame[data-entered] .diagram-stat-reveal {
+    animation: diagram-entry var(--duration-300) ease-out both;
+    animation-delay: calc(var(--diagram-order) * var(--duration-diagram-stagger));
+  }
+  .diagram-stat-frame[data-entered] .stat-bar > span {
+    animation: diagram-bar-fill var(--duration-600) ease-out both;
+    animation-delay: calc(var(--diagram-order) * var(--duration-diagram-stagger));
+  }
+  .diagram-tool-frame .diagram-content-reveal:focus-within {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
   .arc-schematic-frame > .diagram-reveal {
     position: relative;
     inset: auto;
@@ -228,9 +281,6 @@
   .diagram-panel-entry {
     animation: diagram-entry var(--duration-300) ease-out;
   }
-  .diagram-panel .stat-bar > span {
-    animation: diagram-bar-fill var(--duration-600) ease-out;
-  }
   .diagram-notice {
     color: var(--color-text-muted);
   }
@@ -304,7 +354,10 @@
     .diagram-hotspot::after,
     .diagram-frame[data-entered] .diagram-reveal,
     .diagram-panel-entry,
-    .diagram-panel .stat-bar > span {
+    .diagram-panel .stat-bar > span,
+    .diagram-stat-frame[data-entered] .diagram-stat-reveal,
+    .diagram-stat-frame[data-entered] .stat-bar > span,
+    .diagram-tool-frame[data-entered] .diagram-content-reveal {
       animation: none;
     }
     .diagram-scan {

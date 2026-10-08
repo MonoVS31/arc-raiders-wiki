@@ -42,3 +42,16 @@ Imágenes: las mismas entradas de arc-portraits.json, con resolución al snapsho
 El layout `components` ya era una lista de piezas; se mantiene como lista dentro del marco, sin inventar un SVG anatómico. Los demás esquemas conservan trazados y posiciones orientativas. Todos mantienen opciones, condiciones, fuentes, tablas no corroboradas y reportes posibles.
 
 Una selección de zona sin ancla apaga la selección de los puntos de foto y muestra el dato original en el panel. No desplaza el punto existente a otra pieza. Los cuatro tipos se distinguen por texto y tokens: débil, protección, sin blindaje y sin dato específico.
+
+## Armas y granadas · fase 3
+
+| Ficha | Campo | Ancla revisada |
+|---|---|---|
+| Rattler | Magazine Size | Superficie del cargador semicircular visible debajo del receptor |
+| Tempest | Magazine Size | Cargador rectangular visible en la parte inferior trasera |
+
+Kettle: no se pudo identificar inequívocamente un cargador separado en su imagen. Il Toro: la vista no permite separar con certeza el depósito de munición de otras piezas. Ferro: la capacidad de un disparo no justifica señalar un cargador externo que no se ve. Las otras armas siguen pendientes de revisión/calibración, sin puntos agregados por suposición.
+
+Las 16 granadas quedan sin puntos sobre su imagen: los claims actuales no describen una relación pieza visible–campo. Efecto, radio, daño, retardo, duración, búsqueda y aturdimiento siguen en el visor y las estadísticas, con sus marcos nuevos. No se interpreta un pasador como temporizador ni una carcasa como radio de daño.
+
+Se mantienen los cinco diagramas ARC anteriores. Total de fichas con puntos al cerrar la fase 3: siete. Las etiquetas y cifras siempre se leen del dato original.

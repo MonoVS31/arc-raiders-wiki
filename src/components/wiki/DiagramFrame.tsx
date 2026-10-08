@@ -4,9 +4,13 @@ import { useMotionPreference } from '../../app/motion-preference';
 export function DiagramFrame({
   children,
   className = '',
+  scan = true,
+  decorative = false,
 }: {
   children: ReactNode;
   className?: string;
+  scan?: boolean;
+  decorative?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useMotionPreference();
@@ -30,12 +34,15 @@ export function DiagramFrame({
       className={`diagram-frame ${className}`}
       data-entered={entered && !reduced ? '' : undefined}
       data-reduced-motion={reduced ? '' : undefined}
+      aria-hidden={decorative ? true : undefined}
     >
       <span className="diagram-corner diagram-corner-start" aria-hidden="true" />
       <span className="diagram-corner diagram-corner-end" aria-hidden="true" />
-      <div className="diagram-scan-track" aria-hidden="true">
-        <span className="diagram-scan" />
-      </div>
+      {scan && (
+        <div className="diagram-scan-track" aria-hidden="true">
+          <span className="diagram-scan" />
+        </div>
+      )}
       {children}
     </div>
   );

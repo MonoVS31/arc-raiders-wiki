@@ -1,6 +1,7 @@
 import { localImage } from '../domain/images';
 import { StatBars } from './wiki/StatBars';
 import { diagramFor } from '../domain/diagram-hotspots';
+import { DiagramFrame } from './wiki/DiagramFrame';
 import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
 import { catalog } from '../domain/catalog';
@@ -89,66 +90,74 @@ export function WeaponComparison({ entity }: { entity: Entity }) {
     ['Range', 'Alcance declarado'],
   ];
   return (
-    <section className="combat-tool">
-      <h3>Comparar armas y niveles</h3>
-      <label>
-        Comparar con
-        <select
-          value={otherId}
-          onChange={(event) => {
-            setOtherId(event.target.value);
-            setOtherTier(weaponTiers(event.target.value)[0] ?? '');
-          }}
-        >
-          {weapons.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <div className="combat-pair">
-        <Tier key={entity.id} entity={entity} tier={tier} onChange={setTier} />
-        <Tier key={other.id} entity={other} tier={otherTier} onChange={setOtherTier} />
-      </div>
-      <p className="muted">
-        Las cifras por nivel se muestran cuando la fuente publica la serie I–IV. Las mejoras se
-        muestran por separado. La escala de alcance no se convierte a metros ni la cadencia a daño
-        por segundo.
-      </p>
-      <p className="muted bar-legend">
-        Las barras comparan el mismo campo y unidad dentro del archivo. No representan límites del
-        juego.
-      </p>
-      <div className="combat-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Campo</th>
-              <th>
-                {entity.name} · {tier}
-              </th>
-              <th>
-                {other.name} · {otherTier}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {fields.map(([field, title]) => (
-              <tr key={field}>
-                <th>{title}</th>
-                <td>
-                  <Evidence claim={weaponTierMetric(entity.id, field!, tier)} weapon />
-                </td>
-                <td>
-                  <Evidence claim={weaponTierMetric(other.id, field!, otherTier)} weapon />
-                </td>
-              </tr>
+    <DiagramFrame className="diagram-tool-frame" scan={false}>
+      <section className="combat-tool">
+        <h3>Comparar armas y niveles</h3>
+        <label>
+          Comparar con
+          <select
+            value={otherId}
+            onChange={(event) => {
+              setOtherId(event.target.value);
+              setOtherTier(weaponTiers(event.target.value)[0] ?? '');
+            }}
+          >
+            {weapons.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
             ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+          </select>
+        </label>
+        <div
+          className="combat-pair diagram-content-reveal"
+          style={{ '--diagram-order': 0 } as React.CSSProperties}
+        >
+          <Tier key={entity.id} entity={entity} tier={tier} onChange={setTier} />
+          <Tier key={other.id} entity={other} tier={otherTier} onChange={setOtherTier} />
+        </div>
+        <p className="muted">
+          Las cifras por nivel se muestran cuando la fuente publica la serie I–IV. Las mejoras se
+          muestran por separado. La escala de alcance no se convierte a metros ni la cadencia a daño
+          por segundo.
+        </p>
+        <p className="muted bar-legend">
+          Las barras comparan el mismo campo y unidad dentro del archivo. No representan límites del
+          juego.
+        </p>
+        <div
+          className="combat-table diagram-content-reveal"
+          style={{ '--diagram-order': 1 } as React.CSSProperties}
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Campo</th>
+                <th>
+                  {entity.name} · {tier}
+                </th>
+                <th>
+                  {other.name} · {otherTier}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {fields.map(([field, title]) => (
+                <tr key={field}>
+                  <th>{title}</th>
+                  <td>
+                    <Evidence claim={weaponTierMetric(entity.id, field!, tier)} weapon />
+                  </td>
+                  <td>
+                    <Evidence claim={weaponTierMetric(other.id, field!, otherTier)} weapon />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </DiagramFrame>
   );
 }
 export function ARCCombatPanel({ entity }: { entity: Entity }) {
@@ -210,78 +219,93 @@ export function GrenadeEffectPanel({ entity }: { entity: Entity }) {
   const hasStun =
     combatClaim(entity.id, 'ARC Stun Duration') || combatClaim(entity.id, 'Raider Stun Duration');
   return (
-    <section className="combat-tool">
-      <h3>Explorar el efecto</h3>
-      <Evidence claim={combatClaim(entity.id, 'efecto')} />
-      {geometry ? (
-        <>
-          <p>
-            Radio declarado de {geometry.kind}: {geometry.radius} m. La figura muestra distancia
-            geométrica; no calcula daño ni obstáculos.
-          </p>
-          <svg
-            className="effect-diagram"
-            viewBox="0 0 240 180"
-            role="img"
-            aria-label={`Radio de ${geometry.kind}: ${geometry.radius} metros`}
-          >
-            <path d="M0 90H240M120 0V180" stroke="currentColor" opacity=".2" />
-            <circle
-              className="effect-pulse"
-              cx="120"
-              cy="90"
-              r="65"
-              fill="currentColor"
-              fillOpacity=".12"
-              stroke="currentColor"
-            />
-            <circle cx="120" cy="90" r="4" fill="currentColor" />
-            <circle cx={120 + (distance / geometry.radius) * 65} cy="90" r="6" fill="#ffcc73" />
-            <text x="8" y="168" fill="currentColor">
-              {geometry.kind === 'búsqueda'
-                ? 'Búsqueda de objetivo ARC'
-                : 'Área del efecto declarado'}
-            </text>
-          </svg>
-          <label>
-            Distancia: {distance.toFixed(1)} m
-            <input
-              type="range"
-              min="0"
-              max={geometry.radius * 1.5}
-              step="0.1"
-              value={distance}
-              onChange={(event) => setDistance(Number(event.target.value))}
-            />
-          </label>
-          <p aria-live="polite">
-            {withinReportedRadius(distance, geometry.radius) ? 'Dentro' : 'Fuera'} del radio
-            geométrico declarado. No garantiza impacto.
-          </p>
-          <Evidence claim={geometry.claim} />
-        </>
-      ) : (
-        <p className="notice">
-          No hay un radio circular verificado que permita dibujar el efecto completo de esta
-          granada.
+    <DiagramFrame className="diagram-tool-frame" scan={false}>
+      <section className="combat-tool">
+        <h3>Explorar el efecto</h3>
+        <div
+          className="diagram-content-reveal"
+          style={{ '--diagram-order': 0 } as React.CSSProperties}
+        >
+          <Evidence claim={combatClaim(entity.id, 'efecto')} />
+          {geometry ? (
+            <>
+              <p>
+                Radio declarado de {geometry.kind}: {geometry.radius} m. La figura muestra distancia
+                geométrica; no calcula daño ni obstáculos.
+              </p>
+              <svg
+                className="effect-diagram"
+                viewBox="0 0 240 180"
+                role="img"
+                aria-label={`Radio de ${geometry.kind}: ${geometry.radius} metros`}
+              >
+                <path d="M0 90H240M120 0V180" stroke="currentColor" opacity=".2" />
+                <circle
+                  className="effect-pulse"
+                  cx="120"
+                  cy="90"
+                  r="65"
+                  fill="currentColor"
+                  fillOpacity=".12"
+                  stroke="currentColor"
+                />
+                <circle cx="120" cy="90" r="4" fill="currentColor" />
+                <circle
+                  cx={120 + (distance / geometry.radius) * 65}
+                  cy="90"
+                  r="6"
+                  fill="var(--color-accent)"
+                />
+                <text x="8" y="168" fill="currentColor">
+                  {geometry.kind === 'búsqueda'
+                    ? 'Búsqueda de objetivo ARC'
+                    : 'Área del efecto declarado'}
+                </text>
+              </svg>
+              <label>
+                Distancia: {distance.toFixed(1)} m
+                <input
+                  type="range"
+                  min="0"
+                  max={geometry.radius * 1.5}
+                  step="0.1"
+                  value={distance}
+                  onChange={(event) => setDistance(Number(event.target.value))}
+                />
+              </label>
+              <p aria-live="polite">
+                {withinReportedRadius(distance, geometry.radius) ? 'Dentro' : 'Fuera'} del radio
+                geométrico declarado. No garantiza impacto.
+              </p>
+              <Evidence claim={geometry.claim} />
+            </>
+          ) : (
+            <p className="notice">
+              No hay un radio circular verificado que permita dibujar el efecto completo de esta
+              granada.
+            </p>
+          )}
+          {hasStun && (
+            <>
+              <label>
+                Consultar aturdimiento
+                <select value={target} onChange={(event) => setTarget(event.target.value)}>
+                  <option>ARC</option>
+                  <option>Raider</option>
+                </select>
+              </label>
+              <Evidence claim={combatClaim(entity.id, `${target} Stun Duration`)} />
+            </>
+          )}
+        </div>
+        <p
+          className="muted diagram-content-reveal"
+          style={{ '--diagram-order': 1 } as React.CSSProperties}
+        >
+          El radio puede corresponder a humo, distracción o búsqueda. No debe interpretarse
+          automáticamente como una explosión que causa daño.
         </p>
-      )}
-      {hasStun && (
-        <>
-          <label>
-            Consultar aturdimiento
-            <select value={target} onChange={(event) => setTarget(event.target.value)}>
-              <option>ARC</option>
-              <option>Raider</option>
-            </select>
-          </label>
-          <Evidence claim={combatClaim(entity.id, `${target} Stun Duration`)} />
-        </>
-      )}
-      <p className="muted">
-        El radio puede corresponder a humo, distracción o búsqueda. No debe interpretarse
-        automáticamente como una explosión que causa daño.
-      </p>
-    </section>
+      </section>
+    </DiagramFrame>
   );
 }

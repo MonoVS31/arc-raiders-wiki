@@ -9,7 +9,9 @@
         "y": 39.5,
         "lx": 70,
         "ly": 21,
-        "ref": { "zoneId": "thrusters" }
+        "ref": {
+          "zoneId": "thrusters"
+        }
       }
     ]
   },
@@ -23,7 +25,9 @@
         "y": 61,
         "lx": 19,
         "ly": 76,
-        "ref": { "zoneId": "tank" }
+        "ref": {
+          "zoneId": "tank"
+        }
       }
     ]
   },
@@ -37,7 +41,9 @@
         "y": 35,
         "lx": 18,
         "ly": 25,
-        "ref": { "zoneId": "shell" }
+        "ref": {
+          "zoneId": "shell"
+        }
       }
     ]
   },
@@ -51,7 +57,9 @@
         "y": 61.4,
         "lx": 19,
         "ly": 78,
-        "ref": { "zoneId": "joints" }
+        "ref": {
+          "zoneId": "joints"
+        }
       }
     ]
   },
@@ -65,7 +73,41 @@
         "y": 44.2,
         "lx": 76,
         "ly": 29,
-        "ref": { "zoneId": "eye" }
+        "ref": {
+          "zoneId": "eye"
+        }
+      }
+    ]
+  },
+  {
+    "entityId": "weapon-rattler",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/preview/20260919/5a37f4b6b837f6d209a911e1fca050ec11e41b0da36830aac458e7a98443746d.png",
+    "puntos": [
+      {
+        "id": "rattler-cargador-visible",
+        "x": 43,
+        "y": 59,
+        "lx": 20,
+        "ly": 75,
+        "ref": {
+          "field": "Magazine Size"
+        }
+      }
+    ]
+  },
+  {
+    "entityId": "weapon-tempest",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/preview/20260919/51f180b2f6cb06bd5fca1aafb988e065a31a950b1cb9e8e7cf074ba26ca9fa35.png",
+    "puntos": [
+      {
+        "id": "tempest-cargador-visible",
+        "x": 73.5,
+        "y": 79,
+        "lx": 78,
+        "ly": 52,
+        "ref": {
+          "field": "Magazine Size"
+        }
       }
     ]
   }

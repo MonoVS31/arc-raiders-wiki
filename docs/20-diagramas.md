@@ -1,6 +1,6 @@
-# Diagramas animados · fases 1 y 2
+# Diagramas animados · fases 1 a 3
 
-Rama: `feat/diagramas`. Están implementadas la base y la integración ARC. Las fases 3–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
+Rama: `feat/diagramas`. Están implementadas la base, la integración ARC y la de armas/granadas. Las fases 4–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
 
 ## Componentes y datos
 
@@ -50,4 +50,18 @@ ARCCombatPanel muestra una sola instancia del retrato para los cinco ARC con pun
 
 Cierre de fase 2: lint, TypeScript, 126 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. Se comprobó Firefly a 375 y 1366 px, panel debajo/lateral y ausencia de scroll horizontal, selección con Enter entre foto y opciones y el fallback de Hornet. Las pruebas nuevas cubren zona sin ancla, núcleo oculto de Fireball, imagen fallida, tipos de zona y retrato/atribución sin duplicación. El catálogo conserva su hash original. La revisión completa de todas las fichas, anchos y estados de movimiento queda en la fase 6.
 
-Pendiente: las piezas sin ancla y los ARC de [20-diagramas-pendientes.md](20-diagramas-pendientes.md). Las armas, granadas, Leaflet, rutas, proyectos, dossiers y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.
+## Armas y granadas · fase 3
+
+La cabecera de Rattler y Tempest incorpora la imagen en proporción natural, un punto sobre el cargador visible y un panel que lee exclusivamente Magazine Size. Rattler conserva la serie 12 | 16 | 20 | 24 y las cuatro barras I–IV; Tempest conserva su valor 25. La evidencia y las fuentes siguen siendo las del claim original. La cabecera se organiza en una fila de título y otra de imagen/panel, con panel debajo en celular. Las imágenes de los diagramas no heredan el filtro de sombra del retrato anterior.
+
+Sin entrada, la imagen normal de la cabecera permanece intacta. Kettle, Il Toro y Ferro no recibieron un punto tras la revisión: no se identifica un cargador separado con suficiente certeza o la capacidad corresponde al arma sin una pieza inequívoca en esta vista. El resto queda sin posiciones hasta una revisión positiva.
+
+Las granadas no recibieron puntos sobre pasadores, tapas ni carcasas. Los campos existentes describen efecto, daño, radio, retardo, duración, aturdimiento o búsqueda; no relacionan explícitamente esos valores con una pieza visible. Se conserva el visor geométrico existente y sus advertencias, incluido el rechazo de radios inciertos en Wolfpack y Trailblazer.
+
+StatBars agrega un marco compacto decorativo y una entrada/llenado escalonado usando las mismas funciones de escala. WeaponComparison y GrenadeEffectPanel reciben marco y entrada escalonada, conservando controles, números, series, fórmulas y fuentes. Los marcos de estadísticas y controles no tienen escaneo: se evita multiplicar líneas de escaneo en tablas y barras pequeñas. El escaneo sigue en las imágenes con puntos. No se agregó tilt ni parallax.
+
+Las barras siguen siendo aria-hidden: el valor textual original está fuera de la decoración. Movimiento reducido mantiene el valor final y desactiva las entradas y llenados; los marcos continúan pausados por useVisibleAnimations. No se copió ninguna cifra, evidencia, nota o fuente dentro de diagram-hotspots.json.
+
+Cierre de fase 3: lint, TypeScript, 132 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. El hash del catálogo y sus fuentes no cambió. Se comprobó Rattler a 375 y 1366 px sin scroll horizontal, el punto con Enter, la serie original en el panel y el nivel IV del comparador (24). Heavy Fuze conserva max=11.25 en el control de distancia, círculo r=65 en su SVG y la advertencia de impacto no garantizado; no tiene puntos sobre su imagen. La revisión completa con todos los anchos y estados de movimiento se reserva para la fase 6.
+
+Pendiente: las piezas sin ancla y los ARC de [20-diagramas-pendientes.md](20-diagramas-pendientes.md), más las armas/granadas sin una relación pieza-campo revisada. Leaflet, rutas, proyectos, dossiers y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.

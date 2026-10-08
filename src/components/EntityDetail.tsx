@@ -2,6 +2,8 @@ import { numericBarScale } from '../domain/numeric-scale';
 import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
 import { AtlasImage } from './wiki/AtlasImage';
+import { HotspotLayer } from './wiki/HotspotLayer';
+import { diagramFor } from '../domain/diagram-hotspots';
 import { readAtlasData } from '../domain/data-loader';
 import { claimsFor } from '../domain/query';
 import { catalog } from '../domain/catalog';
@@ -41,9 +43,11 @@ export function EntityDetail({
   );
   const pendingLocations = catalog.locations.filter((location) => location.mapId === entity.id);
   const visual = visuals.find((visual) => visual.entityId === entity.id);
+  const entry = ['weapon', 'grenade'].includes(entity.category) ? diagramFor(entity.id) : undefined;
+  const diagram = entry?.puntos.length ? entry : undefined;
   return (
     <article className="detail" aria-labelledby="detail-title">
-      <header className="article-hero">
+      <header className={diagram ? 'article-hero article-hero-diagram' : 'article-hero'}>
         <div>
           <div className="detail-header">
             <span className="eyebrow">{categories[entity.category]} / expediente</span>
@@ -55,14 +59,26 @@ export function EntityDetail({
           </span>
         </div>
         {visual && (
-          <div className="article-visual">
-            <AtlasImage
-              key={visual.url}
-              url={localImage(visual.url)}
-              name={entity.category === 'arc' ? '' : entity.name}
-              id={entity.id}
-              lazy={false}
+          <div className={diagram ? 'article-visual article-visual-diagram' : 'article-visual'}>
+            <HotspotLayer
+              key={entity.id}
+              diagram={diagram}
+              fallback={
+                <AtlasImage
+                  key={visual.url}
+                  url={localImage(visual.url)}
+                  name={entity.category === 'arc' ? '' : entity.name}
+                  id={entity.id}
+                  lazy={false}
+                />
+              }
             />
+            {diagram && (
+              <p className="diagram-attribution">
+                Imagen del catálogo existente · Assets © Embark Studios.{' '}
+                <Sources ids={[visual.sourceId]} label="Procedencia de la imagen" />
+              </p>
+            )}
           </div>
         )}
       </header>
