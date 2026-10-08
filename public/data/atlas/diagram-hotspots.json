@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "entityId": "arc-wasp",
+    "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/wasp.webp",
+    "puntos": [
+      {
+        "id": "wasp-propulsor-visible",
+        "x": 46,
+        "y": 39.5,
+        "lx": 70,
+        "ly": 21,
+        "ref": { "zoneId": "thrusters" }
+      }
+    ]
+  },
+  {
+    "entityId": "arc-firefly",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/images/firefly.webp",
+    "puntos": [
+      {
+        "id": "firefly-deposito-visible",
+        "x": 48.7,
+        "y": 61,
+        "lx": 19,
+        "ly": 76,
+        "ref": { "zoneId": "tank" }
+      }
+    ]
+  },
+  {
+    "entityId": "arc-fireball",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/images/fireball.webp",
+    "puntos": [
+      {
+        "id": "fireball-carcasa-visible",
+        "x": 49,
+        "y": 35,
+        "lx": 18,
+        "ly": 25,
+        "ref": { "zoneId": "shell" }
+      }
+    ]
+  },
+  {
+    "entityId": "arc-bombardier",
+    "imageUrl": "https://static.metaforge.app/arc-raiders/images/bombardier.webp",
+    "puntos": [
+      {
+        "id": "bombardier-articulacion-visible",
+        "x": 37.6,
+        "y": 61.4,
+        "lx": 19,
+        "ly": 78,
+        "ref": { "zoneId": "joints" }
+      }
+    ]
+  },
+  {
+    "entityId": "arc-leaper",
+    "imageUrl": "https://unhbvkszwhczbjxgetgk.supabase.co/storage/v1/object/public/images/arc-raiders/images/bison.webp",
+    "puntos": [
+      {
+        "id": "leaper-ojo-visible",
+        "x": 49.2,
+        "y": 44.2,
+        "lx": 76,
+        "ly": 29,
+        "ref": { "zoneId": "eye" }
+      }
+    ]
+  }
+]

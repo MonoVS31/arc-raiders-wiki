@@ -22,7 +22,8 @@ import { StatBars } from './StatBars';
 interface HotspotProps {
   diagram: Diagram | undefined;
   fallback: ReactNode;
-  selectedId?: string;
+  selectedId?: string | null;
+  panelContent?: ReactNode;
   onSelect?: (point: DiagramPoint) => void;
   renderPanel?: (data: ResolvedDiagramPoint, point: DiagramPoint) => ReactNode;
 }
@@ -46,6 +47,7 @@ function DiagramImage({
   selectedId,
   onSelect,
   renderPanel,
+  panelContent,
 }: HotspotProps & { diagram: Diagram }) {
   const [internalId, setInternalId] = useState(diagram.puntos[0]?.id ?? '');
   const [imageState, setImageState] = useState<'loading' | 'ready' | 'failed'>('loading');
@@ -55,7 +57,10 @@ function DiagramImage({
   const panelId = useId();
   const entity = catalog.entities.find((entity) => entity.id === diagram.entityId);
   const selected =
-    diagram.puntos.find((point) => point.id === (selectedId ?? internalId)) ?? diagram.puntos[0];
+    selectedId === null
+      ? undefined
+      : (diagram.puntos.find((point) => point.id === (selectedId ?? internalId)) ??
+        diagram.puntos[0]);
   const data = selected ? resolveDiagramPoint(diagram.entityId, selected) : null;
   const editor = diagramEditorEnabled();
   const loaded = useCallback((image: HTMLImageElement | null) => {
@@ -181,8 +186,13 @@ function DiagramImage({
         )}
       </div>
       <div id={panelId} className="diagram-panel" aria-live="polite" aria-atomic="true">
-        <div key={selected?.id ?? 'sin-puntos'} className="diagram-panel-entry">
-          {!data || !selected ? (
+        <div
+          key={selected?.id ?? 'sin-puntos'}
+          className={panelContent !== undefined ? undefined : 'diagram-panel-entry'}
+        >
+          {panelContent !== undefined ? (
+            panelContent
+          ) : !data || !selected ? (
             <p>Pendiente de verificar</p>
           ) : renderPanel ? (
             renderPanel(data, selected)

@@ -1,6 +1,6 @@
-# Diagramas animados · fase 1
+# Diagramas animados · fases 1 y 2
 
-Rama: `feat/diagramas`. Solo está implementada la base. Las integraciones de las fases 2–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
+Rama: `feat/diagramas`. Están implementadas la base y la integración ARC. Las fases 3–6 requieren aprobación del usuario después de cada commit. No se integra a main ni se publica en este cierre.
 
 ## Componentes y datos
 
@@ -9,7 +9,7 @@ Rama: `feat/diagramas`. Solo está implementada la base. Las integraciones de la
 - Los números del panel provienen del claim original y de `StatBars`; las barras animan desde cero hasta su escala original. Una zona ARC muestra sus textos, condición, evidencia, confianza y fuentes originales. No se deducen porcentajes de resistencia ni medidas.
 - Sin entrada o con `puntos: []`, el componente devuelve el fallback sin ningún wrapper, marco o efecto adicional. Si falla una imagen con puntos, los controles superpuestos se retiran y el panel conserva los datos y fuentes.
 
-El registro `public/data/atlas/diagram-hotspots.json` empieza como `[]`. No hay fichas con posiciones aprobadas en esta fase. Las coordenadas usadas en tests son sintéticas y no se incluyen en los datos del sitio.
+El registro `public/data/atlas/diagram-hotspots.json` se creó vacío en la fase 1. La fase 2 incorpora cinco referencias ARC tras inspeccionar las imágenes locales: Wasp, Firefly, Fireball, Bombardier y Leaper. Las coordenadas sintéticas usadas en los tests de la base no se incluyen en los datos del sitio. Ver [piezas y pendientes](20-diagramas-pendientes.md).
 
 Cada entrada admite únicamente `entityId`, `imageUrl` y `puntos`. Cada punto admite `id`, `x`, `y`, `lx`, `ly` y `ref`. Los cuatro porcentajes son finitos y van de 0 a 100. `ref` contiene exclusivamente `{ zoneId }` o `{ field }`:
 
@@ -26,7 +26,7 @@ Disponible exclusivamente con `import.meta.env.DEV` y `?editar-diagrama=1`. Sobr
 
 Para cargar el primer punto puede montarse una entrada con imagen existente y `puntos: []`: el editor funciona, sin inventar una referencia. El JSON se edita a mano; el editor no escribe datos automáticamente. En modo edición, los clics atraviesan los hotspots para registrar coordenadas sobre toda la imagen; los botones mantienen el acceso por teclado.
 
-La URL por sí sola no monta diagramas en las fichas actuales: esa integración empieza en la fase 2. El editor no aparece en producción aunque se conserve el parámetro.
+La fase 2 monta el componente en ARCZoneExplorer cuando hay una entrada con puntos. El parámetro habilita el editor en esas instancias de desarrollo; no aparece en producción aunque se conserve en la URL.
 
 ## Identidad, animación y accesibilidad
 
@@ -40,4 +40,14 @@ Cierre de fase 1: lint, TypeScript, 120 pruebas, data:validate y build en verde;
 
 Las pruebas cubren el JSON y sus referencias, fallback idéntico, controles nativos enfocables, selección controlada, datos/fuentes originales, proporción de imagen, imagen fallida, reduced motion, pausa por visibilidad y editor en desarrollo/producción, incluyendo entrada vacía y fallo del portapapeles.
 
-Pendiente de la fase 2: integrar ARCZoneExplorer, revisar imágenes y cargar solo piezas inequívocas; registrar los ARC pendientes. Las armas, granadas, Leaflet, rutas, proyectos, dossiers y revisión a cuatro anchos se mantienen para sus fases correspondientes. No se agregaron dependencias, posiciones reales, datos de detección, extracciones, cotas ni curvas de nivel.
+## Integración ARC · fase 2
+
+Las referencias de foto se sincronizan con zone-options y zone-detail mediante una única selección de zona. Elegir una opción sin ancla deja todos los puntos de la foto sin seleccionar; el panel conserva el dato original y aclara que la posición en ese retrato está pendiente. Los puntos y las opciones se comprobaron con Enter en el navegador.
+
+Los esquemas drone-four y shell-core conservan sus trazados y posiciones, ahora con marco, pulso y colores por tokens. El layout components conserva su lista de piezas dentro del marco: no se inventó una anatomía SVG. Débil, protección, sin blindaje y desconocido mantienen texto explícito y sus tokens. El panel tiene una única región aria-live; la entrada no se duplica entre el contenedor y zone-detail.
+
+ARCCombatPanel muestra una sola instancia del retrato para los cinco ARC con puntos. La atribución y la procedencia de la imagen quedan junto al diagrama. Sin puntos se conserva el retrato anterior. Una imagen fallida no elimina las opciones, condiciones ni fuentes. Se mantienen las tablas de anatomía no corroboradas y los reportes posibles; no se crean barras de resistencia sin datos adecuados.
+
+Cierre de fase 2: lint, TypeScript, 126 pruebas, data:validate y build en verde, con 167 fichas prerenderizadas. Se comprobó Firefly a 375 y 1366 px, panel debajo/lateral y ausencia de scroll horizontal, selección con Enter entre foto y opciones y el fallback de Hornet. Las pruebas nuevas cubren zona sin ancla, núcleo oculto de Fireball, imagen fallida, tipos de zona y retrato/atribución sin duplicación. El catálogo conserva su hash original. La revisión completa de todas las fichas, anchos y estados de movimiento queda en la fase 6.
+
+Pendiente: las piezas sin ancla y los ARC de [20-diagramas-pendientes.md](20-diagramas-pendientes.md). Las armas, granadas, Leaflet, rutas, proyectos, dossiers y revisión completa a cuatro anchos permanecen en sus fases correspondientes. No se agregaron dependencias, detección, extracciones, cotas ni curvas de nivel.

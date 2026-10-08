@@ -9,6 +9,69 @@
   .diagram-layout > * {
     min-width: 0;
   }
+  .arc-schematic-frame > .diagram-reveal {
+    position: relative;
+    inset: auto;
+    pointer-events: auto;
+  }
+  .arc-schematic-frame .zone-diagram {
+    max-width: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .arc-schematic-frame .diagram-orientation {
+    font-family: var(--font-family-mono);
+  }
+  .arc-schematic-frame .zone-point {
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .arc-schematic-frame .zone-point[aria-pressed='true']::after {
+    inset: auto;
+    box-shadow: none;
+    border: var(--diagram-border-width) solid currentColor;
+    animation: diagram-pulse var(--duration-2000) ease-out infinite;
+  }
+  .arc-schematic-frame .zone-point.unarmored {
+    color: var(--color-secondary);
+  }
+  .arc-schematic-frame .zone-point.unknown {
+    color: var(--color-evidence-unknown);
+  }
+  .diagram-components {
+    padding: var(--space-20);
+  }
+  .diagram-components .zone-options {
+    margin: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .arc-zones .zone-option.weak .zone-kind {
+    color: var(--color-weak-point);
+  }
+  .arc-zones .zone-option.unarmored .zone-kind {
+    color: var(--color-secondary);
+  }
+  .arc-zones .zone-option.unknown .zone-kind {
+    color: var(--color-evidence-unknown);
+  }
+  .arc-zones .zone-detail.unarmored {
+    border-color: var(--color-secondary);
+  }
+  .arc-zones .zone-detail.unknown {
+    border-color: var(--color-evidence-unknown);
+  }
+  .arc-zones .diagram-panel .zone-detail {
+    padding: var(--space-12);
+  }
+  .arc-zones .diagram-panel h5 {
+    font-family: var(--font-family-display);
+  }
+  .diagram-attribution {
+    font: var(--font-size-help)/var(--line-height-help) var(--font-family-body);
+    color: var(--color-text-muted);
+  }
   .diagram-frame {
     position: relative;
     isolation: isolate;

@@ -1,5 +1,6 @@
 import { localImage } from '../domain/images';
 import { StatBars } from './wiki/StatBars';
+import { diagramFor } from '../domain/diagram-hotspots';
 import { readAtlasData } from '../domain/data-loader';
 import { lazy, Suspense, useState } from 'react';
 import { catalog } from '../domain/catalog';
@@ -158,7 +159,7 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
   return (
     <section className="combat-tool">
       <h3>Preparar el combate</h3>
-      {portrait && (
+      {portrait && !diagramFor(entity.id)?.puntos.length && (
         <figure className="arc-portrait">
           {imageFailed ? (
             <p>

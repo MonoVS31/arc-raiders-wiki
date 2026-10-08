@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import { DiagramFrame } from './wiki/DiagramFrame';
+import { HotspotLayer } from './wiki/HotspotLayer';
+import { diagramFor, type DiagramPoint } from '../domain/diagram-hotspots';
+import { readAtlasData } from '../domain/data-loader';
 import { zonesForARC, type ARCZone } from '../domain/arc-zones';
 import { WikiLink, Sources } from '../app/WikiContext';
 import { arcMapReports } from '../domain/arc-links';
@@ -10,20 +14,38 @@ const kinds = {
 };
 export default function ARCZoneExplorer({ entityId }: { entityId: string }) {
   const enemy = zonesForARC(entityId);
+  const diagram = diagramFor(entityId);
+  const photo = diagram?.puntos.length ? diagram : undefined;
   const [selectedId, setSelectedId] = useState(enemy?.zones[0]?.id ?? '');
+  const [pointId, setPointId] = useState<string | null>(null);
+  const titleId = useId(),
+    detailId = useId();
   if (!enemy) return null;
   const selected = enemy.zones.find((zone) => zone.id === selectedId) ?? enemy.zones[0]!;
-  const select = (zone: ARCZone) => setSelectedId(zone.id);
+  const pointMatches = (point: DiagramPoint) =>
+    'zoneId' in point.ref && point.ref.zoneId === selected.id;
+  const selectedPoint =
+    photo?.puntos.find((point) => point.id === pointId && pointMatches(point)) ??
+    photo?.puntos.find(pointMatches);
+  const select = (zone: ARCZone) => {
+    setSelectedId(zone.id);
+    setPointId(null);
+  };
+  const selectPoint = (point: DiagramPoint) => {
+    if ('zoneId' in point.ref) setSelectedId(point.ref.zoneId);
+    setPointId(point.id);
+  };
   const diagramButton = (zone: ARCZone, position: string, label = zone.label) => (
     <button
       type="button"
       key={position}
-      className={`zone-point ${position} ${zone.kind}`}
-      aria-label={label}
+      className={`zone-point diagram-hotspot ${position} ${zone.kind}`}
+      aria-label={`${label} · ${kinds[zone.kind]}`}
       aria-pressed={selected.id === zone.id}
+      aria-controls={detailId}
       onClick={() => select(zone)}
     >
-      <span aria-hidden="true">●</span>
+      <span aria-hidden="true" />
     </button>
   );
   const thruster = (front: boolean) =>
@@ -33,15 +55,63 @@ export default function ARCZoneExplorer({ entityId }: { entityId: string }) {
   const weak = enemy.zones.find((zone) => zone.kind === 'weak')!;
   const protection = enemy.zones.find((zone) => zone.kind === 'protected');
   const reports = arcMapReports.find((report) => report.entityId === entityId)?.maps ?? [];
-  return (
-    <section className="arc-zones" aria-labelledby="zones-title">
-      <h4 id="zones-title">Zonas y condiciones de combate</h4>
-      <p className="muted">
-        Elegí una pieza para ver su función y cuándo queda expuesta. Los dibujos son orientativos y
-        no reproducen las zonas exactas de impacto.
-      </p>
+  const portraits = readAtlasData<{
+    sourceId: string;
+    portraits: { entityId: string; imageUrl: string }[];
+  }>('arc-portraits.json');
+  const visuals =
+    readAtlasData<{ entityId: string; url: string; sourceId: string }[]>('entity-visuals.json');
+  const imageSource = portraits.portraits.some(
+    (image) => image.entityId === entityId && image.imageUrl === photo?.imageUrl,
+  )
+    ? portraits.sourceId
+    : visuals.find((image) => image.entityId === entityId && image.url === photo?.imageUrl)
+        ?.sourceId;
+  const options = (
+    <div className="zone-options" aria-label="Piezas del ARC">
+      {enemy.zones.map((zone) => (
+        <button
+          type="button"
+          key={zone.id}
+          className={`zone-option ${zone.kind}`}
+          aria-pressed={selected.id === zone.id}
+          aria-controls={detailId}
+          onClick={() => select(zone)}
+        >
+          <span className="zone-kind">{kinds[zone.kind]}</span>
+          <strong>{zone.label}</strong>
+        </button>
+      ))}
+    </div>
+  );
+  const detail = (
+    <div
+      id={detailId}
+      className={`zone-detail diagram-panel-entry ${selected.kind}`}
+      key={selected.id}
+    >
+      <span className="zone-kind">{kinds[selected.kind]}</span>
+      <h5>{selected.label}</h5>
+      <span className={`confidence ${selected.confidence.replaceAll(' ', '-')}`}>
+        {selected.confidence}
+      </span>
+      {selected.kind === 'unknown' && <p className="unknown">Pendiente de verificar</p>}
+      {photo && !selectedPoint && (
+        <p className="muted">Posición en este retrato: Pendiente de verificar.</p>
+      )}
+      {selected.condition && (
+        <p className="zone-condition">
+          <strong>Cuándo:</strong> {selected.condition}
+        </p>
+      )}
+      <p>{selected.description}</p>
+      <Sources ids={enemy.sourceIds} />
+    </div>
+  );
+  const schematic = (
+    <>
       {enemy.layout === 'drone-four' && (
-        <div className="zone-diagram drone-diagram">
+        <div className="zone-diagram drone-diagram diagram-reveal">
           <span className="diagram-orientation">FRENTE ↑</span>
           <svg viewBox="0 0 300 190" aria-hidden="true">
             <path
@@ -55,7 +125,7 @@ export default function ARCZoneExplorer({ entityId }: { entityId: string }) {
               width="60"
               height="60"
               rx="20"
-              fill="#263d31"
+              fill="var(--color-surface-raised)"
               stroke="currentColor"
             />
           </svg>
@@ -72,42 +142,65 @@ export default function ARCZoneExplorer({ entityId }: { entityId: string }) {
         </div>
       )}
       {enemy.layout === 'shell-core' && (
-        <div className="zone-diagram shell-diagram">
+        <div className="zone-diagram shell-diagram diagram-reveal">
           <svg viewBox="0 0 300 190" aria-hidden="true">
-            <circle cx="150" cy="95" r="72" fill="#203329" stroke="#bda277" strokeWidth="12" />
-            <circle cx="150" cy="95" r="28" fill="#d9ed9933" stroke="#d9ed99" />
+            <circle
+              cx="150"
+              cy="95"
+              r="72"
+              fill="var(--color-surface-raised)"
+              stroke="var(--color-armor)"
+              strokeWidth="12"
+            />
+            <circle
+              cx="150"
+              cy="95"
+              r="28"
+              fill="var(--color-weak-point-glow)"
+              stroke="var(--color-weak-point)"
+            />
           </svg>
           {protection && diagramButton(protection, 'shell-point', 'Carcasa o blindaje')}
-          {diagramButton(weak, 'center-point', 'Núcleo cuando queda expuesto')}
+          {weak && diagramButton(weak, 'center-point', 'Núcleo cuando queda expuesto')}
         </div>
       )}
-      <div className="zone-options" aria-label="Piezas del ARC">
-        {enemy.zones.map((zone) => (
-          <button
-            type="button"
-            key={zone.id}
-            className={`zone-option ${zone.kind}`}
-            aria-pressed={selected.id === zone.id}
-            onClick={() => select(zone)}
-          >
-            <span className="zone-kind">{kinds[zone.kind]}</span>
-            <strong>{zone.label}</strong>
-          </button>
-        ))}
-      </div>
-      <div className={`zone-detail ${selected.kind}`} key={selected.id} aria-live="polite">
-        <h5>{selected.label}</h5>
-        <span className={`confidence ${selected.confidence.replaceAll(' ', '-')}`}>
-          {selected.confidence}
-        </span>
-        {selected.condition && (
-          <p className="zone-condition">
-            <strong>Cuándo:</strong> {selected.condition}
-          </p>
-        )}
-        <p>{selected.description}</p>
-        <Sources ids={enemy.sourceIds} />
-      </div>
+      {enemy.layout === 'components' && (
+        <div className="diagram-components diagram-reveal">{options}</div>
+      )}
+    </>
+  );
+  return (
+    <section className="arc-zones" aria-labelledby={titleId}>
+      <h4 id={titleId}>Zonas y condiciones de combate</h4>
+      <p className="muted">
+        Elegí una pieza para ver su función y cuándo queda expuesta.
+        {!photo && ' Los dibujos son orientativos y no reproducen las zonas exactas de impacto.'}
+      </p>
+      {photo ? (
+        <>
+          <HotspotLayer
+            diagram={photo}
+            selectedId={selectedPoint?.id ?? null}
+            onSelect={selectPoint}
+            panelContent={detail}
+            fallback={null}
+          />
+          {imageSource && (
+            <p className="diagram-attribution">
+              Referencia visual vía MetaForge · Assets © Embark Studios.{' '}
+              <Sources ids={[imageSource]} label="Procedencia de la imagen" />
+            </p>
+          )}
+        </>
+      ) : (
+        <div className="diagram-layout">
+          <DiagramFrame className="arc-schematic-frame">{schematic}</DiagramFrame>
+          <div className="diagram-panel" aria-live="polite" aria-atomic="true">
+            {detail}
+          </div>
+        </div>
+      )}
+      {(photo || enemy.layout !== 'components') && options}
       {enemy.resistances.length > 0 && (
         <details className="anatomy-table">
           <summary>Tabla de anatomía comunitaria · valores sin corroborar</summary>
