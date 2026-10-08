@@ -146,7 +146,11 @@ function DiagramImage({
                       <span
                         className="diagram-label"
                         aria-hidden="true"
-                        style={{ left: `${point.lx}%`, top: `${point.ly}%` }}
+                        style={{
+                          left: `${point.lx}%`,
+                          top: `${point.ly}%`,
+                          maxWidth: `${Math.min(42, point.lx * 2, (100 - point.lx) * 2)}%`,
+                        }}
                       >
                         {resolved.label}
                       </span>

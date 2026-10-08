@@ -1,4 +1,4 @@
-# Posiciones de diagramas ARC · fase 2
+# Posiciones y recorridos pendientes · cierre de fase 6
 
 Las posiciones son anclas editoriales en porcentajes de la imagen original, no geometría ni coordenadas de impacto del juego. Cada referencia lee label, kind, confidence, condition, description y fuentes de `arc-zones.json`. No se cambió la evidencia de ningún dato.
 
@@ -63,3 +63,66 @@ Los seis mapas con snapshot reciben marco, escaneo, pulso de selección y guía 
 Los 83 registros de rutas son metadatos de obtención; ninguno tiene geometría ni orden de coordenadas respaldado para dibujar un recorrido. No se enlazan cajas, ARC u objetivos de misión por orden arbitrario. Para cada plano, el recorrido cartográfico continúa como Pendiente de verificar, aunque su método de obtención conserve su evidencia original.
 
 Para cargar un trazo futuro: fuente que respalde el orden, mapa, piso e IDs de reportes existentes. El esquema admite traces, pero el JSON no fue modificado. Para etiquetas de región, MapConfig reserva lat, lng, texto y fuente; regionLabels está vacío por ausencia y no tiene representación nueva en esta fase.
+
+
+## Inventario completo sin puntos nuevos · fase 6
+
+Los 20 ARC sin ancla están enumerados arriba, junto con sus motivos y esquemas conservados. Las zonas ocultas o no calibradas de los cinco ARC con foto también permanecen pendientes; se pueden consultar en las opciones existentes.
+
+### Armas: 24 fichas
+
+Kettle, Il Toro y Ferro tienen los motivos particulares indicados arriba. Las otras armas disponibles necesitan una revisión positiva de una pieza visible relacionada con un claim existente. Las anunciadas no reciben posiciones por suposición.
+
+| Ficha | ID | Disponibilidad original |
+|---|---|---|
+| Kettle | weapon-kettle | disponible |
+| Arpeggio | weapon-arpeggio | disponible |
+| Bettina | weapon-bettina | disponible |
+| Ferro | weapon-ferro | disponible |
+| Renegade | weapon-renegade | disponible |
+| Aphelion | weapon-aphelion | disponible |
+| Stitcher | weapon-stitcher | disponible |
+| Canto | weapon-canto | disponible |
+| Bobcat | weapon-bobcat | disponible |
+| Il Toro | weapon-il-toro | disponible |
+| Vulcano | weapon-vulcano | disponible |
+| Dolabra | weapon-dolabra | disponible |
+| Hairpin | weapon-hairpin | disponible |
+| Burletta | weapon-burletta | disponible |
+| Venator | weapon-venator | disponible |
+| Anvil | weapon-anvil | disponible |
+| Torrente | weapon-torrente | disponible |
+| Osprey | weapon-osprey | disponible |
+| Jupiter | weapon-jupiter | disponible |
+| Rascal | weapon-rascal | disponible |
+| Hullcracker | weapon-hullcracker | disponible |
+| Equalizer | weapon-equalizer | disponible |
+| Stiletto | weapon-stiletto | anunciado |
+| Bantam | weapon-bantam | anunciado |
+
+### Granadas: 16 fichas
+
+Todas carecen de una relación pieza visible–campo en los claims actuales. Se conservan valores y advertencias; no se ancla el efecto a una parte del modelo.
+
+| Ficha | ID |
+|---|---|
+| Light Impact Grenade | grenade-light-impact-grenade |
+| Heavy Fuze Grenade | grenade-heavy-fuze-grenade |
+| Blaze Grenade | grenade-blaze-grenade |
+| Gas Grenade | grenade-gas-grenade |
+| Showstopper | grenade-showstopper |
+| Snap Blast Grenade | grenade-snap-blast-grenade |
+| Seeker Grenade | grenade-seeker-grenade |
+| Shrapnel Grenade | grenade-shrapnel-grenade |
+| Trigger 'Nade | grenade-trigger-nade |
+| Trailblazer | grenade-trailblazer |
+| Wolfpack | grenade-wolfpack |
+| Lure Grenade | grenade-lure-grenade |
+| Li'l Smoke Grenade | grenade-li-l-smoke-grenade |
+| Smoke Grenade | grenade-smoke-grenade |
+| Tagging Grenade | grenade-tagging-grenade |
+| Yank Grenade | grenade-yank-grenade |
+
+### Planos y regiones
+
+Los 83 planos del [registro de rutas](../public/data/atlas/blueprint-routes.json) permanecen pendientes de geometría y orden respaldados por una fuente. El dato de obtención conserva su propia evidencia: esta falta no invalida ni eleva esa evidencia. Ningún mapa tiene etiquetas de región con coordenadas y fuente; el campo opcional sigue vacío por ausencia.

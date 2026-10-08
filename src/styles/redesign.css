@@ -373,6 +373,7 @@
   .diagram-label {
     position: absolute;
     transform: translate(-50%, -50%);
+    width: max-content;
     max-width: 42%;
     padding: var(--space-4);
     background: var(--color-background);

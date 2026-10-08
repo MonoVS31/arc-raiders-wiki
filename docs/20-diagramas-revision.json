@@ -1,0 +1,2040 @@
+{
+  "date": "2026-10-08",
+  "reducedMotionMethod": "Fixture local temporal: matchMedia y activación de las reglas CSS de prefers-reduced-motion; sin cambiar el sistema operativo.",
+  "checks": [
+    {
+      "entity": "weapon-rattler",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 24,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 6,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 375,
+      "reduced": false,
+      "scrollWidth": 360,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 24,
+      "reducedFrames": 24,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 6,
+      "reducedFrames": 6,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 375,
+      "reduced": true,
+      "scrollWidth": 360,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 24,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 6,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 900,
+      "reduced": false,
+      "scrollWidth": 885,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 24,
+      "reducedFrames": 24,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 6,
+      "reducedFrames": 6,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 900,
+      "reduced": true,
+      "scrollWidth": 885,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 24,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 6,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 1024,
+      "reduced": false,
+      "scrollWidth": 1009,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 24,
+      "reducedFrames": 24,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 6,
+      "reducedFrames": 6,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 1024,
+      "reduced": true,
+      "scrollWidth": 1009,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 24,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan",
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 22,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 6,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 2,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 0,
+      "scan": [
+        "diagram-scan"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 1366,
+      "reduced": false,
+      "scrollWidth": 1351,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "weapon-rattler",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-tempest",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 24,
+      "reducedFrames": 24,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-wasp",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-firefly",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-fireball",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-bombardier",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-leaper",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-hornet",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-tick",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "arc-surveyor",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 3,
+      "reducedFrames": 3,
+      "scan": [
+        "none",
+        "none"
+      ]
+    },
+    {
+      "entity": "weapon-kettle",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 22,
+      "reducedFrames": 22,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "grenade-heavy-fuze-grenade",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 6,
+      "reducedFrames": 6,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "project-trophy-display",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "blueprint-hullcracker-blueprint",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 2,
+      "reducedFrames": 2,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "container-weapon-case",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": []
+    },
+    {
+      "entity": "map-dam-battlegrounds",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 1,
+      "reducedFrames": 1,
+      "scan": [
+        "none"
+      ]
+    },
+    {
+      "entity": "home",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    },
+    {
+      "entity": "gallery",
+      "viewport": 1366,
+      "reduced": true,
+      "scrollWidth": 1351,
+      "frames": 0,
+      "reducedFrames": 0,
+      "scan": []
+    }
+  ],
+  "finalLabelChecks": [
+    {
+      "id": "weapon-rattler",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-wasp",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-firefly",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-fireball",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-leaper",
+      "width": 375,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-wasp",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-firefly",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-fireball",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "arc-leaper",
+      "width": 375,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 360,
+      "viewport": 375
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-wasp",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-firefly",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-fireball",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-leaper",
+      "width": 900,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-wasp",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-firefly",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-fireball",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "arc-leaper",
+      "width": 900,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 885,
+      "viewport": 900
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-wasp",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-firefly",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-fireball",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-leaper",
+      "width": 1024,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-wasp",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-firefly",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-fireball",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "arc-leaper",
+      "width": 1024,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1009,
+      "viewport": 1024
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-wasp",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-firefly",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-fireball",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-leaper",
+      "width": 1366,
+      "reduced": false,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "weapon-rattler",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "weapon-tempest",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-wasp",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-firefly",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-fireball",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-bombardier",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    },
+    {
+      "id": "arc-leaper",
+      "width": 1366,
+      "reduced": true,
+      "clipped": [],
+      "pageWidth": 1351,
+      "viewport": 1366
+    }
+  ]
+}

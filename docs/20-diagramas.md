@@ -1,11 +1,11 @@
-# Diagramas animados · fases 1 a 5
+# Diagramas animados · fases 1 a 6
 
-Rama: `feat/diagramas`. Están implementadas la base y las integraciones ARC, armas/granadas, mapas y resto del sitio. La fase 6 requiere aprobación del usuario antes de continuar. No se integra a main ni se publica en este cierre.
+Rama: `feat/diagramas`. Están implementadas y revisadas las seis fases: base, ARC, armas/granadas, mapas, resto del sitio y revisión final. No se integra a main ni se publica en este cierre; queda pendiente la aprobación del usuario.
 
 ## Componentes y datos
 
 - `DiagramFrame`: esquinas opuestas, escaneo horizontal de ida y vuelta, entrada una sola vez al entrar en pantalla y escalonado de 150 ms por punto. La entrada usa IntersectionObserver; no hay callbacks de scroll ni filtros nuevos.
-- `HotspotLayer`: imagen en su proporción natural, puntos y etiquetas en porcentajes de esa superficie, líneas guía y botones nativos con nombre accesible, aria-pressed y aria-controls. El panel lateral conserva un contenedor aria-live="polite" y pasa debajo hasta 900 px. `selectedId`, `onSelect` y `renderPanel` permiten sincronizarlo con los controles ARC existentes en la próxima fase.
+- `HotspotLayer`: imagen en su proporción natural, puntos y etiquetas en porcentajes de esa superficie, líneas guía y botones nativos con nombre accesible, aria-pressed y aria-controls. El panel lateral conserva un contenedor aria-live="polite" y pasa debajo hasta 900 px. `selectedId`, `onSelect` y `renderPanel` lo sincronizan con los controles ARC existentes.
 - Los números del panel provienen del claim original y de `StatBars`; las barras animan desde cero hasta su escala original. Una zona ARC muestra sus textos, condición, evidencia, confianza y fuentes originales. No se deducen porcentajes de resistencia ni medidas.
 - Sin entrada o con `puntos: []`, el componente devuelve el fallback sin ningún wrapper, marco o efecto adicional. Si falla una imagen con puntos, los controles superpuestos se retiran y el panel conserva los datos y fuentes.
 
@@ -89,3 +89,33 @@ Las imágenes principales sin puntos reciben DiagramFrame como fallback de Entit
 Los nuevos efectos usan únicamente transform y opacity y los tokens existentes. Al enfocar un control se elimina la espera de su entrada; reduced motion mantiene todo visible y sin animación. Los marcos ya están incluidos en la pausa por visibilidad. No se agregaron posiciones, datos, dependencias ni rutas.
 
 Cierre de fase 5: lint, TypeScript, 142 pruebas, data:validate y build en verde; 381 imágenes verificadas y 167 fichas prerenderizadas. El catálogo conserva su hash original. Las pruebas cubren cambio de etapa, navegación al mapa desde un plano, fallo y reintento del dossier, campos de contenedores, imagen sin puntos y ausencia de capas duplicadas en portada y galería. Se comprobaron proyectos, planos, contenedores y portada a 375 px sin desborde horizontal. Quedan pendientes la revisión completa a 375, 900, 1024 y 1366 px con ambos estados de movimiento y la actualización final del README en la fase 6.
+
+## Revisión final · fase 6
+
+Revisión del 8 de octubre de 2026, sin actualizar el snapshot de investigación ni inferir cambios de parche. Se corrigió el ancho intrínseco de las etiquetas para evitar que Cargador se parta en Tempest a 375 px. Su ancho máximo se limita también por la distancia del ancla a los bordes de la imagen. No cambian x, y, lx, ly ni las referencias del registro.
+
+Se comprobaron 18 variantes a 375, 900, 1024 y 1366 px, en movimiento normal y reducido: las siete fichas con puntos; Hornet, Tick y Surveyor para los tres fallbacks; Kettle sin puntos; Heavy Fuze Grenade; Trophy Display; Hullcracker Blueprint; Weapon Case; Dam Battlegrounds; portada y galería de armas. Las 144 comprobaciones no presentaron scroll horizontal. Tras ajustar las etiquetas se repitieron las siete imágenes en los ocho estados: 56 comprobaciones adicionales, sin etiquetas fuera de sus límites horizontales. Ver [registro de revisión](20-diagramas-revision.json).
+
+La API del navegador no ofrece emulación de media features. Para el estado reducido se usó una página local temporal que devuelve la preferencia en matchMedia antes de iniciar React y activa las reglas CSS correspondientes, manteniendo las consultas de ancho normales. Todos los marcos montados llevaron data-reduced-motion y los escaneos tuvieron animation-name: none. Se verificaron además el pulso y la entrada del panel desactivados y las cuatro barras de Rattler visibles con sus escalas finales. La página temporal se retiró del repositorio y no forma parte del build. Esta prueba emula la preferencia en la aplicación; no certifica una configuración de accesibilidad del sistema operativo.
+
+Con teclado se comprobó Firefly: el punto selecciona Depósito amarillo; la opción de propulsores protegidos apaga la selección de foto y anuncia su posición pendiente; el punto vuelve a sincronizar el panel. Se conservaron condición, evidencia y fuentes. El panel se ubicó lateralmente a 1366 px y debajo a 375 px. Se comprobó también la pausa de los marcos fuera de pantalla.
+
+Rattler conserva 12 | 16 | 20 | 24; el comparador en nivel IV muestra 24. Dam con el foco de Hullcracker conserva la misión The Major's Footlocker, la evidencia posible y el aviso de que no es un punto de aparición del plano. Centrar mapa y zoom mantienen tiles y coordenadas; el mapa no recibe transformación. Con el marcador dentro de la superficie aparece el pulso y la guía hacia el reporte en escritorio; la guía se oculta en celular. No se dibuja una ruta inexistente.
+
+Lint, TypeScript, las 142 pruebas, data:validate y build pasaron después del ajuste final. Las pruebas de prerender verifican el HTML factual, evidencia, notas y fuentes de las 167 entidades. Se comprobaron además los 167 HTML generados, sus canonicals, metadatos y PNG. En la vista de producción se abrieron /fichas/weapon-rattler/ y /fichas/map-dam-battlegrounds/?blueprint=blueprint-hullcracker-blueprint: cargan imágenes locales y datos relativos, conservan el foco y no muestran editor. El presupuesto de entrada pasó; el chunk de arranque mide 4,48 kB, 2,15 kB gzip. El catálogo y el snapshot conservan sus hashes.
+
+### Inventario final
+
+| Ficha con puntos | ID | Referencia original |
+|---|---|---|
+| Wasp | arc-wasp | thrusters |
+| Firefly | arc-firefly | tank |
+| Fireball | arc-fireball | shell |
+| Bombardier | arc-bombardier | joints |
+| Leaper | arc-leaper | eye |
+| Rattler | weapon-rattler | Magazine Size |
+| Tempest | weapon-tempest | Magazine Size |
+
+Hay siete entradas y siete puntos sobre imagen. Los botones de los esquemas SVG previos son orientativos y no representan posiciones nuevas sobre retratos. Los otros 20 ARC, 24 armas y 16 granadas siguen sin anclas nuevas por los motivos documentados en [pendientes](20-diagramas-pendientes.md). Los 83 planos siguen sin trazos cartográficos respaldados; las etiquetas de región están vacías. Tener marco o barras no convierte una ficha sin puntos en una anatomía calibrada.
+
+El cierre deja la rama y la vista previa disponibles para aprobación. Main y GitHub Pages no se modifican. Continúa vigente el límite de medición de Performance de la fase 9: no se certifican 60 fps sin una traza de Chrome válida.

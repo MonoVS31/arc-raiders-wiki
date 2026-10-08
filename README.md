@@ -4,7 +4,7 @@
 
 Wiki comunitaria independiente de ARC Raiders en español rioplatense. Mapas, armas, ARC, granadas, planos, proyectos, recetas, materiales y fuentes se consultan dentro del sitio. No está afiliada a Embark Studios.
 
-**URL pública:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/). La edición 2.2 se publica mediante GitHub Actions: lint, tipos, datos, tests y build deben pasar antes del despliegue.
+**URL pública:** [Abrir ARC Atlas](https://monovs31.github.io/arc-raiders-wiki/). La edición 2.3 se publica mediante GitHub Actions: lint, tipos, datos, tests y build deben pasar antes del despliegue. Los diagramas de `feat/diagramas` todavía requieren aprobación antes de integrar y publicar.
 
 ## Cambios por fase
 
@@ -36,7 +36,7 @@ npm run build
 npm run preview
 ```
 
-La edición 2.3 pasó **109 tests**, lint, TypeScript, validación de datos y build.
+La rama de diagramas de la edición 2.3 pasó **142 tests**, lint, TypeScript, validación de datos y build, incluidas las 167 fichas prerenderizadas.
 
 `npm run build` ejecuta TypeScript, la validación de datos, la recuperación/verificación del snapshot de imágenes, Vite y el prerender. `npm run dev` recupera las imágenes antes de iniciar. Un presupuesto impide que el chunk de entrada alcance 200.000 bytes. `npm run format` aplica el formato compartido. TypeScript sigue estricto; la rama 6.0 permite usar typescript-eslint sin forzar dependencias incompatibles.
 
@@ -66,7 +66,17 @@ Cada URL `/fichas/<id>/` recibe HTML y metadatos propios durante el build. Las t
 
 Repositorio: [MonoVS31/arc-raiders-wiki](https://github.com/MonoVS31/arc-raiders-wiki). Cada fase se guarda en un commit separado. GitHub Actions ejecuta lint, pruebas, tipos, validación y build; Pages publica dist cuando se integra main. No se reescribió la historia ni se modificaron otros repositorios.
 
-La edición 2.2 se verifica antes de publicar: rutas profundas, metadatos, PNG, HTML factual, carga/reintento y mapas. Los ZIP y bundles de Git se guardan fuera del árbol del repo, dentro de Arc.
+La edición 2.3 se verifica antes de publicar: rutas profundas, metadatos, PNG, HTML factual, carga/reintento y mapas. Los ZIP y bundles de Git se guardan fuera del árbol del repo, dentro de Arc.
+
+## Diagramas animados
+
+En `feat/diagramas`, siete fichas tienen puntos sobre imágenes existentes: Wasp, Firefly, Fireball, Bombardier, Leaper, Rattler y Tempest. Los puntos leen textos, valores, evidencia y fuentes del dato original; el registro nuevo guarda solamente posiciones y referencias. Las zonas ARC sin ancla siguen disponibles en sus opciones, con posición pendiente de verificar.
+
+Los marcos, el escaneo y las entradas se extienden a los esquemas ARC anteriores, estadísticas, comparadores, granadas, proyectos, planos, contenedores, dossiers e imágenes sin puntos. Leaflet conserva sus coordenadas y herramientas; ningún plano tiene un recorrido de coordenadas ordenadas respaldado en los datos actuales. No se agregan zonas, extracciones, medidas ni detección.
+
+Las animaciones usan transform y opacity, se pausan fuera de pantalla y se desactivan con prefers-reduced-motion. Los puntos son botones de teclado, el panel anuncia cambios con aria-live y pasa debajo en celular. El editor de posiciones solo aparece en desarrollo con `?editar-diagrama=1`.
+
+La revisión cubrió 375, 900, 1024 y 1366 px, con movimiento normal y reducido, sin scroll horizontal. La preferencia reducida se emuló en una página temporal de prueba de JavaScript y CSS; no se modificó la configuración del sistema. Ver [decisiones y validación](docs/20-diagramas.md) y [lista de piezas y recorridos pendientes](docs/20-diagramas-pendientes.md).
 
 ## Riesgos y decisiones pendientes
 
