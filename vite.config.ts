@@ -8,13 +8,15 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'standalone-weapon-viewer',
+      name: 'standalone-3d-viewers',
       generateBundle() {
-        this.emitFile({
-          type: 'asset',
-          fileName: 'armas-3d.html',
-          source: readFileSync(resolve(process.cwd(), 'armas-3d.html')),
-        });
+        for (const fileName of ['armas-3d.html', 'arrojadizos-3d.html']) {
+          this.emitFile({
+            type: 'asset',
+            fileName,
+            source: readFileSync(resolve(process.cwd(), fileName)),
+          });
+        }
       },
     },
     {

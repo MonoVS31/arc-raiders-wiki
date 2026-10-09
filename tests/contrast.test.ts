@@ -27,19 +27,19 @@ it('la escala tipográfica no permite texto por debajo de 0.75rem', () => {
       expect(Number.parseFloat(value), name).toBeGreaterThanOrEqual(0.75);
 });
 it.each([
-  ['tile-number', '#192333'],
-  ['tile-arrow', '#192333'],
-  ['wiki-footer-span-last-child', '#0f1623'],
-  ['wiki-footer-p', '#0f1623'],
-  ['article-index-p', '#0f1623'],
-  ['claim-note', '#182230'],
-  ['sidebar-label', '#0d131e'],
-  ['wiki-sidebar-nav-small', '#0d131e'],
-  ['sidebar-bottom-small', '#0d131e'],
-  ['local-dossier-table-arrow-cell', '#101d2d'],
-  ['arc-portrait-figcaption', '#314963'],
-  ['evidence-button', '#314963'],
-  ['global-results-small', '#28435b'],
+  ['tile-number', '#e2d9c4'],
+  ['tile-arrow', '#e2d9c4'],
+  ['wiki-footer-span-last-child', '#e2d9c4'],
+  ['wiki-footer-p', '#e2d9c4'],
+  ['article-index-p', '#e2d9c4'],
+  ['claim-note', '#e2d9c4'],
+  ['sidebar-label', '#e2d9c4'],
+  ['wiki-sidebar-nav-small', '#e2d9c4'],
+  ['sidebar-bottom-small', '#e2d9c4'],
+  ['local-dossier-table-arrow-cell', '#e2d9c4'],
+  ['arc-portrait-figcaption', '#e2d9c4'],
+  ['evidence-button', '#e2d9c4'],
+  ['global-results-small', '#e2d9c4'],
 ])('el token de %s cumple 4.5:1 en su fondo más exigente', (name, background) => {
   expect(ratio(tokens.get(`--color-text-${name}`)!, background)).toBeGreaterThanOrEqual(4.5);
 });

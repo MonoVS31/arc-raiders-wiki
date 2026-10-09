@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
-import { standaloneWeaponCodes, standaloneWeaponLink } from '../../domain/standalone-weapons';
+import { standaloneViewer } from '../../domain/standalone-weapons';
 export function StandaloneWeaponLink({ entityId }: { entityId: string }) {
-  return standaloneWeaponCodes[entityId] ? (
-    <a className="standalone-weapon-link" href={standaloneWeaponLink(entityId)}>
+  const viewer = standaloneViewer(entityId);
+  return viewer ? (
+    <a className="standalone-weapon-link" href={viewer.link}>
       Ver en 3D
     </a>
   ) : null;
@@ -15,7 +16,7 @@ export function StandaloneWeaponGalleryEntry({
   entityId: string;
   children: ReactNode;
 }) {
-  return standaloneWeaponCodes[entityId] ? (
+  return standaloneViewer(entityId) ? (
     <div className="gallery-item">
       {children}
       <StandaloneWeaponLink entityId={entityId} />

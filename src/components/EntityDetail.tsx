@@ -1,6 +1,6 @@
 import { StandaloneWeaponLink } from './wiki/StandaloneWeaponLink';
-import { standaloneWeaponSketch } from '../domain/standalone-weapons';
-import { OriginalWeaponSketch } from './wiki/OriginalWeaponSketch';
+import { standaloneViewer } from '../domain/standalone-weapons';
+import { ViewerEmbed } from './wiki/ViewerEmbed';
 import { numericBarScale } from '../domain/numeric-scale';
 import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
@@ -57,14 +57,17 @@ export function EntityDetail({
   const pendingLocations = catalog.locations.filter((location) => location.mapId === entity.id);
   const visual = visuals.find((visual) => visual.entityId === entity.id);
   const entry = ['weapon', 'grenade'].includes(entity.category) ? diagramFor(entity.id) : undefined;
-  const study = entity.category === 'weapon' ? standaloneWeaponSketch(entity.id) : undefined;
+  const viewer = ['weapon', 'grenade'].includes(entity.category)
+    ? standaloneViewer(entity.id)
+    : undefined;
+  const study = viewer?.sketch;
   const diagram = !study && entry?.puntos.length ? entry : undefined;
   return (
     <article className="detail" aria-labelledby="detail-title">
       <header
         className={
           study
-            ? 'article-hero article-hero-weapon-study'
+            ? 'article-hero article-hero-weapon-study article-hero-viewer'
             : diagram
               ? 'article-hero article-hero-diagram'
               : 'article-hero'
@@ -76,7 +79,7 @@ export function EntityDetail({
             <span className={`availability ${entity.availability}`}>{entity.availability}</span>
           </div>
           <h2 id="detail-title">{entity.name}</h2>
-          {entity.category === 'weapon' && <StandaloneWeaponLink entityId={entity.id} />}
+          <StandaloneWeaponLink entityId={entity.id} />
           <span className="article-code" aria-hidden="true">
             ARCHIVO / {entity.id.toUpperCase()}
           </span>
@@ -98,38 +101,35 @@ export function EntityDetail({
             </dl>
           )}
         </div>
-        {study ? (
-          <div className="article-visual article-visual-weapon-study">
-            <OriginalWeaponSketch entityId={entity.id} name={entity.name} />
-          </div>
-        ) : (
-          visual && (
-            <div className={diagram ? 'article-visual article-visual-diagram' : 'article-visual'}>
-              <HotspotLayer
-                key={entity.id}
-                diagram={diagram}
-                fallback={
-                  <DiagramFrame className="diagram-static-image">
-                    <AtlasImage
-                      key={visual.url}
-                      url={localImage(visual.url)}
-                      name={entity.category === 'arc' ? '' : entity.name}
-                      id={entity.id}
-                      lazy={false}
-                    />
-                  </DiagramFrame>
-                }
-              />
-              {diagram && (
-                <p className="diagram-attribution">
-                  Imagen del catálogo existente · Assets © Embark Studios.{' '}
-                  <Sources ids={[visual.sourceId]} label="Procedencia de la imagen" />
-                </p>
-              )}
-            </div>
-          )
-        )}
+        {study
+          ? null
+          : visual && (
+              <div className={diagram ? 'article-visual article-visual-diagram' : 'article-visual'}>
+                <HotspotLayer
+                  key={entity.id}
+                  diagram={diagram}
+                  fallback={
+                    <DiagramFrame className="diagram-static-image">
+                      <AtlasImage
+                        key={visual.url}
+                        url={localImage(visual.url)}
+                        name={entity.category === 'arc' ? '' : entity.name}
+                        id={entity.id}
+                        lazy={false}
+                      />
+                    </DiagramFrame>
+                  }
+                />
+                {diagram && (
+                  <p className="diagram-attribution">
+                    Imagen del catálogo existente · Assets © Embark Studios.{' '}
+                    <Sources ids={[visual.sourceId]} label="Procedencia de la imagen" />
+                  </p>
+                )}
+              </div>
+            )}
       </header>
+      {viewer && <ViewerEmbed entityId={entity.id} viewer={viewer} name={entity.name} />}
       <ShareEntityLink entityId={entity.id} blueprintId={blueprintId} arcId={arcId} />
       <p className="muted">
         Cada campo conserva su propia evidencia. Los datos comunitarios siguen sujetos a revisión.

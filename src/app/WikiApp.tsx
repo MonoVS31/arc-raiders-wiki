@@ -10,6 +10,7 @@ import type { WikiPanel } from '../components/WikiModal';
 import { useWikiNavigation } from './useWikiNavigation';
 import { Sidebar } from '../components/wiki/Sidebar';
 import { Topbar } from '../components/wiki/Topbar';
+import { MobileNav } from '../components/wiki/MobileNav';
 import { HomeView } from '../components/wiki/HomeView';
 import { CategoryView } from '../components/wiki/CategoryView';
 import { ArticleView } from '../components/wiki/ArticleView';
@@ -139,6 +140,12 @@ export function App() {
           </button>
           <span>V2.3 / ARCHIVO EN ESPAÑOL</span>
         </footer>
+        <MobileNav
+          view={view}
+          activeCategory={filters.category as Category}
+          home={home}
+          category={category}
+        />
       </div>
       {modalLoaded && (
         <Suspense

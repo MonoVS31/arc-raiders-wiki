@@ -1,0 +1,498 @@
+/* Estilo de los bocetos de ARC Atlas (escritorio y celular): papel, tinta, bordes de 1,5 px,
+   franja roja / amarilla / verde azulada, Space Grotesk y etiquetas en JetBrains Mono.
+   Va en una capa propia, después de las demás, para no tocar las reglas existentes. */
+@layer skin {
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-family-body);
+  }
+
+  /* Franja tricolor arriba de la barra superior y del menú lateral */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: var(--tricolor);
+    z-index: 60;
+    pointer-events: none;
+  }
+  .wiki-topbar {
+    background: var(--paper);
+    padding-top: 6px;
+    border-bottom: var(--stroke);
+  }
+  .wiki-sidebar {
+    background: var(--paper-card);
+    border-right: var(--stroke);
+  }
+  .wiki-brand b {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .wiki-sidebar nav button {
+    border-radius: var(--corner);
+    border: 1.5px solid transparent;
+  }
+  .wiki-sidebar nav button[aria-current='page'] {
+    background: var(--paper);
+    border: var(--stroke);
+    box-shadow: inset 4px 0 0 var(--sig-red);
+    color: var(--ink);
+  }
+  .breadcrumb li:last-child > span:last-child {
+    border-bottom: 2px solid var(--sig-red);
+  }
+  .new-label,
+  .edition-chip {
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--paper-card);
+    color: var(--ink);
+  }
+
+  /* Etiquetas: "// archivo de campo" en rojo y "— sección" en gris */
+  .section-kicker {
+    color: var(--sig-red);
+    font: 500 0.6875rem var(--font-family-mono);
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+  }
+  .section-kicker::before {
+    content: '// ';
+  }
+  .eyebrow,
+  .home-label,
+  .sidebar-label,
+  .article-index p:first-child {
+    font: 500 0.6875rem var(--font-family-mono);
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+  }
+  .home-label::before {
+    content: '— ';
+  }
+
+  /* Títulos */
+  h1,
+  h2,
+  h3,
+  .detail h2,
+  .wiki-section-title h2 {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Botones, campos y controles */
+  button,
+  select,
+  input,
+  textarea {
+    border-radius: var(--corner);
+  }
+  .welcome-actions button {
+    clip-path: none;
+    border: var(--stroke);
+    border-radius: var(--corner);
+    font: 500 0.875rem var(--font-family-body);
+    padding: 0.7rem 1.2rem;
+  }
+  .welcome-actions button:first-child {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .welcome-actions button:last-child {
+    background: transparent;
+    color: var(--ink);
+  }
+  input,
+  select,
+  .portal-search input,
+  .filters input,
+  .filters select {
+    border: var(--stroke);
+    background: var(--paper-card);
+    color: var(--ink);
+  }
+  input::placeholder {
+    color: var(--ink-muted);
+  }
+  :focus-visible {
+    outline: 2px solid var(--sig-teal);
+    outline-offset: 2px;
+  }
+
+  /* Tarjetas y paneles: borde de tinta y esquinas de 4 px */
+  .featured-editorial,
+  .home-guide,
+  .home-evidence,
+  .filters,
+  .detail,
+  .claim,
+  .article-visual,
+  .weapon-viewer-frame,
+  .blueprint-route,
+  .project-steps,
+  .local-dossier,
+  .quest-guide,
+  .wiki-modal,
+  .global-results,
+  .combat-tool,
+  .material-grid button {
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--paper-card);
+  }
+  .gallery-card {
+    border: var(--stroke);
+    border-top: 4px solid var(--card-accent);
+    border-radius: var(--corner);
+    background: var(--paper-card);
+    --card-accent: var(--sig-yellow);
+  }
+  .gallery-card.status-anunciado {
+    --card-accent: var(--sig-red);
+  }
+  .gallery-card::before,
+  .gallery-card::after {
+    display: none;
+  }
+  .gallery-card:hover {
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: translate(-2px, -2px);
+  }
+  .gallery-art {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--paper-stripe-a),
+      var(--paper-stripe-a) 6px,
+      var(--paper-stripe-b) 6px,
+      var(--paper-stripe-b) 12px
+    );
+    border-bottom: var(--stroke);
+  }
+  .availability {
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--paper);
+  }
+  .claim,
+  .reference-record {
+    border-bottom: var(--stroke-dashed);
+  }
+  hr,
+  .home-guide hr {
+    border: 0;
+    border-top: var(--stroke-dashed);
+  }
+
+  /* Portada: texto a la izquierda, panel verde azulado con grilla a la derecha */
+  .welcome-banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: stretch;
+    min-height: 0;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    border: var(--stroke);
+    border-radius: 6px;
+    background: var(--paper-card);
+    overflow: hidden;
+  }
+  .welcome-banner::before {
+    display: none;
+  }
+  .welcome-copy {
+    max-width: none;
+    padding: clamp(1.5rem, 3vw, 2.75rem);
+  }
+  .welcome-copy h1 {
+    font-size: clamp(2.25rem, 4.4vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin: 0.75rem 0 1rem;
+  }
+  .welcome-copy h1 em {
+    color: var(--sig-red);
+    font-style: normal;
+  }
+  .welcome-copy p {
+    color: var(--ink-2);
+    max-width: 30rem;
+  }
+  .banner-machine {
+    position: relative;
+    inset: auto;
+    width: auto;
+    z-index: 0;
+    mask-image: none;
+    border-left: var(--stroke);
+    border-radius: 0;
+    background:
+      linear-gradient(var(--color-hero-grid-line) 1px, transparent 1px) 0 0 / 20px 20px,
+      linear-gradient(90deg, var(--color-hero-grid-line) 1px, transparent 1px) 0 0 / 20px 20px,
+      var(--sig-teal);
+    min-height: 260px;
+  }
+  .banner-machine::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(70%, 260px);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--paper);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 40px transparent;
+    outline: 2px dashed var(--paper);
+    outline-offset: -60px;
+    z-index: 1;
+  }
+  .banner-machine::after {
+    display: none;
+  }
+  .banner-machine img {
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
+    opacity: 1;
+    transform: none;
+    filter: drop-shadow(0 10px 18px var(--color-shadow-ink));
+  }
+  .banner-machine > span {
+    z-index: 3;
+    left: 0.75rem;
+    right: auto;
+    bottom: 0.6rem;
+    color: var(--paper);
+    font: 0.6875rem var(--font-family-mono);
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+  }
+  .release-ticker {
+    margin: 0 0 1.5rem;
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--ink);
+    color: var(--sig-yellow);
+  }
+  .portal-stats {
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--paper-card);
+    padding: 1rem;
+  }
+  .portal-stats > div {
+    border-left: var(--stroke-dashed);
+  }
+  .portal-stats > div:first-child {
+    border-left: 0;
+  }
+
+  /* Tarjetas de categorías de la portada, con barra de color arriba */
+  .home-categories {
+    margin: 1.5rem 0;
+  }
+  .home-label {
+    margin: 0 0 0.6rem;
+  }
+  .home-category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  .home-category {
+    display: grid;
+    gap: 0.35rem;
+    justify-items: start;
+    text-align: left;
+    padding: 0 0.85rem 0.85rem;
+    background: var(--paper-card);
+    border: var(--stroke);
+    border-radius: var(--corner);
+    color: var(--ink);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .home-category::before {
+    content: '';
+    display: block;
+    height: 4px;
+    margin: 0 -0.85rem 0.6rem;
+    width: calc(100% + 1.7rem);
+    background: var(--sig-yellow);
+  }
+  .home-category.tone-red::before {
+    background: var(--sig-red);
+  }
+  .home-category.tone-teal::before {
+    background: var(--sig-teal);
+  }
+  .home-category.tone-blue::before {
+    background: var(--sig-blue);
+  }
+  .home-category.tone-ink::before {
+    background: var(--ink);
+  }
+  .home-category svg {
+    width: 22px;
+    height: 22px;
+    color: var(--ink);
+  }
+  .home-category-name {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  .home-category-count {
+    font: 0.6875rem var(--font-family-mono);
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+  }
+  .home-category:hover {
+    box-shadow: 3px 3px 0 var(--ink);
+    transform: translate(-1px, -1px);
+  }
+  .home-evidence {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .home-evidence p,
+  .home-evidence button {
+    color: var(--paper);
+  }
+
+  /* Barra inferior del celular */
+  .mobile-nav {
+    display: none;
+  }
+  @media (max-width: 700px) {
+    .welcome-banner {
+      grid-template-columns: 1fr;
+    }
+    .banner-machine {
+      border-left: 0;
+      border-top: var(--stroke);
+      min-height: 160px;
+      max-height: 200px;
+    }
+    .home-category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .mobile-nav {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 40;
+      display: flex;
+      justify-content: space-around;
+      padding: 0.4rem 0.25rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
+      background: var(--paper-card);
+      border-top: var(--stroke);
+    }
+    .mobile-nav button {
+      display: grid;
+      justify-items: center;
+      gap: 2px;
+      min-width: 56px;
+      padding: 0.25rem;
+      background: none;
+      border: 0;
+      color: var(--ink);
+      font: 0.625rem var(--font-family-mono);
+      letter-spacing: 0.04em;
+    }
+    .mobile-nav svg {
+      width: 22px;
+      height: 22px;
+    }
+    .mobile-nav button[aria-current='page'] {
+      color: var(--sig-red);
+    }
+    .wiki-shell {
+      padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-card:hover,
+    .home-category:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Visor 3D dentro de las fichas de armas y granadas */
+@layer skin {
+  .article-hero-viewer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .viewer-embed {
+    margin: 1.5rem 0;
+  }
+  .viewer-embed-frame {
+    height: clamp(540px, 64vh, 660px);
+    border: var(--stroke);
+    border-radius: var(--corner);
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .viewer-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .viewer-embed-note {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    margin: 0.5rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+  }
+  .viewer-embed-note a {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .standalone-weapon-link {
+    display: inline-block;
+    border: var(--stroke);
+    border-radius: var(--corner);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.45rem 0.9rem;
+    font: 500 0.8125rem var(--font-family-body);
+    text-decoration: none;
+  }
+  .gallery-art img.weapon-study-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+  .gallery-art:has(.weapon-study-thumbnail) {
+    background:
+      radial-gradient(70% 60% at 50% 45%, var(--paper-card), transparent 75%),
+      repeating-linear-gradient(
+        45deg,
+        var(--paper-stripe-a),
+        var(--paper-stripe-a) 6px,
+        var(--paper-stripe-b) 6px,
+        var(--paper-stripe-b) 12px
+      );
+  }
+  .gallery-art:has(.weapon-study-thumbnail) svg {
+    display: none;
+  }
+  @media (max-width: 760px) {
+    .viewer-embed-frame {
+      height: 820px;
+    }
+  }
+}

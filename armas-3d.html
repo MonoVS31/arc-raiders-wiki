@@ -6,35 +6,26 @@
 <title>Bocetos de Armería</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: banco de trabajo en tres columnas — lista de armas | visor 3D | ficha técnica. En móvil se apila. */
 :root{
-  --bg:#d8d3c6;          /* hormigón cálido */
-  --panel:#e9e5da;
-  --ink:#1f2328;
-  --muted:#5f5d55;
-  --line:#b9b3a3;
-  --stage-a:#ece8dd;
-  --stage-b:#c9c3b3;
-  --sig-red:#c8452c;     /* franja retro */
-  --sig-yel:#e2a630;
-  --sig-teal:#2f7f7a;
-  --chip:#f3f0e8;
-  --focus:#2f7f7a;
-  --f-display:"Saira Condensed","Arial Narrow",system-ui,sans-serif;
-  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#efe8d8;          /* papel */
+  --panel:#f7f2e6;
+  --ink:#1e1e1c;
+  --muted:#5f5e5a;
+  --line:#1e1e1c;
+  --stage-a:#f7f2e6;
+  --stage-b:#e2d9c4;
+  --sig-red:#d8442e;
+  --sig-yel:#f2b33d;
+  --sig-teal:#2e8c86;
+  --chip:#efe8d8;
+  --focus:#2e8c86;
+  --f-display:"Space Grotesk",system-ui,sans-serif;
+  --f-body:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1e2022; --panel:#26292b; --ink:#ebe5d6; --muted:#a39e8f; --line:#3d4043;
-    --stage-a:#33373a; --stage-b:#1c1e20; --chip:#2e3134; --focus:#5cc0b8; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1e2022; --panel:#26292b; --ink:#ebe5d6; --muted:#a39e8f; --line:#3d4043;
-  --stage-a:#33373a; --stage-b:#1c1e20; --chip:#2e3134; --focus:#5cc0b8; color-scheme:dark;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -116,17 +107,50 @@ aside.spec{background:var(--panel);border:1px solid var(--line);border-radius:6p
   aside.spec{order:3}
   .hint{display:none}
 }
+
+
+/* Estilo de los bocetos de ARC Atlas: bordes de tinta de 1,5 px y esquinas de 4 px */
+nav.list,aside.spec,.stage{border:1.5px solid var(--ink)!important;border-radius:4px!important}
+.tool,.slide,.call,.wbtn,.mod{border-radius:4px}
+.tool,.slide{border:1.5px solid var(--ink)}
+.tool[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+header h1,.tag .big,.spec h2,.wbtn .n{text-transform:none;letter-spacing:-.02em}
+.wbtn[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.wbtn[aria-current="true"] .c{color:var(--bg)}
+.grp::before{content:"— "}
+.stage{background:radial-gradient(120% 90% at 50% 35%,var(--stage-a),var(--stage-b))}
+.arc-return{display:flex;align-items:center;gap:12px;min-height:36px;margin-inline:-16px;padding:0 16px;background:var(--panel);border-bottom:1.5px solid var(--ink);font:500 13px var(--f-body)}
+.arc-return a{color:var(--ink);text-decoration:none}
+.arc-return a:hover{text-decoration:underline}
+.arc-return span{margin-left:auto;font:11px var(--f-mono);letter-spacing:.08em;color:var(--muted)}
+/* Modo dentro de la ficha (?embed): sin encabezado ni lista */
+html.embed,html.embed body{height:100%!important;overflow:hidden}
+html.embed body{padding:0}
+html.embed .app{height:100%!important}
+html.embed .stripe,html.embed header,html.embed nav.list,html.embed .arc-return{display:none}
+html.embed .app{grid-template-columns:minmax(0,1fr) 270px;height:100%;min-height:0;gap:10px}
+html.embed .hint{display:none}
+html.embed .stage{height:auto;min-height:0;order:0}
+html.embed aside.spec{order:0;overflow:auto;min-height:0}
+@media (max-width:760px){html.embed .app{grid-template-columns:1fr;grid-template-rows:400px minmax(0,1fr);height:100%}html.embed .stage{height:auto;min-height:0}html.embed aside.spec{order:3;overflow:auto}}
+/* Modo miniatura (?thumb): solo el modelo, sin interfaz */
+html.thumb,html.thumb body{background:transparent!important;padding:0}
+html.thumb .stripe,html.thumb header,html.thumb nav.list,html.thumb aside.spec,html.thumb .arc-return,html.thumb .toolbar,html.thumb .tag,html.thumb .serial,html.thumb #calls,html.thumb .callsvg{display:none!important}
+html.thumb .app{display:block;height:100%}
+html.thumb .stage{height:100%;border:0!important;background:transparent!important}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hot::after{animation:none}}
 </style>
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<!-- ARC ATLAS RETURN BAR START -->
-<nav aria-label="Volver a la wiki" style="min-height:32px;display:flex;align-items:center;padding:0 16px;background:#100f0c;border-bottom:1px solid #6a5e49;font:600 12px system-ui,sans-serif"><a href="./" style="color:#f3ead6;text-decoration:none">← Volver a ARC Atlas</a></nav>
-<!-- ARC ATLAS RETURN BAR END -->
 
 
+<script>(function(){var q=new URLSearchParams(location.search);if(q.has("embed"))document.documentElement.classList.add("embed");if(q.has("thumb"))document.documentElement.classList.add("thumb")})()</script>
 <div class="stripe"></div>
+<!-- ARC ATLAS RETURN BAR START -->
+<nav class="arc-return" aria-label="Volver a la wiki"><a href="./">← Volver a ARC Atlas</a><span>armería en 3d</span></nav>
+<!-- ARC ATLAS RETURN BAR END -->
 <header>
   <h1>Bocetos de Armería</h1>
   <p>24 modelos 3D originales, uno por cada arma de tu lista, en estilo actual o retro. Arrastrá para girar, rueda o pellizco para acercar.</p>
@@ -1112,7 +1136,7 @@ const bData=document.getElementById('bData');bData.onclick=()=>{showData=!showDa
 const stA=document.getElementById('stA'),stR=document.getElementById('stR');
 function setStyle(v){STYLE=v;stA.setAttribute('aria-pressed',v==='actual');stR.setAttribute('aria-pressed',v!=='actual');try{localStorage.setItem('armeria-style',v)}catch(e){}if(current)select(curIdx)}
 stA.onclick=()=>setStyle('actual');stR.onclick=()=>setStyle('retro');stA.setAttribute('aria-pressed',STYLE==='actual');stR.setAttribute('aria-pressed',STYLE!=='actual');
-window.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const p=navOrder.indexOf(curIdx);
+window.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||document.documentElement.classList.contains('embed'))return;const p=navOrder.indexOf(curIdx);
   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();select(navOrder[(p+1)%navOrder.length]);btns[curIdx].focus()}
   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();select(navOrder[(p-1+navOrder.length)%navOrder.length]);btns[curIdx].focus()}});
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){controls.autoRotate=false;bRot.setAttribute('aria-pressed','false')}
@@ -1143,12 +1167,14 @@ function updateCalls(){
       svg.innerHTML=`<polyline points="${x.toFixed(1)},${y.toFixed(1)} ${ex.toFixed(1)},${ly.toFixed(1)} ${ex2.toFixed(1)},${ly.toFixed(1)}"/>`}})}
 function loop(){requestAnimationFrame(loop);controls.update();updateCalls();renderer.render(scene,camera)}
 function start(){
-  resize();let id=null;const h=(location.hash||'').slice(1);try{id=localStorage.getItem('armeria-w')}catch(e){}
+  if(document.documentElement.classList.contains("thumb")){controls.autoRotate=false;showData=false;grid.visible=false;const f0=fit;fit=function(){f0();const r=dims?dims.x/Math.max(dims.y,.001):1,flat=dims&&dims.z/dims.x>.6,k=r>1.6&&flat?1.05:r>2.6?.96:r>1.6?.8:.62;fitDist*=k;camera.position.lerp(controls.target,1-k);controls.update()}}
+  resize();let id=null;const h=(location.hash||'').slice(1);try{if(!document.documentElement.classList.contains('embed'))id=localStorage.getItem('armeria-w')}catch(e){}
   let i=DEFS.findIndex(d=>d.id===h);if(i<0)i=DEFS.findIndex(d=>d.id===id);if(i<0)i=navOrder[0];
   select(i);loop();
 }
 const fontReady=document.fonts&&document.fonts.load?Promise.race([document.fonts.load('600 96px "Saira Condensed"'),new Promise(r=>setTimeout(r,1500))]):Promise.resolve();
 fontReady.then(start,start);
+window.addEventListener('hashchange',()=>{const i=DEFS.findIndex(d=>d.id===location.hash.slice(1));if(i>=0)select(i)});
 window.__ARM={DEFS,build,select};
 })();
 </script>

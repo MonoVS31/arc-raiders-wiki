@@ -5,6 +5,15 @@ import { WikiLink } from '../../app/WikiContext';
 import type { WikiPanel } from '../WikiModal';
 import { GlobalSearch } from './GlobalSearch';
 import { artFor, availableCount } from './presentation';
+import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
+
+const homeCategories: [Category, string, string, HomeCategoryIconName][] = [
+  ['weapon', 'Armas', 'yellow', 'weapon'],
+  ['arc', 'Enemigos ARC', 'red', 'arc'],
+  ['map', 'Mapas', 'teal', 'map'],
+  ['grenade', 'Granadas', 'blue', 'equipment'],
+  ['blueprint', 'Planos', 'ink', 'science'],
+];
 
 export function HomeView({
   category,
@@ -31,24 +40,24 @@ export function HomeView({
           <span className="section-kicker">INTELIGENCIA PARA LA PRÓXIMA INCURSIÓN</span>
           <h1>
             <span className="hero-word" style={{ '--word': 0 } as React.CSSProperties}>
-              EL{' '}
+              El{' '}
             </span>
             <span className="hero-word" style={{ '--word': 1 } as React.CSSProperties}>
-              RUST{' '}
+              Rust{' '}
             </span>
             <span className="hero-word" style={{ '--word': 2 } as React.CSSProperties}>
-              BELT.
+              Belt.
             </span>
             <br />
             <em>
               <span className="hero-word" style={{ '--word': 3 } as React.CSSProperties}>
-                EN{' '}
+                En{' '}
               </span>
               <span className="hero-word" style={{ '--word': 4 } as React.CSSProperties}>
-                TUS{' '}
+                tus{' '}
               </span>
               <span className="hero-word" style={{ '--word': 5 } as React.CSSProperties}>
-                MANOS.
+                manos.
               </span>
             </em>
           </h1>
@@ -102,6 +111,24 @@ export function HomeView({
           <span>máquinas ARC</span>
         </div>
       </div>
+      <section className="home-categories" aria-labelledby="home-categories-title">
+        <h2 id="home-categories-title" className="home-label">
+          categorías
+        </h2>
+        <div className="home-category-grid">
+          {homeCategories.map(([value, label, tone, icon]) => (
+            <button
+              key={value}
+              className={`home-category tone-${tone}`}
+              onClick={() => category(value)}
+            >
+              <HomeCategoryIcon name={icon} />
+              <span className="home-category-name">{label}</span>
+              <span className="home-category-count">{availableCount(value)} fichas</span>
+            </button>
+          ))}
+        </div>
+      </section>
       <section className="featured-grid">
         <div className="featured-editorial">
           <span className="section-kicker">MÁQUINAS BAJO LA LUPA</span>

@@ -103,8 +103,8 @@ it('el contenedor conserva sus campos sin puntos y las imágenes normales tienen
     if (claim.value !== null) expect(host.textContent).toContain(String(claim.value));
   const kettle = catalog.entities.find((entity) => entity.id === 'weapon-kettle')!;
   await act(async () => root.render(<EntityDetail key={kettle.id} entity={kettle} />));
-  expect(host.querySelectorAll('.article-visual .original-weapon-sketch')).toHaveLength(1);
-  expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
+  expect(host.querySelectorAll('.viewer-embed')).toHaveLength(1);
+  expect(host.querySelector('.diagram-hotspot')).toBeNull();
 });
 it('portada y galería mantienen una sola capa de tilt y no se apilan marcos de diagrama', async () => {
   const entity = catalog.entities.find((entity) => entity.id === 'weapon-kettle')!;

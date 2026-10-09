@@ -1,13 +1,13 @@
 import { StandaloneWeaponGalleryEntry } from './StandaloneWeaponLink';
 import { entityTransitionName } from '../../app/view-transitions';
-import { standaloneWeaponSketch } from '../../domain/standalone-weapons';
+import { standaloneViewer } from '../../domain/standalone-weapons';
 import type { Entity } from '../../domain/schema';
 import { categories } from '../EntityDetail';
 import { WikiIcon } from '../WikiIcon';
 import { WikiLink } from '../../app/WikiContext';
 import { EntityImage } from './presentation';
 export function GalleryCardContent({ entity }: { entity: Entity }) {
-  const study = entity.category === 'weapon' ? standaloneWeaponSketch(entity.id) : undefined;
+  const study = standaloneViewer(entity.id)?.sketch;
   return (
     <div className="card-tilt">
       <span className="card-light-clip" aria-hidden="true">

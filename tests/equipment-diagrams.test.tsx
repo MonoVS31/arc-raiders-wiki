@@ -43,7 +43,7 @@ it('los puntos de objetos leen campos originales del mismo sujeto', () => {
     }
   }
 });
-it('el estudio de Rattler reemplaza la imagen y conserva el cargador, evidencia y fuente originales', async () => {
+it('el visor 3D de Rattler reemplaza la imagen y conserva el cargador, evidencia y fuente originales', async () => {
   const references = vi.fn(),
     claim = combatClaim('weapon-rattler', 'Magazine Size')!,
     before = JSON.stringify(claim);
@@ -54,8 +54,10 @@ it('el estudio de Rattler reemplaza la imagen y conserva el cargador, evidencia 
       </WikiContext.Provider>,
     ),
   );
-  expect(host.querySelector('.original-weapon-sketch')).not.toBeNull();
-  expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
+  expect(host.querySelector('.viewer-embed iframe')?.getAttribute('src')).toContain(
+    'armas-3d.html?embed#rattler',
+  );
+  expect(host.querySelector('.diagram-hotspot')).toBeNull();
   const field = Array.from(host.querySelectorAll('.weapon-study-summary>div')).find(
     (field) => field.querySelector('dt')?.textContent === 'Cargador',
   )!;
@@ -65,26 +67,16 @@ it('el estudio de Rattler reemplaza la imagen y conserva el cargador, evidencia 
   expect(references).toHaveBeenCalledWith(claim.sourceIds);
   expect(JSON.stringify(claim)).toBe(before);
 });
-it('sin relación pieza-campo conserva la cabecera normal y no agrega puntos', async () => {
-  for (const id of ['weapon-kettle', 'grenade-heavy-fuze-grenade']) {
+it('sin relación pieza-campo muestra el visor 3D y no agrega puntos de diagrama', async () => {
+  for (const [id, page] of [
+    ['weapon-kettle', 'armas-3d.html?embed#kettle'],
+    ['grenade-heavy-fuze-grenade', 'arrojadizos-3d.html?embed#pesada'],
+  ] as const) {
     expect(diagramFor(id)).toBeUndefined();
     await act(async () => root.render(<EntityDetail key={id} entity={entity(id)} />));
     expect(host.querySelector('.article-hero-diagram')).toBeNull();
-    expect(
-      host.querySelector(
-        id.startsWith('weapon-')
-          ? '.article-visual .original-weapon-sketch'
-          : '.article-visual .diagram-static-image',
-      ),
-    ).not.toBeNull();
-    expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
-    expect(
-      host.querySelector(
-        id.startsWith('weapon-')
-          ? '.article-visual .original-weapon-sketch img'
-          : '.article-visual .atlas-image',
-      ),
-    ).not.toBeNull();
+    expect(host.querySelector('.viewer-embed iframe')?.getAttribute('src')).toContain(page);
+    expect(host.querySelector('.diagram-hotspot')).toBeNull();
   }
 });
 it('el marco del comparador conserva la selección I–IV y sus números', async () => {

@@ -1,4 +1,5 @@
 import { standaloneWeaponLink } from '../../domain/standalone-weapons';
+import { atlasAsset } from '../../domain/assets';
 import { lazy, Suspense } from 'react';
 import { Gallery } from './Gallery';
 const MotionGallery = lazy(() => import('./MotionGallery'));
@@ -29,6 +30,11 @@ export function CategoryView({
         {filters.category === 'weapon' && (
           <a className="standalone-weapon-link" href={standaloneWeaponLink()}>
             Armas en 3D →
+          </a>
+        )}
+        {filters.category === 'grenade' && (
+          <a className="standalone-weapon-link" href={atlasAsset('arrojadizos-3d.html')}>
+            Arrojadizos en 3D →
           </a>
         )}
       </div>
