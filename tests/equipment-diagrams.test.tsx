@@ -54,7 +54,7 @@ it('el estudio de Rattler reemplaza la imagen y conserva el cargador, evidencia 
       </WikiContext.Provider>,
     ),
   );
-  expect(host.querySelector('.weapon-study')).not.toBeNull();
+  expect(host.querySelector('.original-weapon-sketch')).not.toBeNull();
   expect(host.querySelector('.article-visual .diagram-hotspot')).toBeNull();
   const field = Array.from(host.querySelectorAll('.weapon-study-summary>div')).find(
     (field) => field.querySelector('dt')?.textContent === 'Cargador',
@@ -73,7 +73,7 @@ it('sin relación pieza-campo conserva la cabecera normal y no agrega puntos', a
     expect(
       host.querySelector(
         id.startsWith('weapon-')
-          ? '.article-visual .weapon-study'
+          ? '.article-visual .original-weapon-sketch'
           : '.article-visual .diagram-static-image',
       ),
     ).not.toBeNull();
@@ -81,7 +81,7 @@ it('sin relación pieza-campo conserva la cabecera normal y no agrega puntos', a
     expect(
       host.querySelector(
         id.startsWith('weapon-')
-          ? '.article-visual .weapon-study-fallback'
+          ? '.article-visual .original-weapon-sketch img'
           : '.article-visual .atlas-image',
       ),
     ).not.toBeNull();

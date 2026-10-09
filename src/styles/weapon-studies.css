@@ -248,3 +248,29 @@
     }
   }
 }
+@layer components {
+  .original-weapon-sketch {
+    border: 1px solid var(--color-border);
+    min-width: 0;
+  }
+  .original-weapon-sketch a {
+    display: block;
+  }
+  .original-weapon-sketch img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .original-weapon-sketch p {
+    padding: 0.75rem;
+    margin: 0;
+    color: var(--color-text-muted);
+    font: 0.8rem var(--font-family-body);
+  }
+}
+@layer components {
+  .weapon-study-thumbnail,
+  .original-weapon-sketch img {
+    background: var(--color-text);
+  }
+}

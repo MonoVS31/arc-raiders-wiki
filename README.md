@@ -58,7 +58,7 @@ Los comandos data:maps, data:blueprints, data:audit y data:arc-links actualizan 
 
 ## Armas: estudios originales en 3D
 
-Las 24 armas disponibles tienen modelos originales completos, creados por código, con giro/pausa, vista de perfil, reinicio y zoom. El listado usa miniaturas livianas y cada ficha carga un único visor al verse en pantalla. Con movimiento reducido se pausa el giro automático; sin WebGL se muestra un perfil SVG de la misma pieza. Los diseños son orientativos y no representan los assets del juego. Los datos, comparaciones, fabricación y enlaces se conservan. Ver [arte, archivos y validación](docs/24-estudios-armas-3d.md).
+Las 24 armas disponibles muestran en tarjetas y fichas los bocetos del visor suministrado. Desde cada una se abre «Ver en 3D» en el arma correspondiente, con giro, desarme, niveles y detalles. El visor completo conserva su código y sus valores de ejemplo; los datos factuales de la wiki siguen separados. Ver [reemplazo de bocetos](docs/26-reemplazo-bocetos-armas.md).
 
 ## Mapas interactivos
 

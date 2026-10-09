@@ -28,3 +28,8 @@ export const standaloneWeaponCodes: Record<string, string> = {
 export const standaloneWeaponLink = (id?: string) =>
   atlasAsset('armas-3d.html') +
   (id && standaloneWeaponCodes[id] ? '#' + standaloneWeaponCodes[id] : '');
+
+export const standaloneWeaponSketch = (id: string) =>
+  standaloneWeaponCodes[id]
+    ? atlasAsset('weapon-sketches/' + standaloneWeaponCodes[id] + '.png')
+    : undefined;

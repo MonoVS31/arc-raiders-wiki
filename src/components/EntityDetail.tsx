@@ -1,6 +1,6 @@
 import { StandaloneWeaponLink } from './wiki/StandaloneWeaponLink';
-import { weaponStudyFor } from '../domain/weapon-studies';
-import { WeaponStudyViewer } from './wiki/WeaponStudyViewer';
+import { standaloneWeaponSketch } from '../domain/standalone-weapons';
+import { OriginalWeaponSketch } from './wiki/OriginalWeaponSketch';
 import { numericBarScale } from '../domain/numeric-scale';
 import { StatBars } from './wiki/StatBars';
 import { localImage } from '../domain/images';
@@ -57,7 +57,7 @@ export function EntityDetail({
   const pendingLocations = catalog.locations.filter((location) => location.mapId === entity.id);
   const visual = visuals.find((visual) => visual.entityId === entity.id);
   const entry = ['weapon', 'grenade'].includes(entity.category) ? diagramFor(entity.id) : undefined;
-  const study = entity.category === 'weapon' ? weaponStudyFor(entity.id) : undefined;
+  const study = entity.category === 'weapon' ? standaloneWeaponSketch(entity.id) : undefined;
   const diagram = !study && entry?.puntos.length ? entry : undefined;
   return (
     <article className="detail" aria-labelledby="detail-title">
@@ -100,7 +100,7 @@ export function EntityDetail({
         </div>
         {study ? (
           <div className="article-visual article-visual-weapon-study">
-            <WeaponStudyViewer entityId={entity.id} name={entity.name} />
+            <OriginalWeaponSketch entityId={entity.id} name={entity.name} />
           </div>
         ) : (
           visual && (
