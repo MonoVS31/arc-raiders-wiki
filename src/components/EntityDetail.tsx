@@ -1,3 +1,4 @@
+import { StandaloneWeaponLink } from './wiki/StandaloneWeaponLink';
 import { weaponStudyFor } from '../domain/weapon-studies';
 import { WeaponStudyViewer } from './wiki/WeaponStudyViewer';
 import { numericBarScale } from '../domain/numeric-scale';
@@ -75,6 +76,7 @@ export function EntityDetail({
             <span className={`availability ${entity.availability}`}>{entity.availability}</span>
           </div>
           <h2 id="detail-title">{entity.name}</h2>
+          {entity.category === 'weapon' && <StandaloneWeaponLink entityId={entity.id} />}
           <span className="article-code" aria-hidden="true">
             ARCHIVO / {entity.id.toUpperCase()}
           </span>

@@ -1,3 +1,4 @@
+import { standaloneWeaponLink } from '../../domain/standalone-weapons';
 import { lazy, Suspense } from 'react';
 import { Gallery } from './Gallery';
 const MotionGallery = lazy(() => import('./MotionGallery'));
@@ -25,6 +26,11 @@ export function CategoryView({
         </span>
         <h1>{categories[filters.category as Category]}</h1>
         <p>{descriptions[filters.category as Category]}</p>
+        {filters.category === 'weapon' && (
+          <a className="standalone-weapon-link" href={standaloneWeaponLink()}>
+            Armas en 3D →
+          </a>
+        )}
       </div>
       <div className="filters">
         <label className="search-label">

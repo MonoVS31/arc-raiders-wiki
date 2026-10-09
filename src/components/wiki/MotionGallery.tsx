@@ -1,3 +1,4 @@
+import { StandaloneWeaponGalleryEntry } from './StandaloneWeaponLink';
 import { LazyMotion, domMax, MotionConfig } from 'motion/react';
 import * as m from 'motion/react-m';
 import type { Entity } from '../../domain/schema';
@@ -12,16 +13,17 @@ export default function MotionGallery({ entities }: { entities: Entity[] }) {
       <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
         <div className="entity-gallery">
           {entities.map((entity) => (
-            <MotionWikiLink
-              key={entity.id}
-              entityId={entity.id}
-              className={`gallery-card category-${entity.category} status-${entity.availability}`}
-              layout={reduced ? false : 'position'}
-              initial={false}
-              transition={{ layout: { duration: reduced ? 0 : 0.25, ease: 'easeOut' } }}
-            >
-              <GalleryCardContent entity={entity} />
-            </MotionWikiLink>
+            <StandaloneWeaponGalleryEntry key={entity.id} entityId={entity.id}>
+              <MotionWikiLink
+                entityId={entity.id}
+                className={`gallery-card category-${entity.category} status-${entity.availability}`}
+                layout={reduced ? false : 'position'}
+                initial={false}
+                transition={{ layout: { duration: reduced ? 0 : 0.25, ease: 'easeOut' } }}
+              >
+                <GalleryCardContent entity={entity} />
+              </MotionWikiLink>
+            </StandaloneWeaponGalleryEntry>
           ))}
         </div>
       </MotionConfig>

@@ -1,3 +1,4 @@
+import { StandaloneWeaponGalleryEntry } from './StandaloneWeaponLink';
 import { entityTransitionName } from '../../app/view-transitions';
 import { weaponStudyFor } from '../../domain/weapon-studies';
 import { atlasAsset } from '../../domain/assets';
@@ -43,13 +44,14 @@ export function Gallery({ entities }: { entities: Entity[] }) {
   return (
     <div className="entity-gallery">
       {entities.map((entity) => (
-        <WikiLink
-          key={entity.id}
-          entityId={entity.id}
-          className={`gallery-card category-${entity.category} status-${entity.availability}`}
-        >
-          <GalleryCardContent entity={entity} />
-        </WikiLink>
+        <StandaloneWeaponGalleryEntry key={entity.id} entityId={entity.id}>
+          <WikiLink
+            entityId={entity.id}
+            className={`gallery-card category-${entity.category} status-${entity.availability}`}
+          >
+            <GalleryCardContent entity={entity} />
+          </WikiLink>
+        </StandaloneWeaponGalleryEntry>
       ))}
     </div>
   );

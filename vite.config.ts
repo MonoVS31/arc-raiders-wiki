@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -5,6 +7,16 @@ export default defineConfig({
   base: './',
   plugins: [
     react(),
+    {
+      name: 'standalone-weapon-viewer',
+      generateBundle() {
+        this.emitFile({
+          type: 'asset',
+          fileName: 'armas-3d.html',
+          source: readFileSync(resolve(process.cwd(), 'armas-3d.html')),
+        });
+      },
+    },
     {
       name: 'entry-size-budget',
       generateBundle(_options, bundle) {

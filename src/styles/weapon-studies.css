@@ -1,4 +1,34 @@
 @layer components {
+  .standalone-weapon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    margin: 0.6rem 0;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: 600 0.8rem var(--font-family-body);
+    text-decoration: none;
+  }
+  .standalone-weapon-link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .gallery-item {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-item > .gallery-card {
+    flex: 1;
+  }
+  .gallery-item > .standalone-weapon-link {
+    margin: 0;
+    border-top: 0;
+  }
+
   .article-hero-weapon-study #detail-title {
     font-size: clamp(2.2rem, 3vw, 3.2rem);
     overflow-wrap: normal;
