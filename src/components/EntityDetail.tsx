@@ -57,7 +57,7 @@ export function EntityDetail({
   const pendingLocations = catalog.locations.filter((location) => location.mapId === entity.id);
   const visual = visuals.find((visual) => visual.entityId === entity.id);
   const entry = ['weapon', 'grenade'].includes(entity.category) ? diagramFor(entity.id) : undefined;
-  const viewer = ['weapon', 'grenade'].includes(entity.category)
+  const viewer = ['weapon', 'grenade', 'arc'].includes(entity.category)
     ? standaloneViewer(entity.id)
     : undefined;
   const study = viewer?.sketch;

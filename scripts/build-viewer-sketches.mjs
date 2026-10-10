@@ -9,6 +9,7 @@ const base = process.env.ATLAS_PREVIEW ?? 'http://127.0.0.1:4173/';
 const viewers = [
   ['armas-3d.html', 'public/weapon-sketches'],
   ['arrojadizos-3d.html', 'public/throwable-sketches'],
+  ['robots-3d.html', 'public/robot-sketches'],
 ];
 const browser = await chromium.launch({
   args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],

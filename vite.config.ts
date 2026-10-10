@@ -10,7 +10,7 @@ export default defineConfig({
     {
       name: 'standalone-3d-viewers',
       generateBundle() {
-        for (const fileName of ['armas-3d.html', 'arrojadizos-3d.html']) {
+        for (const fileName of ['armas-3d.html', 'arrojadizos-3d.html', 'robots-3d.html']) {
           this.emitFile({
             type: 'asset',
             fileName,

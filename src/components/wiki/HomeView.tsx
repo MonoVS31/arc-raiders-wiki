@@ -4,7 +4,8 @@ import { sources } from '../../domain/catalog';
 import { WikiLink } from '../../app/WikiContext';
 import type { WikiPanel } from '../WikiModal';
 import { GlobalSearch } from './GlobalSearch';
-import { artFor, availableCount } from './presentation';
+import { availableCount } from './presentation';
+import { standaloneViewer } from '../../domain/standalone-weapons';
 import { HomeCategoryIcon, type HomeCategoryIconName } from './HomeCategoryIcon';
 
 const homeCategories: [Category, string, string, HomeCategoryIconName][] = [
@@ -79,7 +80,13 @@ export function HomeView({
           </div>
         </div>
         <div className="banner-machine" aria-hidden="true">
-          <img width={512} height={512} decoding="async" src={artFor('arc-rocketeer')} alt="" />
+          <img
+            width={960}
+            height={480}
+            decoding="async"
+            src={standaloneViewer('arc-rocketeer')?.sketch}
+            alt=""
+          />
           <span>ARC / ARCHIVO DE COMBATE</span>
         </div>
       </section>
@@ -143,10 +150,10 @@ export function HomeView({
           <WikiLink entityId="arc-hornet">Explorar Hornet →</WikiLink>
           <div className="featured-art">
             <img
-              width={512}
-              height={512}
+              width={960}
+              height={480}
               decoding="async"
-              src={artFor('arc-hornet')}
+              src={standaloneViewer('arc-hornet')?.sketch}
               alt="Hornet"
               loading="lazy"
             />

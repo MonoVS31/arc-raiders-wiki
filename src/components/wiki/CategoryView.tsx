@@ -32,6 +32,11 @@ export function CategoryView({
             Armas en 3D →
           </a>
         )}
+        {filters.category === 'arc' && (
+          <a className="standalone-weapon-link" href={atlasAsset('robots-3d.html')}>
+            Robots en 3D →
+          </a>
+        )}
         {filters.category === 'grenade' && (
           <a className="standalone-weapon-link" href={atlasAsset('arrojadizos-3d.html')}>
             Arrojadizos en 3D →

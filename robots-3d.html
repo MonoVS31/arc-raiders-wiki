@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bocetos de Robots ARC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: banco de trabajo en tres columnas — lista de armas | visor 3D | ficha técnica. En móvil se apila. */
+:root{
+  --bg:#efe8d8;          /* papel */
+  --panel:#f7f2e6;
+  --ink:#1e1e1c;
+  --muted:#5f5e5a;
+  --line:#1e1e1c;
+  --stage-a:#f7f2e6;
+  --stage-b:#e2d9c4;
+  --sig-red:#d8442e;
+  --sig-yel:#f2b33d;
+  --sig-teal:#2e8c86;
+  --chip:#efe8d8;
+  --focus:#2e8c86;
+  --f-display:"Space Grotesk",system-ui,sans-serif;
+  --f-body:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:0 16px}
+.stripe{height:6px;margin-inline:-16px;background:linear-gradient(90deg,var(--sig-red) 0 33.3%,var(--sig-yel) 33.3% 66.6%,var(--sig-teal) 66.6%)}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:14px 12px}
+header h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:.02em;text-transform:uppercase;margin:0;line-height:1;text-wrap:balance}
+header p{margin:0;color:var(--muted);font-size:13px;max-width:52ch}
+.app{display:grid;grid-template-columns:230px minmax(0,1fr) 270px;gap:14px;height:calc(100% - 92px);min-height:520px}
+/* lista */
+nav.list{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:auto;padding:8px 0}
+.grp{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:12px 14px 4px}
+.wbtn{display:flex;align-items:baseline;justify-content:space-between;gap:8px;width:100%;border:0;background:none;color:var(--ink);text-align:left;padding:6px 14px;cursor:pointer;font:inherit}
+.wbtn .n{font-family:var(--f-display);font-weight:600;font-size:17px;letter-spacing:.02em}
+.wbtn .c{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.wbtn:hover{background:var(--chip)}
+.wbtn[aria-current="true"]{background:var(--ink);color:var(--panel)}
+.wbtn[aria-current="true"] .c{color:inherit;opacity:.75}
+.wbtn:focus-visible,.tool:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+/* visor */
+.stage{position:relative;border-radius:6px;overflow:hidden;background:radial-gradient(120% 90% at 50% 35%,var(--stage-a),var(--stage-b));border:1px solid var(--line);min-height:360px}
+.stage canvas{display:block;width:100%;height:100%;touch-action:none}
+.tag{position:absolute;left:18px;top:14px;pointer-events:none}
+.tag .cls{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tag .big{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,6vw,64px);line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+.tag .alias{font-size:13px;color:var(--muted)}
+.serial{position:absolute;right:16px;top:16px;font-family:var(--f-mono);font-size:11px;color:var(--muted);text-align:right;pointer-events:none}
+.toolbar{position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool{border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 13px var(--f-body);padding:7px 12px;border-radius:4px;cursor:pointer}
+.tool[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.callsvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.callsvg polyline{fill:none;stroke:var(--ink);stroke-width:1.2;opacity:.8}.callsvg circle.halo{display:none}.callsvg circle{fill:var(--sig-red);stroke:var(--panel);stroke-width:1.5}
+.hot{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--panel);background:var(--sig-red);padding:0;cursor:pointer;pointer-events:auto;box-shadow:0 0 0 1px rgba(200,69,44,.35);will-change:transform}
+.hot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--sig-red);opacity:.6;animation:hp 2s ease-out infinite}
+.hot.gold{background:var(--sig-yel)}.hot.gold::after{border-color:var(--sig-yel)}.hot.ammo{background:var(--sig-teal)}.hot.ammo::after{border-color:var(--sig-teal)}
+.hot.on{box-shadow:0 0 0 3px var(--ink)}.hot:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+@keyframes hp{from{transform:scale(.6);opacity:.8}to{transform:scale(1.4);opacity:0}}
+#calls{position:absolute;inset:0;pointer-events:none}
+.call{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--sig-red);border-radius:3px;padding:3px 8px 4px;white-space:nowrap;transform:translate(-50%,-50%)}
+.call b{display:block;font:600 10px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.call span{font:600 14px var(--f-display);letter-spacing:.02em}
+.call i{display:block;height:3px;background:var(--line);margin-top:3px;width:70px}.call i::after{content:"";display:block;height:100%;width:var(--v);background:var(--ink)}
+.call.ammo{border-left-color:var(--sig-yel)}
+.slide{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:5px 10px;font-size:13px}
+.slide input{width:110px;accent-color:var(--sig-red)}
+.hint{margin-left:auto;font-size:12px;color:var(--muted)}
+/* ficha */
+aside.spec{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;overflow:auto;min-width:0}
+.spec h2{font-family:var(--f-display);font-weight:700;font-size:26px;text-transform:uppercase;margin:0;line-height:1}
+.spec .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;font-size:12.5px}
+.spec ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px}
+.sw{display:flex;gap:6px;margin-top:4px}
+.sw span{width:26px;height:26px;border-radius:3px;border:1px solid var(--line)}
+.note{font-size:12.5px;color:var(--muted);margin-top:18px;border-top:1px dashed var(--line);padding-top:10px}
+
+.hot.info{background:var(--sig-teal)}.hot.info::after{border-color:var(--sig-teal)}
+.hot.weak{background:var(--sig-red)}.hot.weak::before{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:50%;background:var(--panel)}
+.hot.back{opacity:.38}.hot.back::after{animation:none;opacity:0}
+.call.weak{border-left-color:var(--sig-red)}.call.info{border-left-color:var(--sig-teal)}
+.call em{display:block;white-space:normal;width:max-content;max-width:230px;font-style:normal;font-size:12.5px;line-height:1.3;color:var(--muted);margin-top:3px}
+.spec ul.wk{list-style:none;padding:0;gap:7px}
+.spec ul.wk li{font-size:13.5px;line-height:1.35}
+.wkb{font:600 13.5px var(--f-body);color:var(--ink);background:none;border:0;border-bottom:1.5px solid var(--sig-red);padding:0;cursor:pointer}
+.wkb:hover{color:var(--sig-red)}.wkb:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.spec ul.wk small{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px}
+.legend span{display:flex;align-items:center;gap:6px}.legend i{width:14px;height:14px;border-radius:3px;border:1px solid var(--line)}
+.prelim{margin:10px 0 0;font-size:12.5px;padding:6px 8px;border-left:3px solid var(--sig-yel);background:var(--chip)}
+.note a{color:inherit}
+.kv{grid-template-columns:104px minmax(0,1fr)}.kv dd{text-align:left;font-family:var(--f-body);font-size:13px;line-height:1.35}
+@media (max-width:980px){
+  body{height:auto}
+  .app{grid-template-columns:1fr;height:auto}
+  nav.list{order:2;display:flex;overflow-x:auto;padding:8px;gap:6px}
+  nav.list .grp{display:none}
+  .wbtn{flex:0 0 auto;border:1px solid var(--line);border-radius:4px;width:auto}
+  .wbtn .c{display:none}
+  .stage{order:1;height:62vh;min-height:340px}
+  aside.spec{order:3}
+  .hint{display:none}
+}
+
+
+/* Estilo de los bocetos de ARC Atlas: bordes de tinta de 1,5 px y esquinas de 4 px */
+nav.list,aside.spec,.stage{border:1.5px solid var(--ink)!important;border-radius:4px!important}
+.tool,.slide,.call,.wbtn,.mod{border-radius:4px}
+.tool,.slide{border:1.5px solid var(--ink)}
+.tool[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+header h1,.tag .big,.spec h2,.wbtn .n{text-transform:none;letter-spacing:-.02em}
+.wbtn[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.wbtn[aria-current="true"] .c{color:var(--bg)}
+.grp::before{content:"— "}
+.stage{background:radial-gradient(120% 90% at 50% 35%,var(--stage-a),var(--stage-b))}
+.arc-return{display:flex;align-items:center;gap:12px;min-height:36px;margin-inline:-16px;padding:0 16px;background:var(--panel);border-bottom:1.5px solid var(--ink);font:500 13px var(--f-body)}
+.arc-return a{color:var(--ink);text-decoration:none}
+.arc-return a:hover{text-decoration:underline}
+.arc-return span{margin-left:auto;font:11px var(--f-mono);letter-spacing:.08em;color:var(--muted)}
+/* Modo dentro de la ficha (?embed): sin encabezado ni lista */
+html.embed,html.embed body{height:100%!important;overflow:hidden}
+html.embed body{padding:0}
+html.embed .app{height:100%!important}
+html.embed .stripe,html.embed header,html.embed nav.list,html.embed .arc-return{display:none}
+html.embed .app{grid-template-columns:minmax(0,1fr) 270px;height:100%;min-height:0;gap:10px}
+html.embed .hint{display:none}
+html.embed .stage{height:auto;min-height:0;order:0}
+html.embed aside.spec{order:0;overflow:auto;min-height:0}
+@media (max-width:760px){html.embed .app{grid-template-columns:1fr;grid-template-rows:400px minmax(0,1fr);height:100%}html.embed .stage{height:auto;min-height:0}html.embed aside.spec{order:3;overflow:auto}}
+/* Modo miniatura (?thumb): solo el modelo, sin interfaz */
+html.thumb,html.thumb body{background:transparent!important;padding:0}
+html.thumb .stripe,html.thumb header,html.thumb nav.list,html.thumb aside.spec,html.thumb .arc-return,html.thumb .toolbar,html.thumb .tag,html.thumb .serial,html.thumb #calls,html.thumb .callsvg{display:none!important}
+html.thumb .app{display:block;height:100%}
+html.thumb .stage{height:100%;border:0!important;background:transparent!important}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hot::after{animation:none}}
+</style>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<script>(function(){var q=new URLSearchParams(location.search);if(q.has("embed"))document.documentElement.classList.add("embed");if(q.has("thumb"))document.documentElement.classList.add("thumb")})()</script>
+<div class="stripe"></div>
+<!-- ARC ATLAS RETURN BAR START -->
+<nav class="arc-return" aria-label="Volver a la wiki"><a href="./">← Volver a ARC Atlas</a><span>robots en 3d</span></nav>
+<!-- ARC ATLAS RETURN BAR END -->
+<header>
+  <h1>Bocetos de Robots ARC</h1>
+  <p>27 máquinas ARC en 3D con sus puntos débiles marcados. Diseños originales según lo que hace cada una. Arrastrá para girar, rueda o pellizco para acercar.</p>
+</header>
+<div class="app">
+  <nav class="list" id="list" aria-label="Robots ARC"></nav>
+  <section class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="tag"><div class="cls" id="tCls"></div><div class="big" id="tName"></div><div class="alias" id="tAlias"></div></div>
+    <div class="serial" id="tSerial"></div>
+    <svg class="callsvg" id="callsvg" aria-hidden="true"></svg><div id="calls"></div>
+    <div class="toolbar">
+      <button class="tool" id="bRot" aria-pressed="true">Girar</button>
+      <button class="tool" id="bSketch" aria-pressed="false">Modo boceto</button>
+      <button class="tool" id="bData" aria-pressed="true">Datos</button>
+      <button class="tool" id="bMan" aria-pressed="false">Escala humana</button>
+      <label class="slide" for="sExp" id="expWrap">Abrir blindaje <input id="sExp" type="range" min="0" max="100" value="0"></label>
+      <button class="tool" id="bFit">Reencuadrar</button>
+      <span class="hint">Rojo: punto débil · verde: dato · ← → cambian de robot</span>
+    </div>
+  </section>
+  <aside class="spec" id="spec"></aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+const TAU=Math.PI*2;
+/* ---------- texturas procedurales ---------- */
+function canvasTex(w,h,draw,srgb=true){
+  const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');draw(x,w,h);
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;if(srgb)t.encoding=THREE.sRGBEncoding;t.anisotropy=8;return t;
+}
+function rnd(s){return function(){s=(s*16807)%2147483647;return (s-1)/2147483646}}
+const R0=rnd(1234);
+const GRIME=canvasTex(512,512,(x,w,h)=>{
+  x.fillStyle='#ececec';x.fillRect(0,0,w,h);
+  for(let i=0;i<5000;i++){const v=200+R0()*55|0;x.fillStyle=`rgba(${v-40},${v-42},${v-46},${.25*R0()})`;x.fillRect(R0()*w,R0()*h,1+R0()*3,1+R0()*3)}
+  x.lineCap='round';
+  for(let i=0;i<70;i++){x.strokeStyle=`rgba(255,255,255,${.25+R0()*.35})`;x.lineWidth=.6+R0();const a=R0()*w,b=R0()*h;x.beginPath();x.moveTo(a,b);x.lineTo(a+(R0()-.5)*60,b+(R0()-.5)*20);x.stroke()}
+  for(let i=0;i<14;i++){const g=x.createRadialGradient(0,0,0,0,0,40+R0()*60);g.addColorStop(0,'rgba(90,80,60,.16)');g.addColorStop(1,'rgba(90,80,60,0)');x.save();x.translate(R0()*w,R0()*h);x.fillStyle=g;x.fillRect(-120,-120,240,240);x.restore()}
+});
+GRIME.repeat.set(3,3);
+const CLEAN=canvasTex(256,256,(x,w,h)=>{x.fillStyle='#e6e6e6';x.fillRect(0,0,w,h);for(let i=0;i<2500;i++){const v=218+R0()*30|0;x.fillStyle=`rgba(${v},${v},${v},.5)`;x.fillRect(R0()*w,R0()*h,1,1)}});CLEAN.repeat.set(4,4);
+const WOOD=canvasTex(512,256,(x,w,h)=>{
+  x.fillStyle='#d9b48a';x.fillRect(0,0,w,h);
+  for(let i=0;i<90;i++){x.strokeStyle=`rgba(${70+R0()*40|0},${40+R0()*20|0},20,${.12+R0()*.25})`;x.lineWidth=.6+R0()*2.2;x.beginPath();let y=R0()*h;x.moveTo(0,y);for(let s=0;s<=w;s+=32){y+=(R0()-.5)*6;x.lineTo(s,y)}x.stroke()}
+});
+WOOD.repeat.set(4,4);
+function normalTex(size,drawH,rep,strength){const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');drawH(x,size);
+  const src=x.getImageData(0,0,size,size).data,out=x.createImageData(size,size),o=out.data,h=(i,j)=>src[(((j+size)%size)*size+((i+size)%size))*4]/255;
+  for(let j=0;j<size;j++)for(let i=0;i<size;i++){const dx=(h(i-1,j)-h(i+1,j))*strength,dy=(h(i,j-1)-h(i,j+1))*strength,l=Math.hypot(dx,dy,1),k=(j*size+i)*4;
+    o[k]=(dx/l*.5+.5)*255;o[k+1]=(dy/l*.5+.5)*255;o[k+2]=(1/l*.5+.5)*255;o[k+3]=255}
+  x.putImageData(out,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep,rep);t.anisotropy=8;return t}
+const NRM_FINE=normalTex(256,(x,n)=>{x.fillStyle='#808080';x.fillRect(0,0,n,n);for(let i=0;i<9000;i++){const v=110+R0()*40|0;x.fillStyle=`rgb(${v},${v},${v})`;x.fillRect(R0()*n,R0()*n,1.4,1.4)}
+  x.strokeStyle='rgba(95,95,95,.6)';for(let i=0;i<40;i++){x.lineWidth=.5;const a=R0()*n,b=R0()*n;x.beginPath();x.moveTo(a,b);x.lineTo(a+(R0()-.5)*50,b+(R0()-.5)*12);x.stroke()}},1,1.6);
+const NRM_STIP=normalTex(128,(x,n)=>{x.fillStyle='#606060';x.fillRect(0,0,n,n);for(let j=0;j<16;j++)for(let i=0;i<16;i++){const g=x.createRadialGradient(i*8+4+(j%2)*4,j*8+4,0,i*8+4+(j%2)*4,j*8+4,3.4);g.addColorStop(0,'#e0e0e0');g.addColorStop(1,'#606060');x.fillStyle=g;x.beginPath();x.arc(i*8+4+(j%2)*4,j*8+4,3.4,0,TAU);x.fill()}},90,2.4);
+const NRM_WOOD=normalTex(256,(x,n)=>{x.fillStyle='#808080';x.fillRect(0,0,n,n);for(let i=0;i<70;i++){x.strokeStyle=`rgba(${R0()<.5?60:170},${R0()<.5?60:170},${R0()<.5?60:170},.35)`;x.lineWidth=.6+R0()*1.6;x.beginPath();let y=R0()*n;x.moveTo(0,y);for(let s=0;s<=n;s+=16){y+=(R0()-.5)*3;x.lineTo(s,y)}x.stroke()}},1,1.2);
+
+
+/* ---------- estado de construcción ---------- */
+let G=null,P=null,MATS=[];
+function lin(c){return new THREE.Color(c).convertSRGBToLinear()}
+function mat(color,rough,metal,extra={}){const phys=extra.clearcoat!=null;const C=phys?THREE.MeshPhysicalMaterial:THREE.MeshStandardMaterial;const m=new C(Object.assign({color:lin(color),roughness:rough,metalness:metal},extra));MATS.push(m);return m}
+/* Código de colores de los bocetos: blanco mate = chapa común, gris oscuro brillante = blindaje pesado,
+   amarillo mate = punto débil, rojo/naranja encendido = núcleo. */
+function makePal(c){
+  const glow=c.glow||'#79e8ff',T=CLEAN,nv=v=>new THREE.Vector2(v,v),core=c.core||'#ff4b2b';
+  return {
+    body:mat(c.body||'#e4ded0',.62,.12,{map:T,roughnessMap:T,normalMap:NRM_FINE,normalScale:nv(.35),clearcoat:.08,clearcoatRoughness:.6}),
+    body2:mat(c.body2||'#34383d',.6,.35,{map:T,roughnessMap:T,normalMap:NRM_FINE,normalScale:nv(.4)}),
+    accent:mat(c.accent||'#d8452a',.55,.12,{map:T,roughnessMap:T,normalMap:NRM_FINE,normalScale:nv(.3)}),
+    heavy:mat(c.heavy||'#5f656c',.34,.55,{map:T,roughnessMap:T,normalMap:NRM_FINE,normalScale:nv(.3),clearcoat:.35,clearcoatRoughness:.3}),
+    metal:mat(c.metal||'#3a3e43',.38,.82,{map:T,roughnessMap:T,normalMap:NRM_FINE,normalScale:nv(.25),clearcoat:.12,clearcoatRoughness:.4}),
+    steel:mat('#a3a8ad',.26,.95,{normalMap:NRM_FINE,normalScale:nv(.15)}),
+    dark:mat('#121314',.9,.05),
+    rubber:mat('#1b1c1d',.92,0,{normalMap:NRM_STIP,normalScale:nv(.9)}),
+    weak:mat(c.weak||'#e9b532',.86,.04,{map:T,normalMap:NRM_STIP,normalScale:nv(.35)}),
+    core:mat(core,.4,0,{emissive:lin(core),emissiveIntensity:2.6}),
+    glow:mat(glow,.4,0,{emissive:lin(glow),emissiveIntensity:2.4}),
+    red:mat('#ff3b2f',.4,0,{emissive:lin('#ff3b2f'),emissiveIntensity:3.2}),
+    glass:mat(c.glass||'#9cc6d2',.04,.1,{transparent:true,opacity:.35,clearcoat:1,clearcoatRoughness:.05}),
+    cable:mat('#2a2b2c',.7,.2),
+    brass:mat('#c19443',.3,.95),
+  };
+}
+let TAGS=[];function T(...t){TAGS=t}
+function add(geo,m,x=0,y=0,z=0,rx=0,ry=0,rz=0){const o=new THREE.Mesh(geo,m);o.userData.tags=TAGS.slice();o.position.set(x,y,z);o.rotation.set(rx,ry,rz);o.castShadow=true;o.receiveShadow=true;G.add(o);return o}
+function fx(o){o.userData.fx=true;o.castShadow=false;o.receiveShadow=false;return o}
+function rr(s,cx,cy,w,h,r){const x=cx-w/2,y=cy-h/2;r=Math.max(0,Math.min(r,w/2-1e-5,h/2-1e-5));s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+h-r);s.quadraticCurveTo(x+w,y+h,x+w-r,y+h);s.lineTo(x+r,y+h);s.quadraticCurveTo(x,y+h,x,y+h-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);return s}
+function extrude(shape,W,b){b=Math.max(.0003,Math.min(b,W*.3));const d=Math.max(.0002,W-2*b);const g=new THREE.ExtrudeGeometry(shape,{depth:d,bevelEnabled:true,bevelThickness:b,bevelSize:b*.9,bevelSegments:2,curveSegments:6});g.translate(0,0,-d/2);return g}
+/* caja redondeada: L en x, H en y, W en z */
+function box(x,y,z,L,H,W,m,r=.01,rz=0,ry=0,rx=0){
+  const b=Math.min(r,L*.22,H*.22,W*.3);const s=rr(new THREE.Shape(),0,0,Math.max(.0004,L-2*b),Math.max(.0004,H-2*b),r*.8);
+  return add(extrude(s,W,b),m,x,y,z,rx,ry,rz)}
+function shapeOf(pts){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));s.closePath();return s}
+function prism(pts,W,m,z=0,b=.006){return add(extrude(shapeOf(pts),W,b),m,0,0,z)}
+function cyl(x,y,z,r,L,m,o={}){
+  const g=new THREE.CylinderGeometry(o.r2!=null?o.r2:r,r,L,o.seg||28,1,!!o.open);
+  if((o.axis||'x')==='x')g.rotateZ(-Math.PI/2);else if(o.axis==='z')g.rotateX(Math.PI/2);
+  return add(g,m,x,y,z)}
+function ring(x,y,z,R,t,m,axis='x',arc=TAU){const g=new THREE.TorusGeometry(R,t,10,48,arc);if(axis==='x')g.rotateY(Math.PI/2);else if(axis==='y')g.rotateX(Math.PI/2);return add(g,m,x,y,z)}
+function sphere(x,y,z,r,m,sy=1){const o=add(new THREE.SphereGeometry(r,28,18),m,x,y,z);o.scale.y=sy;return o}
+function ell(x,y,z,rx,ry,rz,m){const o=add(new THREE.SphereGeometry(1,40,24),m,x,y,z);o.scale.set(rx,ry,rz);return o}
+function shell(x,y,z,r,pS,pL,tS,tL,m){m.side=THREE.DoubleSide;return add(new THREE.SphereGeometry(r,40,24,pS,pL,tS,tL),m,x,y,z)}
+function lathe(pts,m,x=0,y=0,z=0,seg=48){m.side=THREE.DoubleSide;return add(new THREE.LatheGeometry(pts.map(p=>new THREE.Vector2(p[0],p[1])),seg),m,x,y,z)}
+const UPV=new THREE.Vector3(0,1,0);
+const V=(a)=>new THREE.Vector3(...a);
+function rod(a,b,r,m){return strut(a,b,r,r,m)}
+function strut(a,b,r1,r2,m,seg=14){const A=V(a),B=V(b);const d=B.clone().sub(A);const o=add(new THREE.CylinderGeometry(r2,r1,d.length(),seg),m);o.position.copy(A).add(B).multiplyScalar(.5);o.quaternion.setFromUnitVectors(UPV,d.normalize());return o}
+/* barra de sección cuadrada entre dos puntos (para brazos y patas mecánicas) */
+function beam(a,b,w,h,m,r=.01){const A=V(a),B=V(b),d=B.clone().sub(A),L=d.length();const s=rr(new THREE.Shape(),0,0,w,h,r);const g=extrude(s,L,Math.min(r,L*.1));
+  const o=add(g,m);o.position.copy(A).add(B).multiplyScalar(.5);o.lookAt(B.clone().add(G.position));return o}
+function cable(pts,r,m){const c=new THREE.CatmullRomCurve3(pts.map(p=>V(p)));return add(new THREE.TubeGeometry(c,48,r,8,false),m)}
+function around(n,fn,off=0){for(let i=0;i<n;i++){const a=i/n*TAU+off;fn(a,Math.cos(a),Math.sin(a),i)}}
+const sides=[1,-1];
+/* cilindro centrado en p apuntando a dir */
+function cylDir(p,dir,r,L,m,o={}){const g=new THREE.CylinderGeometry(o.r2!=null?o.r2:r,r,L,o.seg||24,1,!!o.open);const x=add(g,m);x.position.set(...p);x.quaternion.setFromUnitVectors(UPV,V(dir).normalize());return x}
+function ringDir(p,dir,R,t,m){const g=new THREE.TorusGeometry(R,t,10,40);g.rotateX(Math.PI/2);const x=add(g,m);x.position.set(...p);x.quaternion.setFromUnitVectors(UPV,V(dir).normalize());return x}
+function off(p,dir,k){const d=V(dir).normalize();return [p[0]+d.x*k,p[1]+d.y*k,p[2]+d.z*k]}
+/* placa de blindaje con normal n (w ancho, h alto, t espesor) */
+function plate(p,n,w,h,t,m,r=.01,roll=0){const o=add(extrude(rr(new THREE.Shape(),0,0,w,h,r),t,Math.min(r,t*.3)),m);o.position.set(...p);o.lookAt(V(p).add(V(n)).add(G.position));if(roll)o.rotateZ(roll);return o}
+/* sensor: carcasa, anillo y lente encendida */
+function eye(p,dir,r,o={}){cylDir(off(p,dir,-r*.35),dir,r*1.25,r*.9,o.house||P.body2,{seg:24});ringDir(off(p,dir,r*.12),dir,r*1.02,r*.14,P.dark);
+  const l=sphere(...off(p,dir,r*.05),r*.82,o.m||P.glow);l.scale.set(1,1,1);return l}
+/* tobera: dir es hacia donde sale el chorro */
+function thruster(p,dir,r,len,m,o={}){const n=cylDir(p,dir,r,len,m||P.metal,{r2:r*.78,seg:24});
+  ringDir(off(p,dir,-len*.5),dir,r*1.02,r*.12,o.band||P.dark);ringDir(off(p,dir,len*.15),dir,r*.95,r*.08,P.dark);
+  const g=cylDir(off(p,dir,len*.5+.002),dir,r*.62,.004,o.glowM||P.glow,{seg:20});return n}
+/* rotor de palas con conducto */
+function bladeShapes(R,n){const arr=[];for(let i=0;i<n;i++){const a=i/n*TAU,w=R*.17;
+  const loc=[[R*.1,-w*.35],[R*.6,-w*.5],[R*.97,-w*.32],[R,0],[R*.97,w*.24],[R*.6,w*.44],[R*.1,w*.35]];
+  arr.push(shapeOf(loc.map(([x,y])=>[x*Math.cos(a)-y*Math.sin(a),x*Math.sin(a)+y*Math.cos(a)])))}return arr}
+function rotor(x,y,z,R,o={}){
+  const g=new THREE.ExtrudeGeometry(bladeShapes(R,o.n||3),{depth:R*.03,bevelEnabled:false});g.rotateX(-Math.PI/2);
+  const m=add(g,o.blade||P.dark,x,y,z);m.userData.spin={axis:'y',v:o.v||22};
+  cyl(x,y,z,R*.16,R*.16,P.metal,{axis:'y',seg:20});cyl(x,y+R*.1,z,R*.08,R*.06,P.accent,{axis:'y',seg:16});
+  if(o.duct!==false){const d=o.ductM||P.body2;cyl(x,y,z,R*1.1,R*.22,d,{axis:'y',seg:48,open:true});ring(x,y+R*.11,z,R*1.1,R*.035,d,'y');ring(x,y-R*.11,z,R*1.1,R*.035,d,'y');
+    around(3,(a,c,s)=>rod([x+c*R*.15,y-R*.05,z+s*R*.15],[x+c*R*1.08,y-R*.05,z+s*R*1.08],R*.03,d),.5)}
+}
+function joint(p,r,m,band){sphere(...p,r,m||P.metal);if(band!==false)ringDirAuto(p,r)}
+function ringDirAuto(p,r){ring(p[0],p[1],p[2],r*1.01,r*.16,P.dark,'z')}
+/* pata mecánica: puntos de cadera a pie, radios por tramo */
+function leg(pts,r,o={}){const m=o.m||P.body2,jm=o.jm||P.metal;
+  for(let i=0;i<pts.length-1;i++){const k=1-i*(o.taper??.18);
+    const mm=i===0&&o.m0?o.m0:m;if(o.box)beam(pts[i],pts[i+1],r*2*k,r*1.6*k,mm,r*.4*k);else strut(pts[i],pts[i+1],r*k,r*k*.85,mm);
+    if(o.piston&&i<pts.length-2){const a=pts[i],b=pts[i+1];rod(off(a,[0,1,0],r*1.3),off([(a[0]+b[0])*.5,(a[1]+b[1])*.5,(a[2]+b[2])*.5],[0,1,0],r*1.4),r*.32,P.steel)}}
+  pts.forEach((p,i)=>{if(i>0&&i<pts.length-1){const T0=TAGS;if(o.jointTag)T(...o.jointTag);sphere(...p,r*1.45*(1-i*.1),o.jw||jm);TAGS=T0}else if(i===0)sphere(...p,r*1.3,jm)});
+  const f=pts[pts.length-1];if(o.foot!==false){const fm=o.footM||P.rubber;cyl(f[0],f[1]+r*.25,f[2],r*1.5,r*.5,fm,{axis:'y',seg:20})}
+}
+function mirrorZ(fn){for(const s of sides)fn(s)}
+function vents(x,y,z,n,w,h,step,m,dir='x'){for(let i=0;i<n;i++){if(dir==='x')box(x+i*step,y,z,w,h,.004,m||P.dark,.002);else box(x,y,z+i*step,.004,h,w,m||P.dark,.002)}}
+function bolts(pts,r){pts.forEach(p=>sphere(...p,r,P.steel))}
+function decal(text,x,y,zs,h,o={}){
+  const fs=96,c=document.createElement('canvas');const ctx=c.getContext('2d');ctx.font=`600 ${fs}px "Saira Condensed", "Arial Narrow", sans-serif`;
+  const tw=o.kind==='hazard'?512:Math.ceil(ctx.measureText(text).width)+24;c.width=tw;c.height=128;
+  const x2=c.getContext('2d');
+  if(o.kind==='hazard'){x2.fillStyle='#e2a630';x2.fillRect(0,0,tw,128);x2.fillStyle='#1d1e1f';for(let i=-4;i<12;i++){x2.beginPath();x2.moveTo(i*64,128);x2.lineTo(i*64+32,128);x2.lineTo(i*64+96,0);x2.lineTo(i*64+64,0);x2.fill()}}
+  else{x2.font=ctx.font;x2.fillStyle=o.color||'#2c2f33';x2.textBaseline='middle';x2.fillText(text,12,68)}
+  const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=8;
+  const m=new THREE.MeshStandardMaterial({map:t,transparent:true,roughness:.6,metalness:0,polygonOffset:true,polygonOffsetFactor:-2,depthWrite:false});MATS.push(m);m.userData.tex=t;
+  const w=o.w||h*tw/128;const geo=new THREE.PlaneGeometry(w,h);
+  for(const s of (o.both?sides:[o.side||1])){const d=add(geo,m,x,y,s*zs,0,s<0?Math.PI:0,o.rz||0);d.castShadow=false;d.userData.decal=true}
+}
+/* efectos translúcidos (rayos, escudos): no cuentan para el encuadre */
+function tGlow(c,op){const m=mat(c,.3,0,{transparent:true,opacity:op,emissive:lin(c),emissiveIntensity:1.6,depthWrite:false,side:THREE.DoubleSide});return m}
+function beamFx(a,b,r,c,op){const o=strut(a,b,r,r,tGlow(c,op),12);fx(o);return o}
+function minigun(x,y,z,L,R,m){
+  const sh=[];for(let i=0;i<6;i++){const a=i/6*TAU,s=new THREE.Shape();s.absarc(Math.cos(a)*R,Math.sin(a)*R,R*.42,0,TAU,false);sh.push(s)}
+  const g=new THREE.ExtrudeGeometry(sh,{depth:L,bevelEnabled:false,curveSegments:10});g.translate(0,0,-L/2);g.rotateY(Math.PI/2);
+  const o=add(g,m||P.metal,x,y,z);o.userData.spin={axis:'x',v:8};
+  cyl(x-L/2-R*1.4,y,z,R*1.9,R*3,P.body2,{seg:24});for(const f of[-.2,.3])ring(x+L*f,y,z,R*1.45,R*.22,P.steel);ring(x+L/2-R*.2,y,z,R*1.45,R*.2,P.dark);
+  return o}
+function barrel(p,dir,r,L,m){const b=cylDir(off(p,dir,L/2),dir,r,L,m||P.metal,{seg:20});ringDir(off(p,dir,L*.97),dir,r*1.12,r*.22,P.dark);cylDir(off(p,dir,L+.001),dir,r*.55,.003,P.dark,{seg:16});return b}
+/* gajo de torno (phiS/phiL en radianes) */
+function latheSeg(pts,m,phiS,phiL,x=0,y=0,z=0,seg=16){m.side=THREE.DoubleSide;return add(new THREE.LatheGeometry(pts.map(p=>new THREE.Vector2(p[0],p[1])),seg,phiS,phiL),m,x,y,z)}
+/* tobera vertical con conducto (el chorro sale hacia abajo) */
+function nacelle(p,r,h,band,o={}){const[x,y,z]=p;const dm=o.m||P.body2;dm.side=THREE.DoubleSide;h=Math.min(h,r*.75);
+  cyl(x,y,z,r,h,dm,{axis:'y',seg:36,open:true});cyl(x,y,z,r*.9,h*.98,dm,{axis:'y',seg:36,open:true});
+  ring(x,y+h/2,z,r*.95,r*.075,band||dm,'y');ring(x,y-h/2,z,r*.95,r*.06,dm,'y');
+  cyl(x,y-h*.1,z,r*.34,h*.9,P.metal,{axis:'y',seg:20});cyl(x,y-h/2-r*.12,z,r*.3,r*.24,P.metal,{axis:'y',seg:20,r2:r*.24});cyl(x,y-h/2-r*.25,z,r*.24,.004,P.glow,{axis:'y',seg:20});
+  rotor(x,y+h*.15,z,r*.86,{n:o.n||5,duct:false,v:30});
+  around(4,(a,c,s)=>box(x+c*r*.6,y-h*.1,z+s*r*.6,r*.56,h*.12,r*.05,dm,.002,0,-a),Math.PI/4);
+  if(o.vane)for(let i=0;i<3;i++)box(x,y-h*.42,z+(i-1)*r*.5,r*1.7,r*.05,r*.04,P.steel,.002)}
+/* casco de una sola pieza: lista de [radio, altura] alrededor de y */
+function hull(pts,m,x=0,y=0,z=0){return lathe(pts,m,x,y,z,48)}
+
+/* punto sobre una esfera (ph desde -x hacia +z, th desde +y) */
+function onSphere(c,R,ph,th,k=0){const x=-Math.cos(ph)*Math.sin(th),y=Math.cos(th),z=Math.sin(ph)*Math.sin(th);return {p:[c[0]+x*(R+k),c[1]+y*(R+k),c[2]+z*(R+k)],n:[x,y,z]}}
+function spPlate(c,R,ph,th,w,h,t,m){const q=onSphere(c,R,ph,th,t*.4);return plate(q.p,q.n,w,h,t,m,Math.min(w,h)*.18)}
+function meridian(c,R,ph,t0,t1,r,m,k=8){const pts=[];for(let i=0;i<=k;i++){const th=t0+i*(t1-t0)/k;pts.push(onSphere(c,R,ph,th).p)}return cable(pts,r,m)}
+
+const DEFS=[
+
+/* ================= TERRESTRES ================= */
+{id:'topografo',name:'Topógrafo',alias:'Surveyor',cls:'Esfera blindada de datos',group:'Terrestres',mode:'Terrestre · rodante',size:'≈ 1,1 m de diámetro',armor:'Pesado en todo el cuerpo',hp:'≈ 257',atk:'Sin armas: embiste solo si lo acorralan',loot:'Bóveda del Topógrafo',
+ pal:{body:'#e6e0d2',body2:'#2f3338',heavy:'#4b5158',accent:'#2e8c86',glow:'#6fdcff',core:'#3fc8ff'},
+ desc:'Esfera blindada y esquiva que rueda más rápido de lo que corrés. Cada tanto se frena y dispara un rayo de transmisión al cielo.',
+ tac:'Esperá a que se quede quieto transmitiendo y pegale al núcleo. Aturdilo con un Hornet Driver o una Showstopper y rematalo con explosivos; la munición pesada le saca las placas.',
+ notes:['Ocho gajos de blindaje que se abren como una naranja','Núcleo esférico sostenido por tres aros','Mástil telescópico con emisor de rayo','Tres sensores en la tapa superior'],
+ src:['https://arcraiders.wiki/wiki/Surveyor'],
+ pts:[{t:'w0',k:'weak',n:'Núcleo',fx:'Solo queda expuesto y quieto mientras dispara el rayo de transmisión.',hid:true},
+      {t:'emit',k:'info',n:'Emisor de transmisión',v:'Rayo azul al cielo',fx:'Mientras transmite se abre: es la ventana para atacar.'},
+      {t:'armor',k:'info',n:'Gajos de blindaje',v:'Pesados',fx:'Se van rompiendo con el daño y las placas se pueden saquear.'}],
+ build(){const Y=.55,R=.5;
+  T('core','w0');sphere(0,Y,0,.29,P.core);
+  T();for(const ax of['x','y','z'])ring(0,Y,0,.36,.022,P.body2,ax);around(6,(a,c,s)=>rod([c*.29,Y,s*.29],[c*.35,Y,s*.35],.018,P.metal));
+  rod([0,Y+.29,0],[0,Y+.36,0],.02,P.metal);rod([0,Y-.29,0],[0,Y-.36,0],.02,P.metal);
+  T('armor');for(let i=0;i<8;i++){const ps=i*TAU/8+.012,pl=TAU/8-.024,pm=ps+pl/2;shell(0,Y,0,R,ps,pl,.22,Math.PI-.44,i%2?P.heavy:P.body);
+    spPlate([0,Y,0],R,pm,Math.PI/2,.15,.3,.025,i%2?P.body:P.heavy);spPlate([0,Y,0],R,pm,1.0,.12,.1,.02,P.body2);spPlate([0,Y,0],R,pm,Math.PI-1.0,.12,.1,.02,P.body2);
+    for(const th of[.45,Math.PI-.45])sphere(-Math.cos(pm)*Math.sin(th)*(R+.004),Y+Math.cos(th)*(R+.004),Math.sin(pm)*Math.sin(th)*(R+.004),.014,P.steel)}
+  T('cap');shell(0,Y,0,R+.006,0,TAU,0,.21,P.body2);shell(0,Y,0,R+.006,0,TAU,Math.PI-.21,.21,P.body2);
+  for(const sy of[1,-1])ring(0,Y+sy*R*Math.cos(.21),0,R*Math.sin(.21)+.004,.016,P.metal,'y');
+  around(3,(a,c,s)=>eye([c*.13,Y+R*.97,s*.13],[c,.7,s],.024),Math.PI/6);
+  T('emit');cyl(0,Y+R+.04,0,.065,.08,P.metal,{axis:'y'});cyl(0,Y+R+.13,0,.047,.12,P.steel,{axis:'y'});cyl(0,Y+R+.23,0,.034,.1,P.steel,{axis:'y'});
+  for(const y of[.08,.19])ring(0,Y+R+y,0,.05-y*.08,.008,P.dark,'y');
+  lathe([[.012,0],[.05,.004],[.085,.03],[.1,.06]],P.body2,0,Y+R+.28,0);sphere(0,Y+R+.31,0,.028,P.glow);ring(0,Y+R+.33,0,.09,.008,P.glow,'y');
+  T();const b=beamFx([0,Y+R+.32,0],[0,Y+R+2.4,0],.04,'#6fdcff',.32);b.userData.open=true;
+ }},
+{id:'pop',name:'Pop',cls:'Esfera explosiva rodante',group:'Terrestres',mode:'Terrestre · rodante',size:'≈ 45 cm',armor:'Sin blindaje',hp:'≈ 20',atk:'Rueda hacia vos y explota',loot:'Gatillo de Pop',
+ pal:{body:'#ece2c8',body2:'#2f3236',accent:'#e0572b',glow:'#ffb02e',core:'#ff7a1f'},
+ desc:'Esfera chica sin blindaje que se acerca rodando, pita cada vez más rápido y explota al llegar. Daña escudo y vida.',
+ tac:'Disparale temprano con un arma de cadencia alta. Casi nunca puede subir obstáculos: una escalera o un cajón te salvan.',
+ notes:['Casco liviano en dos mitades con bandas de rodadura','Carga explosiva visible por cuatro mirillas','Luz de aviso que acelera el pitido','Antena corta de detección'],
+ src:['https://arcraiders.wiki/wiki/Pop'],
+ pts:[{t:'w0',k:'weak',n:'Todo el cuerpo',fx:'No tiene blindaje y casi no tiene vida: cae con uno o dos tiros.'},
+      {t:'boom',k:'info',n:'Carga explosiva',v:'Explota al contacto',fx:'Pega a escudo y vida a la vez.'},
+      {t:'lamp',k:'info',n:'Luz de aviso',v:'Pitido que se acelera',fx:'Cuando pita rápido, ya está por explotar.'}],
+ build(){const Y=.22,R=.2;
+  T('w0');sphere(0,Y,0,R,P.body);
+  for(const z of[-.11,.11]){ring(0,Y,z,Math.sqrt(R*R-z*z)+.006,.018,P.rubber,'z');for(let i=0;i<16;i++){const a=i/16*TAU,r=Math.sqrt(R*R-z*z)+.02;box(Math.cos(a)*r,Y+Math.sin(a)*r,z,.012,.016,.03,P.rubber,.003,a)}}
+  ring(0,Y,0,R+.004,.008,P.body2,'y');
+  T('boom');around(4,(a,c,s)=>{cylDir([c*(R-.005),Y+.04,s*(R-.005)],[c,0,s],.034,.02,P.body2);cylDir([c*(R+.006),Y+.04,s*(R+.006)],[c,0,s],.024,.006,P.core)},Math.PI/4);
+  decal('',0,0,0,.001,{kind:'hazard',w:.12});{const d=G.children[G.children.length-1];d.position.set(0,Y-.06,R-.025);d.rotation.x=-.3}
+  T('lamp');cyl(0,Y+R+.006,0,.04,.02,P.metal,{axis:'y'});sphere(0,Y+R+.025,0,.03,P.red,.8);sphere(0,Y+R+.025,0,.034,P.glass,.82);
+  T();rod([-.03,Y+R,0],[-.06,Y+R+.09,0],.004,P.steel);sphere(-.06,Y+R+.092,0,.008,P.accent);
+  eye([R*.86,Y+.08,0],[1,.35,0],.022);
+ }},
+{id:'fireball',name:'Bola de fuego',alias:'Fireball',cls:'Rodante incendiario',group:'Terrestres',mode:'Terrestre · rodante',size:'≈ 80 cm',armor:'Pesado (con el frente cerrado)',atk:'Lanzallamas frontal',loot:'Quemador de Fireball',
+ pal:{body:'#d9d2c2',body2:'#2c2e30',heavy:'#4a4f55',accent:'#e0572b',glow:'#ff7a1f',core:'#fff0c8'},
+ desc:'Esfera acorazada que se acerca rodando, abre el frente y larga una llamarada larga. Anda adentro de edificios y búnkeres, muchas veces con Pops.',
+ tac:'Esperá a que abra el frente y tirale al núcleo blanco: ahí cualquier arma lo mata. Armas que pegan fuerte (Ferro, Anvil) atraviesan el caparazón cerrado.',
+ notes:['Caparazón trasero fijo con nervios de refuerzo','Frente en dos valvas que se abren','Núcleo blanco con boquilla de llama delante','Bisagras laterales a la vista'],
+ src:['https://arcraiders.wiki/wiki/Fireball'],
+ pts:[{t:'w0',k:'weak',n:'Núcleo blanco',fx:'Queda expuesto cuando abre el panel frontal para tirar fuego.',hid:true},
+      {t:'atk',k:'info',n:'Lanzallamas',v:'Ráfaga larga a corta distancia',fx:'Seguís quemándote un rato y al morir prende fuego la zona.',hid:true},
+      {t:'shell',k:'info',n:'Caparazón',v:'Pesado',fx:'La munición ligera rebota; la media o pesada lo atraviesa.'}],
+ build(){const Y=.4,R=.38;
+  T('core','w0');sphere(-.02,Y,0,.17,P.core);T();for(const ax of['y','z'])ring(-.02,Y,0,.2,.02,P.metal,ax);
+  T('atk');cylDir([.2,Y,0],[1,0,0],.06,.12,P.metal,{r2:.045});ringDir([.26,Y,0],[1,0,0],.047,.01,P.dark);cylDir([.262,Y,0],[1,0,0],.03,.004,P.glow);
+  around(4,(a,c,s)=>rod([.14,Y+c*.07,s*.07],[.24,Y+c*.05,s*.05],.008,P.steel),Math.PI/4);
+  T('shell');shell(0,Y,0,R,-Math.PI/2,Math.PI,0,Math.PI,P.heavy);
+  for(let i=1;i<6;i++){const ph=-Math.PI/2+i*Math.PI/6;const pts=[];for(let k=0;k<=8;k++){const th=.15+k*(Math.PI-.3)/8;pts.push([-Math.cos(ph)*Math.sin(th)*(R+.01),Y+Math.cos(th)*(R+.01),Math.sin(ph)*Math.sin(th)*(R+.01)])}cable(pts,.012,P.body2)}
+  ring(0,Y,0,R+.012,.016,P.body2,'x');
+  T('armor');const top=shell(0,Y,0,R+.01,Math.PI/2,Math.PI,0,Math.PI/2,P.body);top.userData.ex=[.12,.32,0];
+  const bot=shell(0,Y,0,R+.01,Math.PI/2,Math.PI,Math.PI/2,Math.PI/2,P.body);bot.userData.ex=[.32,-.02,0];
+  for(const[t,ex]of[[.4,[.12,.32,0]],[Math.PI-.4,[.32,-.02,0]]]){const pts=[];for(let k=0;k<=8;k++){const ph=Math.PI/2+.12+k*(Math.PI-.24)/8;pts.push([-Math.cos(ph)*Math.sin(t)*(R+.02),Y+Math.cos(t)*(R+.02),Math.sin(ph)*Math.sin(t)*(R+.02)])}cable(pts,.014,P.accent).userData.ex=ex}
+  T('shell');for(const s of sides){cyl(0,Y,s*(R+.01),.07,.04,P.metal,{axis:'z'});cyl(0,Y,s*(R+.035),.035,.02,P.body2,{axis:'z'});for(let i=0;i<6;i++){const a=i/6*TAU;sphere(Math.cos(a)*.052,Y+Math.sin(a)*.052,s*(R+.032),.007,P.steel)}}
+  vents(-.33,Y+.12,-.06,4,.004,.012,.04,P.dark,'z');
+  decal('F-3',-.1,Y+.05,R-.02,.06,{color:'#e8e0c8'});
+ }},
+{id:'garrapata',name:'Garrapata',alias:'Tick',cls:'Trepadora de interiores',group:'Terrestres',mode:'Terrestre · trepa paredes y techos',size:'≈ 50 cm',armor:'Sin blindaje',hp:'≈ 10',atk:'Salta a la cabeza y drena escudo y vida',loot:'Cápsula de Tick',
+ pal:{body:'#d6cfbd',body2:'#2d3035',accent:'#d84b2c',glow:'#ff3b2f'},
+ desc:'Máquina chiquita con patas de araña que se pega a paredes y techos. Te salta a la cabeza y se queda prendida drenando escudo y vida.',
+ tac:'Escuchá el ruido de patas antes de entrar a un cuarto y pegale con el cuerpo a cuerpo para ahorrar balas. Si se te prende, mantené «interactuar» para sacártela.',
+ notes:['Seis patas de tres tramos con puntas de agarre','Cuatro ojos rojos agrupados','Dos garras delanteras de enganche','Aguja de drenaje bajo la cabeza'],
+ src:['https://arcraiders.wiki/wiki/Tick'],
+ pts:[{t:'w0',k:'weak',n:'Todo el cuerpo',fx:'Tiene solo unos 10 de vida: un golpe cuerpo a cuerpo alcanza.'},
+      {t:'atk',k:'info',n:'Garras y aguja',v:'Se prende a tu cabeza',fx:'Drena escudo y vida mientras siga enganchada.'},
+      {t:'eyes',k:'info',n:'Sensores',v:'Cuatro ojos',fx:'Trepa por paredes y techos: mirá arriba.'}],
+ build(){
+  T('w0');ell(-.07,.15,0,.12,.07,.095,P.body);ell(-.08,.205,0,.08,.022,.065,P.body2);ell(.06,.145,0,.07,.055,.065,P.body2);
+  for(let i=0;i<4;i++)box(-.13+i*.03,.21,0,.012,.008,.07,P.accent,.003);
+  box(.12,.15,0,.06,.05,.07,P.body,.012);
+  T('eyes');for(const[y,z]of[[.165,-.016],[.165,.016],[.145,-.027],[.145,.027]])sphere(.152,y,z,.009,P.glow);
+  T('atk');for(const s of sides){const a=[.13,.13,s*.03],b=[.2,.12,s*.045],c=[.22,.08,s*.025];strut(a,b,.008,.006,P.metal);strut(b,c,.006,.002,P.steel)}
+  strut([.12,.12,0],[.2,.08,0],.005,.0015,P.steel);
+  T('w0');for(const s of sides){[[.06,.11,.2],[0,.08,.24],[-.07,.06,.22]].forEach(([x0,k,f])=>{const hip=[x0,.15,s*.05],knee=[x0*1.6+.01,.27,s*(.05+k)],ank=[x0*2.2,.1,s*f],toe=[x0*2.4,0,s*(f+.03)];
+    leg([hip,knee,ank],.009,{m:P.body2,jm:P.metal,foot:false,taper:.25});strut(ank,toe,.006,.0015,P.steel)})}
+  rod([-.13,.19,0],[-.17,.27,0],.003,P.steel);sphere(-.17,.272,0,.006,P.glow);
+ }},
+{id:'cometa',name:'Cometa',alias:'Comet',cls:'Esfera kamikaze',group:'Terrestres',mode:'Terrestre · rodante',size:'≈ 90 cm',armor:'Pesado (se parte al cargar)',atk:'Embestida y autodestrucción con onda expansiva',loot:'Encendedor de Comet (solo si no llegó a explotar)',
+ pal:{body:'#ddd5c4',body2:'#2c2f33',heavy:'#474c52',accent:'#e0572b',glow:'#ffb02e',core:'#ff7a1f'},
+ desc:'Esfera blindada que rueda rápido hacia vos y se autodestruye con una onda expansiva grande. Justo antes de explotar, el caparazón se parte.',
+ tac:'Esquivá hacia un costado cuando arranca y disparale al interior expuesto. Dos o tres granadas Seeker le sacan el blindaje antes de que llegue.',
+ notes:['Cuatro pétalos de blindaje con nervios','Núcleo naranja con encendedor central','Tapas superior e inferior con emisores de choque','Bandas de rodadura sobre los pétalos'],
+ src:['https://arcraiders.wiki/wiki/Comet'],
+ pts:[{t:'w0',k:'weak',n:'Núcleo e interior',fx:'Queda a la vista cuando el caparazón se abre antes de explotar. Si lo matás antes, deja el Encendedor.',hid:true},
+      {t:'cap',k:'info',n:'Emisores de choque',v:'Onda expansiva amplia',fx:'Esquivalo de costado mientras carga.'},
+      {t:'armor',k:'info',n:'Pétalos de blindaje',v:'Pesados',fx:'Se parten en cuatro al cargar.'}],
+ build(){const Y=.45,R=.42;
+  T('core','w0');sphere(0,Y,0,.2,P.core);T();for(let i=0;i<3;i++)cyl(0,Y,0,.035-i*.008,.46-i*.04,i?P.brass:P.metal,{axis:'y',seg:16});
+  around(6,(a,c,s)=>rod([c*.2,Y,s*.2],[c*.32,Y,s*.32],.015,P.body2));ring(0,Y,0,.32,.018,P.body2,'y');
+  T('armor');for(let i=0;i<4;i++){const ps=i*TAU/4+.04,pl=TAU/4-.08,pm=ps+pl/2;shell(0,Y,0,R,ps,pl,.18,Math.PI-.36,i%2?P.heavy:P.body);
+    for(const dp of[-.35,0,.35]){const ph=pm+dp;const pts=[];for(let k=0;k<=6;k++){const th=.3+k*(Math.PI-.6)/6;pts.push([-Math.cos(ph)*Math.sin(th)*(R+.01),Y+Math.cos(th)*(R+.01),Math.sin(ph)*Math.sin(th)*(R+.01)])}cable(pts,dp?.008:.016,dp?P.body2:P.rubber)}}
+  T('cap');for(const sy of[1,-1]){shell(0,Y,0,R+.004,0,TAU,sy>0?0:Math.PI-.18,.18,P.body2);ring(0,Y+sy*R*Math.cos(.18),0,R*Math.sin(.18)+.004,.014,P.metal,'y');
+    around(6,(a,c,s)=>sphere(c*.045,Y+sy*(R-.006),s*.045,.012,P.glow));cyl(0,Y+sy*(R+.004),0,.03,.012,P.metal,{axis:'y'})}
+ }},
+
+/* ================= AÉREOS ================= */
+{id:'avispa',name:'Avispa',alias:'Wasp',cls:'Dron de enjambre',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 90 cm de ancho',armor:'Sin blindaje',hp:'≈ 110',atk:'Ráfaga de ametralladora ligera tras fijarte con un láser rojo',loot:'Driver de Wasp y munición ligera',
+ pal:{body:'#e6e0d2',body2:'#33373c',accent:'#e0572b',glow:'#ffd06a'},
+ desc:'Dron chico que anda en enjambre. Te fija con un láser rojo, se queda quieto un instante y larga una ráfaga.',
+ tac:'Apuntá a los propulsores: con dos o tres rotos se estrella. Si te agarra un enjambre, una granada Lure te da tiempo para escapar.',
+ notes:['Cuatro toberas con conducto en brazos cruzados','Cabeza de sensores con láser de fijación','Doble cañón ligero bajo el morro','Lomo oscuro con antena de enlace'],
+ src:['https://arcraiders.wiki/wiki/Wasp'],
+ pts:[{t:'w0',k:'weak',n:'Cuatro propulsores',fx:'Sin blindaje: romper varios lo deja sin control y suele estrellarse.'},
+      {t:'atk',k:'info',n:'Ametralladora ligera',v:'Ráfaga corta'},
+      {t:'eye',k:'info',n:'Láser de fijación',v:'Rojo',fx:'Cuando lo ves, buscá cobertura: viene la ráfaga.'}],
+ build(){
+  ell(0,0,0,.2,.08,.12,P.body);ell(-.03,.05,0,.15,.035,.09,P.body2);box(-.03,.075,0,.12,.012,.05,P.accent,.004);
+  for(const s of sides){box(0,-.005,s*.115,.22,.035,.012,P.body2,.004);bolts([[-.06,.01,s*.123],[.06,.01,s*.123]],.006)}
+  box(.17,-.01,0,.09,.075,.09,P.body2,.02);
+  T('eye');eye([.218,0,0],[1,0,0],.022,{m:P.red});for(const s of sides)eye([.2,-.025,s*.03],[1,0,.3*s],.01);
+  T();around(4,(a,c,s)=>{beam([c*.08,0,s*.07],[c*.3,.03,s*.27],.04,.028,P.body2,.008)},Math.PI/4);
+  T('w0');around(4,(a,c,s)=>nacelle([Math.sign(c)*.3,.03,Math.sign(s)*.27],.075,.09,P.weak,{n:4}),Math.PI/4);
+  T('atk');box(.1,-.075,0,.1,.04,.06,P.metal,.01);for(const z of[-.018,.018])barrel([.15,-.078,z],[1,0,0],.008,.12);
+  T();rod([-.15,.04,0],[-.22,.13,0],.003,P.steel);sphere(-.22,.132,0,.007,P.glow);
+  decal('W-01',-.02,-.005,.122,.03,{both:true});
+ }},
+{id:'avispon',name:'Avispón',alias:'Hornet',cls:'Dron blindado aturdidor',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 1,1 m de ancho',armor:'Ligero, con frente reforzado',hp:'≈ 200',atk:'Disparo aturdidor lento que vacía escudos',loot:'Driver de Hornet (se puede tirar para aturdir) y munición media',
+ pal:{body:'#e2dccd',body2:'#30343a',heavy:'#5f656c',accent:'#d8452a',glow:'#8fd8ff'},
+ desc:'Dron de cuatro propulsores con el frente muy blindado. Te apunta con un láser y larga un proyectil lento que aturde y vacía escudos.',
+ tac:'Rodealo para pegarle a los propulsores traseros; de frente desperdiciás balas. Con munición media o pesada cae rápido. El proyectil es lento: esquivalo de costado.',
+ notes:['Escudo frontal inclinado de chapa gruesa','Toberas delanteras con capota blindada','Cañón aturdidor con tres bobinas','Toberas traseras al descubierto'],
+ src:['https://arcraiders.wiki/wiki/Hornet'],
+ pts:[{t:'w0',k:'weak',n:'Propulsores traseros',fx:'No tienen blindaje: perder varios lo desestabiliza.'},
+      {t:'shield',k:'info',n:'Frente blindado',v:'Placas gruesas',fx:'Incluye las toberas delanteras: flanquealo.'},
+      {t:'atk',k:'info',n:'Cañón aturdidor',v:'Proyectil lento',fx:'Aturde un momento y vacía escudos.'}],
+ build(){
+  box(0,0,0,.42,.12,.26,P.body,.035);box(-.03,.075,0,.3,.035,.18,P.body2,.012);vents(-.12,.095,0,6,.012,.006,.035,P.dark);
+  for(const s of sides)box(-.02,-.02,s*.135,.32,.06,.014,P.body2,.005);
+  T('shield');plate([.24,.0,0],[1,-.2,0],.28,.15,.035,P.heavy,.02);for(const s of sides)plate([.2,.0,s*.13],[.6,0,s*.8],.12,.13,.03,P.heavy,.015);
+  T('laser');eye([.27,.07,0],[1,.1,0],.016,{m:P.red});
+  T();around(4,(a,c,s)=>beam([c*.12,.02,s*.08],[Math.sign(c)*.3,.04,Math.sign(s)*.27],.045,.03,P.body2,.008),Math.PI/4);
+  for(const s of sides){T('shield');nacelle([.3,.04,s*.27],.08,.1,P.heavy,{n:4,m:P.heavy});plate([.39,.04,s*.27],[1,0,0],.16,.12,.025,P.heavy,.015);
+    T('w0');nacelle([-.3,.04,s*.27],.08,.1,P.weak,{n:4})}
+  T('atk');box(.08,-.095,0,.16,.06,.08,P.metal,.012);cylDir([.24,-.1,0],[1,0,0],.026,.16,P.metal);
+  for(let i=0;i<3;i++)ringDir([.19+i*.04,-.1,0],[1,0,0],.034,.008,P.glow);cylDir([.322,-.1,0],[1,0,0],.018,.006,P.glow);
+  T();decal('H-22',-.04,-.02,.143,.035,{both:true,color:'#e2dccd'});
+ }},
+{id:'soplon',name:'Soplón',alias:'Snitch',cls:'Explorador',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 80 cm',armor:'Sin blindaje',hp:'≈ 158',atk:'No ataca: llama refuerzos',loot:'Escáner de Snitch',
+ pal:{body:'#ebe5d6',body2:'#2f3338',accent:'#f2b33d',glow:'#fff0b8'},
+ desc:'Dron explorador que barre el terreno con un foco. Si te detecta, pide refuerzos desde órbita: dos Wasp, un Firefly con un Hornet o un Rocketeer.',
+ tac:'Bajalo antes de que llame: unos pocos tiros de munición media o pesada a los propulsores alcanzan. Meterte entre el follaje te esconde de su foco.',
+ notes:['Cuerpo de platillo con anillo de luces','Torreta de escaneo colgante con foco','Mástil con baliza de llamada','Cuatro toberas cortas en los costados'],
+ src:['https://arcraiders.wiki/wiki/Snitch'],
+ pts:[{t:'w0',k:'weak',n:'Propulsores',fx:'Romper varios lo hace caer en espiral contra el piso.'},
+      {t:'scan',k:'info',n:'Escáner con foco',v:'Barre el terreno',fx:'El follaje te tapa.'},
+      {t:'call',k:'info',n:'Baliza de llamada',v:'Pide refuerzos',fx:'Wasp, Firefly con Hornet o Rocketeer.'}],
+ build(){
+  hull([[0,-.06],[.13,-.06],[.2,-.03],[.215,0],[.19,.035],[.1,.065],[0,.072]],P.body);ring(0,0,0,.214,.012,P.body2,'y');
+  around(12,(a,c,s)=>sphere(c*.217,.0,s*.217,.007,P.glow));ring(0,.045,0,.15,.008,P.body2,'y');around(6,(a,c,s)=>box(c*.12,.058,s*.12,.05,.012,.02,P.body2,.004,0,-a),.26);
+  T('call');cyl(0,.085,0,.025,.03,P.metal,{axis:'y'});rod([0,.1,0],[0,.2,0],.006,P.steel);sphere(0,.21,0,.018,P.red);sphere(0,.21,0,.022,P.glass);
+  T('scan');cyl(0,-.075,0,.05,.03,P.metal,{axis:'y'});sphere(0,-.11,0,.055,P.body2);eye([.045,-.13,0],[1,-.7,0],.026,{m:P.glow});
+  T();const cone=strut([.07,-.15,0],[.6,-.62,0],.02,.2,tGlow('#fff3c0',.1),24);fx(cone);
+  T();around(4,(a,c,s)=>rod([c*.19,0,s*.19],[c*.28,.0,s*.28],.012,P.body2),Math.PI/4);
+  T('w0');around(4,(a,c,s)=>nacelle([c*.3,0,s*.3],.05,.07,P.weak,{n:4}),Math.PI/4);
+  T();decal('S-07',0,-.03,.19,.03,{both:true});
+ }},
+{id:'observador',name:'Observador',alias:'Spotter',cls:'Marcador de blancos',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 55 cm',armor:'Sin blindaje',hp:'≈ 80',atk:'No ataca: te marca con un láser para los morteros del Bombardero',loot:'Relé de Spotter',
+ pal:{body:'#e9e3d4',body2:'#2f3236',accent:'#d8442e',glow:'#ffcf7a'},
+ desc:'Dron chico de vuelo errático que acompaña al Bombardero de a pares. Te mantiene marcado con un láser para que los morteros sepan dónde caer.',
+ tac:'Cortá la línea de visión o metete bajo techo. Si bajás a los dos, el Bombardero queda ciego un rato hasta que llegan otros dos; cuando muere el Bombardero, se van.',
+ notes:['Cuerpo esférico con visera de lentes','Emisor de láser marcador de gran alcance','Tres toberas a 120 grados','Aletas estabilizadoras en el lomo'],
+ src:['https://arcraiders.wiki/wiki/Spotter'],
+ pts:[{t:'w0',k:'weak',n:'Propulsores',fx:'La wiki los marca como punto débil; no detalla qué pasa al romperlos.'},
+      {t:'laser',k:'info',n:'Láser marcador',v:'Guía los morteros',fx:'Si te marca, salí de su vista.'}],
+ build(){
+  sphere(0,0,0,.1,P.body);ring(0,0,0,.102,.014,P.body2,'y');ell(.02,.05,0,.07,.03,.06,P.body2);
+  T('laser');box(.08,0,0,.06,.06,.1,P.body2,.015);eye([.115,.0,0],[1,0,0],.03,{m:P.red});for(const s of sides)eye([.11,.0,s*.04],[1,0,0],.009);
+  const lz=strut([.14,0,0],[1.4,-.5,0],.004,.004,tGlow('#ff3b2f',.55),8);fx(lz);
+  T();for(const s of sides)prism([[-.04,.07],[.02,.07],[-.04,.13],[-.07,.13]],.008,P.accent,s*.03,.002);
+  around(3,(a,c,s)=>rod([c*.09,-.02,s*.09],[c*.17,-.02,s*.17],.01,P.body2));
+  T('w0');around(3,(a,c,s)=>nacelle([c*.18,-.02,s*.18],.04,.06,P.weak,{n:4}));
+ }},
+{id:'firefly',name:'Firefly',alias:'Firefly',cls:'Dron lanzallamas',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 1,2 m de ancho',armor:'Pesado (el tanque no)',hp:'≈ 200',atk:'Lanzallamas que te deja ardiendo un rato',loot:'Quemador de Firefly',
+ pal:{body:'#e3ddcf',body2:'#2f3236',heavy:'#5d636a',accent:'#e0572b',glow:'#ffb04a'},
+ desc:'Dron blindado que se acerca y te quema con un lanzallamas montado en un cardán. Lleva el combustible en un tanque amarillo a la vista.',
+ tac:'Esperá a que se tire a atacar y apuntale al tanque: si le das bien, estalla en una bola de fuego. Cuando muere prende fuego la zona: alejate.',
+ notes:['Casco de chapa gruesa con lomo claro','Lanzallamas en cardán bajo el vientre','Tanque de combustible con flejes','Cuatro toberas blindadas'],
+ src:['https://arcraiders.wiki/wiki/Firefly'],
+ pts:[{t:'w0',k:'weak',n:'Tanque de combustible',fx:'Daño extra; un buen impacto lo hace estallar. Se ve mejor cuando baja a atacar.'},
+      {t:'w1',k:'weak',n:'Propulsores',fx:'Están blindados, pero si caen pierde el control del vuelo.'},
+      {t:'atk',k:'info',n:'Lanzallamas en cardán',v:'Corta distancia',fx:'Te sigue quemando un rato después.'}],
+ build(){
+  ell(0,0,0,.26,.11,.19,P.heavy);ell(-.02,.07,0,.19,.045,.13,P.body);box(-.04,.11,0,.14,.014,.05,P.accent,.004);
+  box(.22,-.01,0,.09,.08,.13,P.heavy,.02);for(const z of[-.035,0,.035])eye([.27,.0,z],[1,0,0],.012);
+  T();around(4,(a,c,s)=>beam([c*.12,.02,s*.09],[Math.sign(c)*.32,.05,Math.sign(s)*.3],.05,.035,P.heavy,.01),Math.PI/4);
+  T('w1');around(4,(a,c,s)=>nacelle([Math.sign(c)*.32,.05,Math.sign(s)*.3],.085,.11,P.heavy,{n:4,m:P.heavy}),Math.PI/4);
+  T('atk');ring(.06,-.12,0,.06,.012,P.metal,'y');sphere(.06,-.14,0,.04,P.body2);cylDir([.17,-.18,0],[1,-.35,0],.03,.2,P.metal,{r2:.022});
+  ringDir([.26,-.215,0],[1,-.35,0],.026,.006,P.dark);cylDir([.268,-.218,0],[1,-.35,0],.016,.004,P.glow);
+  T('w0');cyl(-.12,-.13,0,.065,.26,P.weak,{axis:'z',seg:28});for(const z of[-.13,.13])sphere(-.12,-.13,z,.065,P.weak,1);
+  for(const z of[-.07,.07])ring(-.12,-.13,z,.068,.008,P.metal,'z');cyl(-.12,-.06,0,.012,.03,P.metal,{axis:'y'});
+  T();cable([[-.06,-.13,.05],[.0,-.17,.06],[.06,-.16,.03],[.1,-.16,0]],.01,P.cable);
+  decal('FF-6',-.02,.0,.19,.04,{both:true,color:'#e3ddcf'});
+ }},
+{id:'cohetero',name:'Cohetero',alias:'Rocketeer',cls:'Artillería aérea',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 3 m de ancho',armor:'Pesado (propulsores sin blindaje)',hp:'≈ 1.100',atk:'Salvas de misiles con daño en área',loot:'Driver de Rocketeer y munición de lanzador',
+ pal:{body:'#e0d9c8',body2:'#30343a',heavy:'#5d636a',accent:'#d8452a',glow:'#ffd27a',core:'#ff3b2f'},
+ desc:'Dron pesado de artillería. Cuatro láseres amarillos se ponen rojos al fijarte y después larga misiles con daño en área: dos impactos pueden tirarte.',
+ tac:'Peleá desde cobertura dura y movete cuando los láseres desaparecen. Granadas adhesivas en los propulsores o una Showstopper lo bajan al suelo.',
+ notes:['Casco central con cara de cuatro láseres','Placa superior tipo ceja que tapa un punto débil','Dos baterías laterales de seis tubos','Núcleo rojo trasero que se ve al recargar'],
+ src:['https://arcraiders.wiki/wiki/Rocketeer','https://allthings.how/how-to-defeat-every-arc-enemy-in-arc-raiders-weak-points-and-loot/'],
+ pts:[{t:'w0',k:'weak',n:'Propulsores',fx:'Sin blindaje: romper dos lo baja al suelo.'},
+      {t:'w1',k:'weak',n:'Punto bajo la ceja',fx:'Volale la placa de arriba y tirale al punto que queda debajo.',hid:true},
+      {t:'w2',k:'weak',n:'Núcleo rojo',fx:'Queda expuesto mientras recarga; pegarle lo aturde un momento.'},
+      {t:'atk',k:'info',n:'Baterías de misiles',v:'Daño en área'},
+      {t:'laser',k:'info',n:'Láseres de fijación',v:'Amarillo → rojo',fx:'Cuando se apagan, viene la salva.'}],
+ build(){
+  box(0,0,0,1.15,.48,.72,P.body,.12);box(-.05,.27,0,.8,.08,.5,P.body2,.03);vents(-.35,.32,0,7,.04,.012,.1,P.dark);
+  for(const s of sides){plate([0,-.02,s*.37],[0,0,s],.9,.36,.04,P.heavy,.05);bolts([[-.38,.12,s*.395],[.38,.12,s*.395],[-.38,-.16,s*.395],[.38,-.16,s*.395]],.018)}
+  box(.6,-.03,0,.16,.4,.56,P.heavy,.05);
+  T('laser');for(const y of[.06,-.1])for(const z of[-.15,.15])eye([.69,y,z],[1,0,0],.038,{m:P.glow});
+  T('armor');const brow=plate([.56,.28,0],[.45,1,0],.6,.24,.05,P.heavy,.03);brow.userData.ex=[-.05,.35,0];
+  T('w1');box(.55,.22,0,.18,.06,.36,P.weak,.02);
+  T('w2');cyl(-.62,.1,0,.16,.1,P.metal,{seg:32,open:true});sphere(-.6,.1,0,.11,P.core);ring(-.67,.1,0,.16,.015,P.dark);
+  T('atk');for(const s of sides){box(.12,-.06,s*.53,.72,.3,.3,P.body2,.05);rod([.0,0,s*.36],[.0,-.04,s*.4],.05,P.metal);
+    for(let r=0;r<2;r++)for(let q=0;q<3;q++){const y=-.12+r*.12,z=s*(.44+q*.09);cyl(.485,y,z,.04,.02,P.dark,{seg:16});sphere(.47,y,z,.03,P.accent)}
+    decal('',0,0,0,.001,{kind:'hazard',w:.4});const d=G.children[G.children.length-1];d.position.set(.1,.07,s*.682);if(s<0)d.rotation.y=Math.PI}
+  T();around(4,(a,c,s)=>beam([Math.sign(c)*.42,.12,Math.sign(s)*.3],[Math.sign(c)*.78,.18,Math.sign(s)*.86],.12,.08,P.body2,.02),Math.PI/4);
+  T('w0');around(4,(a,c,s)=>nacelle([Math.sign(c)*.8,.18,Math.sign(s)*.88],.2,.24,P.weak,{n:5}),Math.PI/4);
+  T();prism([[-.5,.3],[-.32,.3],[-.55,.62],[-.62,.62]],.04,P.accent,0,.008);rod([-.2,.32,.15],[-.25,.6,.18],.008,P.steel);sphere(-.25,.61,.18,.02,P.glow);
+  decal('RK-5',-.2,-.05,.391,.11,{both:true});
+ }},
+{id:'triturador',name:'Triturador',alias:'Shredder',cls:'Flotador de metralla',group:'Aéreos',mode:'Flota a ras del piso',size:'≈ 1,8 m de alto',armor:'Pesado',hp:'≈ 385',atk:'Metralla en todas direcciones y una descarga cargada más grande',loot:'Giróscopo de Shredder',
+ pal:{body:'#e2dccd',body2:'#2d3035',heavy:'#5f656c',accent:'#d8452a',glow:'#64c2ff'},
+ desc:'Flota a poca altura sobre chorros azules y te persigue para arrinconarte. Larga metralla en todas direcciones y, después de cargar, una descarga más grande.',
+ tac:'Usá explosivos mientras carga o justo después, y no lo enfrentes en cuartos chicos. Una mina Jolt en una puerta lo aturde.',
+ notes:['Torso de barril con placas superpuestas','Anillo de doce bocas de metralla','Cabeza reforzada con visor ranurado','Tres chorros azules debajo'],
+ src:['https://arcraiders.wiki/wiki/Shredder'],
+ pts:[{t:'w0',k:'weak',n:'Chorros azules',fx:'Pegarles hace daño extra y lo hace trastabillar.'},
+      {t:'atk',k:'info',n:'Bocas de metralla',v:'En todas direcciones',fx:'Antes de la descarga grande se carga: es la ventana.'},
+      {t:'head',k:'info',n:'Cabeza reforzada',v:'Vida extra',fx:'No se la podés volar: no gastes balas ahí.'}],
+ build(){
+  hull([[0,.36],[.26,.38],[.4,.5],[.46,.75],[.45,1.05],[.38,1.25],[.22,1.36],[0,1.38]],P.body2);
+  around(8,(a,c,s)=>{plate([c*.46,.8,s*.46],[c,0,s],.3,.42,.04,P.heavy,.03,0);plate([c*.42,1.15,s*.42],[c,.5,s],.26,.22,.035,P.body,.02)},TAU/16);
+  around(8,(a,c,s)=>bolts([[c*.49,1.0,s*.49],[c*.49,.6,s*.49]],.015),TAU/16);
+  T('atk');ring(0,.98,0,.47,.035,P.metal,'y');around(12,(a,c,s)=>barrel([c*.46,.98,s*.46],[c,0,s],.026,.1,P.metal));
+  T('head');cyl(0,1.42,0,.2,.08,P.metal,{axis:'y'});sphere(0,1.52,0,.21,P.heavy,.75);for(const y of[1.47,1.58])ring(0,y,0,.2-(y-1.47)*.6,.018,P.body2,'y');
+  box(.17,1.52,0,.06,.04,.26,P.dark,.01,0,0,0);box(.2,1.52,0,.01,.012,.22,P.glow,.004);
+  T('w0');around(3,(a,c,s)=>{cyl(c*.24,.36,s*.24,.1,.08,P.metal,{axis:'y'});thruster([c*.24,.27,s*.24],[0,-1,0],.09,.12,P.weak);
+    const f=strut([c*.24,.2,s*.24],[c*.26,-.15,s*.26],.08,.02,tGlow('#64c2ff',.35),16);fx(f)},Math.PI/6);
+  T();decal('SH-3',0,.62,.48,.08,{both:true,color:'#e2dccd'});
+ }},
+{id:'vaporizador',name:'Vaporizador',alias:'Vaporizer',cls:'Láser volador',group:'Aéreos',mode:'Aéreo',fly:true,size:'≈ 3,5 m de ancho',armor:'Ligero',hp:'≈ 1.500',atk:'Láser de impacto instantáneo que deja fuego en el piso',loot:'Regulador de Vaporizer',
+ pal:{body:'#e4dece',body2:'#2f3338',heavy:'#5f656c',accent:'#2e8c86',glow:'#7ff0e6',core:'#ff5a2a'},
+ desc:'Dron grande con un láser que pega al instante y deja manchas de fuego. Se protege con un escudo de energía que frena balas y objetos tirados.',
+ tac:'Hacé que use el escudo primero (Seeker o Wolfpack): tarda en volver a ponerlo. En esa ventana reventale el panel de abajo y tirale al núcleo.',
+ notes:['Casco de platillo con proa de láser','Panel inferior atornillado sobre el núcleo','Dos rotores laterales y dos toberas traseras','Pilones emisores del escudo en el lomo'],
+ src:['https://arcraiders.wiki/wiki/Vaporizer'],
+ pts:[{t:'w0',k:'weak',n:'Núcleo bajo el panel',fx:'Volá el panel de abajo y queda a la vista.',hid:true},
+      {t:'w1',k:'weak',n:'Propulsores',fx:'También figuran como punto débil.'},
+      {t:'atk',k:'info',n:'Láser',v:'Impacto instantáneo',fx:'Deja fuego en el piso.'},
+      {t:'shield',k:'info',n:'Escudo de energía',v:'Frena balas y objetos',fx:'Forzalo primero: tarda en volver.'}],
+ build(){
+  hull([[0,-.2],[.55,-.22],[1.0,-.12],[1.12,0],[1.0,.13],[.6,.27],[.25,.33],[0,.34]],P.body);ring(0,0,0,1.12,.025,P.body2,'y');
+  ring(0,.2,0,.72,.02,P.body2,'y');ring(0,.29,0,.4,.016,P.body2,'y');around(10,(a,c,s)=>box(c*.86,.17,s*.86,.22,.035,.05,P.body2,.01,0,-a),.31);around(16,(a,c,s)=>box(c*1.08,.0,s*1.08,.05,.08,.03,P.dark,.006,0,-a));
+  T('atk');box(.95,-.02,0,.5,.2,.32,P.body2,.05);barrel([1.15,-.03,0],[1,0,0],.07,.55,P.metal);for(let i=0;i<4;i++)ringDir([1.3+i*.09,-.03,0],[1,0,0],.085,.016,P.glow);
+  T('core','w0');sphere(0,-.12,0,.2,P.core);
+  T('armor');const pan=plate([0,-.235,0],[0,-1,0],.85,.85,.05,P.heavy,.06);pan.userData.ex=[0,-.35,0];
+  T('w1');for(const s of sides){beam([0,0,s*.95],[0,0,s*1.35],.14,.08,P.body2,.02);nacelle([0,.02,s*1.55],.36,.22,P.weak,{n:4})}
+  for(const s of sides)thruster([-1.05,.02,s*.3],[-1,0,0],.11,.22,P.weak);
+  T('shield');for(const s of sides){rod([-.2,.3,s*.25],[-.25,.6,s*.3],.03,P.metal);sphere(-.25,.63,s*.3,.06,P.glow);ring(-.25,.55,s*.3,.06,.012,P.body2,'y')}
+  T();decal('VZ-1',0,.0,1.125,.1,{both:true});
+ }},
+{id:'turbina',name:'Turbina',alias:'ARC Turbine',cls:'Nave costera',group:'Aéreos',mode:'Aéreo y terrestre',size:'≈ 5 m de alto',armor:'Pesado en vuelo; al posarse se abren huecos',hp:'≈ 4.000',atk:'Misiles de rayos en racimo y minas de proximidad',loot:'Compresor de Turbine y materiales ARC raros',
+ pal:{body:'#e3ddd0',body2:'#2f3338',heavy:'#5f656c',accent:'#3a6ea5',glow:'#8fd0ff'},
+ desc:'Nave grande con forma de cono que deriva por la costa y se posa en techos. Llegó con Riven Tides. En vuelo está toda blindada; al aterrizar, el tren de aterrizaje abre huecos en las placas.',
+ tac:'Esperá a que aterrice para tirarle por los huecos, o usá un Jupiter desde 150–200 m, fuera del alcance de los rayos. Mirá el piso: suelta minas debajo.',
+ notes:['Seis gajos de blindaje en forma de cono','Tres tanques amarillos que giran adentro','Corona de ocho lanzadores de rayos','Tres patas de aterrizaje con amortiguadores'],
+ src:['https://arcraiders.wiki/wiki/ARC_Turbine','https://news.xbox.com/en-us/2026/05/01/arc-raiders-arc-turbine-guide/'],
+ pts:[{t:'w0',k:'weak',n:'Tanques amarillos giratorios',fx:'Se ven por los huecos que abre el tren de aterrizaje cuando se posa.',hid:true},
+      {t:'w1',k:'weak',n:'Parte superior (sin confirmar)',fx:'Algunas guías la marcan; no está claro qué pasa al romperla.'},
+      {t:'atk',k:'info',n:'Misiles de rayos',v:'En racimo',fx:'Mucho daño y aturden.'},
+      {t:'mine',k:'info',n:'Minas de proximidad',v:'Las suelta debajo'}],
+ build(){
+  T();cyl(0,2.2,0,.42,3.0,P.body2,{axis:'y',seg:32});
+  T('w0');around(3,(a,c,s)=>{cyl(c*.78,1.55,s*.78,.3,1.1,P.weak,{axis:'y',seg:28});for(const y of[1.15,1.55,1.95])ring(c*.78,y,s*.78,.305,.025,P.dark,'y');rod([c*.42,1.55,s*.42],[c*.5,1.55,s*.5],.08,P.metal)},Math.PI/6);
+  T('armor');const prof=[[1.62,.75],[1.68,.95],[1.45,1.7],[1.08,2.6],[.7,3.35],[.42,3.8]];
+  for(let i=0;i<6;i++){const ps=i*TAU/6+.03,pl=TAU/6-.06;latheSeg(prof,i%2?P.heavy:P.body,ps,pl);
+    const pm=ps+pl/2;plate([Math.sin(pm)*1.42,1.75,Math.cos(pm)*1.42],[Math.sin(pm),.4,Math.cos(pm)],.5,.5,.04,i%2?P.body:P.heavy,.04);
+    for(const y of[1.2,2.3])sphere(Math.sin(pm)*(y<2?1.6:1.15),y,Math.cos(pm)*(y<2?1.6:1.15),.03,P.steel)}
+  T();ring(0,.82,0,1.66,.05,P.body2,'y');ring(0,3.75,0,.45,.04,P.body2,'y');
+  T('atk');around(8,(a,c,s)=>{const p=[c*.62,3.2,s*.62];cylDir(p,[c,1.4,s],.07,.3,P.body2);cylDir(off(p,[c,1.4,s],.16),[c,1.4,s],.05,.01,P.glow)});
+  T('w1');sphere(0,3.85,0,.38,P.body2,.6);ring(0,3.9,0,.3,.03,P.glow,'y');cyl(0,4.1,0,.06,.2,P.metal,{axis:'y'});
+  T('gear');around(3,(a,c,s)=>{const hip=[c*1.2,.9,s*1.2],knee=[c*1.75,.55,s*1.75],ft=[c*1.9,0,s*1.9];strut(hip,knee,.09,.08,P.body2);strut(knee,ft,.07,.06,P.metal);
+    rod([c*1.0,1.1,s*1.0],[c*1.62,.45,s*1.62],.035,P.steel);sphere(...knee,.1,P.metal);cyl(ft[0],.04,ft[2],.22,.08,P.rubber,{axis:'y'})},Math.PI/2);
+  T('mine');cyl(0,.62,0,.38,.2,P.metal,{axis:'y'});around(4,(a,c,s)=>{sphere(c*.2,.47,s*.2,.08,P.accent);ring(c*.2,.47,s*.2,.08,.012,P.dark,'y')});
+ }},
+
+/* ================= PESADOS, JEFES Y APOYO ================= */
+{id:'saltador',name:'Saltador',alias:'Leaper',cls:'Caminante de salto',group:'Pesados, jefes y apoyo',mode:'Terrestre · pesado',size:'≈ 3,5 m de alto',armor:'Pesado (el núcleo, poco)',hp:'≈ 1.100',atk:'Saltos largos que aplastan y un pulso de onda expansiva de cerca',loot:'Unidad de pulso de Leaper',
+ pal:{body:'#e3ddcf',body2:'#30343a',heavy:'#5f656c',accent:'#2e8c86',glow:'#8fe6ff',core:'#ff5a2a'},
+ desc:'Caminante grande de cuatro patas que salta lejos y cae encima. Hasta los saltos que fallan por poco lastiman, y de cerca larga un pulso expansivo.',
+ tac:'Metete por puertas donde no entra. Granadas Blaze y después munición pesada a las articulaciones; cuando caiga, pelale las placas del ojo.',
+ notes:['Cuatro patas de tres tramos con pistones','Ojo dentro de un tubo rodeado de placas','Núcleo detrás del ojo','Emisor de pulso bajo el vientre'],
+ src:['https://arcraiders.wiki/wiki/Leaper'],
+ pts:[{t:'w0',k:'weak',n:'Articulaciones de las patas',fx:'Romper una articulación hace caer todos los tramos que tiene debajo.'},
+      {t:'w1',k:'weak',n:'Núcleo detrás del ojo',fx:'Sacale las placas del ojo para dejarlo a la vista.',hid:true},
+      {t:'atk',k:'info',n:'Emisor de pulso',v:'Onda expansiva de cerca',fx:'Su blindaje aguanta mucho los explosivos.'},
+      {t:'eye',k:'info',n:'Ojo',v:'Rodeado de placas'}],
+ build(){
+  ell(0,2.1,0,.95,.42,.62,P.body2);for(const x of[-.45,0,.45])plate([x,2.5,0],[0,1,0],.42,.7,.05,P.body,.05);ell(0,1.95,0,.85,.3,.66,P.heavy);
+  vents(-.75,2.25,-.3,5,.004,.05,.15,P.dark,'z');
+  cyl(.98,2.05,0,.3,.42,P.body2,{seg:36,open:true});ring(1.19,2.05,0,.3,.03,P.metal);ring(.77,2.05,0,.3,.03,P.metal);
+  T('core','w1');sphere(.92,2.05,0,.2,P.core);
+  T('eye');rod([.95,2.05,0],[1.12,2.05,0],.05,P.metal);eye([1.18,2.05,0],[1,0,0],.075,{m:P.glow});
+  T('armor');plate([1.2,2.31,0],[.6,1,0],.5,.22,.05,P.heavy,.03).userData.ex=[.15,.3,0];plate([1.2,1.79,0],[.6,-1,0],.5,.22,.05,P.heavy,.03).userData.ex=[.15,-.2,0];
+  for(const s of sides)plate([1.2,2.05,s*.27],[.6,0,s],.36,.24,.05,P.heavy,.03).userData.ex=[.12,0,s*.3];
+  T('atk');cyl(0,1.62,0,.3,.12,P.metal,{axis:'y'});for(let i=0;i<3;i++)ring(0,1.54-i*.06,0,.27-i*.05,.022,P.glow,'y');
+  for(const sx of[1,-1])for(const s of sides){const hip=[sx*.55,2.0,s*.45],k1=[sx*1.25,2.95,s*1.15],k2=[sx*1.75,1.35,s*1.65],ft=[sx*1.95,0,s*1.85];
+    T();leg([hip,k1,k2,ft],.1,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],taper:.14,piston:true});
+    T('armor');const mid=[(hip[0]+k1[0])/2,(hip[1]+k1[1])/2+.08,(hip[2]+k1[2])/2];plate(mid,[sx*.4,1,s*.6],.24,.6,.04,P.heavy,.03,0).userData.ex=[sx*.06,.18,s*.06];
+    T();for(let i=0;i<4;i++){const t=.25+i*.15;ring(k2[0]+(ft[0]-k2[0])*t,k2[1]+(ft[1]-k2[1])*t,k2[2]+(ft[2]-k2[2])*t,.1,.016,P.accent,'y')}}
+  decal('LP-4',-.2,2.05,.62,.16,{both:true,color:'#e3ddcf'});
+ }},
+{id:'bastion',name:'Bastión',alias:'Bastion',cls:'Fortaleza con patas',group:'Pesados, jefes y apoyo',mode:'Terrestre · pesado',size:'≈ 4,5 m',armor:'Pesado, con placa trasera',hp:'≈ 2.050',atk:'Ametralladora rotativa: chilla y tira unos 3 s a tu última posición',loot:'Celda de Bastion',
+ pal:{body:'#e0dacb',body2:'#2d3035',heavy:'#5f656c',accent:'#d8452a',glow:'#ff7a3a',core:'#ff5a2a'},
+ desc:'Caminante lento y muy blindado, con patas de cangrejo y una ametralladora rotativa. Antes de disparar chilla, y después barre durante unos 3 segundos.',
+ tac:'Flanquealo para pegarle atrás. Granadas Blaze ayudan; una mina Deadline pegada al cilindro trasero lo puede matar de un solo golpe.',
+ notes:['Caparazón ancho de chapa gruesa','Cuatro patas de cangrejo con rodillas amarillas','Ametralladora rotativa con tambor y cinta','Cilindro trasero sobre una placa abatible'],
+ src:['https://arcraiders.wiki/wiki/Bastion'],
+ pts:[{t:'w0',k:'weak',n:'Rodillas amarillas',fx:'Lo aturden un momento y lo hacen más lento.'},
+      {t:'w1',k:'weak',n:'Cilindro trasero',fx:'Lo aturde y despega la placa trasera.',dir:[-1,.3,.2]},
+      {t:'w2',k:'weak',n:'Pieza bajo la placa trasera',fx:'Queda expuesta cuando cae la placa: recibe mucho daño.',hid:true,dir:[-1,0,.2]},
+      {t:'atk',k:'info',n:'Ametralladora rotativa',v:'Ráfaga de unos 3 s',fx:'El chillido es el aviso.'}],
+ build(){
+  ell(0,2.25,0,1.35,.75,1.05,P.heavy);ell(-.1,2.72,0,1.0,.3,.8,P.body);for(const x of[-.6,-.2,.2,.6])box(x,3.0,0,.28,.06,.9,P.body2,.02);
+  for(const s of sides)for(const x of[-.7,0,.7])plate([x,2.3,s*1.0],[0,.2,s],.6,.5,.06,P.body,.04);
+  box(1.25,2.1,0,.5,.6,.9,P.body2,.1);box(1.5,2.22,0,.04,.1,.6,P.glow,.01);for(const z of[-.2,0,.2])eye([1.5,2.0,z],[1,0,0],.05);
+  T('atk');beam([1.0,1.85,.55],[1.55,1.72,.95],.2,.2,P.body2,.04);sphere(1.55,1.72,.95,.17,P.metal);minigun(2.12,1.72,.95,.9,.07);
+  cyl(.55,1.85,1.15,.32,.24,P.accent,{axis:'z',seg:32});cable([[.55,1.85,1.25],[1.0,1.95,1.25],[1.5,1.85,1.1],[1.75,1.75,1.0]],.04,P.brass);
+  T();beam([1.0,1.85,-.55],[1.45,1.6,-.95],.2,.2,P.body2,.04);sphere(1.45,1.6,-.95,.16,P.metal);for(const dy of[.12,-.12])prism([[1.45,1.6+dy],[1.95,1.6+dy*2.4],[2.05,1.6+dy*1.4],[1.6,1.6+dy*.2]],.16,P.heavy,-.95,.02);
+  for(const sx of[1,-1])for(const s of sides){const hip=[sx*.75,1.8,s*.85],knee=[sx*1.45,2.7,s*2.0],ft=[sx*1.85,0,s*2.5];
+    leg([hip,knee,ft],.19,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],box:true,taper:.1,piston:true});
+    plate([(hip[0]+knee[0])/2,(hip[1]+knee[1])/2+.15,(hip[2]+knee[2])/2],[sx*.3,1,s*.5],.34,.8,.05,P.heavy,.03)}
+  T('w1');cyl(-1.42,2.45,0,.27,.95,P.weak,{axis:'z',seg:32});for(const z of[-.3,0,.3])ring(-1.42,2.45,z,.275,.025,P.dark,'z');for(const s of sides){cyl(-1.42,2.45,s*.5,.18,.06,P.metal,{axis:'z'});box(-1.25,2.45,s*.42,.3,.12,.08,P.body2,.02)}
+  T('w2');box(-1.15,1.75,0,.24,.42,.7,P.core,.04);
+  T('armor');const rp=plate([-1.38,1.75,0],[-1,-.15,0],.95,.6,.08,P.heavy,.05);rp.userData.ex=[-.2,-.12,0];
+  T();decal('BST-9',-.3,2.0,1.08,.2,{both:true});
+ }},
+{id:'bombardero',name:'Bombardero',alias:'Bombardier',cls:'Artillería caminante',group:'Pesados, jefes y apoyo',mode:'Terrestre · pesado',size:'≈ 4,5 m',armor:'Fuerte al frente',hp:'≈ 2.670',atk:'Morteros de largo alcance guiados por dos Spotter; onda expansiva de cerca',loot:'Celda de Bombardier',
+ pal:{body:'#d9cfb4',body2:'#2f3236',heavy:'#5f656c',accent:'#d8452a',glow:'#ffb02e'},
+ desc:'Caminante de artillería que tira morteros desde lejos. No ve solo: dos drones Spotter lo acompañan y le marcan dónde caer.',
+ tac:'Bajá primero a los Spotter para dejarlo ciego. Pegale justo después de que dispare; una mina Deadline junto al cilindro trasero también funciona.',
+ notes:['Batería de cuatro morteros en el lomo','Frente con placa gruesa inclinada','Cilindro amarillo vertical en la cola','Antena de enlace con los Spotter'],
+ src:['https://arcraiders.wiki/wiki/Bombardier'],
+ pts:[{t:'w0',k:'weak',n:'Rodillas amarillas',fx:'Lo frenan y dejan expuestas las piezas de abajo.'},
+      {t:'w1',k:'weak',n:'Cilindro trasero',fx:'Lo deja fuera de combate rápido.',dir:[-1,.2,.3]},
+      {t:'atk',k:'info',n:'Morteros',v:'Largo alcance',fx:'De cerca suelta una onda expansiva.'},
+      {t:'link',k:'info',n:'Enlace con los Spotter',v:'Dos drones marcan el blanco'}],
+ build(){
+  box(0,2.0,0,2.2,.9,1.5,P.body,.15);box(-.1,2.5,0,1.8,.12,1.3,P.body2,.04);for(const s of sides)plate([0,1.95,s*.77],[0,0,s],1.8,.6,.05,P.body2,.04);
+  plate([1.18,2.05,0],[1,.25,0],1.2,.85,.12,P.heavy,.06);plate([.95,2.5,0],[.5,1,0],1.0,.45,.08,P.heavy,.05);for(const z of[-.3,.3])eye([1.27,1.75,z],[1,0,0],.06);
+  T('atk');box(-.1,2.72,0,.95,.32,.95,P.body2,.06);for(const x of[-.35,.15])for(const z of[-.25,.25]){cylDir([x+.12,3.15,z],[.35,1,0],.13,.7,P.metal);ringDir([x+.24,3.48,z],[.35,1,0],.14,.025,P.dark);ringDir([x+.06,2.98,z],[.35,1,0],.15,.03,P.body2)}
+  T();for(const s of sides){cyl(-.3,2.0,s*.86,.32,.14,P.accent,{axis:'z',seg:32});cyl(-.3,2.0,s*.94,.12,.04,P.metal,{axis:'z'})}
+  T('link');rod([-.8,2.55,.45],[-.95,3.4,.5],.025,P.steel);lathe([[.02,0],[.1,.02],[.18,.08]],P.body2,-.95,3.42,.5);sphere(-.95,3.48,.5,.03,P.glow);
+  T();for(const sx of[1,-1])for(const s of sides){const hip=[sx*.85,1.6,s*.65],knee=[sx*1.35,1.0,s*1.25],ft=[sx*1.55,0,s*1.45];
+    leg([hip,knee,ft],.21,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],box:true,taper:.1,piston:true})}
+  T('w1');cyl(-1.3,2.35,0,.25,.9,P.weak,{axis:'y',seg:32});for(const y of[2.05,2.35,2.65])ring(-1.3,y,0,.255,.025,P.dark,'y');for(const y of[2.0,2.7])box(-1.15,y,0,.2,.08,.3,P.body2,.02);
+  T();decal('',0,0,0,.001,{kind:'hazard',w:.9});{const d=G.children[G.children.length-1];d.position.set(.1,1.6,.755)}
+  decal('BMB-2',-.3,2.2,.8,.18,{both:true});
+ }},
+{id:'torreta',name:'Torreta',alias:'Turret',cls:'Defensa de interiores',group:'Pesados, jefes y apoyo',mode:'Estacionaria',size:'≈ 1 m',armor:'Sin blindaje',hp:'≈ 80',atk:'Ráfagas; sigue tirando a donde te vio por última vez',
+ pal:{body:'#e1dbcc',body2:'#2f3338',accent:'#f2b33d',glow:'#fff0b0'},
+ desc:'Arma fija de interiores con una luz que barre el cuarto. Cuando te ve, tira ráfagas y sigue disparando al último lugar donde estabas.',
+ tac:'Ubicá la luz de escaneo antes de entrar. Hacela disparar contra tu cobertura y asomate a romperla: cualquier munición alcanza.',
+ notes:['Base de ocho pernos con columna giratoria','Cabezal compacto de doble cañón','Lámpara de escaneo sobre el cabezal','Caja de munición lateral con cinta'],
+ src:['https://arcraiders.wiki/wiki/Turret'],
+ pts:[{t:'w0',k:'weak',n:'Cabezal',fx:'No tiene blindaje: cae rápido con cualquier munición.'},
+      {t:'scan',k:'info',n:'Luz de escaneo',v:'Barre el cuarto',fx:'Si la ves venir, cubrite.'},
+      {t:'atk',k:'info',n:'Doble cañón',v:'Ráfagas'}],
+ build(){
+  cyl(0,.03,0,.3,.06,P.metal,{axis:'y',seg:8});around(8,(a,c,s)=>cyl(c*.25,.07,s*.25,.018,.02,P.steel,{axis:'y',seg:6}),Math.PI/8);
+  cyl(0,.25,0,.09,.4,P.body2,{axis:'y'});ring(0,.42,0,.13,.02,P.metal,'y');cyl(0,.46,0,.14,.06,P.metal,{axis:'y'});
+  T('w0');box(0,.6,0,.36,.24,.3,P.body,.05);for(const s of sides){box(0,.6,s*.16,.3,.18,.03,P.body2,.01);bolts([[-.1,.66,s*.178],[.1,.66,s*.178]],.01)}
+  vents(-.14,.72,0,5,.025,.006,.05,P.dark);
+  T('atk');for(const z of[-.06,.06]){barrel([.18,.6,z],[1,0,0],.024,.3);cylDir([.21,.6,z],[1,0,0],.036,.06,P.body2)}
+  T('scan');cyl(.04,.77,0,.05,.05,P.metal,{axis:'y'});eye([.1,.78,0],[1,-.2,0],.035,{m:P.glow});
+  T();fx(strut([.14,.77,0],[1.4,.35,0],.03,.32,tGlow('#fff3c0',.09),24));
+  box(-.12,.56,-.21,.15,.16,.1,P.accent,.015);cable([[-.06,.6,-.17],[.0,.64,-.12],[.06,.62,-.08]],.012,P.brass);
+  decal('T-40',-.02,.6,.152,.05,{color:'#2f3338'});
+ }},
+{id:'centinela',name:'Centinela',alias:'Sentinel',cls:'Francotirador fijo',group:'Pesados, jefes y apoyo',mode:'Estacionaria · en altura',size:'≈ 2,5 m',armor:'Ligero',hp:'≈ 300',atk:'Un disparo pesado después de que convergen varios láseres naranjas',loot:'Núcleo de disparo de Sentinel',
+ pal:{body:'#e2dccd',body2:'#2f3338',heavy:'#5f656c',accent:'#d8442e',glow:'#ffa04a'},
+ desc:'Francotirador fijo en lugares altos, montado sobre un brazo que pivota. Varios láseres naranjas se juntan sobre vos y después larga un tiro pesado.',
+ tac:'Reacciona lento: asomate, tirale y volvé a cubrirte, o bajalo desde lejos. Apuntá a la cápsula amarilla de atrás del brazo.',
+ notes:['Base atornillada a un techo con columna giratoria','Brazo pivotante de una pieza','Rifle largo con freno de boca','Cápsula amarilla en la espalda del brazo'],
+ src:['https://arcraiders.wiki/wiki/Sentinel'],
+ pts:[{t:'w0',k:'weak',n:'Cápsula de la espalda',fx:'Recibe daño extra. Hay quien dice que lo mata de un tiro; no está confirmado.',dir:[-1,.4,.4]},
+      {t:'laser',k:'info',n:'Láseres naranjas',v:'Convergen antes del tiro'},
+      {t:'atk',k:'info',n:'Rifle pesado',v:'Mucho daño en un tiro'}],
+ build(){
+  box(0,.1,0,1.0,.2,1.0,P.body2,.04);around(4,(a,c,s)=>cyl(c*.4,.22,s*.4,.03,.04,P.steel,{axis:'y',seg:8}),Math.PI/4);
+  cyl(0,.5,0,.16,.6,P.metal,{axis:'y'});ring(0,.8,0,.2,.03,P.body2,'y');sphere(0,.88,0,.18,P.metal);
+  beam([0,.88,0],[.6,1.9,0],.24,.2,P.body,.04);for(const s of sides)beam([.05,.95,s*.13],[.55,1.82,s*.13],.04,.08,P.body2,.01);
+  sphere(.6,1.92,0,.15,P.metal);
+  T('w0');const ad=[.5,.87,0],c=[.126,1.475,0];cylDir(c,ad,.1,.5,P.weak,{seg:28});sphere(...off(c,ad,.25),.1,P.weak);sphere(...off(c,ad,-.25),.1,P.weak);
+  for(const k of[-.12,.12])ringDir(off(c,ad,k),ad,.103,.014,P.dark);
+  T('atk');box(.78,2.0,0,.6,.3,.32,P.body,.06);box(.7,2.18,0,.4,.06,.22,P.body2,.02);barrel([1.05,2.0,0],[1,0,0],.05,1.1);for(let i=0;i<3;i++)ringDir([1.9+i*.07,2.0,0],[1,0,0],.075,.02,P.metal);
+  cylDir([.8,2.27,0],[1,0,0],.05,.36,P.body2);
+  T('laser');around(3,(a,c,s)=>{const p=[1.1,2.0+c*.17,s*.17];sphere(...p,.03,P.glow);fx(strut(p,[3.6,2.0,0],.006,.006,tGlow('#ffa04a',.5),8))},Math.PI/2);
+  T();decal('SN-1',.7,2.0,.162,.07,{both:true});
+ }},
+{id:'reina',name:'La Reina',alias:'Queen',cls:'Jefe',group:'Pesados, jefes y apoyo',mode:'Jefe · custodia Cosechadoras',size:'≈ 12 m de alto',armor:'Pesado, con placas sobre el núcleo',hp:'≈ 23.000 (estimado por la wiki)',atk:'Morteros incendiarios desde la cúpula, rayo láser, pulso EMP y golpe al piso',loot:'Reactor de Queen',
+ pal:{body:'#e0d9c9',body2:'#2c2f33',heavy:'#5f656c',accent:'#d8452a',glow:'#ffb04a',core:'#ff3b2f'},
+ desc:'Jefe gigante de patas largas que aparece cuidando Cosechadoras en ciertas condiciones del mapa. Tira morteros que estallan en fuego, un láser que atraviesa cobertura blanda y, de cerca, un pulso EMP.',
+ tac:'Pelea para toda la escuadra: Hullcracker para sacarle placas y después Bettina o Jupiter al núcleo rojo. Las articulaciones amarillas la hacen trastabillar y abren ventanas.',
+ notes:['Seis patas largas de tramos cuadrados','Cúpula dorsal con cinco morteros','Cabeza frontal con lente de láser','Núcleo rojo bajo el vientre tapado por placas'],
+ src:['https://arcraiders.wiki/wiki/Queen','https://brokenbuilds.gg/arc-raiders/guides/arc-raiders-queen-boss-guide'],
+ pts:[{t:'w0',k:'weak',n:'Articulaciones amarillas',fx:'La hacen trastabillar.'},
+      {t:'w1',k:'weak',n:'Núcleo rojo',fx:'Está bajo placas: volalas y es la ventana para matarla.',hid:true,dir:[.5,-1,.4]},
+      {t:'atk',k:'info',n:'Morteros de la cúpula',v:'De 2 a 5, estallan en fuego'},
+      {t:'laser',k:'info',n:'Rayo láser',v:'Atraviesa cobertura blanda',fx:'De cerca: pulso EMP y golpe al piso.'}],
+ build(){
+  ell(0,7,0,3.2,1.5,2.6,P.body2);ell(0,6.7,0,2.9,1.2,2.4,P.heavy);
+  T('armor');around(8,(a,c,s)=>plate([c*2.2,7.9,s*1.75],[c*.7,1,s*.7],1.6,1.1,.14,a%1.5<.8?P.body:P.heavy,.1));
+  T('atk');hull([[0,0],[1.4,0],[1.3,.5],[.9,1.0],[0,1.2]],P.body,0,8.1,0);around(5,(a,c,s)=>{const p=[c*.75,9.0,s*.75];cylDir(p,[c*.5,1,s*.5],.2,.9,P.metal);ringDir(off(p,[c*.5,1,s*.5],.45),[c*.5,1,s*.5],.21,.04,P.dark)});
+  T();box(3.0,7.0,0,1.4,1.2,1.6,P.body2,.2);plate([3.5,7.6,0],[.5,1,0],1.2,1.4,.12,P.heavy,.1);
+  T('laser');eye([3.75,7.0,0],[1,0,0],.35,{m:P.glow});for(const z of[-.55,.55])eye([3.7,7.15,z],[1,0,0],.12);
+  T('core','w1');sphere(.8,5.75,0,.7,P.core);T();ring(.8,5.75,0,.75,.08,P.metal,'y');
+  T('armor');plate([.8,5.05,0],[0,-1,0],1.9,1.7,.16,P.heavy,.1).userData.ex=[0,-.12,0];for(const s of sides)plate([.8,5.4,s*.95],[0,-.6,s],1.9,.7,.14,P.heavy,.08).userData.ex=[0,-.05,s*.14];
+  T();around(6,(a,c,s)=>{const hip=[c*2.2,6.6,s*1.8],knee=[c*4.6,9.0,s*4.0],ank=[c*6.4,3.2,s*5.6],ft=[c*6.8,0,s*6.0];
+    leg([hip,knee,ank,ft],.42,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],box:true,taper:.12,piston:true});
+    plate([(knee[0]+ank[0])/2,(knee[1]+ank[1])/2,(knee[2]+ank[2])/2],[c,.35,s],.7,2.4,.12,P.heavy,.08)},Math.PI/6);
+  decal('Q-01',0,6.9,2.62,.6,{both:true,color:'#e0d9c9'});
+ }},
+{id:'matriarca',name:'Matriarca',alias:'Matriarch',cls:'Jefe colosal',group:'Pesados, jefes y apoyo',mode:'Jefe · condición de mapa',size:'≈ 18 m de alto',armor:'Pesado, con placas faciales y escudo de energía',atk:'Misiles teledirigidos, pisotones, cápsulas de gas y flash; llama a otras ARC',loot:'Reactor de Matriarch',
+ pal:{body:'#ddd7c8',body2:'#2d3035',heavy:'#5f656c',accent:'#2e8c86',glow:'#7fe8ff',core:'#ff3b2f'},
+ desc:'El jefe más grande: más alta que la Reina y con patas que no dejan de moverse. Se cubre con un escudo de energía de casi un minuto y llama a otras máquinas ARC.',
+ tac:'Buscá altura o cobertura dura. Mientras tenga el escudo arriba no tires, o metete adentro del escudo y pegale al núcleo. Rompé las placas de la cara para dejarlo a la vista.',
+ notes:['Cara frontal con cuatro placas sobre el núcleo','Cuatro patas colosales siempre en movimiento','Dos brazos delanteros lanzacápsulas','Dos baterías de misiles y tres pilones del escudo'],
+ src:['https://arcraiders.wiki/wiki/Matriarch'],
+ pts:[{t:'w0',k:'weak',n:'Núcleo rojo',fx:'Rompé las placas de la cara para dejarlo a la vista.',hid:true,dir:[1,0,.2]},
+      {t:'atk',k:'info',n:'Misiles teledirigidos',v:'3 a 6 por salva',fx:'También tira cápsulas de gas y flash.'},
+      {t:'shield',k:'info',n:'Escudo de energía',v:'Dura cerca de un minuto'},
+      {t:'legs',k:'info',n:'Patas',v:'No conviene apuntarles',fx:'Pisotones que te tiran al piso.'}],
+ build(){
+  ell(0,11,0,3.6,3.0,3.0,P.body2);ell(-.6,13.2,0,2.8,1.4,2.4,P.body);for(const x of[-1.8,-.6,.6])box(x,14.5,0,.9,.22,2.2,P.body2,.06);
+  for(const s of sides)for(const x of[-1.8,0])plate([x,11.2,s*2.85],[0,.15,s],1.5,2.0,.16,P.heavy,.1);
+  cyl(3.3,10.6,0,1.7,1.2,P.body2,{seg:40,open:true});ring(3.9,10.6,0,1.7,.15,P.metal);
+  T('core','w0');sphere(3.2,10.6,0,1.35,P.core);
+  T('armor');plate([4.05,11.35,0],[1,.6,0],2.2,1.1,.22,P.heavy,.12).userData.ex=[.15,.2,0];plate([4.05,9.85,0],[1,-.6,0],2.2,1.1,.22,P.heavy,.12).userData.ex=[.15,-.12,0];
+  for(const s of sides)plate([4.05,10.6,s*.85],[1,0,s*.7],.9,1.4,.22,P.heavy,.12).userData.ex=[.12,0,s*.2];
+  T();for(const z of[-.6,0,.6])eye([3.4,12.9,z],[1,.3,0],.16);
+  T('atk');for(const s of sides){box(-1.0,14.9,s*1.5,2.2,.9,1.0,P.body2,.12);for(let i=0;i<3;i++)for(let j=0;j<2;j++){cyl(-1.6+i*.6,15.37,s*(1.3+j*.4),.15,.06,P.dark,{axis:'y',seg:16});sphere(-1.6+i*.6,15.32,s*(1.3+j*.4),.12,P.accent)}}
+  T('shield');around(3,(a,c,s)=>{rod([c*1.2-.5,14.6,s*1.2],[c*1.5-.5,16.3,s*1.5],.1,P.metal);sphere(c*1.5-.5,16.5,s*1.5,.28,P.glow);ring(c*1.5-.5,16.0,s*1.5,.25,.05,P.body2,'y')},Math.PI/3);
+  T();for(const s of sides){leg([[2.4,9.0,s*1.6],[4.2,6.4,s*2.3],[4.9,3.6,s*2.5]],.22,{m:P.body2,m0:P.body,jw:P.metal,box:true,taper:.1,foot:false});
+    for(const k of[-1,1])strut([4.9,3.6,s*2.5],[5.2,3.0,s*2.5+k*.3],.08,.02,P.steel)}
+  T('legs');around(4,(a,c,s)=>{const hip=[c*2.4,9.6,s*2.2],knee=[c*5.6,13.0,s*5.1],ank=[c*7.3,5.0,s*6.7],ft=[c*7.7,0,s*7.1];
+    leg([hip,knee,ank,ft],.62,{m:P.body2,m0:P.body,jw:P.metal,box:true,taper:.12,piston:true});
+    plate([(knee[0]+ank[0])/2,(knee[1]+ank[1])/2,(knee[2]+ank[2])/2],[c,.3,s],1.3,3.4,.18,P.heavy,.1)},Math.PI/4);
+ }},
+
+/* ================= FROZEN TRAIL ================= */
+{id:'bully',name:'Bully',cls:'Embestidor pesado',group:'Frozen Trail',prelim:true,mode:'Terrestre · pesado',size:'≈ 3 m',armor:'Pesado',atk:'Embestidas que te tiran y rompen coberturas, escopetazo de cerca y granadas de racimo a distancia',loot:'Fragmentador de Bully (se tira como granada de racimo)',
+ pal:{body:'#ddd6c6',body2:'#2d3035',heavy:'#5f656c',accent:'#d8452a',glow:'#ff8a3a'},
+ desc:'Máquina agresiva de cuatro patas pensada para acortar distancia rápido. Embiste una y otra vez, te tira al piso y puede atravesar coberturas.',
+ tac:'Hacé que cargue contra una cobertura o en lugares estrechos, apuntá a las articulaciones con munición pesada y no gastes balas mientras se mueve. La wiki sugiere granadas Wolfpack.',
+ notes:['Torso inclinado hacia adelante con chapa gruesa','Escudo de embestida con dos topes','Cabeza baja cerrada por placas','Lanzagranadas de cuatro tubos en el lomo'],
+ src:['https://arcraiders.wiki/wiki/Bully','https://insider-gaming.com/how-to-get-bully-fragmenter-destroy-bully-in-arc-raiders/'],
+ pts:[{t:'w0',k:'weak',n:'Articulaciones de las patas',fx:'Tirales con munición pesada (dato preliminar).'},
+      {t:'w1',k:'weak',n:'Cabeza',fx:'Se abre al recibir disparos y deja ver un punto débil (dato preliminar).',hid:true,dir:[1,.2,.3]},
+      {t:'ram',k:'info',n:'Escudo de embestida',v:'Rompe coberturas',fx:'Esquivá de costado y tirale cuando frena.'},
+      {t:'gren',k:'info',n:'Lanzagranadas',v:'Racimo a distancia'},
+      {t:'atk',k:'info',n:'Escopeta',v:'De cerca'}],
+ build(){
+  ell(0,1.65,0,1.05,.72,.82,P.heavy);ell(-.15,2.15,0,.8,.35,.65,P.body);box(.1,2.35,0,.9,.2,.9,P.body2,.06);
+  for(const s of sides)for(const x of[-.5,.2])plate([x,1.7,s*.78],[0,.1,s],.6,.55,.06,P.body,.04);
+  T('ram');plate([1.02,1.55,0],[1,-.15,0],.95,.95,.12,P.body,.08);for(const s of sides){rod([1.0,1.25,s*.32],[1.3,1.15,s*.36],.07,P.metal);sphere(1.32,1.15,s*.36,.09,P.steel)}
+  T('w1');sphere(1.22,.98,0,.2,P.weak);T();cyl(1.12,.98,0,.24,.2,P.body2,{seg:32,open:true});
+  T('armor');plate([1.4,1.08,0],[1,.8,0],.45,.25,.05,P.heavy,.03).userData.ex=[.1,.25,0];plate([1.4,.88,0],[1,-.8,0],.45,.25,.05,P.heavy,.03).userData.ex=[.12,-.12,0];
+  for(const s of sides)plate([1.38,.98,s*.2],[1,0,s*1.3],.3,.3,.05,P.heavy,.03).userData.ex=[.08,0,s*.25];
+  T();for(const s of sides)eye([1.43,1.12,s*.12],[1,.2,0],.035);
+  T('atk');barrel([1.25,.72,0],[1,0,0],.1,.35);ringDir([1.55,.72,0],[1,0,0],.13,.03,P.dark);
+  T('gren');box(-.45,2.55,0,.6,.3,.5,P.body2,.05);for(const z of[-.12,.12])for(const y of[2.6,2.75])cylDir([-.15,y,z],[1,.6,0],.06,.3,P.metal);
+  T();for(const s of sides){leg([[.6,1.3,s*.6],[.95,.8,s*.88],[1.05,0,s*.95]],.17,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],box:true,taper:.08});
+    leg([[-.65,1.4,s*.6],[-1.25,.9,s*.85],[-1.0,0,s*.9]],.18,{m:P.body2,m0:P.body,jw:P.weak,jointTag:['w0'],box:true,taper:.08});
+    plate([.82,1.12,s*.82],[.4,.4,s],.25,.45,.04,P.heavy,.03)}
+  decal('BL-2',-.3,1.6,.83,.18,{both:true});
+ }},
+{id:'skulker',name:'Skulker',cls:'Acechador con cola rifle',group:'Frozen Trail',prelim:true,mode:'Terrestre · se desliza',size:'≈ 1,6 m de largo',armor:'Ligero (por confirmar)',atk:'Tiros precisos de larga distancia o ráfagas desde la cola; dispara y se reubica',loot:'Targeter de Skulker (se despliega como torreta chica)',
+ pal:{body:'#dcd6c8',body2:'#2d3035',heavy:'#5f656c',accent:'#3a6ea5',glow:'#ff5a3a'},
+ desc:'Máquina baja que se desliza pegada al piso y espera escondida. Despliega una cola tipo escorpión con un rifle, dispara con precisión y se aleja para mantener distancia. Suele andar en grupo.',
+ tac:'Quedate detrás de rocas o follaje, seguilo por el sonido y tomá cada pelea como intercambios cortos: después de tirar, se mueve.',
+ notes:['Casco bajo y ancho con placas en el lomo','Cuatro toberas de deslizamiento','Cola de cinco segmentos que se despliega','Rifle con mira en la punta de la cola'],
+ src:['https://arcraiders.wiki/wiki/Skulker','https://insider-gaming.com/how-to-get-skulker-targeter-destroy-skulker-in-arc-raiders/'],
+ pts:[{t:'w0',k:'weak',n:'Propulsores (sin confirmar)',fx:'Romperlos le quitaría movilidad, según los primeros reportes.'},
+      {t:'w1',k:'weak',n:'Rifle de la cola (sin confirmar)',fx:'Dañarlo mientras apunta bajaría su daño.'},
+      {t:'eye',k:'info',n:'Sensor',v:'Te sigue desde lejos',fx:'Anda en grupo: si ves uno, hay más.'}],
+ build(){
+  ell(0,.33,0,.62,.13,.33,P.body);for(const x of[-.3,0,.3])plate([x,.44,0],[0,1,0],.24,.42,.03,P.body2,.02);
+  for(const s of sides){box(-.05,.3,s*.32,.9,.08,.04,P.body2,.015);for(const x of[-.35,0,.35])prism([[x-.1,.27],[x+.12,.27],[x+.04,.17]],.03,P.heavy,s*.36,.005)}
+  box(.62,.33,0,.22,.12,.24,P.body2,.03);
+  T('eye');eye([.74,.35,0],[1,0,0],.04,{m:P.glow});for(const s of sides)eye([.72,.31,s*.08],[1,-.1,0],.015);
+  T('w0');for(const x of[-.38,.38])for(const s of sides){cyl(x,.2,s*.25,.075,.05,P.metal,{axis:'y'});thruster([x,.15,s*.25],[0,-1,0],.06,.07,P.metal);fx(strut([x,.11,s*.25],[x,.0,s*.25],.045,.015,tGlow('#9fd8ff',.35),12))}
+  T();const tail=[[-.6,.36],[-.85,.5],[-.95,.78],[-.85,1.02],[-.62,1.12]];
+  for(let i=0;i<tail.length-1;i++){const a=[tail[i][0],tail[i][1],0],b=[tail[i+1][0],tail[i+1][1],0];beam(a,b,.13-i*.015,.1-i*.01,i%2?P.body:P.body2,.02);sphere(...b,.07-i*.006,P.metal)}
+  T('w1');box(-.48,1.15,0,.36,.12,.12,P.metal,.02);barrel([-.3,1.15,0],[1,0,0],.022,.5,P.metal);cylDir([-.45,1.25,0],[1,0,0],.03,.16,P.body2);sphere(-.36,1.25,0,.026,P.glow);
+  T();decal('SK-1',.05,.32,.33,.06,{both:true});
+ }},
+{id:'hydra',name:'Hydra',cls:'Torre de tres cuerpos',group:'Frozen Trail',prelim:true,mode:'Estacionaria · en la cubierta de la Fragata',size:'≈ 6 m de alto',armor:'Sin datos todavía',atk:'Cada sección apunta a un jugador distinto (hasta 3), o los seis cañones a uno que se queda quieto. En la zona de carga tira a través de paredes',
+ pal:{body:'#dfd9cb',body2:'#2d3035',heavy:'#5f656c',accent:'#d8452a',glow:'#ff7a3a'},
+ desc:'Torre fija de tres secciones apiladas que giran por separado, cada una con dos cañones que pivotan. Custodia la cubierta de la Fragata.',
+ tac:'Separen a la escuadra, corten la línea de visión y descárguenle cuando sus secciones miran para otro lado. Una guía sugiere el Hullcracker.',
+ noWeak:'Todavía no hay puntos débiles confirmados: salió el 8 de octubre. Cada sección se puede atacar por separado.',
+ notes:['Base de doce pernos con columna central','Tres tambores que giran cada uno a su ritmo','Dos cañones pivotantes por sección','Domo de sensores en la punta'],
+ src:['https://metaforge.app/arc-raiders/how-to-board-the-arc-raiders-frigate-and-beat-the-hydra','https://www.playnews.gg/en/guides/hydra-arc-raiders-how-to-defeat-this-three-cannon-turret-from-frozen-trail'],
+ pts:[{t:'sec0',k:'info',n:'Sección inferior',v:'Dos cañones',fx:'Gira por su cuenta.'},{t:'sec1',k:'info',n:'Sección media',v:'Dos cañones',fx:'Gira por su cuenta.'},{t:'sec2',k:'info',n:'Sección superior',v:'Dos cañones',fx:'Gira por su cuenta.'},
+      {t:'top',k:'info',n:'Domo de sensores',v:'Sigue hasta 3 blancos'}],
+ build(){
+  cyl(0,.15,0,1.4,.3,P.metal,{axis:'y',seg:12});around(12,(a,c,s)=>cyl(c*1.25,.32,s*1.25,.06,.06,P.steel,{axis:'y',seg:6}));
+  cyl(0,1.0,0,.5,1.6,P.body2,{axis:'y'});cyl(0,3.4,0,.36,4.4,P.metal,{axis:'y'});
+  for(let k=0;k<3;k++){const y=1.55+k*1.5,R=.85-k*.08,a=k*1.15+.3;T('sec'+k);
+    cyl(0,y,0,R,1.15,k%2?P.body:P.heavy,{axis:'y',seg:40});for(const dy of[-.5,.5])ring(0,y+dy,0,R+.01,.035,P.body2,'y');
+    around(8,(b,c,s)=>box(c*(R+.01),y,s*(R+.01),.04,.6,.18,P.body2,.01,0,-b),a);
+    const d=[Math.cos(a),0,Math.sin(a)],pp=[-Math.sin(a),0,Math.cos(a)];
+    for(const s of sides){const p=[pp[0]*s*(R+.28),y,pp[2]*s*(R+.28)];cylDir([pp[0]*s*(R+.1),y,pp[2]*s*(R+.1)],pp,.14,.2,P.metal);
+      beam(off(p,d,-.5),off(p,d,.45),.4,.38,P.body2,.06);plate(off(off(p,d,0),[0,1,0],.2),[0,1,0],.36,.8,.05,P.body,.03);barrel(off(p,d,.4),d,.09,1.2,P.metal);ringDir(off(p,d,1.5),d,.12,.03,P.dark);sphere(...off(off(p,d,.2),[0,1,0],.18),.05,P.glow)}
+    ring(0,y+.62,0,R*.6,.04,P.metal,'y')}
+  T('top');sphere(0,5.4,0,.55,P.body2,.7);ring(0,5.4,0,.5,.04,P.glow,'y');for(const z of[-.25,0,.25])eye([.47,5.45,z],[1,.2,0],.06);rod([0,5.7,0],[0,6.2,0],.03,P.steel);sphere(0,6.22,0,.05,P.glow);
+ }},
+
+/* ================= CONTENEDORES Y OPERACIONES ================= */
+{id:'fragata',name:'Fragata',alias:'ARC Frigate',cls:'Nave nodriza',group:'Contenedores y operaciones',prelim:true,mode:'Operación ARC · no se derriba',fly:true,size:'≈ 60 m de largo (estimado)',armor:'No se puede derribar',atk:'Torretas bajo el casco que le tiran a quien se queda abajo',loot:'Módulos de amplificación',
+ pal:{body:'#dcd6c7',body2:'#2d3035',heavy:'#5f656c',accent:'#d8452a',glow:'#9fd8ff',core:'#ff8a2a'},
+ desc:'Nave ARC enorme que llegó con Frozen Trail. No se derriba: se sube por las plataformas Reclaimer, se recorre por dentro y se sabotea. A bordo hay Hydra, Rocketeer, Firefly y Vaporizer.',
+ tac:'Subí por las plataformas, coordiná con tu escuadra para tirar las tres palancas a la vez y romper los núcleos de energía. No te quedes debajo del casco: las torretas te cazan.',
+ notes:['Casco largo achatado con cubierta superior','Cuatro motores traseros','Núcleos de energía naranjas en los flancos','Plataformas de subida colgando del vientre'],
+ src:['https://arcraiders.wiki/wiki/Frigate','https://www.keengamer.com/articles/guides/arc-raiders-frigate-guide-farming-amplification-modules/'],
+ pts:[{t:'w0',k:'weak',n:'Núcleos de energía naranjas',fx:'Destruirlos es parte del sabotaje desde adentro.'},
+      {t:'w1',k:'weak',n:'Válvula amarilla',fx:'Dispararle abre la zona de carga.'},
+      {t:'core2',k:'info',n:'Núcleo central',v:'Tres palancas a la vez',fx:'Hay que tirarlas juntas para subirlo.'},
+      {t:'atk',k:'info',n:'Torretas del casco',v:'Le tiran a quien está abajo'},
+      {t:'lift',k:'info',n:'Plataformas Reclaimer',v:'Así se sube a bordo'},
+      {t:'hydra',k:'info',n:'Hydra en cubierta',v:'Torre de tres cuerpos'}],
+ build(){
+  const h=hull([[0,-30],[2.5,-28.5],[5.5,-22],[7,-10],[7,8],[6,18],[3.5,26],[0,29]],P.body);h.rotation.z=-Math.PI/2;h.scale.set(.5,1,1);
+  box(0,3.3,0,44,1.2,7,P.body2,.4);box(-4,4.4,0,18,1.2,5,P.body,.3);box(-9,6.2,0,6,2.6,3.6,P.body2,.3);for(const z of[-1,0,1])eye([-5.9,6.6,z],[1,0,0],.25);
+  for(const s of sides){for(let i=0;i<6;i++)plate([-18+i*6.5,0,s*6.85],[0,0,s],5.6,2.6,.25,i%2?P.heavy:P.body,.2);box(0,-1.9,s*5.4,46,.5,.5,P.body2,.1)}
+  T('core2');cyl(2,5.5,0,1.1,3.2,P.body2,{axis:'y'});for(const y of[4.6,5.5,6.4])ring(2,y,0,1.12,.12,P.glow,'y');
+  T('hydra');cyl(12,4.4,0,.9,1.2,P.heavy,{axis:'y'});cyl(12,5.4,0,.75,1.0,P.body,{axis:'y'});cyl(12,6.3,0,.6,.9,P.heavy,{axis:'y'});for(const y of[4.4,5.4,6.3])barrel([12.5,y,0],[1,0,0],.12,1.4);
+  T('w0');for(const s of sides)for(const x of[-12,0,12]){cyl(x,.3,s*6.9,1.1,.5,P.metal,{axis:'z'});sphere(x,.3,s*6.95,.85,P.core);ring(x,.3,s*7.2,.95,.15,P.dark,'z')}
+  T('w1');{const p=[6,-1.2,7.05];cylDir(p,[0,0,1],.8,.25,P.weak);ringDir(off(p,[0,0,1],.2),[0,0,1],.75,.12,P.weak);around(4,(a,c,s)=>rod([6,-1.2,7.3],[6+c*.75,-1.2+s*.75,7.3],.08,P.weak))}
+  T();for(const s of sides)for(const y of[-.6,1.6]){thruster([-28.5,y,s*3.4],[-1,0,0],1.6,3.2,P.metal);ringDir([-27,y,s*3.4],[-1,0,0],1.7,.25,P.body2)}
+  T('atk');for(const x of[-15,-3,9,20]){sphere(x,-3.05,0,.9,P.body2,.6);barrel([x+.4,-3.2,0],[1,-.3,0],.12,1.6)}
+  T('lift');for(const x of[-8,6]){for(const z of[-1.5,1.5])rod([x,-3,z],[x,-6.5,z],.08,P.steel);box(x,-6.7,0,4,.3,4,P.body2,.1);box(x,-6.45,0,3.6,.1,3.6,P.accent,.05)}
+  T();decal('ARC-F',-14,2.6,7.0,1.8,{both:true});
+ }},
+{id:'sonda',name:'Sonda',alias:'ARC Probe',cls:'Recolectora de muestras',group:'Contenedores y operaciones',mode:'Contenedor',size:'≈ 1,5 m',armor:'No pelea',atk:'Ninguno',
+ pal:{body:'#e4dfd2',body2:'#30343a',heavy:'#5f656c',accent:'#f2b33d',glow:'#ff5a3a'},
+ desc:'Máquina sin armas que junta muestras del terreno. No es un enemigo: se fuerza para sacar el botín, pero al abrirla pita fuerte y atrae a las ARC cercanas.',
+ tac:'Antes de abrirla, limpiá la zona o tené una salida preparada: el pitido avisa a todo lo que esté cerca.',
+ noWeak:'No pelea: es un contenedor que se abre.',
+ notes:['Cápsula de tres patas con bandas','Brazo perforador hasta el piso','Escotilla lateral con manija','Baliza roja en la tapa'],
+ src:['https://arcraiders.wiki/wiki/ARC_Probe'],
+ pts:[{t:'hatch',k:'info',n:'Escotilla',v:'Se fuerza para el botín'},
+      {t:'beep',k:'info',n:'Baliza',v:'Pita fuerte al abrirla',fx:'Atrae a las ARC cercanas.'},
+      {t:'drill',k:'info',n:'Perforador',v:'Junta muestras'}],
+ build(){
+  hull([[0,.32],[.3,.34],[.42,.5],[.45,.9],[.38,1.2],[.2,1.34],[0,1.36]],P.body);for(const y of[.55,.9,1.15])ring(0,y,0,(y<1?.452:.39),.018,P.body2,'y');
+  around(3,(a,c,s)=>{strut([c*.3,.5,s*.3],[c*.62,0,s*.62],.04,.03,P.body2);sphere(c*.3,.5,s*.3,.06,P.metal);cyl(c*.62,.02,s*.62,.09,.04,P.rubber,{axis:'y'})},Math.PI/2);
+  T('drill');beam([-.3,.75,0],[-.62,.6,0],.08,.08,P.body2,.02);strut([-.62,.6,0],[-.62,.15,0],.04,.035,P.metal);strut([-.62,.15,0],[-.62,0,0],.035,.005,P.steel);sphere(-.62,.6,0,.06,P.metal);
+  T('hatch');plate([.44,.75,0],[1,0,0],.36,.42,.04,P.heavy,.04);box(.47,.75,0,.04,.04,.18,P.accent,.01);bolts([[.465,.93,.14],[.465,.93,-.14],[.465,.57,.14],[.465,.57,-.14]],.015);
+  decal('',0,0,0,.001,{kind:'hazard',w:.3});{const d=G.children[G.children.length-1];d.position.set(.3,.45,.33);d.rotation.y=.8}
+  T('beep');cyl(0,1.38,0,.08,.05,P.metal,{axis:'y'});sphere(0,1.43,0,.07,P.red,.8);sphere(0,1.43,0,.08,P.glass,.82);
+  T();rod([.1,1.3,.1],[.18,1.6,.15],.008,P.steel);
+  for(let i=0;i<3;i++)cyl(-.2+i*.1,.95,.4,.035,.16,P.glass,{axis:'y'});
+  decal('PRB',0,.75,.44,.1,{color:'#30343a'});
+ }},
+{id:'evaluador',name:'Evaluador',alias:'ARC Assessor',cls:'Muestreador orbital',group:'Contenedores y operaciones',mode:'Evento con contenedor',size:'≈ 2,5 m',armor:'No pelea',atk:'Ninguno: al abrirlo llama a un escuadrón ARC',loot:'Matriz de Assessor',
+ pal:{body:'#e3ddd0',body2:'#2f3338',heavy:'#5f656c',accent:'#2e8c86',glow:'#7fe8ff'},
+ desc:'Cápsula que baja desde órbita a juntar muestras. No dispara: es un evento con botín, pero tiene trampa. Al forzarla llama a un escuadrón de máquinas ARC.',
+ tac:'Prepará la pelea antes de abrirla: buscá cobertura, cargá munición y, si vas solo, pensá la salida.',
+ noWeak:'No pelea: es un evento con contenedor que se abre.',
+ notes:['Cápsula de reentrada con escudo térmico quemado','Cuatro patas de aterrizaje','Bahías de muestras en los costados','Antena de enlace en la punta'],
+ src:['https://arcraiders.wiki/wiki/ARC_Assessor'],
+ pts:[{t:'hatch',k:'info',n:'Panel de apertura',v:'Botín: Matriz de Assessor'},
+      {t:'call',k:'info',n:'Antena de enlace',v:'Trampa',fx:'Al abrirlo llama a un escuadrón ARC.'},
+      {t:'heat',k:'info',n:'Escudo térmico',v:'Bajó desde órbita'}],
+ build(){
+  T('heat');cyl(0,.5,0,1.04,.14,P.heavy,{axis:'y',seg:48});ring(0,.44,0,1.0,.04,P.dark,'y');
+  T();hull([[0,.55],[1.0,.57],[1.03,.72],[.8,1.6],[.55,2.2],[.3,2.4],[0,2.42]],P.body);for(const y of[.9,1.5,2.0])ring(0,y,0,1.03-(y-.72)*.27,.025,P.body2,'y');
+  around(4,(a,c,s)=>{strut([c*.85,.75,s*.85],[c*1.35,0,s*1.35],.06,.05,P.body2);sphere(c*.85,.75,s*.85,.08,P.metal);rod([c*.9,1.0,s*.9],[c*1.2,.35,s*1.2],.025,P.steel);cyl(c*1.35,.03,s*1.35,.14,.06,P.rubber,{axis:'y'})},Math.PI/4);
+  around(3,(a,c,s)=>plate([c*.93,1.15,s*.93],[c,.3,s],.4,.5,.05,P.body2,.04),Math.PI);
+  T('hatch');plate([.95,1.2,0],[1,.27,0],.48,.6,.06,P.heavy,.05);box(.99,1.2,0,.03,.4,.04,P.glow,.01);
+  T('call');cyl(0,2.48,0,.12,.12,P.metal,{axis:'y'});around(3,(a,c,s)=>{rod([c*.06,2.5,s*.06],[c*.25,2.95,s*.25],.015,P.steel);sphere(c*.25,2.96,s*.25,.03,P.glow)});
+  lathe([[.02,0],[.12,.03],[.22,.1]],P.body2,0,2.56,0);
+  decal('ASR',0,1.4,.87,.14,{both:true});
+ }},
+
+];
+
+/* ---------- escena ---------- */
+const cv=document.getElementById('cv'),stage=document.getElementById('stage');
+const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(30,1,.01,50);
+const controls=new THREE.OrbitControls(camera,cv);controls.enableDamping=true;controls.dampingFactor=.08;controls.autoRotate=true;controls.autoRotateSpeed=1.0;controls.enablePan=true;controls.maxPolarAngle=Math.PI*.62;
+(function(){const pm=new THREE.PMREMGenerator(renderer);const es=new THREE.Scene();
+  es.add(new THREE.Mesh(new THREE.BoxGeometry(12,12,12),new THREE.MeshBasicMaterial({color:0x2e2d29,side:THREE.BackSide})));
+  const pl=(c,s,x,y,z,w,h)=>{const m=new THREE.MeshBasicMaterial({color:c});m.color.multiplyScalar(s);const p=new THREE.Mesh(new THREE.PlaneGeometry(w,h),m);p.position.set(x,y,z);p.lookAt(0,0,0);es.add(p)};
+  pl(0xfff2dd,3,0,5.8,0,6,3);pl(0xdde8ff,1.4,-5.8,1.5,2,3,5);pl(0xffe0c0,1.2,5.8,1,-2,3,4);pl(0xffffff,.7,0,1,5.8,6,2);
+  pl(0xffffff,3.5,-2.5,4,4,.3,6);pl(0xffffff,3.5,2.5,4,4,.3,6);pl(0xfff4e8,2.5,0,2.5,-5.8,8,.4);
+  scene.environment=pm.fromScene(es,.03).texture;pm.dispose()})();
+scene.add(new THREE.HemisphereLight(0xfff4e2,0x3a352c,.35));
+const key=new THREE.DirectionalLight(0xfff0dc,1.7);key.position.set(1.6,3.2,2.2);key.castShadow=true;key.shadow.mapSize.set(2048,2048);
+Object.assign(key.shadow.camera,{left:-1.2,right:1.2,top:1.2,bottom:-1.2,near:.5,far:9});key.shadow.bias=-.0004;key.shadow.normalBias=.01;key.shadow.radius=4;scene.add(key);
+const rim=new THREE.DirectionalLight(0xc8dcff,1.3);rim.position.set(-2.5,1.6,-2.4);scene.add(rim);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(10,10),new THREE.ShadowMaterial({opacity:.24}));floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+const grid=new THREE.GridHelper(1.6,48,0x777064,0x8a8475);grid.material.transparent=true;grid.material.opacity=.18;scene.add(grid);
+const paper=new THREE.MeshStandardMaterial({color:lin('#ebe6d8'),roughness:1,metalness:0});
+const ink=new THREE.LineBasicMaterial({color:0x22324d});
+const HL=new THREE.MeshStandardMaterial({color:lin('#ffcf4a'),roughness:.5,metalness:0,emissive:lin('#ff5a2a'),emissiveIntensity:.8});
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let current=null,curIdx=0,sketch=false,explode=0,dims=null,scaleK=1,showMan=false,hasArmor=false;
+
+/* figura humana de 1,8 m para comparar tamaños */
+const man=new THREE.Group();(function(){const m=new THREE.MeshStandardMaterial({color:lin('#8c877b'),roughness:.9});
+  const P2=(g,x,y,z)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;man.add(o)};
+  for(const s of[-.1,.1])P2(new THREE.CylinderGeometry(.07,.06,.86,12),0,.43,s);
+  P2(new THREE.CylinderGeometry(.19,.15,.62,14),0,1.18,0);man.children[2].scale.z=1.4;
+  for(const s of[-.27,.27])P2(new THREE.CylinderGeometry(.05,.045,.66,10),0,1.12,s);
+  P2(new THREE.SphereGeometry(.12,18,12),0,1.65,0)})();
+man.visible=false;scene.add(man);
+
+function meshesOf(g){return g.children.filter(o=>o.isMesh&&!o.userData.decal&&!o.userData.fx)}
+function build(i){
+  if(current){scene.remove(current);current.traverse(o=>{if(o.geometry)o.geometry.dispose()});MATS.forEach(m=>{if(m.userData.tex)m.userData.tex.dispose();m.dispose()})}
+  MATS=[];TAGS=[];const d=DEFS[i];G=new THREE.Group();P=makePal(d.pal||{});d.build();TAGS=[];
+  G.updateMatrixWorld(true);
+  const bb=new THREE.Box3();meshesOf(G).forEach(o=>bb.expandByObject(o));
+  const c=bb.getCenter(new THREE.Vector3()),sz=bb.getSize(new THREE.Vector3());
+  G.children.forEach(o=>{o.position.sub(c);o.userData.base=o.position.clone()});
+  G.updateMatrixWorld(true);G.children.forEach(o=>{o.userData.ctr=new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3())});
+  hasArmor=G.children.some(o=>o.userData.tags&&o.userData.tags.includes('armor'));
+  ANCH=makeAnchors(d,sz);
+  scaleK=1/Math.max(sz.x,sz.y,sz.z);G.scale.setScalar(scaleK);
+  dims=sz.clone().multiplyScalar(scaleK);
+  G.position.y=dims.y/2+(d.fly?.14:0)+.002;G.userData.baseY=G.position.y;
+  current=G;scene.add(G);
+  man.scale.setScalar(scaleK);man.position.set(0,0,-(dims.z/2+.45*scaleK+.04));man.rotation.y=Math.PI/2;
+  applySketch();fit();applyExplode();setupHots();
+  return {parts:meshesOf(G).length,size:d.size};
+}
+let ANCH=[],fitDist=1;
+const VIEW=new THREE.Vector3(.42,.3,1).normalize();
+function fit(){
+  if(!dims)return;const t=Math.tan(camera.fov*Math.PI/360);
+  const b=new THREE.Box3();current.updateMatrixWorld(true);meshesOf(current).forEach(o=>b.expandByObject(o));if(showMan){man.updateMatrixWorld(true);b.expandByObject(man)}
+  const sz=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),hx=Math.max(sz.x,sz.z);
+  const vf=camera.fov*Math.PI/180,hf=2*Math.atan(t*camera.aspect),rad=sz.length()/2;
+  const dist=Math.max(rad/Math.sin(Math.min(vf,hf)/2)*.9,sz.y*1.9/(2*t));
+  controls.target.copy(c);
+  camera.position.copy(c).add(VIEW.clone().multiplyScalar(dist));
+  fitDist=dist;controls.minDistance=dist*.2;controls.maxDistance=dist*2.6;camera.near=dist/100;camera.far=dist*20;camera.updateProjectionMatrix();controls.update();
+}
+function applySketch(){
+  if(!current)return;closeHL();
+  current.children.forEach(o=>{
+    if(o.userData.decal||o.userData.fx){o.visible=!sketch&&(!o.userData.open||explode>.3);return}
+    if(!o.userData.orig)o.userData.orig=o.material;
+    o.material=sketch?paper:o.userData.orig;
+    if(sketch&&!o.userData.edges){const e=new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry,28),ink);o.add(e);o.userData.edges=e}
+    if(o.userData.edges)o.userData.edges.visible=sketch;
+  });
+}
+/* «abrir blindaje»: las placas se separan hacia afuera y queda a la vista lo que tapan */
+function applyExplode(){if(!current||!dims)return;const L=Math.max(dims.x,dims.y,dims.z)/scaleK;
+  current.children.forEach(o=>{const b=o.userData.base;if(!b)return;const tg=o.userData.tags||[];
+    if(o.userData.open)o.visible=!sketch&&explode>.3;
+    if(!tg.includes('armor')){o.position.copy(b);return}
+    let v;if(o.userData.ex)v=new THREE.Vector3(...o.userData.ex).multiplyScalar(.65);else{v=o.userData.ctr.clone();if(v.length()<1e-6)v.set(0,1,0);v.normalize().multiplyScalar(.17)}
+    o.position.copy(b).add(v.multiplyScalar(L*explode))});
+  const dir=camera.position.clone().sub(controls.target).normalize();camera.position.copy(controls.target).add(dir.multiplyScalar(fitDist*(1+explode*.25)))}
+function makeAnchors(d,sz){const A=[],rc=new THREE.Raycaster(),R=sz.length();
+  (d.pts||[]).forEach(pt=>{const ms=G.children.filter(o=>o.isMesh&&!o.userData.decal&&(o.userData.tags||[]).includes(pt.t));if(!ms.length)return;
+    let best=ms[0],bv=-1e9;ms.forEach(o=>{const c=o.userData.ctr,v=c.clone().normalize().dot(pt.dir?V(pt.dir).normalize():VIEW)+c.y/R*.2;if(v>bv){bv=v;best=o}});
+    const c=best.userData.ctr.clone();let dir=pt.dir?V(pt.dir).normalize():c.clone();if(dir.length()<1e-6)dir=VIEW.clone();dir.normalize();
+    rc.set(c.clone().add(dir.clone().multiplyScalar(R)),dir.clone().negate());const h=rc.intersectObject(best,false)[0];
+    const p=h?h.point:c;A.push(Object.assign({},pt,{mesh:best,local:best.worldToLocal(p.clone()),group:ms}))});
+  return A}
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+new ResizeObserver(()=>{resize();fit();applyExplode()}).observe(stage);
+
+/* ---------- interfaz ---------- */
+const list=document.getElementById('list'),spec=document.getElementById('spec');
+const ORDER=['Terrestres','Aéreos','Pesados, jefes y apoyo','Frozen Trail','Contenedores y operaciones'];
+const btns=[];
+ORDER.forEach(g=>{const h=document.createElement('div');h.className='grp';h.textContent=g;list.appendChild(h);
+  DEFS.forEach((d,i)=>{if(d.group!==g)return;const b=document.createElement('button');b.className='wbtn';b.id='w-'+d.id;
+    b.innerHTML=`<span class="n">${d.name}</span><span class="c">${d.cls}</span>`;b.onclick=()=>select(i);list.appendChild(b);btns[i]=b})});
+const navOrder=[];ORDER.forEach(g=>DEFS.forEach((d,i)=>{if(d.group===g)navOrder.push(i)}));
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+const sExp=document.getElementById('sExp'),expWrap=document.getElementById('expWrap');
+function select(i){
+  curIdx=i;const d=DEFS[i];explode=0;sExp.value=0;const info=build(i);
+  expWrap.hidden=!hasArmor;
+  btns.forEach((b,j)=>b&&b.setAttribute('aria-current',j===i?'true':'false'));
+  btns[i].scrollIntoView({block:'nearest',inline:'nearest'});
+  document.getElementById('tCls').textContent=d.cls+(d.prelim?' · Frozen Trail':'');
+  document.getElementById('tName').textContent=d.name;
+  document.getElementById('tAlias').textContent=d.alias||'';
+  const n=navOrder.indexOf(i)+1;
+  document.getElementById('tSerial').innerHTML=`LÁMINA ${String(n).padStart(2,'0')} / ${DEFS.length}<br>${d.id.toUpperCase()}-${(info.parts*37%900+100)}`;
+  const weak=(d.pts||[]).filter(p=>p.k==='weak'),wl=weak.length?`<ul class="wk">${weak.map(p=>`<li><button type="button" class="wkb" data-t="${p.t}">${esc(p.n)}</button>${p.fx?` — ${esc(p.fx)}`:''}${p.hid?' <small>(tapado por el blindaje)</small>':''}</li>`).join('')}</ul>`:`<p style="margin:0;font-size:14px">${esc(d.noWeak||'Sin puntos débiles confirmados todavía.')}</p>`;
+  const row=(k,v)=>v?`<dt>${k}</dt><dd>${esc(v)}</dd>`:'';
+  spec.innerHTML=`<h2>${esc(d.name)}</h2><div style="color:var(--muted);font-size:13.5px">${esc(d.cls)}${d.alias?' · '+esc(d.alias):''}</div>
+  ${d.prelim?'<p class="prelim">Datos preliminares: llegó con Frozen Trail el 8 de octubre y la comunidad todavía los está confirmando.</p>':''}
+  <div class="k">Qué hace</div><p style="margin:0;font-size:14.5px">${esc(d.desc)}</p>
+  <div class="k">Ficha</div>
+  <dl class="kv">${row('Tipo',d.mode)}${row('Tamaño estimado',d.size)}${row('Blindaje',d.armor)}${row('Vida',d.hp)}${row('Ataque',d.atk)}${row('Botín',d.loot)}</dl>
+  <div class="k">Puntos débiles</div>${wl}
+  <div class="k">Cómo encararlo</div><p style="margin:0;font-size:14px">${esc(d.tac)}</p>
+  <div class="k">Rasgos del diseño</div><ul>${d.notes.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+  <div class="k">Código de colores</div><div class="legend"><span><i style="background:#e9b532"></i>Punto débil</span><span><i style="background:#4a4f55"></i>Blindaje pesado</span><span><i style="background:#e4ded0"></i>Chapa común</span><span><i style="background:#ff4b2b"></i>Núcleo</span></div>
+  <p class="note">Diseño original pensado según lo que hace cada máquina, no una copia del modelo del juego. Puntos débiles según ${d.src.map(u=>`<a href="${u}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,'').split('/')[0])}</a>`).join(', ')}. Tamaños estimados para el boceto.</p>`;
+  spec.querySelectorAll('.wkb').forEach(b=>b.onclick=()=>openTag(b.dataset.t));
+  try{localStorage.setItem('robots-w',d.id)}catch(e){}
+}
+function openTag(t){const i=ANCH.findIndex(a=>a.t===t);if(i<0)return;if(ANCH[i].hid&&explode<.3){explode=1;sExp.value=100;applyExplode()}if(!showData){showData=true;bData.setAttribute('aria-pressed','true')}OPEN=i;fillCall()}
+const bRot=document.getElementById('bRot'),bSk=document.getElementById('bSketch'),bMan=document.getElementById('bMan');
+bRot.onclick=()=>{controls.autoRotate=!controls.autoRotate;bRot.setAttribute('aria-pressed',controls.autoRotate)};
+bSk.onclick=()=>{sketch=!sketch;bSk.setAttribute('aria-pressed',sketch);applySketch()};
+bMan.onclick=()=>{showMan=!showMan;man.visible=showMan;bMan.setAttribute('aria-pressed',showMan);fit();applyExplode()};
+sExp.oninput=()=>{explode=sExp.value/100;applyExplode()};
+document.getElementById('bFit').onclick=()=>{fit();applyExplode()};
+window.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||document.documentElement.classList.contains('embed'))return;const p=navOrder.indexOf(curIdx);
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();select(navOrder[(p+1)%navOrder.length]);btns[curIdx].focus()}
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();select(navOrder[(p-1+navOrder.length)%navOrder.length]);btns[curIdx].focus()}});
+if(reduce){controls.autoRotate=false;bRot.setAttribute('aria-pressed','false')}
+
+const svg=document.getElementById('callsvg'),callBox=document.getElementById('calls');let showData=true,OPEN=-1,HOTS=[],callEl=null,HLON=null;const _v=new THREE.Vector3();
+function setupHots(){OPEN=-1;HLON=null;callBox.innerHTML='';svg.innerHTML='';HOTS=ANCH.map((a,i)=>{const b=document.createElement('button');b.className='hot '+(a.k==='weak'?'weak':'info');
+    b.setAttribute('aria-label',(a.k==='weak'?'Punto débil: ':'')+a.n);b.title=a.n;b.onclick=e=>{e.stopPropagation();OPEN=OPEN===i?-1:i;fillCall()};callBox.appendChild(b);return b});
+  callEl=document.createElement('div');callEl.className='call';callEl.hidden=true;callBox.appendChild(callEl)}
+function closeHL(){if(HLON){HLON.forEach(o=>{if(o.userData.hlOrig){o.material=o.userData.hlOrig;delete o.userData.hlOrig}});HLON=null}}
+function fillCall(){HOTS.forEach((b,i)=>b.classList.toggle('on',i===OPEN));closeHL();if(OPEN<0||!ANCH[OPEN]){callEl.hidden=true;svg.innerHTML='';return}
+  const a=ANCH[OPEN];callEl.className='call '+(a.k==='weak'?'weak':'info');
+  callEl.innerHTML=a.k==='weak'?`<b>Punto débil</b><span>${esc(a.n)}</span>${a.fx?`<em>${esc(a.fx)}</em>`:''}`:`<b>${esc(a.n)}</b><span>${esc(a.v||'')}</span>${a.fx?`<em>${esc(a.fx)}</em>`:''}`;callEl.hidden=false;
+  if(a.k==='weak'&&!sketch){HLON=a.group;HLON.forEach(o=>{o.userData.hlOrig=o.material;o.material=HL})}}
+let frame=0;const rcO=new THREE.Raycaster();
+function updateCalls(){
+  const vis=current&&showData&&!sketch;callBox.hidden=!vis;svg.style.display=vis?'':'none';if(!vis)return;
+  const W=stage.clientWidth,H=stage.clientHeight;current.updateMatrixWorld();const occl=(frame++%6)===0,targets=occl?meshesOf(current):null;
+  const cen=new THREE.Vector3();current.localToWorld(cen);cen.project(camera);const cx=(cen.x+1)/2*W,cy=(1-cen.y)/2*H;
+  ANCH.forEach((a,i)=>{const b=HOTS[i];if(!b)return;const hide=a.hid&&explode<.3;
+    _v.copy(a.local);a.mesh.localToWorld(_v);
+    if(occl&&!hide){const dirv=_v.clone().sub(camera.position),dist=dirv.length();rcO.set(camera.position,dirv.normalize());const h=rcO.intersectObjects(targets,false)[0];
+      b.classList.toggle('back',!!h&&h.distance<dist-dims.x*.01&&!a.group.includes(h.object))}
+    _v.project(camera);
+    if(hide||_v.z>1){b.hidden=true;if(OPEN===i){OPEN=-1;fillCall()}return}
+    const x=(_v.x+1)/2*W,y=(1-_v.y)/2*H;b.hidden=false;b.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`;
+    if(i===OPEN){let dx=x-cx,dy=y-cy;const n=Math.hypot(dx,dy)||1;dx/=n;dy/=n;const sx=dx>=0?1:-1;
+      let lx=x+dx*100+sx*80,ly=y+dy*80-(Math.abs(dy)<.3?50:0);lx=Math.min(W-125,Math.max(125,lx));ly=Math.min(H-90,Math.max(lx<380?175:96,ly));
+      callEl.style.left=lx+'px';callEl.style.top=ly+'px';const ex=lx-sx*120,ex2=lx-sx*108;
+      svg.innerHTML=`<polyline points="${x.toFixed(1)},${y.toFixed(1)} ${ex.toFixed(1)},${ly.toFixed(1)} ${ex2.toFixed(1)},${ly.toFixed(1)}"/>`}})}
+let pd=null;cv.addEventListener('pointerdown',e=>{pd=[e.clientX,e.clientY]});cv.addEventListener('pointerup',e=>{if(pd&&Math.hypot(e.clientX-pd[0],e.clientY-pd[1])<5&&OPEN>=0){OPEN=-1;fillCall()}pd=null});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&OPEN>=0){OPEN=-1;fillCall()}});
+const bData=document.getElementById('bData');bData.onclick=()=>{showData=!showData;bData.setAttribute('aria-pressed',showData)};
+const clock=new THREE.Clock();
+function loop(){requestAnimationFrame(loop);const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;controls.update();
+  if(current&&!reduce){current.children.forEach(o=>{const s=o.userData.spin;if(s)o.rotation[s.axis]+=s.v*dt});
+    if(DEFS[curIdx].fly)current.position.y=current.userData.baseY+Math.sin(t*1.2)*dims.y*.025}
+  HL.emissiveIntensity=reduce?.7:.55+.35*Math.sin(t*5);
+  updateCalls();renderer.render(scene,camera)}
+function start(){
+  if(document.documentElement.classList.contains("thumb")){controls.autoRotate=false;showData=false;grid.visible=false;const f0=fit;fit=function(){f0();const r=dims?dims.x/Math.max(dims.y,.001):1,flat=dims&&dims.z/dims.x>.6,k=r>1.6&&flat?1.05:r>2.6?.96:r>1.6?.8:.62;fitDist*=k;camera.position.lerp(controls.target,1-k);controls.update()}}
+  resize();let id=null;const h=(location.hash||'').slice(1);try{if(!document.documentElement.classList.contains('embed'))id=localStorage.getItem('robots-w')}catch(e){}
+  let i=DEFS.findIndex(d=>d.id===h);if(i<0)i=DEFS.findIndex(d=>d.id===id);if(i<0)i=navOrder[0];
+  select(i);loop();
+}
+const fontReady=document.fonts&&document.fonts.load?Promise.race([document.fonts.load('600 96px "Saira Condensed"'),new Promise(r=>setTimeout(r,1500))]):Promise.resolve();
+fontReady.then(start,start);
+window.addEventListener('hashchange',()=>{const i=DEFS.findIndex(d=>d.id===location.hash.slice(1));if(i>=0)select(i)});
+/* encuadre ajustado para las miniaturas: el modelo ocupa casi todo el cuadro */
+function tight(m=.84){if(!current)return;const b=new THREE.Box3();current.updateMatrixWorld(true);meshesOf(current).forEach(o=>b.expandByObject(o));
+  const C=b.getCenter(new THREE.Vector3()),dir=camera.position.clone().sub(controls.target).normalize(),pts=[];
+  for(const x of[b.min.x,b.max.x])for(const y of[b.min.y,b.max.y])for(const z of[b.min.z,b.max.z])pts.push(new THREE.Vector3(x,y,z));
+  const ext=d=>{camera.position.copy(C).add(dir.clone().multiplyScalar(d));camera.lookAt(C);camera.updateMatrixWorld(true);let mx=0;
+    for(const p of pts){const q=p.clone().project(camera);if(q.z>1||q.z<-1)return 9;mx=Math.max(mx,Math.abs(q.x),Math.abs(q.y))}return mx};
+  let lo=fitDist*.05,hi=fitDist*6;for(let i=0;i<30;i++){const mid=(lo+hi)/2;if(ext(mid)>m)lo=mid;else hi=mid}
+  controls.target.copy(C);ext(hi);fitDist=hi;controls.update()}
+window.__ARM={DEFS,build,select,tight};
+})();
+</script>
+
+</body>
+</html>

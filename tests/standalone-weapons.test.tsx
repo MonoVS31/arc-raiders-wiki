@@ -7,6 +7,7 @@ import { Gallery } from '../src/components/wiki/Gallery';
 import { EntityDetail } from '../src/components/EntityDetail';
 import { catalog } from '../src/domain/catalog';
 import {
+  standaloneRobotCodes,
   standaloneThrowableCodes,
   standaloneViewer,
   standaloneWeaponCodes,
@@ -20,6 +21,7 @@ const withoutReturnBar = (file: string) =>
 it.each([
   ['armas-3d.html', '09798469ee10296eea5756df10a0e5d9f32a84e0e84faa74b7b1ca6f309490c6'],
   ['arrojadizos-3d.html', '1d3b8bca4534a5086e0d76b2878c59b9e493a08c6547d5bf8d15701a4464c492'],
+  ['robots-3d.html', 'dd378534604491b312acd2a08c447604c5d5b822b045139cce4e442a7848665b'],
 ])('preserva exactamente %s, descontando solo la barra autorizada', (file, hash) => {
   const source = withoutReturnBar(file);
   expect(createHash('sha256').update(source).digest('hex')).toBe(hash);
@@ -57,8 +59,26 @@ it('las 15 granadas con modelo abren el visor de arrojadizos', () => {
     );
   }
 });
+it('las 25 máquinas ARC del catálogo abren el visor de robots y no muestran retratos del juego', () => {
+  const html = readFileSync('robots-3d.html', 'utf8');
+  const arcs = catalog.entities.filter((entity) => entity.category === 'arc');
+  expect(Object.keys(standaloneRobotCodes).sort()).toEqual(arcs.map((entity) => entity.id).sort());
+  for (const [id, code] of Object.entries(standaloneRobotCodes)) {
+    expect(html).toContain(`id:'${code}'`);
+    expect(standaloneViewer(id)?.link).toMatch(new RegExp(`robots-3d\\.html#${code}$`));
+    const entity = catalog.entities.find((entity) => entity.id === id)!;
+    expect(renderToStaticMarkup(<Gallery entities={[entity]} />)).toContain(
+      `robots-3d.html#${code}`,
+    );
+    const detail = renderToStaticMarkup(<EntityDetail entity={entity} />);
+    expect(detail).toContain(`robots-3d.html?embed#${code}`);
+    expect(detail).not.toContain('arc-portrait');
+  }
+  // la sonda y el evaluador no tienen ficha propia, pero están en el visor
+  for (const code of ['sonda', 'evaluador']) expect(html).toContain(`id:'${code}'`);
+});
 it('no agrega botones ni contenedores nuevos a otras categorías o fichas sin modelo', () => {
-  for (const id of ['arc-hornet', 'weapon-stiletto', 'grenade-yank-grenade']) {
+  for (const id of ['map-dam-battlegrounds', 'weapon-stiletto', 'grenade-yank-grenade']) {
     const entity = catalog.entities.find((entity) => entity.id === id)!;
     const card = renderToStaticMarkup(<Gallery entities={[entity]} />);
     expect(card).not.toContain('Ver en 3D');

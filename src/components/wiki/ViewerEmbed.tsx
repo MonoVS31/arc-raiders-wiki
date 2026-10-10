@@ -27,8 +27,9 @@ export function ViewerEmbed({
       </div>
       <p className="viewer-embed-note">
         <span>
-          Diseño original orientativo · Girá el modelo, usá «Desarme» y tocá los puntos para ver
-          cada dato.
+          {viewer.kind === 'robot'
+            ? 'Diseño original orientativo · Girá el modelo, usá «Abrir blindaje» y tocá los puntos rojos para ver cada punto débil.'
+            : 'Diseño original orientativo · Girá el modelo, usá «Desarme» y tocá los puntos para ver cada dato.'}
         </span>
         <a href={viewer.link}>Abrir en pantalla completa</a>
       </p>

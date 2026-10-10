@@ -26,15 +26,6 @@ afterEach(async () => {
   host.remove();
   vi.unstubAllGlobals();
 });
-async function loadImage() {
-  const image = host.querySelector('.diagram-image-plane img')!;
-  Object.defineProperties(image, {
-    complete: { value: true, configurable: true },
-    naturalWidth: { value: 792, configurable: true },
-    naturalHeight: { value: 630, configurable: true },
-  });
-  await act(async () => image.dispatchEvent(new Event('load')));
-}
 it('las entradas ARC apuntan solo a zonas originales, sin campos ni estados anunciados', () => {
   const arcDiagrams = diagramHotspots.filter(
     (diagram) =>
@@ -55,7 +46,7 @@ it('las entradas ARC apuntan solo a zonas originales, sin campos ni estados anun
     }
   }
 });
-it('el retrato, las opciones y el panel se sincronizan sin señalar una zona no mapeada', async () => {
+it('con boceto 3D propio, las opciones y el panel se sincronizan sin el retrato del juego', async () => {
   const references = vi.fn();
   await act(async () =>
     root.render(
@@ -64,17 +55,17 @@ it('el retrato, las opciones y el panel se sincronizan sin señalar una zona no 
       </WikiContext.Provider>,
     ),
   );
-  await loadImage();
-  const point = host.querySelector<HTMLButtonElement>('.diagram-hotspot')!;
-  expect(point.getAttribute('aria-pressed')).toBe('true');
+  expect(host.querySelector('.diagram-image-plane')).toBeNull();
+  expect(host.querySelector('.arc-schematic-frame')).not.toBeNull();
+  expect(host.textContent).not.toContain('Embark Studios');
   const protection = host.querySelector<HTMLButtonElement>('.zone-option.protected')!;
   await act(async () => protection.click());
   expect(host.querySelector('.zone-detail h5')!.textContent).toBe('Cuatro propulsores blindados');
-  expect(point.getAttribute('aria-pressed')).toBe('false');
   expect(protection.getAttribute('aria-pressed')).toBe('true');
-  point.focus();
-  expect(document.activeElement).toBe(point);
-  await act(async () => point.click());
+  const tank = [...host.querySelectorAll<HTMLButtonElement>('.zone-option.weak')].find((button) =>
+    button.textContent!.includes('Depósito amarillo'),
+  )!;
+  await act(async () => tank.click());
   expect(host.querySelector('.zone-detail h5')!.textContent).toBe('Depósito amarillo');
   expect(host.querySelector('.zone-condition')!.textContent).toContain('Lanzallamas extendido');
   expect(protection.getAttribute('aria-pressed')).toBe('false');
@@ -88,32 +79,17 @@ it('el retrato, las opciones y el panel se sincronizan sin señalar una zona no 
   expect(host.textContent).toContain('Reportes posibles');
   expect(host.textContent).toContain('Los dibujos son orientativos');
 });
-it('seleccionar un núcleo oculto no crea un punto sobre la carcasa de Fireball', async () => {
+it('el núcleo oculto de Fireball conserva su condición sin dibujarse sobre una foto', async () => {
   await act(async () => root.render(<ARCZoneExplorer entityId="arc-fireball" />));
-  await loadImage();
-  const point = host.querySelector<HTMLButtonElement>('.diagram-hotspot')!;
-  expect(point.getAttribute('aria-pressed')).toBe('false');
+  expect(host.querySelector('.diagram-hotspot.zone-point img')).toBeNull();
+  expect(host.querySelector('.diagram-image-plane')).toBeNull();
   expect(host.querySelector('.zone-condition')!.textContent).toContain('Panel frontal abierto');
-  expect(host.querySelector('.zone-detail')!.textContent).toContain(
-    'Posición en este retrato: Pendiente de verificar.',
-  );
   await act(async () =>
     (host.querySelector('.zone-option.protected') as HTMLButtonElement).click(),
   );
-  expect(point.getAttribute('aria-pressed')).toBe('true');
   expect(host.querySelector('.zone-condition')!.textContent).toContain(
     'Mientras el panel está cerrado',
   );
-});
-it('una imagen fallida conserva la selección, fuentes y opciones ARC', async () => {
-  await act(async () => root.render(<ARCZoneExplorer entityId="arc-firefly" />));
-  await act(async () => host.querySelector('img')!.dispatchEvent(new Event('error')));
-  expect(host.querySelector('.diagram-hotspot')).toBeNull();
-  await act(async () =>
-    (host.querySelector('.zone-option.protected') as HTMLButtonElement).click(),
-  );
-  expect(host.querySelector('.zone-detail h5')!.textContent).toBe('Cuatro propulsores blindados');
-  expect(host.querySelector('.zone-detail .evidence-button')).not.toBeNull();
 });
 it('los ARC sin entrada mantienen sus esquemas y la distinción textual de las zonas', async () => {
   for (const [entityId, selector] of [
@@ -131,11 +107,11 @@ it('los ARC sin entrada mantienen sus esquemas y la distinción textual de las z
   expect(host.textContent).toContain('Sin dato específico');
   expect(host.textContent).toContain('Sin blindaje declarado');
 });
-it('el panel de combate evita repetir el retrato cuando hay diagrama y mantiene la atribución', async () => {
+it('el panel de combate no muestra retratos del juego cuando hay boceto 3D', async () => {
   const entity = catalog.entities.find((entity) => entity.id === 'arc-firefly')!;
   await act(async () => root.render(<ARCCombatPanel entity={entity} />));
+  await vi.waitFor(() => expect(host.querySelector('.arc-zones')).not.toBeNull());
   expect(host.querySelector('.arc-portrait')).toBeNull();
-  await vi.waitFor(() => expect(host.querySelector('.diagram-image-plane img')).not.toBeNull());
-  expect(host.querySelector('.diagram-attribution')!.textContent).toContain('Embark Studios');
-  expect(host.querySelector('.diagram-attribution .evidence-button')).not.toBeNull();
+  expect(host.querySelector('img')).toBeNull();
+  expect(host.textContent).not.toContain('Embark Studios');
 });

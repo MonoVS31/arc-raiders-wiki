@@ -1,6 +1,7 @@
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
+  standaloneRobotCodes,
   standaloneThrowableCodes,
   standaloneViewer,
   standaloneWeaponCodes,
@@ -20,6 +21,10 @@ it('las tarjetas usan miniaturas sacadas de los visores 3D, sin el visor anterio
   for (const [id, code] of Object.entries(standaloneThrowableCodes)) {
     expect(standaloneViewer(id)?.sketch).toContain('throwable-sketches/' + code + '.png');
     isThumbnail('public/throwable-sketches/' + code + '.png');
+  }
+  for (const [id, code] of Object.entries(standaloneRobotCodes)) {
+    expect(standaloneViewer(id)?.sketch).toContain('robot-sketches/' + code + '.png');
+    isThumbnail('public/robot-sketches/' + code + '.png');
   }
   expect(readFileSync('src/components/EntityDetail.tsx', 'utf8')).not.toContain(
     'WeaponStudyViewer',

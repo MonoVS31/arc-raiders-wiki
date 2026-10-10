@@ -6,6 +6,7 @@ import { readAtlasData } from '../domain/data-loader';
 import { zonesForARC, type ARCZone } from '../domain/arc-zones';
 import { WikiLink, Sources } from '../app/WikiContext';
 import { arcMapReports } from '../domain/arc-links';
+import { standaloneViewer } from '../domain/standalone-weapons';
 const kinds = {
   weak: 'Zona débil reportada',
   protected: 'Protección reportada',
@@ -15,7 +16,8 @@ const kinds = {
 export default function ARCZoneExplorer({ entityId }: { entityId: string }) {
   const enemy = zonesForARC(entityId);
   const diagram = diagramFor(entityId);
-  const photo = diagram?.puntos.length ? diagram : undefined;
+  // Con boceto 3D propio no se usa el retrato del juego: quedan el esquema y las piezas.
+  const photo = diagram?.puntos.length && !standaloneViewer(entityId) ? diagram : undefined;
   const [selectedId, setSelectedId] = useState(enemy?.zones[0]?.id ?? '');
   const [pointId, setPointId] = useState<string | null>(null);
   const titleId = useId(),

@@ -1,4 +1,5 @@
 import { localImage } from '../domain/images';
+import { standaloneViewer } from '../domain/standalone-weapons';
 import { StatBars } from './wiki/StatBars';
 import { diagramFor } from '../domain/diagram-hotspots';
 import { DiagramFrame } from './wiki/DiagramFrame';
@@ -168,7 +169,7 @@ export function ARCCombatPanel({ entity }: { entity: Entity }) {
   return (
     <section className="combat-tool">
       <h3>Preparar el combate</h3>
-      {portrait && !diagramFor(entity.id)?.puntos.length && (
+      {portrait && !standaloneViewer(entity.id) && !diagramFor(entity.id)?.puntos.length && (
         <figure className="arc-portrait">
           {imageFailed ? (
             <p>

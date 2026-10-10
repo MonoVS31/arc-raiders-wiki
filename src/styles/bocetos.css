@@ -272,6 +272,9 @@
     letter-spacing: 0.08em;
     text-transform: lowercase;
   }
+  .featured-editorial .featured-art img {
+    object-fit: contain;
+  }
   .release-ticker {
     margin: 0 0 1.5rem;
     border: var(--stroke);
